@@ -33,6 +33,7 @@ export default function HomeScreen() {
     <div>
 
       <div className='convey'>
+        {/* <img src="../image/ama1.jpg" alt="home" height="500px" width="1320px"/> */}
         <h2>Top Sellers</h2>
         {loadingSellers ? (
           <LoadingBox></LoadingBox>
@@ -123,7 +124,7 @@ export default function HomeScreen() {
 
       <div className='armour'>
         <div className="carousel-item">
-          <Carousel   showThumbs={false}>
+          <Carousel showArrows autoPlay showThumbs={true}>
             <div className='row'>
 
               <div className='col-sm-2'>
@@ -131,18 +132,18 @@ export default function HomeScreen() {
                   <img src="/image/p7.jpg" alt="Avatar" height="300px" />
 
 
-                  <div className="container">
-                    <div className="Name">
+                  <div className="card-body">
+                    <div class="Name">
                       <p>purly saree</p>
                     </div>
-                    <div className="rating">
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star-half-o"></i></span>
+                    <div class="rating">
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star-half-o"></i></span>
                     </div>
-                    <div className="price">
+                    <div class="price">
                       $580
                     </div>
                     {/* <h4><b>John Doe</b></h4>
@@ -153,18 +154,18 @@ export default function HomeScreen() {
               <div className='col-sm-2'>
                 <div className="card2">
                   <img src="/image/p8.jpg" alt="Avatar" height="300px" />
-                  <div className="container">
-                    <div className="Name">
+                  <div class="card-body">
+                    <div class="Name">
                       <p>traditional saree</p>
                     </div>
-                    <div className="rating">
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star-half-o"></i></span>
+                    <div class="rating">
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star-half-o"></i></span>
                     </div>
-                    <div className="price">
+                    <div class="price">
                       $420
                     </div>
                     {/* <h4><b>John Doe</b></h4>
@@ -175,18 +176,18 @@ export default function HomeScreen() {
               <div className='col-sm-2'>
                 <div className="card3">
                   <img src="/image/p9.jpg" alt="Avatar" height="300px" />
-                  <div className="container">
-                    <div className="Name">
+                  <div class="card-body">
+                    <div class="Name">
                       <p>maskar saree</p>
                     </div>
-                    <div className="rating">
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      {/* <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star"></i></span> */}
-                      <span><i className="fa fa-star-half-o"></i></span>
+                    <div class="rating">
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      {/* <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span> */}
+                      <span><i class="fa fa-star-half-o"></i></span>
                     </div>
-                    <div className="price">
+                    <div class="price">
                       $720
                     </div>
                     {/* <h4><b>John Doe</b></h4>
@@ -197,18 +198,18 @@ export default function HomeScreen() {
               <div className='col-sm-2'>
                 <div className="card4">
                   <img src="/image/p91.jpg" alt="Avatar" height="300px" />
-                  <div className="container">
-                    <div className="Name">
+                  <div class="card-body">
+                    <div class="Name">
                       <p>Pinaky saree</p>
                     </div>
-                    <div className="rating">
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      {/* <span><i className="fa fa-star"></i></span> */}
-                      <span><i className="fa fa-star-half-o"></i></span>
+                    <div class="rating">
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      {/* <span><i class="fa fa-star"></i></span> */}
+                      <span><i class="fa fa-star-half-o"></i></span>
                     </div>
-                    <div className="price">
+                    <div class="price">
                       $920
                     </div>
 
@@ -224,18 +225,18 @@ export default function HomeScreen() {
                   <img src="/image/p10.jpg" alt="Avatar" height="300px" />
 
 
-                  <div className="container">
-                    <div className="Name">
+                  <div class="card-body" >
+                    <div class="Name">
                       <p>paper saree</p>
                     </div>
-                    <div className="rating">
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star-half-o"></i></span>
+                    <div class="rating">
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star-half-o"></i></span>
                     </div>
-                    <div className="price">
+                    <div class="price">
                       $580
                     </div>
                     {/* <h4><b>John Doe</b></h4>
@@ -246,18 +247,18 @@ export default function HomeScreen() {
               <div className='col-sm-2'>
                 <div className="card2">
                   <img src="/image/p11.jpg" alt="Avatar" height="300px" />
-                  <div className="container">
-                    <div className="Name">
+                  <div class="card-body" >
+                    <div class="Name">
                       <p>maska saree</p>
                     </div>
-                    <div className="rating">
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star-half-o"></i></span>
+                    <div class="rating">
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star-half-o"></i></span>
                     </div>
-                    <div className="price">
+                    <div class="price">
                       $420
                     </div>
                     {/* <h4><b>John Doe</b></h4>
@@ -268,18 +269,18 @@ export default function HomeScreen() {
               <div className='col-sm-2'>
                 <div className="card3">
                   <img src="/image/p12.jpg" alt="Avatar" height="300px" />
-                  <div className="container">
-                    <div className="Name">
+                  <div class="card-body" >
+                    <div class="Name">
                       <p>arutha saree</p>
                     </div>
-                    <div className="rating">
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      {/* <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star"></i></span> */}
-                      <span><i className="fa fa-star-half-o"></i></span>
+                    <div class="rating">
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      {/* <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span> */}
+                      <span><i class="fa fa-star-half-o"></i></span>
                     </div>
-                    <div className="price">
+                    <div class="price">
                       $720
                     </div>
                     {/* <h4><b>John Doe</b></h4>
@@ -290,18 +291,18 @@ export default function HomeScreen() {
               <div className='col-sm-2'>
                 <div className="card4">
                   <img src="/image/p45.jpg" alt="Avatar" height="300px" />
-                  <div className="container">
-                    <div className="Name">
+                  <div class="card-body" >
+                    <div class="Name">
                       <p>jimka saree</p>
                     </div>
-                    <div className="rating">
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      <span><i className="fa fa-star"></i></span>
-                      {/* <span><i className="fa fa-star"></i></span> */}
-                      <span><i className="fa fa-star-half-o"></i></span>
+                    <div class="rating">
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      <span><i class="fa fa-star"></i></span>
+                      {/* <span><i class="fa fa-star"></i></span> */}
+                      <span><i class="fa fa-star-half-o"></i></span>
                     </div>
-                    <div className="price">
+                    <div class="price">
                       $920
                     </div>
 
@@ -318,20 +319,20 @@ export default function HomeScreen() {
         <div className='row'>
 
           <div className='col-sm-2'>
-            <div className="card5">
-              <img src="/image/kid5.jpg" alt="Avatar" height="300px" />
+            <div class="card5">
+              <img src="/image/kid5.jpg" alt="Avatar" height="300px" width="280px" />
 
 
-              <div className="container">
-                <div className="Name">
+              <div class="card-body">
+                <div class="Name">
                   <p>angel medi</p>
                 </div>
-                <div className="rating">
-                  <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star-half-o"></i></span>
+                <div class="rating">
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star-half-o"></i></span>
                 </div>
-                <div className="price">
+                <div class="price">
                   $980
                 </div>
                 {/* <h4><b>John Doe</b></h4>
@@ -340,20 +341,20 @@ export default function HomeScreen() {
             </div>
           </div>
           <div className='col-sm-2'>
-            <div className="card6">
-              <img src="/image/kid2.jpg" alt="Avatar" height="300px" />
-              <div className="container">
-                <div className="Name">
+            <div class="card6">
+              <img src="/image/kid2.jpg" alt="Avatar" height="300px" width="280px"/>
+              <div class="card-body">
+                <div class="Name">
                   <p>hansa inskert</p>
                 </div>
-                <div className="rating">
-                  <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star-half-o"></i></span>
+                <div class="rating">
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star-half-o"></i></span>
                 </div>
-                <div className="price">
+                <div class="price">
                   $520
                 </div>
                 {/* <h4><b>John Doe</b></h4>
@@ -362,20 +363,20 @@ export default function HomeScreen() {
             </div>
           </div>
           <div className='col-sm-2'>
-            <div className="card7">
-              <img src="/image/kid3.jpg" alt="Avatar" height="300px" />
-              <div className="container">
-                <div className="Name">
+            <div class="card7">
+              <img src="/image/kid3.jpg" alt="Avatar" height="300px" width="280px" />
+              <div class="card-body" >
+                <div class="Name">
                   <p>umberalla harie</p>
                 </div>
-                <div className="rating">
-                  <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star"></i></span>
-                  {/* <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star"></i></span> */}
-                  <span><i className="fa fa-star-half-o"></i></span>
+                <div class="rating">
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span>
+                  {/* <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span> */}
+                  <span><i class="fa fa-star-half-o"></i></span>
                 </div>
-                <div className="price">
+                <div class="price">
                   $920
                 </div>
                 {/* <h4><b>John Doe</b></h4>
@@ -384,20 +385,20 @@ export default function HomeScreen() {
             </div>
           </div>
           <div className='col-sm-2'>
-            <div className="card8" >
-              <img src="/image/kid4.jpg" alt="aval8" height="300px" />
-              <div className="container">
+            <div class="card8" >
+              <img src="/image/kid4.jpg" alt="aval8" height="300px" width="280px" />
+              <div className="card-body">
                 <div className="Name">
                   <p>classic medie</p>
                 </div>
-                <div className="rating">
-                  <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star"></i></span>
-                  <span><i className="fa fa-star"></i></span>
-                  {/* <span><i className="fa fa-star"></i></span> */}
-                  <span><i className="fa fa-star-half-o"></i></span>
+                <div class="rating">
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span>
+                  <span><i class="fa fa-star"></i></span>
+                  {/* <span><i class="fa fa-star"></i></span> */}
+                  <span><i class="fa fa-star-half-o"></i></span>
                 </div>
-                <div className="price">
+                <div class="price">
                   $1220
                 </div>
                 {/* <h4><b>John Doe</b></h4>
