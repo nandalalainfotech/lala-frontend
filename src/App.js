@@ -108,7 +108,9 @@ function App() {
               <i className="fa fa-bars"></i>
             </button>
             <Link className="brand" to="/">
-              {/* <img src="/image/logo8.png" alt="home" height="35px" width="30px"  margin-top="120px"/> */}
+             
+              <img src="/image/logo8.png" alt="home" height="35px" width="30px" className="logo"  margin-right="250px"/>
+            
               <span className="nandalala">lala</span><span className="in"></span>
             </Link>
           </div>
@@ -120,15 +122,13 @@ function App() {
                 <div className="user">
 
                   <a href="dfs" className="nav-item is-active" active-color="orange">
-                    <Link to="men">
-                      {/* <strong> */}
+                    <Link to="men" >
                       MEN
-                      {/* </strong> */}
                     </Link></a>
 
                   <ul className="dropdowns-contents">
                     <li>
-                      <h3 className="btn success"> <Link to="/Topwear" style={{ color: "#20A020" }}>Topwear</Link></h3>
+                      <h3 className="btn success"> <Link to="/Topwear" style={{color:'#ee5f73'}}>Topwear</Link></h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/T-shirts">T-shirts</Link></a>
@@ -160,7 +160,7 @@ function App() {
                         {/* <hr /> */}
                         <li><a href="dffs">
                           <h4>
-                            <Link to="/Indian Festival Wear" style={{ color: "#20A020" }}>Indian festival wear</Link>
+                            <Link to="/Indian Festival Wear" style={{color:'#ee5f73'}}>Indian festival wear</Link>
                           </h4></a>
                         </li>
 
@@ -181,7 +181,7 @@ function App() {
                       </div>
                     </li>
                     <li>
-                      <h3 > <Link to="/Bottom Wear" style={{ color: "#20A020" }}>Bottom Wear</Link> </h3>
+                      <h3 > <Link to="/Bottom Wear" style={{color:'#ee5f73'}}>Bottom Wear</Link> </h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/Jeans">Jeans</Link></a>
@@ -202,7 +202,7 @@ function App() {
                       </div>
                       {/* <hr /> */}
                       {/* <li><a href="dffs"> */}
-                      <h3> <Link to="/Innear Wear& Sleepe Wear" style={{ color: "#20A020" }}>Innear Wear&Sleepe Wear</Link> </h3>
+                      <h3> <Link to="/Innear Wear& Sleepe Wear" style={{color:'#ee5f73'}}>Innear Wear&Sleepe Wear</Link> </h3>
                       {/* </a></li> */}
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -230,12 +230,12 @@ function App() {
                         {/* <hr /> */}
                       </div>
                       {/* <li><a href="dffs"> */}
-                      <h3> <Link to="/Plus Size" style={{ color: "#20A020" }}>Plus Size</Link> </h3>
+                      <h3> <Link to="/Plus Size" style={{color:'#ee5f73'}}>Plus Size</Link> </h3>
                       {/* </a></li> */}
                     </li>
 
                     <li>
-                      <h3> <Link to="/Foot Wear" style={{ color: "#20A020" }}>Foot Wear</Link> </h3>
+                      <h3> <Link to="/Foot Wear" style={{color:'#ee5f73'}}>Foot Wear</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -262,18 +262,18 @@ function App() {
                       </div>
                       {/* <hr /> */}
                       {/* <li><a href="dffs"> */}
-                      <h6><Link to="/Personal Care Grooming" style={{ color: "#20A020" }}>personalCareGrooming</Link> </h6>
+                      <h6><Link to="/Personal Care Grooming" style={{color:'#ee5f73'}}>personalCareGrooming</Link> </h6>
                       {/* </a></li> */}
                       {/* <li><a href="dffs"> */}
-                      <h3> <Link to="/Sunglasses &Frames" style={{ color: "#20A020" }}>Sunglasses&Frames</Link> </h3>
+                      <h3> <Link to="/Sunglasses &Frames" style={{color:'#ee5f73'}}>Sunglasses&Frames</Link> </h3>
                       {/* </a> </li> */}
 
                       {/* // <li><a href="dffs"> */}
-                      <h3>  <Link to="/Watches" style={{ color: "#20A020" }}>Watches</Link> </h3>
+                      <h3>  <Link to="/Watches" style={{color:'#ee5f73'}}>Watches</Link> </h3>
                       {/* // </a></li> */}
                     </li>
                     <li>
-                      <h3>  <Link to="/Sports activy Wear" style={{ color: "#20A020" }}>Sports activy Wear</Link> </h3>
+                      <h3>  <Link to="/Sports activy Wear" style={{color:'#ee5f73'}}>Sports activy Wear</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -308,7 +308,7 @@ function App() {
                       </div>
                       {/* <hr /> */}
                       {/* <li><a href="dffs"> */}
-                      <h3> <Link to="/gadgets" style={{ color: "#20A020" }}>gadgets</Link> </h3>
+                      <h3> <Link to="/gadgets" style={{color:'#ee5f73'}}>gadgets</Link> </h3>
                       {/* </a></li> */}
 
 
@@ -332,7 +332,7 @@ function App() {
 
                     </li>
                     <li>
-                      <h3><Link to="/Faschion Accessories" style={{ color: "#20A020" }}>Faschion Accessories</Link> </h3>
+                      <h3><Link to="/Faschion Accessories" style={{color:'#ee5f73'}}>Faschion Accessories</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -378,10 +378,10 @@ function App() {
                         </li>
                       </div>
                       <li><a href="dffs">
-                        <h5><Link to="/Bags&Backpacks" style={{ color: "#20A020" }}>Bags&Backpacks</Link> </h5>
+                        <h5><Link to="/Bags&Backpacks" style={{color:'#ee5f73'}}>Bags&Backpacks</Link> </h5>
                       </a></li>
                       {/* <li><a href="dffs"> */}
-                      <h5><Link to="/Luggages&trolleys" style={{ color: "#20A020" }}>Luggages&trolleys</Link> </h5>
+                      <h5><Link to="/Luggages&trolleys" style={{color:'#ee5f73'}}>Luggages&trolleys</Link> </h5>
                       {/* </a></li> */}
 
                     </li>
@@ -406,7 +406,7 @@ function App() {
                   <ul className="dropdowns-contents1">
                     <li>
 
-                      <h3><Link to="/Indian&fusion wear" style={{ color: "#3d4eac" }} >Indian&fusion wear</Link></h3>
+                      <h3><Link to="/Indian&fusion wear" style={{color:'#fb56c1'}} >Indian&fusion wear</Link></h3>
 
 
                       <div className="sub-menu">
@@ -446,12 +446,12 @@ function App() {
                       </div>
                       {/* <hr /> */}
                       <div className="ok">
-                        <h3><Link to="/Belts, Scarves & More" style={{ color: "#3d4eac" }}>Belts, Scarves & More</Link></h3>
-                        <h3> <Link to="/Watches & Wearables" style={{ color: "#3d4eac" }}>Watches & Wearables</Link></h3>
+                        <h3><Link to="/Belts, Scarves & More" style={{color:'#fb56c1'}}>Belts, Scarves & More</Link></h3>
+                        <h3> <Link to="/Watches & Wearables" style={{color:'#fb56c1'}}>Watches & Wearables</Link></h3>
                       </div>
                     </li>
                     <li>
-                      <h3> <Link to="/Western Wear" style={{ color: "#3d4eac" }}>Western Wear</Link> </h3>
+                      <h3> <Link to="/Western Wear" style={{color:'#fb56c1'}}>Western Wear</Link> </h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/Dresses">Dresses</Link></a>
@@ -492,13 +492,13 @@ function App() {
 
                       </div>
                       {/* <hr /> */}
-                      <h3> <Link to="/Plus Size" style={{ color: "#3d4eac" }}>Plus Size</Link> </h3>
+                      <h3> <Link to="/Plus Size" style={{color:'#fb56c1'}}>Plus Size</Link> </h3>
                     </li>
 
                     <li>
-                      <h3> <Link to="/Maternity" style={{ color: "#3d4eac" }}>Maternity</Link> </h3>
-                      <h3> <Link to="/Sunglasses & Frames" style={{ color: "#3d4eac" }}>Sunglasses & Frames</Link> </h3>
-                      <h3> <Link to="/Foot Wear" style={{ color: "#3d4eac" }}>Foot Wear</Link> </h3>
+                      <h3> <Link to="/Maternity" style={{color:'#fb56c1'}}>Maternity</Link> </h3>
+                      <h3> <Link to="/Sunglasses & Frames"style={{color:'#fb56c1'}}>Sunglasses & Frames</Link> </h3>
+                      <h3> <Link to="/Foot Wear" style={{color:'#fb56c1'}}>Foot Wear</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -519,7 +519,7 @@ function App() {
 
                       </div>
                       {/* <hr /> */}
-                      <h3>  <Link to="/Sports activy Wear" style={{ color: "#3d4eac" }}>Sports &activy Wear</Link> </h3>
+                      <h3>  <Link to="/Sports activy Wear" style={{color:'#fb56c1'}}>Sports &activy Wear</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -538,7 +538,7 @@ function App() {
                       </div>
                     </li>
                     <li>
-                      <h3> <Link to="/Lingerie & Sleepwear" style={{ color: "#3d4eac" }}> Lingerie & Sleepwear</Link> </h3>
+                      <h3> <Link to="/Lingerie & Sleepwear" style={{color:'#fb56c1'}}> Lingerie & Sleepwear</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -562,7 +562,7 @@ function App() {
                         </li>
                       </div>
                       {/* <hr /> */}
-                      <h3><Link to="/Beauty & Personal Care" style={{ color: "#3d4eac" }}>Beauty & Personal Care</Link> </h3>
+                      <h3><Link to="/Beauty & Personal Care" style={{color:'#fb56c1'}}>Beauty & Personal Care</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -584,7 +584,7 @@ function App() {
                       </div>
                     </li>
                     <li>
-                      <h3> <Link to="/Gadgets" style={{ color: "#3d4eac" }}>Gadgets</Link></h3>
+                      <h3> <Link to="/Gadgets" style={{color:'#fb56c1'}}>Gadgets</Link></h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/Smart Wearables">SmartWearables</Link></a>
@@ -601,7 +601,7 @@ function App() {
                         </li>
                       </div>
                       {/* <hr /> */}
-                      <h3> <Link to="/Jewellery" style={{ color: "#3d4eac" }}>Jewellery</Link></h3>
+                      <h3> <Link to="/Jewellery" style={{color:'#fb56c1'}}>Jewellery</Link></h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/Fashion Jewellery">FashionJewellery</Link></a>
@@ -618,9 +618,9 @@ function App() {
                         </li> */}
                       </div>
                       {/* <hr /> */}
-                      <h3> <Link to="/Gadgets" style={{ color: "#3d4eac" }}>Backpacks</Link></h3>
-                      <h3> <Link to="/Handbags,Bags&Wallets" style={{ color: "#3d4eac" }}>Handbags,Bags&Wallets</Link></h3>
-                      <h3> <Link to="/Luggages & Trolleys" style={{ color: "#3d4eac" }}>Luggages & Trolleys</Link></h3>
+                      <h3> <Link to="/Gadgets" style={{color:'#fb56c1'}}>Backpacks</Link></h3>
+                      <h3> <Link to="/Handbags,Bags&Wallets"style={{color:'#fb56c1'}}>Handbags,Bags&Wallets</Link></h3>
+                      <h3> <Link to="/Luggages & Trolleys" style={{color:'#fb56c1'}}>Luggages & Trolleys</Link></h3>
                     </li>
                   </ul>
                 </div>
@@ -638,7 +638,7 @@ function App() {
                   </a>
                   <ul className="dropdowns-contents2">
                     <li>
-                      <h3> <Link to="/Boys Clothing" style={{ color: "#A02020" }}>Boys Clothing</Link></h3>
+                      <h3> <Link to="/Boys Clothing" style={{color:'#f26a10'}}>Boys Clothing</Link></h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/T-Shirts">T-Shirts</Link></a>
@@ -686,7 +686,7 @@ function App() {
                       </div>
                     </li>
                     <li>
-                      <h3> <Link to="/Western Wear" style={{ color: "#A02020" }}>Girls Clothing</Link> </h3>
+                      <h3> <Link to="/Western Wear" style={{color:'#f26a10'}}>Girls Clothing</Link> </h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/Dresses">Dresses</Link></a>
@@ -741,7 +741,7 @@ function App() {
                     <li>
                       {/* <h3> <Link to="/Maternity">Maternity</Link> </h3>
                     <h3> <Link to="/Sunglasses & Frames">Sunglasses & Frames</Link> </h3> */}
-                      <h3> <Link to="/Foot Wear" style={{ color: "#A02020" }}>Foot Wear</Link> </h3>
+                      <h3> <Link to="/Foot Wear" style={{color:'#f26a10'}}>Foot Wear</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -769,7 +769,7 @@ function App() {
 
                       </div>
                       {/* <hr /> */}
-                      <h3>  <Link to="/Toys" style={{ color: "#A02020" }}>Toys</Link> </h3>
+                      <h3>  <Link to="/Toys" style={{color:'#f26a10'}}>Toys</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -790,7 +790,7 @@ function App() {
 
 
                     <li>
-                      <h3> <Link to="/Infants" style={{ color: "#A02020" }}>Infants</Link> </h3>
+                      <h3> <Link to="/Infants" style={{color:'#f26a10'}}>Infants</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -823,11 +823,11 @@ function App() {
                       </div>
                       {/* <hr /> */}
 
-                      <h3><Link to="/Home & Bath" style={{ color: "#A02020" }}>Home & Bath</Link> </h3>
-                      <h3><Link to="/Personal Care" style={{ color: "#A02020" }}>Personal Care</Link> </h3>
+                      <h3><Link to="/Home & Bath"style={{color:'#f26a10'}}>Home & Bath</Link> </h3>
+                      <h3><Link to="/Personal Care" style={{color:'#f26a10'}}>Personal Care</Link> </h3>
                     </li>
                     <li>
-                      <h3><Link to="/Kids Accessories">Kids Accessories</Link> </h3>
+                      <h3><Link to="/Kids Accessories"style={{color:'#f26a10'}}>Kids Accessories</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -852,7 +852,7 @@ function App() {
                       </div>
                       {/* <hr /> */}
 
-                      <h3> <Link to="/Brands" style={{ color: "#A02020" }}>Brands</Link></h3>
+                      <h3> <Link to="/Brands" style={{color:'#f26a10'}}>Brands</Link></h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/H&M">H&M</Link></a>
@@ -864,7 +864,7 @@ function App() {
                           <Link to="/Pantaloons">Pantaloons</Link></a>
                         </li>
                         <li><a href="dffs">
-                          <Link to="/United Colors Of Benetton Kids">United Colors of BenettonKids</Link></a>
+                          <Link to="/United Colors Of Benetton Kids">UnitedColorsofBenettonKids</Link></a>
                         </li>
                         <li><a href="dffs">
                           <Link to="/YK">YK</Link></a>
@@ -899,7 +899,7 @@ function App() {
                   </a>
                   <ul className="dropdowns-contents3">
                     <li>
-                      <h3> <Link to="/Bed Linen & Furnishing" style={{ color: "#c59613" }}>Bed Linen & Furnishing</Link></h3>
+                      <h3> <Link to="/Bed Linen & Furnishing" style={{color:'#f2c210'}}>Bed Linen & Furnishing</Link></h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/Bed Runners"> Bed Runners</Link></a>
@@ -935,7 +935,7 @@ function App() {
                         </li>
                       </div>
                       {/* <hr /> */}
-                      <h3> <Link to="/Flooring" style={{ color: "#c59613" }}>Flooring</Link> </h3>
+                      <h3> <Link to="/Flooring" style={{color:'#f2c210'}}>Flooring</Link> </h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/Floor Runners">Floor Runners</Link></a>
@@ -959,7 +959,7 @@ function App() {
 
                     <li>
                       <div className="menu" color="text-primary">
-                        <h3><Link to="/Bath" style={{ color: "#c59613" }}>Bath</Link></h3>
+                        <h3><Link to="/Bath" style={{color:'#f2c210'}}>Bath</Link></h3>
                       </div>
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -992,7 +992,7 @@ function App() {
 
                       </div>
                       {/* <hr /> */}
-                      <h3>  <Link to="/Lamps & Lighting" style={{ color: "#c59613" }}>Lamps&Lighting</Link> </h3>
+                      <h3>  <Link to="/Lamps & Lighting" style={{color:'#f2c210'}}>Lamps&Lighting</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -1022,7 +1022,7 @@ function App() {
                     </li>
 
                     <li>
-                      <h3> <Link to="/Home Decor" style={{ color: "#c59613" }}>Home Decor</Link> </h3>
+                      <h3> <Link to="/Home Decor" style={{color:'#f2c210'}}>Home Decor</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -1062,12 +1062,12 @@ function App() {
                         </li>
                       </div>
                       {/* <hr /> */}
-                      <h3><Link to="/Cushions & Cushion Covers" style={{ color: "#c59613" }}>Cushions&CushionCovers</Link> </h3>
-                      <h3><Link to="/Curtains" style={{ color: "#c59613" }}>Curtains</Link> </h3>
+                      <h3><Link to="/Cushions & Cushion Covers" style={{color:'#f2c210'}}>Cushions&CushionCovers</Link> </h3>
+                      <h3><Link to="/Curtains" style={{color:'#f2c210'}}>Curtains</Link> </h3>
                     </li>
                     <li>
-                      <h3><Link to="/Home Gift Sets" style={{ color: "#c59613" }}>Home Gift Sets</Link> </h3>
-                      <h3><Link to="/Kitchen & Table" style={{ color: "#c59613" }}>Kitchen & Table</Link> </h3>
+                      <h3><Link to="/Home Gift Sets" style={{color:'#f2c210'}}>Home Gift Sets</Link> </h3>
+                      <h3><Link to="/Kitchen & Table" style={{color:'#f2c210'}}>Kitchen & Table</Link> </h3>
 
                       <div className="sub-menu">
 
@@ -1094,7 +1094,7 @@ function App() {
                         </li>
                       </div>
                       {/* <hr /> */}
-                      <h3> <Link to="/Gadgets" style={{ color: "#c59613" }}>Storage</Link></h3>
+                      <h3> <Link to="/Gadgets" style={{color:'#f2c210'}}>Storage</Link></h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/Bins">Bins</Link></a>
@@ -1118,7 +1118,7 @@ function App() {
 
                     </li>
                     <li>
-                      <h3> <Link to="/Brands" style={{ color: "#c59613" }}>Brands</Link></h3>
+                      <h3> <Link to="/Brands" style={{color:'#f2c210'}}>Brands</Link></h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/H&M">H&M</Link></a>
@@ -1191,7 +1191,7 @@ function App() {
                   </a>
                   <ul className="dropdowns-contents4">
                     <li>
-                      <h3> <Link to="/Makeup" style={{ color: "#13a1c5" }}>Makeup</Link></h3>
+                      <h3> <Link to="/Makeup" style={{color:'#0db7af'}}>Makeup</Link></h3>
                       <div className="sub-menu">
                         <li><a href="dffs">
                           <Link to="/Lipstick">Lipstick</Link></a>
@@ -1234,7 +1234,7 @@ function App() {
                       </div>
                     </li>
                     <li>
-                      <h3> <Link to="/Skincare, Bath & Body " style={{ color: "#13a1c5" }}>Skincare, Bath & Body</Link> </h3>
+                      <h3> <Link to="/Skincare, Bath & Body " style={{color:'#0db7af'}}>Skincare, Bath & Body</Link> </h3>
                       <div className="sub-menu">
 
                         <li><a href="dffs">
@@ -1276,12 +1276,12 @@ function App() {
                         </li>
                       </div>
                       {/* <hr /> */}
-                      <h3> <Link to="/Baby Care" style={{ color: "#13a1c5" }}>Baby Care</Link> </h3>
-                      <h3> <Link to="/Masks" style={{ color: "#13a1c5" }}>Masks</Link> </h3>
+                      <h3> <Link to="/Baby Care" style={{color:'#0db7af'}}>Baby Care</Link> </h3>
+                      <h3> <Link to="/Masks" style={{color:'#0db7af'}}>Masks</Link> </h3>
                     </li>
 
                     <li>
-                      <h3> <Link to="/Haircare" style={{ color: "#13a1c5" }}>Haircare</Link> </h3>
+                      <h3> <Link to="/Haircare" style={{color:'#0db7af'}}>Haircare</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -1312,7 +1312,7 @@ function App() {
                       </div>
                       {/* <hr /> */}
 
-                      <h3>  <Link to="/Fragrances" style={{ color: "#13a1c5" }}>Fragrances</Link> </h3>
+                      <h3>  <Link to="/Fragrances" style={{color:'#0db7af'}}>Fragrances</Link> </h3>
 
                       <div className="sub-menu">
                         <li><a href="dffs">
@@ -1332,7 +1332,7 @@ function App() {
                     </li>
 
                     <li>
-                      <h3> <Link to="/Appliances" style={{ color: "#13a1c5" }}>Appliances</Link> </h3>
+                      <h3> <Link to="/Appliances" style={{color:'#0db7af'}}>Appliances</Link> </h3>
 
                       <div className="sub-menu">
 
@@ -1347,7 +1347,7 @@ function App() {
                           <Link to="/Epilator">Epilator</Link></a>
                         </li>
                         {/* <hr /> */}
-                        <h3> <Link to="/Men's Grooming" style={{ color: "#13a1c5" }}>Men's Grooming</Link> </h3>
+                        <h3> <Link to="/Men's Grooming" style={{color:'#0db7af'}}>Men's Grooming</Link> </h3>
 
 
                         <li><a href="dffs">
@@ -1362,7 +1362,7 @@ function App() {
                         </li>
 
                         {/* <hr /> */}
-                        <h3> <Link to="/Beauty Gift & Makeup Set" style={{ color: "#13a1c5" }}>Beauty Gift & Makeup Set</Link> </h3>
+                        <h3> <Link to="/Beauty Gift & Makeup Set" style={{color:'#0db7af'}}>Beauty Gift & Makeup Set</Link> </h3>
 
                         <li><a href="dffs">
                           <Link to="/Beauty Gift">Beauty Gift</Link></a>
@@ -1374,12 +1374,12 @@ function App() {
 
                       </div>
                       {/* <hr /> */}
-                      <h3> <Link to="/Premium Beauty" style={{ color: "#13a1c5" }} >Premium Beauty</Link> </h3>
-                      <h3> <Link to="/Wellness & Hygiene" style={{ color: "#13a1c5" }}>Wellness & Hygiene</Link> </h3>
+                      <h3> <Link to="/Premium Beauty" style={{color:'#0db7af'}} >Premium Beauty</Link> </h3>
+                      <h3> <Link to="/Wellness & Hygiene" style={{color:'#0db7af'}}>Wellness & Hygiene</Link> </h3>
 
                     </li>
                     <li>
-                      <h3><Link to="/Top Brands" style={{ color: "#13a1c5" }} s>Top Brands</Link> </h3>
+                      <h3><Link to="/Top Brands" style={{color:'#0db7af'}} >Top Brands</Link> </h3>
 
 
                       <div className="sub-menu">
@@ -1448,20 +1448,20 @@ function App() {
 
             {userInfo ? (
               <div className="dropdown">
-                <Link to="#" className="link">
+                <Link to="#">
                   {userInfo.name} {" "}
                 </Link>
                 <ul className="dropdown-content">
                   <li>
-                    <Link to="/profile">User Profile</Link>
+                  <a href="fff"> <Link to="/profile">User Profile</Link></a>
                   </li>
                   <li>
-                    <Link to="/orderhistory">Order History</Link>
+                  <a href="fff"> <Link to="/orderhistory">OrderHistory</Link></a>
                   </li>
-                  <li>
+                  <li><a href="fff">
                     <Link to="#signout" onClick={signoutHandler}>
-                      Sign Out
-                    </Link>
+                      SignOut
+                    </Link></a>
                     <Link to="#accountout" onClick={accountoutHandler}></Link>
                     <Link to="#registerout" onClick={registeroutHandler}></Link>
                   </li>
@@ -1476,41 +1476,41 @@ function App() {
 
             {userInfo && userInfo.isSeller && (
               <div className="dropdown">
-                <Link to="#admin" className="link">
+                <Link to="#admin">
                   Seller
                 </Link>
                 <ul className="dropdown-content">
                   <li>
-                    <Link to="/productlist/seller">Products</Link>
+                  <a href="fff"> <Link to="/productlist/seller">Products</Link></a>
                   </li>
                   <li>
-                    <Link to="/orderlist/seller">Orders</Link>
+                  <a href="fff"><Link to="/orderlist/seller">Orders</Link></a>
                   </li>
                 </ul>
               </div>
             )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
-                <Link to="#admin" className="link">
+                <Link to="#admin">
                   Admin
                 </Link>
                 <ul className="dropdown-content">
                   <li>
-                    <Link to="/dashboard">Dashboard</Link>
+                  <a href="fff"><Link to="/dashboard">Dashboard</Link></a>
                   </li>
                   <br />
                   <li>
-                    <Link to="/productlist">Products</Link>
+                  <a href="fff"> <Link to="/productlist">Products</Link></a>
                   </li>
                   <br />
                   <li>
-                    <Link to="/orderlist">Orders</Link>
+                  <a href="fff"><Link to="/orderlist">Orders</Link></a>
                   </li>
                   <li>
-                    <Link to="/userlist">Users</Link>
+                  <a href="fff"><Link to="/userlist">Users</Link></a>
                   </li>
-                  <li>
-                    <Link to="/support">Support</Link>
+                  <li><a href="fff">
+                    <Link to="/support">Support</Link></a>
                   </li>
                 </ul>
               </div>
@@ -1519,15 +1519,15 @@ function App() {
             {userInfo && userInfo.isAdmin && (
 
               <div className="dropdown">
-                <Link to="#menu" className="link">
+                <Link to="#menu">
                   Menu 
                 </Link>
                 <ul className="dropdown-content">
-                  <li>
-                    <Link to="/Saree">Saree</Link>
+                  <li><a href="fff">
+                    <Link to="/Saree">Saree</Link></a>
                   </li>
-                  <li>
-                    <Link to="/book">Books</Link>
+                  <li><a href="fff">
+                    <Link to="/book">Books</Link></a>
                   </li>
 
                 </ul>

@@ -9,15 +9,20 @@ export default function SearchBox(props) {
     navigate(`/search/name/${name}`);
   };
   return (
-    <form className="search" onSubmit={submitHandler}>
+    <form className="search" onSubmit={submitHandler} >
       <div className="row">
-        <input
+        <div class="form-group has-search">
+          <span class="fa fa-search form-control-feedback"></span>
+          <input type="text" class="form-control" placeholder="Search for Products,brands and more" onChange={(e)=>setName(e.target.value)}></input>
+        </div>
+
+
+        {/* <input
           type="text"
-          // name="q"
-          // id="q"
-          placeholder="Search of products,brands and more"
+          placeholder="Search for Products,brands and more"
           onChange={(e) => setName(e.target.value)}
-        ></input>
+
+        ></input> */}
         {/* <button className="primary" type="submit">
           <i className="fa fa-search"></i>
         </button> */}
