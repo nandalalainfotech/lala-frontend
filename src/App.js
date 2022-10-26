@@ -111,7 +111,7 @@ function App() {
              
               <img src="/image/logo8.png" alt="home" height="35px" width="30px" className="logo"  margin-right="250px"/>
             
-              <span className="nandalala">lala</span><span className="in"></span>
+              <span className="nandalala">&nbsp;lala</span><span className="in"></span>
             </Link>
           </div>
           <div className="run">
