@@ -56,7 +56,7 @@ header {
 
 main {
   grid-area: main;
-  padding: 1rem;
+  /* padding: 1rem; */
   font-family: 'Amazon Ember', Arial, sans-serif;
 
 }
@@ -139,6 +139,7 @@ button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Amazon Ember', Arial, sans-serif;
+  outline: none;
 }
 
 button {
@@ -180,6 +181,12 @@ button.small {
 } */
 
 /* Header */
+
+header{
+background-color: #13a1c5; 
+ height:60px;
+}
+
 header a {
   color: #1b1919;
   padding: 1rem;
@@ -196,7 +203,7 @@ a.brand {
 
 a.brand:hover {
   /* color: #F02020; */
-  text-decoration: underline;
+  /* text-decoration: underline; */
   cursor: pointer;
   color: #e78585;
 }
@@ -364,7 +371,6 @@ img.large {
   margin: 1rem;
 
 }
-
 .card-body {
   padding: 1rem;
   text-transform: capitalize;
@@ -422,7 +428,59 @@ img.large {
   color: #20A020;
   background-color: #EEFFE0;
 }
+/* --------signin form----------------------------------------------------- */
+.signinform {
+  max-width: 60rem;
+  /* margin:auto !important; */
+  padding:5px;
+}
 
+.signinform>div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.signinform label {
+  margin: 0.5rem 0;
+}
+.signincard{
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.28);
+  -webkit-box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.28);
+  width:35%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 60px !important;
+  margin-bottom: auto !important;
+  background-color: #7dc3f3;
+}
+.tempimg{
+  background-image: url("../src/assets/images/signinbg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+  margin:0px !important;
+  padding:0px !important;
+}
+button.signsubmit{
+  background-color: #239def;
+  margin:0px 150px;
+  font-weight: 500;
+}
+.signinlabel{
+  margin-left: 50px !important;
+}
+.reglink{
+  font-size: 1.4rem;
+}
+.reglink b{
+  cursor: pointer;
+}
+.reglink b:hover{
+  text-decoration: underline;
+}
+/* -------------signin end------------------------------------------ */
 /* Form */
 .form {
   max-width: 60rem;
@@ -436,7 +494,7 @@ img.large {
 }
 
 .form label {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 
 /* dropdown */
@@ -951,20 +1009,6 @@ img.sellerimg {
   background-color: #FAC3F7;
 }
 
-.round {
-  /* text-decoration: underline; */
-  /* margin-top: -35px; */
-  margin-left: 120px;
-  margin-top: -20px;
-}
-
-.round:hover {
-  text-decoration: underline;
-
-}
-
-
-
 .account {
   width: 100%;
   margin-left: 2px;
@@ -1035,7 +1079,6 @@ img.sellerimg {
   background-color: #A02020;
   border-radius: 55px;
 }
-
 .logo{
   margin-bottom:-10px;
 }
@@ -1743,3 +1786,14 @@ text-decoration: underline ;
   /* margin-right: 330px; */
 
 }
+/* -------------------------------------MOBILE VIEW START------------------ */
+@media only screen and (max-width: 600px) {
+  .signincard{
+    /* margin: auto 0px !important; */
+    width:100% !important;
+  }
+  .signinform{
+    margin-top: 150px !important;
+  }
+}
+/* -------------------------------------MOBILE VIEW END------------------ */
