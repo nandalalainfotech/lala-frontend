@@ -25,7 +25,7 @@ export default function SigninScreen(props) {
   }, [navigate, redirect, userInfo]);
   return (
     <div className='formtion tempimg'>
-      <div className='signincard' style={{ height: '350px' }}>
+      <div className='signincard' >
         <form className="signinform" onSubmit={submitHandler}>
           <div>
             <label style={{ textAlign: 'center', fontSize: '18px' }}><i className="fa fa-user"></i>&nbsp;<b>Sign In</b></label>
@@ -53,7 +53,7 @@ export default function SigninScreen(props) {
             ></input>
           </div>
           <div>
-            <label />
+          <label />
             <button className="signsubmit" type="submit">
               Login
             </button>

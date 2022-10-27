@@ -34,9 +34,8 @@ export default function RegisterScreen(props) {
     }
   }, [navigate, redirect, userInfo]);
   return (
-    <div>
       <div className='formtion tempimg'>
-        <div className='signincard' style={{ height: '650px', }}>
+        <div className='signincard'>
           <form className=" signinform" onSubmit={submitHandler}>
             <div>
               <label style={{ textAlign: 'center' }}><i className="fa fa-user"></i>&nbsp;<b>Create Account</b></label>
@@ -115,6 +114,5 @@ export default function RegisterScreen(props) {
           </form>
         </div>
       </div>
-    </div>
   );
 }

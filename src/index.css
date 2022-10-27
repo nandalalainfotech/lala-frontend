@@ -451,11 +451,14 @@ img.large {
   width:35%;
   background-color: #7dc3f3;
   margin:30px 0px;
+   display: flex;
+  justify-content: center;
+  /* align-items: center;  */
 }
 .tempimg{
   background-image: url("../src/assets/images/signinbg.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 100%;
   width: 100%;
   display: flex;
@@ -465,6 +468,7 @@ img.large {
 button.signsubmit{
   background-color: #239def;
   margin:0px 150px;
+  padding:10px 40px;
   align-items: center;
   font-weight: 500;
 }
@@ -1784,7 +1788,7 @@ text-decoration: underline ;
   }
   button.signsubmit{
     background-color: #239def;
-    margin:0px 100px !important;
+    margin:0px 90px !important;
     align-items: center;
     font-weight: 500;
   }
