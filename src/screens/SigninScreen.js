@@ -25,53 +25,49 @@ export default function SigninScreen(props) {
   }, [navigate, redirect, userInfo]);
   return (
     <div className='formtion tempimg'>
-      <div className="row">
-        <div className='col-2'>
-          <div className='signincard'>
-            <form className="signinform" onSubmit={submitHandler}>
-              <div>
-                <h1 style={{ textAlign: 'center' }}><i className="fa fa-user"></i>&nbsp;Sign In</h1>
-              </div>
-              {loading && <LoadingBox></LoadingBox>}
-              {error && <MessageBox variant="danger">{error}</MessageBox>}
-              <div>
-                <label className="signinlabel" htmlFor="email">Email Address</label>
-                <input style={{ margin:'0px 50px' }}
-                  type="email"
-                  id="email"
-                  placeholder="Enter email"
-                  required
-                  onChange={(e) => setEmail(e.target.value)}
-                ></input>
-              </div>
-              <div>
-                <label className="signinlabel" htmlFor="password">Password</label>
-                <input style={{ margin:'0px 50px' }}
-                  type="password"
-                  id="password"
-                  placeholder="Enter password"
-                  required
-                  onChange={(e) => setPassword(e.target.value)}
-                ></input>
-              </div>
-              <div>
-                <label />
-                <button className="signsubmit" type="submit">
-                  Login
-                </button>
-              </div>
-              <div>
-                <label />
-                <>
-                  <label className='reglink' style={{ textAlign: 'center' }}>
-                    New customer?&nbsp;&nbsp;{''}
-                    <span onClick={() => navigate("/register")}><b>Start here</b></span>
-                  </label>
-                </>
-              </div>
-            </form>
+      <div className='signincard' style={{ height: '350px' }}>
+        <form className="signinform" onSubmit={submitHandler}>
+          <div>
+            <label style={{ textAlign: 'center', fontSize: '18px' }}><i className="fa fa-user"></i>&nbsp;<b>Sign In</b></label>
           </div>
-        </div>
+          {loading && <LoadingBox></LoadingBox>}
+          {error && <MessageBox variant="danger">{error}</MessageBox>}
+          <div>
+            <label className="signinlabel" htmlFor="email">Email Address</label>
+            <input style={{ margin: '0px 50px' }}
+              type="email"
+              id="email"
+              placeholder="Enter email"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            <label className="signinlabel" htmlFor="password">Password</label>
+            <input style={{ margin: '0px 50px' }}
+              type="password"
+              id="password"
+              placeholder="Enter password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            <label />
+            <button className="signsubmit" type="submit">
+              Login
+            </button>
+          </div>
+          <div>
+            <label />
+            <>
+              <label className='reglink' style={{ textAlign: 'center' }}>
+                New customer?&nbsp;&nbsp;{''}
+                <span onClick={() => navigate("/register")}><b>Start here</b></span>
+              </label>
+            </>
+          </div>
+        </form>
       </div>
     </div>
   );
