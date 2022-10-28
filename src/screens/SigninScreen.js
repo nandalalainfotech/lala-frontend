@@ -34,7 +34,7 @@ export default function SigninScreen(props) {
           {error && <MessageBox variant="danger">{error}</MessageBox>}
           <div>
             <label className="signinlabel" htmlFor="email">Email Address</label>
-            <input style={{ margin: '0px 50px' }}
+            <input className="signininput" style={{ margin: '0px 50px' }}
               type="email"
               id="email"
               placeholder="Enter email"
@@ -44,7 +44,7 @@ export default function SigninScreen(props) {
           </div>
           <div>
             <label className="signinlabel" htmlFor="password">Password</label>
-            <input style={{ margin: '0px 50px' }}
+            <input className="signininput" style={{ margin: '0px 50px' }}
               type="password"
               id="password"
               placeholder="Enter password"

@@ -44,7 +44,7 @@ export default function RegisterScreen(props) {
             {error && <MessageBox variant="danger">{error}</MessageBox>}
             <div>
               <label className="signinlabel" htmlFor="name">Name</label>
-              <input style={{ margin: '0px 50px' }}
+              <input className="signininput" style={{ margin: '0px 50px' }}
                 type="text"
                 id="name"
                 placeholder="Enter first name"
@@ -54,7 +54,7 @@ export default function RegisterScreen(props) {
             </div>
             <div>
               <label className="signinlabel" htmlFor="mobile">Mobile Number</label>
-              <input style={{ margin: '0px 50px' }}
+              <input className="signininput" style={{ margin: '0px 50px' }}
                 type="Mobile Number"
                 id="Mobile Number"
                 placeholder="Enter mobile number "
@@ -64,7 +64,7 @@ export default function RegisterScreen(props) {
             </div>
             <div>
               <label className="signinlabel" htmlFor="email">Email (Optional)</label>
-              <input style={{ margin: '0px 50px' }}
+              <input className="signininput" style={{ margin: '0px 50px' }}
                 type="email"
                 id="email"
                 placeholder="Enter email"
@@ -73,8 +73,8 @@ export default function RegisterScreen(props) {
               ></input>
             </div>
             <div>
-              <label className="signinlabel" htmlFor="password">Password</label>
-              <input style={{ margin: '0px 50px' }}
+              <label htmlFor="password" className="signinlabel">Password</label>
+              <input style={{ margin: '0px 50px' }}  className="signininput" 
                 type="password"
                 id="password"
                 placeholder="Enter at least 4 characters"
@@ -84,7 +84,7 @@ export default function RegisterScreen(props) {
             </div>
             <div>
               <label className="signinlabel" htmlFor="confirmPassword">Confirm Password</label>
-              <input style={{ margin: '0px 50px' }}
+              <input className="signininput" style={{ margin: '0px 50px' }}
                 type="password"
                 id="confirmPassword"
                 placeholder="Enter confirm password"
