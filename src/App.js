@@ -109,9 +109,9 @@ function App() {
             </button>
             <Link className="brand" to="/">
              
-              <img src="/image/logo8.png" alt="home" height="35px" width="30px" className="logo"  margin-right="250px"/>
+              <img src="/image/logo.png" alt="lala" height="35px" width="30px" className="logo img"  margin-right="250px"/>
             
-              <span className="nandalala">&nbsp;lala</span><span className="in"></span>
+              <span className="nandalala">&nbsp;</span>lala<span className="in"></span>
             </Link>
           </div>
           <div className="run">
