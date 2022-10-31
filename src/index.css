@@ -209,7 +209,7 @@ a.brand:hover {
   /* color: #F02020; */
   /* text-decoration: underline; */
   cursor: pointer;
-  color: #e78585;
+  color: #FF751A
 }
 
 .badge {
@@ -492,6 +492,110 @@ button.signsubmit{
 }
 
 /* -------------signin end------------------------------------------ */
+/* --------accountsignin form----start---------------------------------------------------- */
+.acdiv{
+ height: 100%;
+  width: 100%; 
+  display: flex; 
+   flex-direction: row;
+   justify-content: center;
+  align-items: center;
+background-color: #cde7f8; 
+}
+.ac-container{
+  /* margin:100px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border:1px solid gray;
+  margin:5% 15%;
+  background-color: #fff;
+}
+.ac-col{
+  padding:20px;
+}
+
+.acbutton{
+  background: #239def;
+  color: #222d3a !important;
+}
+.acbutton:hover{
+  outline: none;
+  color: #222d3a;
+  box-shadow: 0px 0px 3px 2px #646c75;
+  text-decoration: none;
+}
+.ac-p{
+margin:0 !important;
+padding: 0 !important;
+font-size: 14px;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* margin-top: -9px; */
+  /* border-bottom: 1px dotted black; */
+}
+
+.tooltip:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 210px;
+  background-color: #56b4f3;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -105px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  font-size: 13px;
+}
+.Learnlink{
+  width:100% !important;
+  background: #0f92e9;
+  /* margin:auto 0px; */
+  padding:0px !important;
+  text-align: center;
+  line-height: 40px;
+  margin: auto 0px 0px 0px !important;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  font-size: 12px;
+}
+.Learnlink:hover{
+text-decoration: underline;
+cursor: pointer;
+}
+.ac-svg{
+  max-width: 45px !important;
+    height: 45px !important;
+    padding: 5px !important;
+    margin-right: 10px !important;
+    margin-top: 5px !important;
+}
+.city {
+  height: 92px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+/* --------accountsignin form----end---------------------------------------------------- */
 /* Form */
 .form {
   max-width: 60rem;
@@ -883,38 +987,7 @@ img.sellerimg {
   color: #bb710f;
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-  margin-top: -9px;
-  /* border-bottom: 1px dotted black; */
-}
 
-.tooltip:hover {
-  text-decoration: underline;
-  color: #bb710f;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 210px;
-  background-color: rgb(243, 220, 220);
-  color: rgb(73, 67, 67);
-  text-align: center;
-  border-radius: 3px;
-  padding: 5px 0;
-  margin-left: 2px;
-  /* margin-bottom: 30px; */
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-
-}
 
 .around {
   margin-top: -85px;
@@ -959,26 +1032,10 @@ img.sellerimg {
   text-decoration: underline;
 }
 
-.city {
-  height: 92px;
-  width: 100px;
-  margin-top: -10px;
-  margin-left: 170px;
-}
-
 .robot {
   color: #1b1818;
 }
 
-
-.gst {
-  margin-top: -5px;
-}
-
-.gst1 {
-  margin-top: -2px;
-
-}
 
 .screen {
   padding: -190px;
@@ -1796,6 +1853,26 @@ margin-top: -20px;
     margin:0px 90px !important;
     align-items: center;
     font-weight: 500;
+  }
+  .acdiv{
+    height: 100% !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  background-color: #fff;
+  margin: 0px !important;
+  padding:0px !important;
+  }
+  .ac-container{
+    margin:10px 10px !important;
+    padding:0px;
+    display: flex;
+    flex-direction: column;
+    border:1px solid gray;
+    width:100% !important;
+    height:100% !important; 
   }
 }
 /* -------------------------------------MOBILE VIEW END------------------ */
