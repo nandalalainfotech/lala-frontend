@@ -9,26 +9,35 @@ import { listTopSellers } from '../actions/userAction';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
+import { listKids } from '../actions/kidAction';
+import { listWomens } from '../actions/womenAction';
+import Women from '../components/women';
+import Kid from '../components/Kid';
 
 
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
-  // console.log(productList)
-  const { loading, error, products } = productList;
+  const { products } = productList;
   const userTopSellersList = useSelector((state) => state.userTopSellersList);
+  const womenList = useSelector((state) => state.womenList);
+  const { womens } = womenList;
+  const kidList = useSelector((state) => state.kidList);
+  const { loading, error, kids } = kidList;
   const {
     loading: loadingSellers,
     error: errorSellers,
     users: sellers,
   } = userTopSellersList;
-
-
   useEffect(() => {
     dispatch(listProducts({}));
+    dispatch(listKids({}));
+    dispatch(listWomens({}));
     dispatch(listTopSellers());
   }, [dispatch]);
+
+
   return (
     <div>
 
@@ -92,343 +101,53 @@ export default function HomeScreen() {
         }
       </div>
 
-
-
       <h2>Men's collection</h2>
-      {
-        loading ? (
-          <LoadingBox></LoadingBox>
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <>
-            {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
-            {/* {sarees.length === 0 && <MessageBox>No Product Found</MessageBox>} */}
-            <div className="row center">
-              {products.map((product) => (
-                <Product key={product._id} product={product}></Product>
-              ))}
-            </div>
-            {/* <div className="row center">
-              {sarees.map((saree) => (
-                <Saree key={saree._id} product={saree}></Saree>
-              ))}
-            </div> */}
-
-          </>
-        )
-      }
-      {/* <h2>Men's collection</h2> */}
-
-      <h2>Women's collection</h2>
-
-      <div className='armour'>
-        <div className="carousel-item">
-          <Carousel showArrows autoPlay showThumbs={true}>
-            <div className='row'>
-
-              <div className='col-sm-2'>
-                <div className="card1">
-                  <img src="/image/p7.jpg" alt="Avatar" height="300px" />
-
-
-                  <div className="card-body">
-                    <div class="Name">
-                      <p>purly saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $580
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card2">
-                  <img src="/image/p8.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body">
-                    <div class="Name">
-                      <p>traditional saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $420
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card3">
-                  <img src="/image/p9.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body">
-                    <div class="Name">
-                      <p>maskar saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      {/* <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span> */}
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $720
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card4">
-                  <img src="/image/p91.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body">
-                    <div class="Name">
-                      <p>Pinaky saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      {/* <span><i class="fa fa-star"></i></span> */}
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $920
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div className='row'>
-
-              <div className='col-sm-2'>
-                <div className="card1">
-                  <img src="/image/p10.jpg" alt="Avatar" height="300px" />
-
-
-                  <div class="card-body" >
-                    <div class="Name">
-                      <p>paper saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $580
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card2">
-                  <img src="/image/p11.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body" >
-                    <div class="Name">
-                      <p>maska saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $420
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card3">
-                  <img src="/image/p12.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body" >
-                    <div class="Name">
-                      <p>arutha saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      {/* <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span> */}
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $720
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card4">
-                  <img src="/image/p45.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body" >
-                    <div class="Name">
-                      <p>jimka saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      {/* <span><i class="fa fa-star"></i></span> */}
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $920
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </Carousel>
-        </div>
-      </div>
-      <h2>Kid's collection</h2>
-      <div className='container'>
-        <div className='row'>
-
-          <div className='col-sm-2'>
-            <div class="card5">
-              <img src="/image/kid5.jpg" alt="Avatar" height="300px" width="280px" />
-
-
-              <div class="card-body">
-                <div class="Name">
-                  <p>angel medi</p>
-                </div>
-                <div class="rating">
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star-half-o"></i></span>
-                </div>
-                <div class="price">
-                  $980
-                </div>
-                {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-              </div>
-            </div>
+      {loading ? (
+        <LoadingBox></LoadingBox>
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
+        <>
+          {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
+          <div className="row center">
+            {products.map((product) => (
+              <Product key={product._id} product={product}></Product>
+            ))}
           </div>
-          <div className='col-sm-2'>
-            <div class="card6">
-              <img src="/image/kid2.jpg" alt="Avatar" height="300px" width="280px"/>
-              <div class="card-body">
-                <div class="Name">
-                  <p>hansa inskert</p>
-                </div>
-                <div class="rating">
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star-half-o"></i></span>
-                </div>
-                <div class="price">
-                  $520
-                </div>
-                {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-              </div>
-            </div>
+        </>
+      )}
+
+
+      <h2>Women collection</h2>
+      {loading ? (
+        <LoadingBox></LoadingBox>
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
+        <>
+          {womens?.length === 0 && <MessageBox>No Product Found</MessageBox>}
+          <div className="row center">
+            {womens?.map((women) => (
+              <Women key={women._id} women={women}></Women>
+            ))}
           </div>
-          <div className='col-sm-2'>
-            <div class="card7">
-              <img src="/image/kid3.jpg" alt="Avatar" height="300px" width="280px" />
-              <div class="card-body" >
-                <div class="Name">
-                  <p>umberalla harie</p>
-                </div>
-                <div class="rating">
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  {/* <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span> */}
-                  <span><i class="fa fa-star-half-o"></i></span>
-                </div>
-                <div class="price">
-                  $920
-                </div>
-                {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-              </div>
-            </div>
+        </>
+      )}
+      <h2>Kids collection</h2>
+      {loading ? (
+        <LoadingBox></LoadingBox>
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
+        <>
+          {kids.length === 0 && <MessageBox>No Product Found</MessageBox>}
+          <div className="row center">
+            {kids.map((kid) => (
+              <Kid key={kid._id} kid={kid}></Kid>
+            ))}
           </div>
-          <div className='col-sm-2'>
-            <div class="card8" >
-              <img src="/image/kid4.jpg" alt="aval8" height="300px" width="280px" />
-              <div className="card-body">
-                <div className="Name">
-                  <p>classic medie</p>
-                </div>
-                <div class="rating">
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  {/* <span><i class="fa fa-star"></i></span> */}
-                  <span><i class="fa fa-star-half-o"></i></span>
-                </div>
-                <div class="price">
-                  $1220
-                </div>
-                {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-
-      {/* {
-        loading ? (
-          <LoadingBox></LoadingBox>
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <>
-            {sarees.length === 0 && <MessageBox>No Product Found</MessageBox>}
-            <div className="row center">
-              {products.map((saree) => (
-                <Saree key={saree._id} saree={saree}></Saree>
-              ))}
-            </div>
-
-
-          </>
-        )
-      } */}
+        </>
+      )}
 
 
 

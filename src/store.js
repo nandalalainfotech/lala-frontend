@@ -6,6 +6,12 @@ import { orderCreateReducer, orderDeleteReducer, orderDeliverReducer, orderDetai
 import { productCategoryListReducer, productCreateReducer, productDeleteReducer, productDetailsReducer, productListReducer, productReviewCreateReducer, productUpdateReducer } from './reducers/productReducers';
 import { userAddressMapReducer, userDeleteReducer, userDetailsReducer, userListReducer, userRegisterReducer, userSigninReducer, userAccountReducer,userAccountcreationReducer,userAdmininReducer ,userTopSellerListReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
 import { SareeListReducer, SareeDetailsReducer } from './reducers/sareeReducer';
+import { womenCategoryListReducer, womenCreateReducer, womenDeleteReducer, womenDetailsReducer, womenListReducer, womenReviewCreateReducer, womenUpdateReducer } from './reducers/womenReducers';
+import { cartWomenReducer } from './reducers/cartWomenReducers';
+import { kidCategoryListReducer, kidCreateReducer, kidDeleteReducer, kidDetailsReducer, kidListReducer, kidReviewCreateReducer, kidUpdateReducer } from './reducers/kidReducer';
+import { cartKidReducer } from './reducers/cartKidReducers';
+import { tshirtDetailsReducer, tshirtListReducer } from './reducers/tshirtReducers';
+
 
 
   
@@ -47,10 +53,22 @@ const initialState = {
 const reducer = combineReducers({
   addressesList: addressListReducer,
   productList: productListReducer,
+  womenList: womenListReducer,
+  tshirtList: tshirtListReducer,
+  kidList: kidListReducer,
   productDetails: productDetailsReducer,
+  womenDetails: womenDetailsReducer,
+  tshirtDetails: tshirtDetailsReducer,
+  kidDetails: kidDetailsReducer,
   cart: cartReducer,
+  // // eslint-disable-next-line no-dupe-keys
+  // cart: cartWomenReducer,
+  // // eslint-disable-next-line no-dupe-keys
+  // cart: cartKidReducer,
+  // // cart: cartTshirtReducer,
   userSignin: userSigninReducer,
   userAccount: userAccountReducer,
+
   userAccountCreation: userAccountcreationReducer,
   userAdminin: userAdmininReducer,
   userRegister: userRegisterReducer,
@@ -61,8 +79,14 @@ const reducer = combineReducers({
   userDetails: userDetailsReducer,
   userUpdateProfile: userUpdateProfileReducer,
   productCreate: productCreateReducer,
+  womenCreate: womenCreateReducer,
+  kidCreate: kidCreateReducer,
   productUpdate: productUpdateReducer,
+  womenUpdate: womenUpdateReducer,
+  kidUpdate: kidUpdateReducer,
   productDelete: productDeleteReducer,
+  womenDelete: womenDeleteReducer,
+  kidDelete: kidDeleteReducer,
   orderList: orderListReducer,
   orderDelete: orderDeleteReducer,
   orderDeliver: orderDeliverReducer,
@@ -71,7 +95,11 @@ const reducer = combineReducers({
   userDelete: userDeleteReducer,
   userTopSellersList: userTopSellerListReducer,
   productCategoryList: productCategoryListReducer,
+  womenCategoryList: womenCategoryListReducer,
+  kidCategoryList: kidCategoryListReducer,
   productReviewCreate: productReviewCreateReducer,
+  womenReviewCreate: womenReviewCreateReducer,
+  kidReviewCreate: kidReviewCreateReducer,
   userAddressMap: userAddressMapReducer,
   orderSummary: orderSummaryReducer,
   sareeReducer: SareeListReducer,

@@ -18,6 +18,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import SigninScreen from "./screens/SigninScreen";
 import AccountScreen from "./screens/AccountScreen";
+// import HomeScreens from "./screens/HomeScreens";
 import AccountCreation from "./screens/AccountCreation";
 import AdmininScreen from "./screens/AdmininScreen";
 import AdminRoute from "./components/AdminRoute";
@@ -42,6 +43,20 @@ import SupportScreen from "./screens/SupportScreen";
 import SareeScreen from "./screens/SareeScreen";
 import BookScreen from "./screens/BookScreen";
 import SareeEditScreen from "./screens/SareeEditScreen";
+import TshirtListScreen from "./screens/TshirtListScreen";
+import CartWomenScreen from "./screens/CartWomenScreen";
+import CartKidScreen from "./screens/CartKidScreen";
+import WomenListScreen from "./screens/WomenListScreen";
+import KidListScreen from "./screens/KidListScreen";
+import WomenEditScreen from "./screens/WomenEditScreen";
+import KidEditScreen from "./screens/KidEditScreen";
+import WomenScreen from "./screens/WomenScreen";
+import KidScreen from "./screens/KidsScreen";
+import TshirtEditScreen from "./screens/TshirtEditScreen";
+import TshirtScreens from "./screens/TshirtScreens";
+import CartTshirtScreen from "./screens/CartTshirtScreen";
+import HomeScreens from "./screens/HomeScreens";
+import CasualShirtScreen from "./screens/CasualShirtScreen";
 // import data from './data';
 // import Saree from "./components/Saree";
 // import ScreenRoute from "./components/ScreenRoute";
@@ -122,7 +137,7 @@ function App() {
                 <div className="user">
 
                   <a href="dfs" className="nav-item is-active" active-color="orange">
-                    <Link to="men" >
+                    <Link to="#men" >
                       MEN
                     </Link></a>
 
@@ -130,11 +145,14 @@ function App() {
                     <li>
                       <h3 className="btn success"> <Link to="/Topwear" style={{ color: '#ee5f73' }}>Topwear</Link></h3>
                       <div className="sub-menu">
-                        <li><a href="dffs">
-                          <Link to="/T-shirts">T-shirts</Link></a>
+                        <li><a href="fff">
+                          <Link to="/Home">Home</Link></a>
                         </li>
                         <li><a href="dffs">
-                          <Link to="/casual-shirts">casual shirts</Link></a>
+                          <Link to="/Tshirt">T-shirts</Link></a>
+                        </li>
+                        <li><a href="dffs">
+                          <Link to="/casual">casual shirts</Link></a>
                         </li>
                         <li><a href="dffs">
                           <Link to="/formal-shirts">formal shirts</Link></a>
@@ -1496,31 +1514,38 @@ function App() {
                 </Link>
                 <ul className="dropdown-content">
                   <li>
-                    <a href="fff"><Link to="/dashboard">Dashboard</Link></a>
+                    <Link to="/dashboard">Dashboard</Link>
                   </li>
                   <br />
                   <li>
-                    <a href="fff"> <Link to="/productlist">Products</Link></a>
+                    <Link to="/productlist">Mens</Link>
+                  </li>
+                  <li>
+                    <Link to="/womenlist">Womens</Link>
+                  </li>
+                  <li>
+                    <Link to="/kidlist">Kids</Link>
                   </li>
                   <br />
                   <li>
-                    <a href="fff"><Link to="/orderlist">Orders</Link></a>
+                    <Link to="/orderlist">Orders</Link>
                   </li>
                   <li>
-                    <a href="fff"><Link to="/userlist">Users</Link></a>
+                    <Link to="/userlist">Users</Link>
                   </li>
-                  <li><a href="fff">
-                    <Link to="/support">Support</Link></a>
+                  <li>
+                    <Link to="/support">Support</Link>
                   </li>
                 </ul>
+
               </div>
             )}
 
-            {/* {userInfo && userInfo.isAdmin && (
+            {userInfo && userInfo.isAdmin && (
 
               <div className="dropdown">
                 <Link to="#menu">
-                  Menu 
+                  Menu
                 </Link>
                 <ul className="dropdown-content">
                   <li><a href="fff">
@@ -1529,12 +1554,14 @@ function App() {
                   <li><a href="fff">
                     <Link to="/book">Books</Link></a>
                   </li>
-
+                  {/* <li><a href="fff">
+                    <Link to="/Home">Home</Link></a>
+                  </li> */}
                 </ul>
               </div>
 
 
-            )} */}
+            )}
           </div>
         </header>
         <aside className={sidebarIsOpen ? 'open' : ''}>
@@ -1594,7 +1621,13 @@ function App() {
           <Routes>
             <Route path="/seller/:id" element={<SellerScreen />}></Route>
             <Route path="/cart/:id" element={<CartScreen />}></Route>
+            <Route path="/cartwomen/:id" element={<CartWomenScreen />}></Route>
+            <Route path="/cartkid/:id" element={<CartKidScreen />}></Route>
+            <Route path="/carttshirt/:id" element={<CartTshirtScreen />}></Route>
             <Route path="/cart" element={<CartScreen />}></Route>
+            <Route path="/cartwomen" element={<CartWomenScreen />}></Route>
+            <Route path="/cartkid" element={<CartKidScreen />}></Route>
+            <Route path="/cartTshirt" element={<CartTshirtScreen />}></Route>
             <Route path="/signin" element={<SigninScreen />}></Route>
             <Route path="/account" element={<AccountScreen />}></Route>
             <Route path="/accountcreation" element={<AccountCreation />}></Route>
@@ -1606,6 +1639,7 @@ function App() {
             <Route path="/register" element={<RegisterScreen />}></Route>
             <Route path="/search/name" element={<SearchScreen />} exact></Route>
             <Route path="/productlist/seller" element={<SellerRoute><ProductListScreen /></SellerRoute>} exact></Route>
+            <Route path="/tshirtlist/seller" element={<SellerRoute><TshirtListScreen /></SellerRoute>} exact></Route>
             <Route path="/Sareelist/seller" element={<SellerRoute><SareeListScreen /></SellerRoute>} exact></Route>
             <Route path="/OrderList/seller" element={<SellerRoute><OrderListScreen /></SellerRoute>} exact></Route>
             <Route
@@ -1621,6 +1655,34 @@ function App() {
               element={
                 <AdminRoute>
                   <ProductListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+            <Route
+              path="/womenlist"
+              element={
+                <AdminRoute>
+                  <WomenListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+            <Route
+              path="/kidlist"
+              element={
+                <AdminRoute>
+                  <KidListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+
+            <Route
+              path="/tshirtlist"
+              element={
+                <AdminRoute>
+                  <TshirtListScreen />
                 </AdminRoute>
               }
               exact
@@ -1674,6 +1736,34 @@ function App() {
             />
 
             <Route
+              path="/womenlist/seller"
+              element={
+                <SellerRoute>
+                  <WomenListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
+            <Route
+              path="/kidlist/seller"
+              element={
+                <SellerRoute>
+                  <KidListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
+            <Route
+              path="/tshirtlist/seller"
+              element={
+                <SellerRoute>
+                  <TshirtListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
+
+            <Route
               path="/sareelist/seller"
               element={
                 <SellerRoute>
@@ -1694,6 +1784,25 @@ function App() {
               element={<ProductEditScreen />}
               exact
             ></Route>
+
+
+            <Route
+              path="/women/:id/edit"
+              element={<WomenEditScreen />}
+              exact
+            ></Route>
+            <Route
+              path="/kid/:id/edit"
+              element={<KidEditScreen />}
+              exact
+            ></Route>
+
+            <Route
+              path="/tshirt/:id/edit"
+              element={<TshirtEditScreen />}
+              exact
+            ></Route>
+
             <Route
               path="/saree/:id/edit"
               element={<SareeEditScreen />}
@@ -1761,6 +1870,31 @@ function App() {
               }
             />
             <Route
+              path="/Home"
+              element={
+                <AdminRoute>
+                  <HomeScreens />
+                </AdminRoute>
+              }
+            />
+            <Route
+              path="/Casual"
+              element={
+                <AdminRoute>
+                  <CasualShirtScreen />
+                </AdminRoute>
+              }
+            />
+
+            <Route
+              path="/Tshirt"
+              element={
+                <AdminRoute>
+                  <TshirtScreens />
+                </AdminRoute>
+              }
+            />
+            <Route
               path="/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order/pageNumber/:pageNumber"
               element={<SearchScreen />}
               exact
@@ -1792,11 +1926,16 @@ function App() {
               element={<ProductScreen />}
               exact
             ></Route>
+
+            <Route path="/women/:id" element={<WomenScreen />} exact></Route>
+            <Route path="/kid/:id" element={<KidScreen />} exact></Route>
+            <Route path="/tshirt/:id" element={<TshirtScreens />} exact></Route>
             <Route
               path="/orderhistory"
               element={<OrderHistoryScreen />}
             ></Route>
             <Route path="/" element={<HomeScreen />} exact></Route>
+
           </Routes>
         </main>
         <footer className="row center">
