@@ -7,6 +7,8 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Product from '../components/Product';
 import Rating from '../components/Rating';
+import Women from '../components/women';
+import Kid from '../components/Kid';
 
 export default function SellerScreen(props) {
   const params = useParams();
@@ -14,13 +16,15 @@ export default function SellerScreen(props) {
 
   const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
-  
+
 
   const productList = useSelector((state) => state.productList);
   const {
     loading: loadingProducts,
     error: errorProducts,
     products,
+    womens,
+    kids,
   } = productList;
 
   const dispatch = useDispatch();
@@ -96,6 +100,39 @@ export default function SellerScreen(props) {
             <div className="row center">
               {products.map((product) => (
                 <Product key={product._id} product={product}></Product>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+
+      <div className="col-3">
+        {loadingProducts ? (
+          <LoadingBox></LoadingBox>
+        ) : errorProducts ? (
+          <MessageBox variant="danger">{errorProducts}</MessageBox>
+        ) : (
+          <>
+            {womens.length === 0 && <MessageBox>No Product Found</MessageBox>}
+            <div className="row center">
+              {womens.map((women) => (
+                <Women key={women._id} women={women}></Women>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      <div className="col-3">
+        {loadingProducts ? (
+          <LoadingBox></LoadingBox>
+        ) : errorProducts ? (
+          <MessageBox variant="danger">{errorProducts}</MessageBox>
+        ) : (
+          <>
+            {kids.length === 0 && <MessageBox>No Product Found</MessageBox>}
+            <div className="row center">
+              {kids.map((kid) => (
+                <Kid key={kid._id} kid={kid}></Kid>
               ))}
             </div>
           </>
