@@ -104,11 +104,11 @@ export default function RegisterScreen(props) {
             <div>
               <label className='reglink' style={{ textAlign: 'center', fontSize: '12px' }}>
                 Already have an account?{' '}&nbsp;&nbsp;
-                <Link to={`/signin`}><b>Sign-In</b></Link>
+                <Link to={`/signin`}><b style={{ fontSize: '13px' }}>Sign-In</b>&nbsp;<i style={{fontSize:'12px' }} class="fa fa-caret-right" aria-hidden="true"></i></Link>
               </label>
               <label className='reglink' style={{ textAlign: 'center', fontSize: '12px' }}>
                 Buying for Work?{' '}&nbsp;
-                <Link to={`/account`}><b>Create a free business account</b></Link>
+                <Link to={`/account`}><b style={{ fontSize: '13px' }}>Create a free business account</b>&nbsp;<i style={{fontSize:'12px' }} class="fa fa-caret-right" aria-hidden="true"></i> </Link>
               </label>
             </div>
           </form>

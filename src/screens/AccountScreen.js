@@ -50,7 +50,7 @@ export default function AccountScreen(props) {
             {error && <MessageBox variant="danger">{error}</MessageBox>}
             <div>
               {/* <label htmlFor="email">Email address</label> */}
-              <input
+              <input className="ac-input"
                 //  autoComplete={'email' + Math.random()} 
 
                 type="email"
@@ -65,7 +65,7 @@ export default function AccountScreen(props) {
             </div>
             <div>
               {/* <label htmlFor="password">Phone Number</label> */}
-              <input
+              <input className="ac-input"
                 type="password"
                 id="password"
                 placeholder="Enter password"
@@ -81,11 +81,11 @@ export default function AccountScreen(props) {
             </div>
             <div>
               <div>
-                <span><i>Make sure that you have information about your organisation to help us verify your business account faster..</i></span>
+                <span><i>Make sure that you have information about your organisation to help us verify your business account faster.</i></span>
               </div>
               <div>
                 <div className="tooltip">
-                  <span style={{ color: '#56b4f3', fontSize: '13px' }}> Why is verification Needed? <i style={{ fontSize: '10px' }} className="fa fa-chevron-down"></i>{''}</span>
+                  <span style={{ color: '#56b4f3', fontSize: '13px',cursor:'pointer' }}> Why is verification Needed? <i style={{ fontSize: '10px' }} className="fa fa-chevron-down"></i>{''}</span>
                   <span className="tooltiptext">To ensure that identity of yours and
                     other business remain secure,We always confirm new business registeration.</span>
                 </div>
