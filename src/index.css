@@ -595,6 +595,10 @@ cursor: pointer;
   margin-right: auto;
   width: 50%;
 }
+input.ac-input:focus { 
+  border: 1px solid  #239def; 
+  box-shadow:0 0 5pt 2pt #239def ;
+}
 /* --------accountsignin form----end---------------------------------------------------- */
 /* Form */
 .form {
