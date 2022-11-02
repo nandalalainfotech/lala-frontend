@@ -18,7 +18,7 @@ export default function Tshirt(props) {
           rating={tshirt.rating}
           numReviews={tshirt.numReviews}
         ></Rating>
-        <div className="price">${tshirt.price}</div>
+        <div className="price">₹{tshirt.price}</div>
       </div>
     </div>
   );

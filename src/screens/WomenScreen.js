@@ -8,7 +8,7 @@ import { createReview, detailsWomen } from "../actions/womenAction";
 import { WOMEN_REVIEW_CREATE_RESET } from "../constants/womenConstants";
 // import ModalImage from "react-modal-image";
 import ReactImageMagnify from 'react-image-magnify';
-import data from "../data";
+// import data from "../data";
 
 
 export default function WomenScreen(props) {
@@ -26,6 +26,7 @@ export default function WomenScreen(props) {
 
   const womenReviewCreate = useSelector((state) => state.womenReviewCreate);
   const {
+    
     loading: loadingReviewCreate,
     error: errorReviewCreate,
     success: successReviewCreate,
@@ -68,7 +69,7 @@ export default function WomenScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div >
-          <Link to="/">Back to result</Link>
+          <Link to="/Tshirt">Back to result</Link>
           <div className="row top">
             <div className="col-2">
             

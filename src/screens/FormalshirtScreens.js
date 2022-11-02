@@ -1,20 +1,21 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listTshirts } from '../actions/tshirtAction';
+
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import Tshirt from '../components/Tshirt';
+import Formalshirt from '../components/Formalshirt';
+import { listFormalshirts } from '../actions/formalshirtAction';
 // import Product from '../components/Product';
 
 
 
 
-export default function TshirtScreens() {
+export default function FormalshirtScreens() {
   const dispatch = useDispatch();
-  const tshirtList = useSelector((state) => state.tshirtList);
-  console.log("called------->tshirtList",tshirtList);
-  const { loading, error, tshirts } = tshirtList;
+  const formalshirtList = useSelector((state) => state.formalshirtList);
+  console.log("called------->formalshirtList",formalshirtList);
+  const { loading, error, formalshirts } = formalshirtList;
   // const userTopSellersList = useSelector((state) => state.userTopSellersList);
   
   // const {
@@ -23,7 +24,7 @@ export default function TshirtScreens() {
   //   users: sellers,
   // } = userTopSellersList;
   useEffect(() => {
-    dispatch(listTshirts({}));
+    dispatch(listFormalshirts({}));
    
   }, [dispatch]);
 
@@ -33,17 +34,17 @@ export default function TshirtScreens() {
 
 
 
-      <h2>Tshirt collection</h2>
+      <h2>Formal shirt collection</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <>
-          {tshirts.length === 0 && <MessageBox>No Product Found</MessageBox>}
+          {formalshirts.length === 0 && <MessageBox>No Product Found</MessageBox>}
           <div className="row center">
-            {tshirts.map((tshirt) => (
-              <Tshirt key={tshirt._id} tshirt={tshirt}></Tshirt>
+            {formalshirts.map((formalshirt) => (
+              <Formalshirt key={formalshirt._id} formalshirt={formalshirt}></Formalshirt>
             ))}
           </div>
         </>

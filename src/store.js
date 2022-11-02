@@ -4,19 +4,26 @@ import { addressListReducer } from './reducers/addressReducers';
 import { cartReducer } from './reducers/cartReducers';
 import { orderCreateReducer, orderDeleteReducer, orderDeliverReducer, orderDetailsReducer, orderListReducer, orderMineListReducer, orderPayReducer, orderSummaryReducer } from './reducers/orderReducers';
 import { productCategoryListReducer, productCreateReducer, productDeleteReducer, productDetailsReducer, productListReducer, productReviewCreateReducer, productUpdateReducer } from './reducers/productReducers';
-import { userAddressMapReducer, userDeleteReducer, userDetailsReducer, userListReducer, userRegisterReducer, userSigninReducer, userAccountReducer,userAccountcreationReducer,userAdmininReducer ,userTopSellerListReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
+import { userAddressMapReducer, userDeleteReducer, userDetailsReducer, userListReducer, userRegisterReducer, userSigninReducer, userAccountReducer, userAccountcreationReducer, userAdmininReducer, userTopSellerListReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
 import { SareeListReducer, SareeDetailsReducer } from './reducers/sareeReducer';
 import { womenCategoryListReducer, womenCreateReducer, womenDeleteReducer, womenDetailsReducer, womenListReducer, womenReviewCreateReducer, womenUpdateReducer } from './reducers/womenReducers';
-import { cartWomenReducer } from './reducers/cartWomenReducers';
+// import { cartWomenReducer } from './reducers/cartWomenReducers';
 import { kidCategoryListReducer, kidCreateReducer, kidDeleteReducer, kidDetailsReducer, kidListReducer, kidReviewCreateReducer, kidUpdateReducer } from './reducers/kidReducer';
-import { cartKidReducer } from './reducers/cartKidReducers';
-import { tshirtDetailsReducer, tshirtListReducer } from './reducers/tshirtReducers';
+// import { cartKidReducer } from './reducers/cartKidReducers';
+import { tshirtDetailsReducer, tshirtListReducer, tshirtReviewCreateReducer } from './reducers/tshirtReducers';
+import { casualshirtDetailsReducer, casualshirtListReducer, casualshirtReviewCreateReducer } from './reducers/casualshirtReducers';
+import { cartTshirtReducer } from './reducers/cartTshirtReducers';
+import { cartcasualshirtReducer } from './reducers/cartCasualShirtReducers';
+import { cartformalshirtReducer } from './reducers/cartFormalShirtReducers';
+import { formalshirtDetailsReducer, formalshirtListReducer, formalshirtReviewCreateReducer } from './reducers/formalshirtReducers';
+// import { cartKidReducer } from './reducers/cartKidReducers';
+// import { cartWomenReducer } from './reducers/cartWomenReducers';
 
 
 
-  
+
 const initialState = {
-  
+
 
   userSignin: {
     userInfo: localStorage.getItem('userInfo')
@@ -26,9 +33,9 @@ const initialState = {
 
 
   userAccount: {
-        accountInfo: localStorage.getItem('data')
-        ? JSON.parse(localStorage.getItem('data'))
-        : null,
+    accountInfo: localStorage.getItem('data')
+      ? JSON.parse(localStorage.getItem('data'))
+      : null,
   },
   userAccountCreation: {
     accountcreationInfo: localStorage.getItem('accountcreationInfo')
@@ -49,23 +56,57 @@ const initialState = {
       : {},
     paymentMethod: 'PayPal',
   },
+  cartTshirt: {
+    cartTshirtItem: localStorage.getItem('cartTshirtItem')
+      ? JSON.parse(localStorage.getItem('cartTshirtItem'))
+      : [],
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.parse(localStorage.getItem('shippingAddress'))
+      : {},
+    paymentMethod: 'PayPal',
+  },
+  cartCasualshirt: {
+    cartCasualshirtItem: localStorage.getItem('cartCasualshirtItem')
+      ? JSON.parse(localStorage.getItem('cartCasualshirtItem'))
+      : [],
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.parse(localStorage.getItem('shippingAddress'))
+      : {},
+    paymentMethod: 'PayPal',
+  },
+  cartFormalshirt: {
+    cartFormalshirtItem: localStorage.getItem('cartFormalshirtItem')
+      ? JSON.parse(localStorage.getItem('cartFormalshirtItem'))
+      : [],
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.parse(localStorage.getItem('shippingAddress'))
+      : {},
+    paymentMethod: 'PayPal',
+  },
+  
 };
 const reducer = combineReducers({
   addressesList: addressListReducer,
   productList: productListReducer,
   womenList: womenListReducer,
   tshirtList: tshirtListReducer,
+  casualshirtList: casualshirtListReducer,
+  formalshirtList: formalshirtListReducer,
   kidList: kidListReducer,
   productDetails: productDetailsReducer,
   womenDetails: womenDetailsReducer,
   tshirtDetails: tshirtDetailsReducer,
+  casualshirtDetails: casualshirtDetailsReducer,
+  formalshirtDetails: formalshirtDetailsReducer,
   kidDetails: kidDetailsReducer,
   cart: cartReducer,
-  // // eslint-disable-next-line no-dupe-keys
+  
   // cart: cartWomenReducer,
-  // // eslint-disable-next-line no-dupe-keys
+
   // cart: cartKidReducer,
-  // // cart: cartTshirtReducer,
+  cartTshirt: cartTshirtReducer,
+  cartCasualshirt: cartcasualshirtReducer,
+  cartFormalshirt: cartformalshirtReducer,
   userSignin: userSigninReducer,
   userAccount: userAccountReducer,
 
@@ -99,6 +140,9 @@ const reducer = combineReducers({
   kidCategoryList: kidCategoryListReducer,
   productReviewCreate: productReviewCreateReducer,
   womenReviewCreate: womenReviewCreateReducer,
+  tshirtReviewCreate: tshirtReviewCreateReducer,
+  casualshirtReviewCreate: casualshirtReviewCreateReducer,
+  formalshirtReviewCreate: formalshirtReviewCreateReducer,
   kidReviewCreate: kidReviewCreateReducer,
   userAddressMap: userAddressMapReducer,
   orderSummary: orderSummaryReducer,
@@ -112,5 +156,5 @@ const store = createStore(
   initialState,
   composeEnhancer(applyMiddleware(thunk))
 );
-document.cookie='name=sri'
+document.cookie = 'name=sri'
 export default store;

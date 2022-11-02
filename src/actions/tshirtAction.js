@@ -138,7 +138,7 @@ export const deleteTshirt = (tshirtId) => async (dispatch, getState) => {
 };
 export const createReview =
   (tshirtId, review) => async (dispatch, getState) => {
-    dispatch({ type:  TSHIRT_REVIEW_CREATE_REQUEST });
+    dispatch({ type: TSHIRT_REVIEW_CREATE_REQUEST });
     const {
       userSignin: { userInfo },
     } = getState();
@@ -151,7 +151,7 @@ export const createReview =
         }
       );
       dispatch({
-        type:  TSHIRT_REVIEW_CREATE_SUCCESS,
+        type: TSHIRT_REVIEW_CREATE_SUCCESS,
         payload: data.review,
       });
     } catch (error) {
@@ -159,6 +159,6 @@ export const createReview =
         error.response && error.response.data.message
           ? error.response.data.message
           : error.message;
-      dispatch({ type:  TSHIRT_REVIEW_CREATE_FAIL, payload: message });
+      dispatch({ type: TSHIRT_REVIEW_CREATE_FAIL, payload: message });
     }
   };
