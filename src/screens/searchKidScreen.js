@@ -6,7 +6,7 @@ import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import Kid from "../components/Kid";
 import Rating from "../components/Rating";
-import Kid from "../components/kid";
+
 import { prices, ratings } from "../utils";
 import data from "../data";
 

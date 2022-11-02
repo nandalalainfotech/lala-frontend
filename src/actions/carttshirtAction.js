@@ -5,18 +5,18 @@ import {
   CART_TSHIRT_SAVE_SHIPPING_ADDRESS,
   CART_TSHIRT_SAVE_PAYMENT_METHOD,
   CART_TSHIRT_ADD_ITEM_FAIL,
-} from "../constants/cartKidConstants";
+} from "../constants/cartTshirtConstants";
 
 export const addToCart = (tshirtId, qty) => async (dispatch, getState) => {
   const { data } = await Axios.get(`/api/tshirts/${tshirtId}`);
-  // const { data } = await Axios.get(`/api/sarees/${sareesId}`);
+
   const {
-    cart: { cartItems },
+    cartTshirt: { cartTshirtItem },
   } = getState();
-  if (cartItems.length > 0 && data.seller._id !== cartItems[0].seller._id) {
+  if (cartTshirtItem.length > 0 && data.seller._id !== cartTshirtItem[0].seller._id) {
     dispatch({
       type: CART_TSHIRT_ADD_ITEM_FAIL,
-      payload: `Can't Add To Cart. Buy only from ${cartItems[0].seller.seller.name} in this order`,
+      payload: `Can't Add To Cart. Buy only from ${cartTshirtItem[0].seller.seller.name} in this order`,
     });
   } else {
     dispatch({
@@ -33,20 +33,16 @@ export const addToCart = (tshirtId, qty) => async (dispatch, getState) => {
       },
     });
     localStorage.setItem(
-      "cartItems",
-      JSON.stringify(getState().cart.cartItems)
+      "cartTshirtItem",
+      JSON.stringify(getState().cartTshirtItem.cartTshirtItem)
     );
   }
 };
 
-export const removeFromCart = (tshirtId) => (dispatch, getState) => {
+export const removeFromCartTshirt = (tshirtId) => (dispatch, getState) => {
   dispatch({ type: CART_TSHIRT_REMOVE_ITEM, payload: tshirtId });
-  localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+  localStorage.setItem("ccartTshirtItem", JSON.stringify(getState().cartTshirtItem.cartTshirtItem));
 };
-// export const removeFromCart = (sareeId) => (dispatch, getState) => {
-//   dispatch({ type: CART_REMOVE_ITEM, payload: sareeId });
-//   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
-// };
 
 export const saveShippingAddress = (data) => (dispatch) => {
   dispatch({ type: CART_TSHIRT_SAVE_SHIPPING_ADDRESS, payload: data });

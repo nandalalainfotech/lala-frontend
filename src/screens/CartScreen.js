@@ -3,20 +3,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { addToCart, removeFromCart } from "../actions/cartAction";
 import MessageBox from "../components/MessageBox";
+
+
 export default function CartScreen(props) {
   const navigate = useNavigate();
   const params = useParams();
   const productId = params.id;
+  // const tshirtId = params.id;
   const { search } = useLocation();
   const qtyInUrl = new URLSearchParams(search).get("qty");
   const qty = qtyInUrl ? Number(qtyInUrl) : 1;
   const dispatch = useDispatch();
+
   const cart = useSelector((state) => state.cart);
   const { cartItems, error } = cart;
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
+    // if (tshirtId) {
+    //   dispatch(addToCart(tshirtId, qty));
+    // }
   }, [dispatch, productId, qty]);
   const removeFromCartHandler = (id) => {
     // delete action
@@ -77,7 +84,50 @@ export default function CartScreen(props) {
                   </div>
                 </div>
               </li>
+              
             ))}
+            {/* {cartItems.map((item) => (
+              <li key={item.tshirt}>
+                <div className="row">
+                  <div>
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="small"
+                    ></img>
+                  </div>
+                  <div className="min-30">
+                    <Link to={`/tshirt/${item.tshirt}`}>{item.name}</Link>
+                  </div>
+                  <div>
+                    <select
+                      value={item.qty}
+                      onChange={(e) =>
+                        dispatch(
+                          addToCart(item.tshirt, Number(e.target.value))
+                        )
+                      }
+                    >
+                      {[...Array(item.countInStock).keys()].map((x) => (
+                        <option key={x + 1} value={x + 1}>
+                          {x + 1}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>${item.price}</div>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => removeFromCartHandler(item.product)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </li>
+              
+            ))} */}
           </ul>
         )}
       </div>
