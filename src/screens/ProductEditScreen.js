@@ -18,7 +18,7 @@ export default function ProductEditScreen(props) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
-  // const [images, setImages] = useState("");
+  const [imageFile, setImageFile] = useState("");
   const [category, setCategory] = useState("");
   const [countInStock, setCountInStock] = useState("");
   const [brand, setBrand] = useState("");
@@ -58,6 +58,7 @@ export default function ProductEditScreen(props) {
         name,
         price,
         image,
+        imageFile,
         category,
         brand,
         countInStock,
@@ -69,27 +70,30 @@ export default function ProductEditScreen(props) {
   const [errorUpload, setErrorUpload] = useState('');
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
+
   const uploadFileHandler = async (e) => {
-    console.log("xxx", e);
     const file = e.target.files[0];
     const bodyFormData = new FormData();
     bodyFormData.append('image', file);
     setLoadingUpload(true);
     try {
       const { data } = await Axios.post('/api/uploads', bodyFormData, {
+        
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${userInfo.token}`,
+          Product: `Bearer ${product}`,
         },
       });
-      setImage(data);
-      console.log("iii.....", setImage);
+      setImage(data.image.originalname);
+      setImageFile(data);
       setLoadingUpload(false);
     } catch (error) {
       setErrorUpload(error.message);
       setLoadingUpload(false);
     }
   };
+
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
@@ -140,6 +144,7 @@ export default function ProductEditScreen(props) {
                 type="file"
                 id="imageFile"
                 label="Choose Images"
+                // accept="image/*"
                 onChange={uploadFileHandler}
               ></input>
               {loadingUpload && <LoadingBox></LoadingBox>}
