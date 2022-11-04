@@ -1,29 +1,29 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
-import { addToCart, removeFromCartTshirt } from "../actions/carttshirtAction";
+import { addToCart, removeFromCartSweater } from "../actions/cartSweaterAction";
 import MessageBox from "../components/MessageBox";
 
 
-export default function CartCasualShirtScreen(props) {
+export default function CartSweaterScreen(props) {
   const navigate = useNavigate();
   const params = useParams();
-  const casualshirtId = params.id;
+  const sweaterId = params.id;
   const { search } = useLocation();
   const qtyInUrl = new URLSearchParams(search).get("qty");
   const qty = qtyInUrl ? Number(qtyInUrl) : 1;
   const dispatch = useDispatch();
-  const cartCasualShirt= useSelector((state) => state.cartCasualShirt);
-  const { cartCasualShirtItem, error } = cartCasualShirt;
-  console.log("called--->cartCasualshirts",cartCasualShirt);
+  const cartSweater= useSelector((state) => state.cartSweater);
+  const { cartSweaterItem, error } = cartSweater;
+  console.log("called--->cartSweaters",cartSweater);
   useEffect(() => {
-    if (casualshirtId) {
-      dispatch(addToCart(casualshirtId, qty));
+    if (sweaterId) {
+      dispatch(addToCart(sweaterId, qty));
     }
-  }, [dispatch, casualshirtId, qty]);
+  }, [dispatch, sweaterId, qty]);
   const removeFromCartHandler = (id) => {
     // delete action
-    dispatch(removeFromCartTshirt(id));
+    dispatch(removeFromCartSweater(id));
   };
 
   const checkoutHandler = () => {
@@ -36,14 +36,14 @@ export default function CartCasualShirtScreen(props) {
       <div className="col-2">
         <h1>Shopping Cart</h1>
         {error && <MessageBox variant="danger">{error}</MessageBox>}
-        {cartCasualShirtItem.length === 0 ? (
+        {cartSweaterItem.length === 0 ? (
           <MessageBox>
-            Cart is  the empty. <Link to="/tshirt">Go Shopping</Link>
+            Cart is  the empty. <Link to="/sweater">Go Shopping</Link>
           </MessageBox>
         ) : (
           <ul>
-            {cartCasualShirtItem.map((item) => (
-              <li key={item.casualshirt}>
+            {cartSweaterItem.map((item) => (
+              <li key={item.sweater}>
                 <div className="row">
                   <div>
                     <img
@@ -53,14 +53,14 @@ export default function CartCasualShirtScreen(props) {
                     ></img>
                   </div>
                   <div className="min-30">
-                    <Link to={`/casualshirt/${item.casualshirt}`}>{item.name}</Link>
+                    <Link to={`/sweater/${item.sweater}`}>{item.name}</Link>
                   </div>
                   <div>
                     <select
                       value={item.qty}
                       onChange={(e) =>
                         dispatch(
-                          addToCart(item.casualshirt, Number(e.target.value))
+                          addToCart(item.sweater, Number(e.target.value))
                         )
                       }
                     >
@@ -75,7 +75,7 @@ export default function CartCasualShirtScreen(props) {
                   <div>
                     <button
                       type="button"
-                      onClick={() => removeFromCartHandler(item.casualshirt)}
+                      onClick={() => removeFromCartHandler(item.sweater)}
                     >
                       Delete
                     </button>
@@ -91,8 +91,8 @@ export default function CartCasualShirtScreen(props) {
           <ul>
             <li>
               <h2>
-                Subtotal ({cartCasualShirt.reduce((a, c) => a + c.qty, 0)} items) : $
-                {cartCasualShirt.reduce((a, c) => a + c.price * c.qty, 0)}
+                Subtotal ({cartSweater.reduce((a, c) => a + c.qty, 0)} items) : $
+                {cartSweater.reduce((a, c) => a + c.price * c.qty, 0)}
               </h2>
             </li>
             <li>
@@ -100,7 +100,7 @@ export default function CartCasualShirtScreen(props) {
                 type="button"
                 onClick={checkoutHandler}
                 className="primary block"
-                disabled={cartCasualShirt.length === 0}
+                disabled={cartSweater.length === 0}
               >
                 Proceed to Checkout
               </button>

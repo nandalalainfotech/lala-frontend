@@ -4,32 +4,32 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import Rating from "../components/Rating";
-import { createReview, detailsTshirt } from "../actions/tshirtAction";
+import { createReview, detailsSuit } from "../actions/suitAction";
 
 // import ModalImage from "react-modal-image";
 import ReactImageMagnify from "react-image-magnify";
-import { TSHIRT_REVIEW_CREATE_RESET } from "../constants/tshirtConstants";
+import { SUIT_REVIEW_CREATE_RESET } from "../constants/suitConstants";
 
-export default function TshirtScreen(props) {
-  console.log("catshirt");
+export default function SuitScreen(props) {
+  console.log("suit --->");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const params = useParams();
-  const { id: tshirtId } = params;
-  console.log("called--->>tshirtId",params);
+  const { id: suitId } = params;
+  console.log("called--->>suitId",params);
   const [qty, setQty] = useState(1);
-  const tshirtDetails = useSelector((state) => state.tshirtDetails);
-  const { loading, error, tshirt } = tshirtDetails;
+  const suitDetails = useSelector((state) => state.suitDetails);
+  const { loading, error, suit} = suitDetails;
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
-  const tshirtReviewCreate = useSelector((state) => state.tshirtReviewCreate);
+  const suitReviewCreate = useSelector((state) => state.suitReviewCreate);
   const {
 
     loading: loadingReviewCreate,
     error: errorReviewCreate,
     success: successReviewCreate,
-  } = tshirtReviewCreate;
+  } = suitReviewCreate;
   
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
@@ -39,20 +39,20 @@ export default function TshirtScreen(props) {
       window.alert("Review Submitted Successfully");
       setRating("");
       setComment("");
-      dispatch({ type: TSHIRT_REVIEW_CREATE_RESET });
+      dispatch({ type: SUIT_REVIEW_CREATE_RESET });
     }
-    dispatch(detailsTshirt(tshirtId));
-  }, [dispatch, tshirtId, successReviewCreate]);
+    dispatch(detailsSuit(suitId));
+  }, [dispatch, suitId, successReviewCreate]);
   const addToCartHandler = () => {
-    navigate(`/tshirts/${tshirtId}?qty=${qty}`);
+    navigate(`/suits/${suitId}?qty=${qty}`);
   };
-console.log("called-->addToCartHandler",tshirtId);
+console.log("called-->addToCartHandler",suitId);
   const submitHandler = (e) => {
     
     e.preventDefault();
     if (comment && rating) {
       dispatch(
-        createReview(tshirtId, { rating, comment, name: userInfo.name })
+        createReview(suitId, { rating, comment, name: userInfo.name })
       );
     } else {
       alert("Please enter comment and rating");
@@ -74,13 +74,13 @@ console.log("called-->addToCartHandler",tshirtId);
                   {...{
                     smallImage: {
                       className: "large",
-                      src: tshirt.image,
+                      src:suit.image,
                       width: 380,
                       height: 480,
                     },
                     largeImage: {
                       className: "small",
-                      src: tshirt.image,
+                      src: suit.image,
                       width: 600,
                       height: 600,
                     },
@@ -98,27 +98,27 @@ console.log("called-->addToCartHandler",tshirtId);
                   <ul>
                     <li>
                       <h1 style={{ textTransform: "uppercase" }}>
-                        {tshirt.name}
+                        {suit.name}
                       </h1>
                     </li>
                     <li>
                       <Rating
-                        rating={tshirt.rating}
-                        numReviews={tshirt.numReviews}
+                        rating={suit.rating}
+                        numReviews={suit.numReviews}
                       ></Rating>
                     </li>
-                    <li>Price : ₹{tshirt.price}</li>
+                    <li>Price : ₹{suit.price}</li>
                     <li>
                       Category:
-                      <span> {tshirt.category}</span>
+                      <span> {suit.category}</span>
                     </li>
                     <li>
                       Brand:
-                      <span> {tshirt.brand}</span>
+                      <span> {suit.brand}</span>
                     </li>
                     <li>
                       Description:
-                      <span> {tshirt.description}</span>
+                      <span> {suit.description}</span>
                     </li>
                   </ul>
                 </div>
@@ -130,14 +130,14 @@ console.log("called-->addToCartHandler",tshirtId);
                     <li>
                       <div className="row">
                         <div>Price</div>
-                        <div className="price">₹{tshirt.price}</div>
+                        <div className="price">₹{suit.price}</div>
                       </div>
                     </li>
                     <li>
                       <div className="row">
                         <div>Status</div>
                         <div>
-                          {tshirt.countInStock > 0 ? (
+                          {suit.countInStock > 0 ? (
                             <span className="success">In Stock</span>
                           ) : (
                             <span className="danger">Unavailable</span>
@@ -145,7 +145,7 @@ console.log("called-->addToCartHandler",tshirtId);
                         </div>
                       </div>
                     </li>
-                    {tshirt.countInStock > 0 && (
+                    {suit.countInStock > 0 && (
                       <>
                         <li>
                           <div className="row">
@@ -155,7 +155,7 @@ console.log("called-->addToCartHandler",tshirtId);
                                 value={qty}
                                 onChange={(e) => setQty(e.target.value)}
                               >
-                                {[...Array(tshirt.countInStock).keys()].map(
+                                {[...Array(suit.countInStock).keys()].map(
                                   (x) => (
                                     <option key={x + 1} value={x + 1}>
                                       {x + 1}
@@ -183,14 +183,14 @@ console.log("called-->addToCartHandler",tshirtId);
               <div className="card card-body" style={{ marginTop: '40px' }}>
                 <div className="step3">
                   <h2 style={{ marginLeft: "20px" }}>Reviews & Ratings</h2>
-                  {tshirt.reviews.length === 0 && (
+                  {suit.reviews.length === 0 && (
                     <MessageBox>There is no review</MessageBox>
                   )}
                 </div>
 
                 <div className="step3">
                   <ul>
-                    {tshirt.reviews.map((review) => (
+                    {suit.reviews.map((review) => (
                       <li key={review._id}>
                         <strong>{review.name}</strong>
                         <p>

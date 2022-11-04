@@ -15,7 +15,20 @@ import { casualshirtDetailsReducer, casualshirtListReducer, casualshirtReviewCre
 import { cartTshirtReducer } from './reducers/cartTshirtReducers';
 import { cartcasualshirtReducer } from './reducers/cartCasualShirtReducers';
 import { cartformalshirtReducer } from './reducers/cartFormalShirtReducers';
+import { cartjacketReducer } from './reducers/cartJacketReducers';
+import { cartsweaterReducer } from './reducers/cartSweaterReducers';
+
+import { cartRainjacketReducer } from './reducers/cartRainjacketReducers';
+import { cartSuitReducer } from './reducers/cartSuitReducers';
+import { cartBlazerReducer } from './reducers/cartBlazerReducers';
 import { formalshirtDetailsReducer, formalshirtListReducer, formalshirtReviewCreateReducer } from './reducers/formalshirtReducers';
+
+import { jacketDetailsReducer, jacketListReducer, jacketReviewCreateReducer } from './reducers/jacketReducers';
+import { sweaterDetailsReducer, sweaterListReducer, sweaterReviewCreateReducer } from './reducers/sweaterReducers';
+import { suitDetailsReducer, suitListReducer, suitReviewCreateReducer } from './reducers/suitReducers';
+import { blazerDetailsReducer, blazerListReducer, blazerReviewCreateReducer } from './reducers/blazerReducers';
+import { rainjacketDetailsReducer, rainjacketListReducer, rainjacketReviewCreateReducer } from './reducers/rainjacketReducers';
+// import { suitDetailsReducer, suitListReducer, suitReviewCreateReducer } from './reducers/suitReducers';
 // import { cartKidReducer } from './reducers/cartKidReducers';
 // import { cartWomenReducer } from './reducers/cartWomenReducers';
 
@@ -83,8 +96,59 @@ const initialState = {
       : {},
     paymentMethod: 'PayPal',
   },
+
+  cartSweater: {
+    cartSweaterItem: localStorage.getItem('cartSweaterItem')
+      ? JSON.parse(localStorage.getItem('cartSweaterItem'))
+      : [],
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.parse(localStorage.getItem('shippingAddress'))
+      : {},
+    paymentMethod: 'PayPal',
+  },
+  
+  
+  cartJacket: {
+    cartJacketItem: localStorage.getItem('cartJacketItem')
+      ? JSON.parse(localStorage.getItem('cartJacketItem'))
+      : [],
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.parse(localStorage.getItem('shippingAddress'))
+      : {},
+    paymentMethod: 'PayPal',
+  },
+  cartSuit: {
+    cartSuitItem: localStorage.getItem(' cartSuitItem')
+      ? JSON.parse(localStorage.getItem(' cartSuitItem'))
+      : [],
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.parse(localStorage.getItem('shippingAddress'))
+      : {},
+    paymentMethod: 'PayPal',
+  },
+  cartBlazer: {
+    cartBlazerItem: localStorage.getItem('cartBlazerItem')
+      ? JSON.parse(localStorage.getItem('cartBlazerItem'))
+      : [],
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.parse(localStorage.getItem('shippingAddress'))
+      : {},
+    paymentMethod: 'PayPal',
+  },
+  cartRainjacket: {
+    cartRainjacketItem: localStorage.getItem('cartRainjacketItem')
+      ? JSON.parse(localStorage.getItem('cartRainjacketItem'))
+      : [],
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.parse(localStorage.getItem('shippingAddress'))
+      : {},
+    paymentMethod: 'PayPal',
+  },
   
 };
+
+
+
 const reducer = combineReducers({
   addressesList: addressListReducer,
   productList: productListReducer,
@@ -92,12 +156,24 @@ const reducer = combineReducers({
   tshirtList: tshirtListReducer,
   casualshirtList: casualshirtListReducer,
   formalshirtList: formalshirtListReducer,
+  jacketList: jacketListReducer,
+  suitList: suitListReducer,
+  rainjacketList: rainjacketListReducer,
+  blazerList: blazerListReducer,
+  sweaterList: sweaterListReducer,
   kidList: kidListReducer,
+
   productDetails: productDetailsReducer,
   womenDetails: womenDetailsReducer,
   tshirtDetails: tshirtDetailsReducer,
   casualshirtDetails: casualshirtDetailsReducer,
   formalshirtDetails: formalshirtDetailsReducer,
+  sweaterDetails: sweaterDetailsReducer,
+  jacketDetails: jacketDetailsReducer,
+  suitDetails: suitDetailsReducer,
+  rainjacketDetails: rainjacketDetailsReducer,
+  blazerDetails: blazerDetailsReducer,
+  
   kidDetails: kidDetailsReducer,
   cart: cartReducer,
   
@@ -107,6 +183,13 @@ const reducer = combineReducers({
   cartTshirt: cartTshirtReducer,
   cartCasualshirt: cartcasualshirtReducer,
   cartFormalshirt: cartformalshirtReducer,
+
+  cartJacket: cartjacketReducer,
+  cartSweater: cartsweaterReducer,
+  cartSuit: cartSuitReducer,
+  cartRainjacket: cartRainjacketReducer,
+  cartBlazer: cartBlazerReducer,
+
   userSignin: userSigninReducer,
   userAccount: userAccountReducer,
 
@@ -143,6 +226,12 @@ const reducer = combineReducers({
   tshirtReviewCreate: tshirtReviewCreateReducer,
   casualshirtReviewCreate: casualshirtReviewCreateReducer,
   formalshirtReviewCreate: formalshirtReviewCreateReducer,
+
+  sweaterReviewCreate: sweaterReviewCreateReducer,
+ jacketReviewCreate: jacketReviewCreateReducer,
+ suitReviewCreate: suitReviewCreateReducer,
+ rainjacketReviewCreate: rainjacketReviewCreateReducer,
+ blazerReviewCreate: blazerReviewCreateReducer,
   kidReviewCreate: kidReviewCreateReducer,
   userAddressMap: userAddressMapReducer,
   orderSummary: orderSummaryReducer,
