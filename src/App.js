@@ -48,6 +48,7 @@ import CasualShirtListScreen from "./screens/CasualShirtListScreen";
 import CartWomenScreen from "./screens/CartWomenScreen";
 import CartKidScreen from "./screens/CartKidScreen";
 import CartCasualShirtScreen from "./screens/CartCasualShirtScreen";
+import CartFormalShirtScreen from "./screens/CartFormalShirtScreen";
 import WomenListScreen from "./screens/WomenListScreen";
 import KidListScreen from "./screens/KidListScreen";
 import WomenEditScreen from "./screens/WomenEditScreen";
@@ -68,9 +69,40 @@ import FormalshirtScreens from "./screens/FormalshirtScreens";
 import FormalShirtListScreen from "./screens/FormalShirtListScreen";
 import FormalShirtEditScreen from "./screens/FormalShirtEditScreen";
 
-// import data from './data';
-// import Saree from "./components/Saree";
-// import ScreenRoute from "./components/ScreenRoute";
+import JacketScreen from "./screens/JacketScreen";
+import JacketScreens from "./screens/JacketScreens";
+import JacketListScreen from "./screens/JacketListScreen";
+import JacketEditScreen from "./screens/JacketEditScreen";
+import CartJacketScreen from "./screens/CartJacketScreen";
+
+import SweaterScreen from "./screens/SweaterScreen";
+import SweaterScreens from "./screens/SweaterScreens";
+import SweaterListScreen from "./screens/SweaterListScreen";
+import SweaterEditScreen from "./screens/SweaterEditScreen";
+import CartSweaterScreen from "./screens/CartSweaterScreen";
+
+
+
+import SuitScreen from "./screens/SuitScreen";
+import SuitScreens from "./screens/SuitScreens";
+import SuitListScreen from "./screens/SuitListScreen";
+import SuitEditScreen from "./screens/SuitEditScreen";
+import CartSuitScreen from "./screens/CartSuitScreen";
+
+
+import RainjacketScreen from "./screens/RainjacketScreen";
+import RainjacketScreens from "./screens/RainjacketScreens";
+import RainJacketListScreen from "./screens/RainJacketListScreen";
+import RainJacketEditScreen from "./screens/RainJacketEditScreen";
+import CartRainjacketScreen from "./screens/CartRainjacketScreen";
+
+
+import BlazerScreen from "./screens/BlazerScreen";
+import BlazerScreens from "./screens/BlazerScreens";
+import BlazerListScreen from "./screens/BlazerListScreen";
+import BlazerEditScreen from "./screens/BlazerEditScreen";
+import CartBlazerScreen from "./screens/CartBlazerScreen";
+
 
 
 
@@ -172,17 +204,17 @@ function App() {
                         </li>
 
                         <li>
-                          <Link to="/Jackets">Jackets</Link>
+                          <Link to="/Jacket">Jackets</Link>
                         </li>
                         <li>
-                          <Link to="/Blazer-coats">Blazer&coats</Link>
+                          <Link to="/Blazer">Blazer&coats</Link>
                         </li>
 
                         <li>
-                          <Link to="/suits">suits</Link>
+                          <Link to="/suit">suits</Link>
                         </li>
                         <li>
-                          <Link to="/Rain-jackets">Rain Jackets</Link>
+                          <Link to="/Rain-jacket">Rain Jackets</Link>
                         </li>
 
                         <li>
@@ -1624,12 +1656,25 @@ function App() {
             <Route path="/cartkid/:id" element={<CartKidScreen />}></Route>
             <Route path="/carttshirt/:id" element={<CartScreen />}></Route>
             <Route path="/cartcasualshirt/:id" element={<CartCasualShirtScreen />}></Route>
+            <Route path="/cartformalshirt/:id" element={<CartFormalShirtScreen />}></Route>
+            <Route path="/cartsweater/:id" element={<CartSweaterScreen />}></Route>
+            <Route path="/cartjacket/:id" element={<CartJacketScreen />}></Route>
+             <Route path="/cartsuit/:id" element={<CartSuitScreen />}></Route>
+            <Route path="/cartrainjacket/:id" element={<CartRainjacketScreen />}></Route>
+            <Route path="/cartblazer/:id" element={<CartBlazerScreen />}></Route> 
+
             <Route path="/cart" element={<CartScreen />}></Route>
             <Route path="/cartwomen" element={<CartWomenScreen />}></Route>
             <Route path="/cartkid" element={<CartKidScreen />}></Route>
             <Route path="/cartTshirt" element={<CartTshirtScreen />}></Route>
             <Route path="/cartCasualShirt" element={<CartCasualShirtScreen />}></Route>
-           
+            <Route path="/cartFormalShirt" element={<CartFormalShirtScreen />}></Route>
+            <Route path="/cartJacket" element={<CartJacketScreen />}></Route>
+            <Route path="/cartSweater" element={<CartSweaterScreen />}></Route>
+            <Route path="/cartSuit" element={<CartSuitScreen />}></Route>
+            <Route path="/cartRainJacket" element={<CartRainjacketScreen />}></Route>
+            <Route path="/cartBlazer" element={<CartBlazerScreen />}></Route> 
+
             <Route path="/signin" element={<SigninScreen />}></Route>
             <Route path="/account" element={<AccountScreen />}></Route>
             <Route path="/accountcreation" element={<AccountCreation />}></Route>
@@ -1644,7 +1689,13 @@ function App() {
             <Route path="/tshirtlist/seller" element={<SellerRoute><TshirtListScreen /></SellerRoute>} exact></Route>
             <Route path="/casualshirtlist/seller" element={<SellerRoute><CasualShirtListScreen /></SellerRoute>} exact></Route>
             <Route path="/formalshirtlist/seller" element={<SellerRoute><FormalShirtListScreen /></SellerRoute>} exact></Route>
-            
+            <Route path="/jacketlist/seller" element={<SellerRoute><JacketListScreen /></SellerRoute>} exact></Route>
+            <Route path="/sweaterlist/seller" element={<SellerRoute><SweaterListScreen /></SellerRoute>} exact></Route>
+            <Route path="/suitlist/seller" element={<SellerRoute><SuitListScreen /></SellerRoute>} exact></Route> 
+            <Route path="/rainjacketlist/seller" element={<SellerRoute><RainJacketListScreen /></SellerRoute>} exact></Route>
+            <Route path="/blazerlist/seller" element={<SellerRoute><BlazerListScreen /></SellerRoute>} exact></Route> 
+
+
             <Route path="/Sareelist/seller" element={<SellerRoute><SareeListScreen /></SellerRoute>} exact></Route>
             <Route path="/OrderList/seller" element={<SellerRoute><OrderListScreen /></SellerRoute>} exact></Route>
             <Route
@@ -1710,6 +1761,52 @@ function App() {
               }
               exact
             />
+            <Route
+              path="/jacketlist"
+              element={
+                <AdminRoute>
+                  <JacketListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+            
+            <Route
+              path="/sweaterlist"
+              element={
+                <AdminRoute>
+                  <SweaterListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+             <Route
+              path="/suitlist"
+              element={
+                <AdminRoute>
+                  <SuitListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+            <Route
+              path="/rainjacketlist"
+              element={
+                <AdminRoute>
+                  <RainJacketListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+            <Route
+              path="/blazerlist"
+              element={
+                <AdminRoute>
+                  <BlazerListScreen />
+                </AdminRoute>
+              }
+              exact
+            /> 
             <Route
               path="/orderlist"
               element={
@@ -1804,6 +1901,51 @@ function App() {
               exact
             ></Route>
             <Route
+              path="/jacketlist/seller"
+              element={
+                <SellerRoute>
+                  <jacketListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
+            <Route
+              path="/sweaterlist/seller"
+              element={
+                <SellerRoute>
+                  <SweaterListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
+            {/* <Route
+              path="/blazerlist/seller"
+              element={
+                <SellerRoute>
+                  <BlazerListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route> */}
+            <Route
+              path="/suitlist/seller"
+              element={
+                <SellerRoute>
+                  <SuitListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
+            {/* <Route
+              path="/rainjacketlist/seller"
+              element={
+                <SellerRoute>
+                  <RainJacketListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route> */} 
+            <Route
               path="/sareelist/seller"
               element={
                 <SellerRoute>
@@ -1852,6 +1994,41 @@ function App() {
               element={<CasualShirtEditScreen />}
               exact
             ></Route>
+
+           <Route
+              path="/sweater/:id/edit"
+              element={<SweaterEditScreen />}
+              exact
+            ></Route>
+
+
+            <Route
+              path="/jacket/:id/edit"
+              element={<JacketEditScreen />}
+              exact
+            ></Route>
+
+
+             <Route
+              path="/blazer/:id/edit"
+              element={<BlazerEditScreen />}
+              exact
+            ></Route>
+
+
+
+           <Route
+              path="/rainjacket/:id/edit"
+              element={<RainJacketEditScreen />}
+              exact
+            ></Route> 
+
+
+           <Route
+              path="/suit/:id/edit"
+              element={<SuitEditScreen />}
+              exact
+            ></Route> 
             <Route
               path="/saree/:id/edit"
               element={<SareeEditScreen />}
@@ -1951,6 +2128,50 @@ function App() {
                 </AdminRoute>
               }
             />
+
+
+           <Route
+              path="/Sweater"
+              element={
+                <AdminRoute>
+                  <SweaterScreens />
+                </AdminRoute>
+              }
+            />
+
+
+            <Route
+              path="/Jacket"
+              element={
+                <AdminRoute>
+                  <JacketScreens />
+                </AdminRoute>
+              }
+            />
+             <Route
+              path="/suit"
+              element={
+                <AdminRoute>
+                  <SuitScreens />
+                </AdminRoute>
+              }
+            />
+            <Route
+              path="/Rain-Jacket"
+              element={
+                <AdminRoute>
+                  <RainjacketScreens />
+                </AdminRoute>
+              }
+            />
+            <Route
+              path="/Blazer"
+              element={
+                <AdminRoute>
+                  <BlazerScreens />
+                </AdminRoute>
+              }
+            />  
             <Route
               path="/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order/pageNumber/:pageNumber"
               element={<SearchScreen />}
@@ -1989,6 +2210,12 @@ function App() {
             <Route path="/tshirt/:id" element={<TshirtScreen />} exact></Route>
             <Route path="/casualshirt/:id" element={<CasualShirtScreen />} exact></Route>
             <Route path="/formalshirt/:id" element={<FormalshirtScreen />} exact></Route>
+            <Route path="/jacket/:id" element={<JacketScreen />} exact></Route>
+            <Route path="/sweater/:id" element={<SweaterScreen />} exact></Route>
+
+             <Route path="/blazer/:id" element={<BlazerScreen />} exact></Route>
+            <Route path="/rainjacket/:id" element={<RainjacketScreen />} exact></Route> 
+            <Route path="/suit/:id" element={<SuitScreen />} exact></Route> 
             <Route
               path="/orderhistory"
               element={<OrderHistoryScreen />}
