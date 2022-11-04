@@ -104,7 +104,7 @@ export default function AccountScreen(props) {
 
             <div style={{ display: 'flex' }}>
 
-              <img src="https://m.media-amazon.com/images/G/31/AmazonBusiness/Registration/desktop/quantity-discounts-icon._CB612297378_.svg" alt="GST Invoice &amp; Bulk Discounts" class="ac-svg"></img>
+              <img src="https://m.media-amazon.com/images/G/31/AmazonBusiness/Registration/desktop/quantity-discounts-icon._CB612297378_.svg" alt="GST Invoice &amp; Bulk Discounts" className="ac-svg"></img>
               <div>
                 <p style={{ margin: '0px' }}> GST Invoice & Bulk Discounts</p>
 
@@ -113,7 +113,7 @@ export default function AccountScreen(props) {
             </div>
             <br></br>
             <div style={{ display: 'flex' }}>
-              <img src="https://m.media-amazon.com/images/G/31/AmazonBusiness/Registration/desktop/analytics-icon._CB612297378_.svg" alt="Business Analytics" class="ac-svg"></img>
+              <img src="https://m.media-amazon.com/images/G/31/AmazonBusiness/Registration/desktop/analytics-icon._CB612297378_.svg" alt="Business Analytics" className="ac-svg"></img>
               <div>
                 <p style={{ margin: '0px' }}>Business Analytics</p>
                 <p className="ac-p" style={{ fontWeight: '300' }}>Track and monitor spending by your organisation with dynamic charts and data tables.</p>
@@ -121,7 +121,7 @@ export default function AccountScreen(props) {
             </div>
             <br></br>
             <div style={{ display: 'flex' }}>
-              <img src="https://m.media-amazon.com/images/G/31/AmazonBusiness/Registration/desktop/add-users-icon._CB612297378_.svg" alt="Secure Your Account" class="ac-svg"></img>
+              <img src="https://m.media-amazon.com/images/G/31/AmazonBusiness/Registration/desktop/add-users-icon._CB612297378_.svg" alt="Secure Your Account" className="ac-svg"></img>
               <div>
                 <p style={{ margin: '0px' }}> Secure Your Account</p>
                 <p className="ac-p" style={{ fontWeight: '300' }}>Add more colleagues to your account for making business purchases instead of sharing your login credentials.</p>
