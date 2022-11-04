@@ -10,7 +10,8 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
-    "bootstrap": "^5.2.0",
+    "bootstrap": "^3.4.1",
+    "framer-motion": "^7.6.1",
     "google-maps-react": "^2.0.6",
     "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
@@ -25,6 +26,7 @@
     "react-owl-carousel": "^2.3.3",
     "react-paypal-button-v2": "^2.6.3",
     "react-redux": "^8.0.2",
+    "react-responsive": "^9.0.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -60,5 +62,8 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.1"
+  }
 }

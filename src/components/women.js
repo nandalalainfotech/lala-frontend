@@ -4,7 +4,6 @@ import Rating from './Rating';
 
 
 export default function Women(props) {
-  console.log("props",props);
   const { women } = props;
   return (
     <div key={women._id} className="card">
