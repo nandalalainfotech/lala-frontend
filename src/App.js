@@ -284,13 +284,13 @@ function App() {
             </div>
           </div>
           
-          <div class="second-nav">
-            <div class="wrapper">
+          <div className="second-nav">
+            <div className="wrapper">
               <input type="radio" name="slider" id="menu-btn" />
               <input type="radio" name="slider" id="close-btn" />
-              <ul class="nav-links">
-                <label for="close-btn" class="btn close-btn">
-                  <i class="fa fa-times"></i>
+              <ul className="nav-links">
+                <label htmlFor="close-btn" className="btn close-btn">
+                  <i className="fa fa-times"></i>
                 </label>
                 {userInfo && userInfo && (
                   <li>
@@ -298,13 +298,13 @@ function App() {
                       Men
                     </Link>
                     <input type="checkbox" id="showMega" />
-                    <label for="showMega" class="mobile-item">
+                    <label htmlFor="showMega" className="mobile-item">
                       MEN
                     </label>
-                    <div class="mega-box">
-                      <div class="content">
-                        <div class="row">
-                          <ul class="mega-links">
+                    <div className="mega-box">
+                      <div className="content">
+                        <div className="row">
+                          <ul className="mega-links">
                             <li>
                               <h3>
                                 <Link
@@ -372,8 +372,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links">
+                        <div className="row">
+                          <ul className="mega-links">
                             <li>
                               <h3>
                                 <Link
@@ -450,8 +450,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links">
+                        <div className="row">
+                          <ul className="mega-links">
                             <li>
                               <h3>
                                 {" "}
@@ -511,8 +511,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links">
+                        <div className="row">
+                          <ul className="mega-links">
                             <li>
                               <h3>
                                 <Link
@@ -582,8 +582,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links">
+                        <div className="row">
+                          <ul className="mega-links">
                             <li>
                               <h3>
                                 <Link
@@ -679,13 +679,13 @@ function App() {
                       Women
                     </Link>
                     <input type="checkbox" id="showMega1" />
-                    <label for="showMega1" class="mobile-item1">
+                    <label htmlFor="showMega1" className="mobile-item1">
                       Women
                     </label>
-                    <div class="mega-box1">
-                      <div class="content">
-                        <div class="row">
-                          <ul class="mega-links1">
+                    <div className="mega-box1">
+                      <div className="content">
+                        <div className="row">
+                          <ul className="mega-links1">
                             <li>
                               <h3>
                                 <Link
@@ -762,8 +762,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links1">
+                        <div className="row">
+                          <ul className="mega-links1">
                             <li>
                               <h3>
                                 {" "}
@@ -829,8 +829,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links1">
+                        <div className="row">
+                          <ul className="mega-links1">
                             <li>
                               <h3>
                                 {" "}
@@ -910,8 +910,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links1">
+                        <div className="row">
+                          <ul className="mega-links1">
                             <li>
                               <h3>
                                 {" "}
@@ -974,8 +974,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links1">
+                        <div className="row">
+                          <ul className="mega-links1">
                             <li>
                               <h3>
                                 <Link
@@ -1067,13 +1067,13 @@ function App() {
                       Kids
                     </Link>
                     <input type="checkbox" id="showMega2" />
-                    <label for="showMega2" class="mobile-item2">
+                    <label htmlFor="showMega2" className="mobile-item2">
                       Kids
                     </label>
-                    <div class="mega-box2">
-                      <div class="content">
-                        <div class="row">
-                          <ul class="mega-links2">
+                    <div className="mega-box2">
+                      <div className="content">
+                        <div className="row">
+                          <ul className="mega-links2">
                             <li>
                               <h3>
                                 {" "}
@@ -1138,8 +1138,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links2">
+                        <div className="row">
+                          <ul className="mega-links2">
                             <li>
                               <h3>
                                 {" "}
@@ -1210,8 +1210,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links2">
+                        <div className="row">
+                          <ul className="mega-links2">
                             <li>
                               <h3>
                                 {" "}
@@ -1270,8 +1270,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links2">
+                        <div className="row">
+                          <ul className="mega-links2">
                             <li>
                               <h3>
                                 {" "}
@@ -1336,8 +1336,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links2">
+                        <div className="row">
+                          <ul className="mega-links2">
                             <li>
                               <h3>
                                 <Link
@@ -1416,13 +1416,13 @@ function App() {
                       Home & Living
                     </Link>
                     <input type="checkbox" id="showMega3" />
-                    <label for="showMega3" class="mobile-item3">
+                    <label htmlFor="showMega3" className="mobile-item3">
                       Home & Living
                     </label>
-                    <div class="mega-box3">
-                      <div class="content">
-                        <div class="row">
-                          <ul class="mega-links3">
+                    <div className="mega-box3">
+                      <div className="content">
+                        <div className="row">
+                          <ul className="mega-links3">
                             <li>
                               <h3>
                                 {" "}
@@ -1502,8 +1502,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links3">
+                        <div className="row">
+                          <ul className="mega-links3">
                             <li>
                               <h3>
                                 <Link to="/Bath" style={{ color: "#f2c210" }}>
@@ -1570,8 +1570,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links3">
+                        <div className="row">
+                          <ul className="mega-links3">
                             <li>
                               <h3>
                                 {" "}
@@ -1647,8 +1647,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links3">
+                        <div className="row">
+                          <ul className="mega-links3">
                             <li>
                               <h3>
                                 <Link
@@ -1726,8 +1726,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links3">
+                        <div className="row">
+                          <ul className="mega-links3">
                             <li>
                               <h3>
                                 {" "}
@@ -1800,13 +1800,13 @@ function App() {
                       Beauty
                     </Link>
                     <input type="checkbox" id="showMega4" />
-                    <label for="showMega4" class="mobile-item4">
+                    <label htmlFor="showMega4" className="mobile-item4">
                       Beauty
                     </label>
-                    <div class="mega-box4">
-                      <div class="content">
-                        <div class="row">
-                          <ul class="mega-links4">
+                    <div className="mega-box4">
+                      <div className="content">
+                        <div className="row">
+                          <ul className="mega-links4">
                             <li>
                               <h3>
                                 {" "}
@@ -1854,8 +1854,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links4">
+                        <div className="row">
+                          <ul className="mega-links4">
                             <li>
                               <h3>
                                 {" "}
@@ -1927,8 +1927,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links4">
+                        <div className="row">
+                          <ul className="mega-links4">
                             <li>
                               <h3>
                                 {" "}
@@ -1986,8 +1986,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links4">
+                        <div className="row">
+                          <ul className="mega-links4">
                             <li>
                               <h3>
                                 {" "}
@@ -2076,8 +2076,8 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links4">
+                        <div className="row">
+                          <ul className="mega-links4">
                             <li>
                               <h3>
                                 <Link
@@ -2145,8 +2145,8 @@ function App() {
                   </li>
                 )}
               </ul>
-              <label for="menu-btn" class="btn menu-btn">
-                <i class="fa fa-bars"></i>
+              <label htmlFor="menu-btn" className="btn menu-btn">
+                <i className="fa fa-bars"></i>
               </label>
             </div>
           </div>
@@ -2154,8 +2154,8 @@ function App() {
             <input type="radio" name="slider" id="menu-btn" />
             <input type="radio" name="slider" id="close-btn" />
             <div className="sub-megamenu">
-              <label for="close-btn" class="btn close-btn">
-                <i class="fa fa-times"></i>
+              <label htmlhtmlFor="close-btn" className="btn close-btn">
+                <i className="fa fa-times"></i>
               </label>
               {userInfo && userInfo && (
                 <div className="user">
@@ -2165,7 +2165,7 @@ function App() {
                     </Link>
                   </span>
                   <input type="checkbox" id="showDrop" />
-                  <label for="showDrop" class="mobile-item">
+                  <label htmlFor="showDrop" className="mobile-item">
                     MEN
                   </label>
                   <ul className="dropdowns-contents">
@@ -4021,8 +4021,8 @@ function App() {
                 </div>
               )}
             </div>
-            <label for="menu-btn" className="btn menu-btn">
-              <i class="fa fa-bars"></i>
+            <label htmlFor="menu-btn" className="btn menu-btn">
+              <i className="fa fa-bars"></i>
             </label>
           </div> */}
         </header>
