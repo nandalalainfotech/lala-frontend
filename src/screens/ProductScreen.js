@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState  } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import LoadingBox from "../components/LoadingBox";
@@ -7,16 +7,20 @@ import Rating from "../components/Rating";
 import { createReview, detailsProduct } from "../actions/productAction";
 import { PRODUCT_REVIEW_CREATE_RESET } from "../constants/productConstants";
 // import ModalImage from "react-modal-image";
-import ReactImageMagnify from "react-image-magnify";
+import ReactImageMagnify from 'react-image-magnify';
+import Axios from 'axios';
+
 
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const params = useParams();
   const { id: productId } = params;
+  
   const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+  
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
@@ -28,8 +32,9 @@ export default function ProductScreen(props) {
   } = productReviewCreate;
 
   const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState("");
-  // const [selectedImage, setSelectedImage] = useState('');
+  const [comment, setComment] = useState('');
+  const [image, setImage] = useState()
+
   useEffect(() => {
     if (successReviewCreate) {
       window.alert("Review Submitted Successfully");
@@ -37,8 +42,20 @@ export default function ProductScreen(props) {
       setComment("");
       dispatch({ type: PRODUCT_REVIEW_CREATE_RESET });
     }
-    dispatch(detailsProduct(productId));
-  }, [dispatch, productId, successReviewCreate]);
+      dispatch(detailsProduct(productId));
+    
+  },[dispatch, productId, successReviewCreate]);
+
+
+  useEffect(() => {
+    if(!loading && !product) return;
+    const fetchBusinesses = async () => {
+      const img = await Axios.get(`/api/uploads/show/${product.fileId}`, { responseType: 'blob' });
+      setImage(URL.createObjectURL(img.data));
+    };
+    fetchBusinesses()
+  },[loading, product]);
+
   const addToCartHandler = () => {
     navigate(`/cart/${productId}?qty=${qty}`);
   };
@@ -69,13 +86,13 @@ export default function ProductScreen(props) {
                   {...{
                     smallImage: {
                       className: "large",
-                      src: product.image,
+                      src:`${image}`,
                       width: 380,
                       height: 480,
                     },
                     largeImage: {
                       className: "small",
-                      src: product.image,
+                      src:`${image}`,
                       width: 600,
                       height: 600,
                     },
