@@ -13,8 +13,9 @@ import { listKids } from '../actions/kidAction';
 import { listWomens } from '../actions/womenAction';
 import Women from '../components/women';
 import Kid from '../components/Kid';
-
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -38,6 +39,49 @@ export default function HomeScreen() {
   }, [dispatch]);
 
 
+
+  var settings = {
+    autoplay: true,
+    autoplaySpeed: 1300,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    draggable: true,
+    swipeToSlide: true,
+    variableWidth: true,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   return (
     <div>
 
@@ -50,9 +94,9 @@ export default function HomeScreen() {
           <MessageBox variant="danger">{errorSellers}</MessageBox>
         ) : (
           <>
-            {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
+            {sellers?.length === 0 && <MessageBox>No Seller Found</MessageBox>}
 
-            {sellers.map((seller) => (
+            {sellers?.map((seller) => (
 
               <div key={seller._id}>
 
@@ -108,15 +152,15 @@ export default function HomeScreen() {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <>
-          {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
-          <div className="row center">
-            {products.map((product) => (
-              <Product key={product._id} product={product}></Product>
+          <Slider {...settings}>
+            {products?.map((product) => (
+              <div >
+                <Product key={product._id} product={product}></Product>
+              </div>
             ))}
-          </div>
+          </Slider>
         </>
       )}
-
 
       <h2>Women collection</h2>
       {loading ? (
@@ -133,6 +177,7 @@ export default function HomeScreen() {
           </div>
         </>
       )}
+
       <h2>Kids collection</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
@@ -140,9 +185,9 @@ export default function HomeScreen() {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <>
-          {kids.length === 0 && <MessageBox>No Product Found</MessageBox>}
+          {kids?.length === 0 && <MessageBox>No Product Found</MessageBox>}
           <div className="row center">
-            {kids.map((kid) => (
+            {kids?.map((kid) => (
               <Kid key={kid._id} kid={kid}></Kid>
             ))}
           </div>

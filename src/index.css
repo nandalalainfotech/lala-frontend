@@ -34,7 +34,7 @@ body {
     'header'
     'main'
     'footer';
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
   font-family: 'Amazon Ember', Arial, sans-serif;
@@ -1636,10 +1636,10 @@ img.small {
   width: 300px;
 }
 
-img.medium {
+/* img.medium {
   height: 200px;
   width: 250px;
-}
+} */
 
 img.large {
   width: 100px;
@@ -1648,13 +1648,57 @@ img.large {
 
 
 /* Card */
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 30px !important;
+  line-height: 1;
+  opacity: .75;
+ color:gray !important; 
+ outline: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-prev:hover, .slick-next:hover {
+border:none !important;
+}
+  .slick-prev, .slick-next {
+    outline: none !important;
+    position: absolute;
+    top: 50%;
+    z-index: 100 !important;
+    display: block !important;
+    font-size: 25px !important;
+  }
+  .slick-prev {
+    left: 2% !important;
+  }
+  .slick-next {
+    right: 2% !important;
+  }
+
 .card {
   border: 0.1rem #C0C0C0 solid;
-  background-color: #dbdbf3;
+  background-color: #fff;
   border-radius: 0.67rem;
   margin: 1rem;
-
+  overflow: hidden;
 }
+.card:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),     0 10px 10px rgba(0,0,0,0.22);
+  background-color: #fff;
+}
+
+img.medium {
+  height: 200px;
+  width: 250px;
+  transition: transform .5s ease;
+  display: inline-block;
+overflow: hidden;
+}
+img.medium:hover{
+  transform:scale(1.1);
+}
+
 .card-body {
   padding: 1rem;
   text-transform: capitalize;
