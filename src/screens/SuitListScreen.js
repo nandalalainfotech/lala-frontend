@@ -8,9 +8,7 @@ import {
 } from "../actions/suitAction";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-
 import { Link } from "react-router-dom";
-
 import { SUIT_CREATE_RESET, SUIT_DELETE_RESET } from "../constants/suitConstants";
 
 export default function SuitListScreen(props) {
@@ -21,6 +19,7 @@ export default function SuitListScreen(props) {
   const suitList = useSelector((state) => state.suitList);
   const { loading, error, suits, page, pages } = suitList;
   const suitCreate = useSelector((state) => state.suitCreate);
+  console.log("called----->suitCreate",suitCreate);
   const {
     loading: loadingCreate,
     error: errorCreate,
@@ -63,6 +62,7 @@ export default function SuitListScreen(props) {
       dispatch(deleteSuit(suit._id));
     }
   };
+  console.log("called----->createSuit",createSuit);
   const createHandler = () => {
     dispatch(createSuit());
   };

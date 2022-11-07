@@ -22,6 +22,7 @@ export default function ProductListScreen(props) {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
   const productCreate = useSelector((state) => state.productCreate);
+  console.log("called----->productCreate",productCreate);
   const {
     loading: loadingCreate,
     error: errorCreate,
@@ -64,8 +65,9 @@ export default function ProductListScreen(props) {
       dispatch(deleteProduct(product._id));
     }
   };
+  console.log("called----->createProduct",createProduct);
   const createHandler = () => {
-    dispatch(createProduct());
+        dispatch(createProduct());
   };
   return (
     <div>
