@@ -22,7 +22,6 @@ export default function TshirtScreen(props) {
   const { loading, error, tshirt } = tshirtDetails;
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
-
   const tshirtReviewCreate = useSelector((state) => state.tshirtReviewCreate);
   const {
 

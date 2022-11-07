@@ -99,6 +99,37 @@ import BlazerListScreen from "./screens/BlazerListScreen";
 import BlazerEditScreen from "./screens/BlazerEditScreen";
 import CartBlazerScreen from "./screens/CartBlazerScreen";
 
+
+import KurtasScreen from "./screens/KurtasScreen";
+import KurtasScreens from "./screens/KurtasScreens";
+import KurtasListScreen from "./screens/KurtasListScreen";
+import KurtasEditScreen from "./screens/KurtasEditScreen";
+import CartKurtasScreen from "./screens/CartKurtasScreen";
+
+import IndianScreen from "./screens/IndianScreen";
+import IndianScreens from "./screens/IndianScreens";
+import IndianListScreen from "./screens/IndianListScreen";
+import IndianEditScreen from "./screens/IndianEditScreen";
+import CartIndianScreen from "./screens/CartIndianScreen";
+
+import NehruScreen from "./screens/NehruScreen";
+import NehruScreens from "./screens/NehruScreens";
+import NehruListScreen from "./screens/NehruListScreen";
+import NehruEditScreen from "./screens/NehruEditScreen";
+import CartNehruScreen from "./screens/CartNehruScreen";
+
+import SherwaniScreen from "./screens/SherwaniScreen";
+import SherwaniScreens from "./screens/SherwaniScreens";
+import SherwaniListScreen from "./screens/SherwaniListScreen";
+import SherwaniEditScreen from "./screens/SherwaniEditScreen";
+import CartSherwaniScreen from "./screens/CartSherwaniScreen";
+
+import DhotisScreen from "./screens/DhotisScreen";
+import DhotisScreens from "./screens/DhotisScreens";
+import DhotisListScreen from "./screens/DhotisListScreen";
+import DhotisEditScreen from "./screens/DhotisEditScreen";
+import CartDhotisScreen from "./screens/CartDhotisScreen";
+
 function App() {
   const cart = useSelector((state) => state.cart);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
@@ -320,10 +351,10 @@ function App() {
                               <Link to="/Tshirt">T-shirts</Link>
                             </li>
                             <li>
-                              <Link to="/casual">casual shirts</Link>
+                              <Link to="/casual-shirt">casual shirts</Link>
                             </li>
                             <li>
-                              <Link to="/formal-shirts">formal shirts</Link>
+                              <Link to="/formal-shirt">formal shirts</Link>
                             </li>
 
                             <li>
@@ -331,23 +362,23 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="/Jackets">Jackets</Link>
+                              <Link to="/Jacket">Jackets</Link>
                             </li>
                             <li>
-                              <Link to="/Blazer-coats">Blazer&coats</Link>
+                              <Link to="/Blazer">Blazer&coats</Link>
                             </li>
 
                             <li>
-                              <Link to="/suits">suits</Link>
+                              <Link to="/suit">suits</Link>
                             </li>
                             <li>
-                              <Link to="/Rain-jackets">Rain Jackets</Link>
+                              <Link to="/Rain-jacket">Rain Jackets</Link>
                             </li>
 
                             <li>
                               <h3>
                                 <Link
-                                  to="/Indian-Festival-Wear"
+                                  to="/Indian"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Indian festival wear
@@ -356,15 +387,15 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="/Kurtas-kurtaseats">
+                              <Link to="/Kurtas">
                                 Kurtas&kurtaseats
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Sherwanis">Sherwanis</Link>
+                              <Link to="/Sherwani">Sherwanis</Link>
                             </li>
                             <li>
-                              <Link to="/Nehru-Jackets">NehruJackets</Link>
+                              <Link to="/Nehru">NehruJackets</Link>
                             </li>
 
                             <li>
@@ -545,9 +576,7 @@ function App() {
                                 Jackets&sweetshirts
                               </Link>
                             </li>
-                            <li>
-                              <Link to="/active-t-shirts">active t-shirts</Link>
-                            </li>
+                           
 
                             <li>
                               <Link to="/sports-accessories">
@@ -4103,14 +4132,14 @@ function App() {
               element={<CartJacketScreen />}
             ></Route>
             <Route path="/cartsuit/:id" element={<CartSuitScreen />}></Route>
-            <Route
-              path="/cartrainjacket/:id"
-              element={<CartRainjacketScreen />}
-            ></Route>
-            <Route
-              path="/cartblazer/:id"
-              element={<CartBlazerScreen />}
-            ></Route>
+            <Route path="/cartrainjacket/:id" element={<CartRainjacketScreen />}></Route>
+            <Route path="/cartblazer/:id" element={<CartBlazerScreen />}></Route>
+
+            <Route path="/cartdhotis/:id" element={<CartDhotisScreen />}></Route>
+            <Route path="/cartkurtas/:id" element={<CartKurtasScreen />}></Route>
+            <Route path="/cartnehru/:id" element={<CartNehruScreen />}></Route>
+            <Route path="/cartindian/:id" element={<CartIndianScreen />}></Route>
+            <Route path="/cartsherwani/:id" element={<CartSherwaniScreen />}></Route>
 
             <Route path="/cart" element={<CartScreen />}></Route>
             <Route path="/cartwomen" element={<CartWomenScreen />}></Route>
@@ -4132,6 +4161,11 @@ function App() {
               element={<CartRainjacketScreen />}
             ></Route>
             <Route path="/cartBlazer" element={<CartBlazerScreen />}></Route>
+            <Route path="/cartsherwani" element={<CartSherwaniScreen />}></Route>
+            <Route path="/cartkurtas" element={<CartKurtasScreen />}></Route>
+            <Route path="/cartnehru" element={<CartNehruScreen />}></Route>
+            <Route path="/cartindian" element={<CartIndianScreen />}></Route>
+            <Route path="/cartdhotis" element={<CartDhotisScreen />}></Route>
 
             <Route path="/signin" element={<SigninScreen />}></Route>
             <Route path="/account" element={<AccountScreen />}></Route>
@@ -4227,7 +4261,11 @@ function App() {
               }
               exact
             ></Route>
-
+  <Route path="/kurtaslist/seller" element={<SellerRoute><KurtasListScreen /></SellerRoute>} exact></Route>
+            <Route path="/nehrulist/seller" element={<SellerRoute><NehruListScreen /></SellerRoute>} exact></Route>
+            <Route path="/indianlist/seller" element={<SellerRoute><IndianListScreen /></SellerRoute>} exact></Route>
+            <Route path="/dhotislist/seller" element={<SellerRoute><DhotisListScreen /></SellerRoute>} exact></Route>
+            <Route path="/sherwanilist/seller" element={<SellerRoute><SherwaniListScreen /></SellerRoute>} exact></Route>
             <Route
               path="/Sareelist/seller"
               element={
@@ -4355,6 +4393,62 @@ function App() {
               }
               exact
             />
+
+            <Route
+              path="/kurtastlist"
+              element={
+                <AdminRoute>
+                  <KurtasListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+
+
+            <Route
+              path="/nehrulist"
+              element={
+                <AdminRoute>
+                  <NehruListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+
+
+
+            <Route
+              path="/dhotislist"
+              element={
+                <AdminRoute>
+                  <DhotisListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+
+
+
+            <Route
+              path="/indianlist"
+              element={
+                <AdminRoute>
+                  <IndianListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
+
+
+            <Route
+              path="/dhotislist"
+              element={
+                <AdminRoute>
+                  <DhotisListScreen />
+                </AdminRoute>
+              }
+              exact
+            />
             <Route
               path="/orderlist"
               element={
@@ -4466,6 +4560,51 @@ function App() {
               }
               exact
             ></Route>
+            <Route
+              path="/dhotislist/seller"
+              element={
+                <SellerRoute>
+                  <DhotisListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
+            <Route
+              path="/nehrulist/seller"
+              element={
+                <SellerRoute>
+                  <NehruListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
+            <Route
+              path="/sherwanilist/seller"
+              element={
+                <SellerRoute>
+                  <SherwaniListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
+            <Route
+              path="/indianlist/seller"
+              element={
+                <SellerRoute>
+                  <IndianListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
+            <Route
+              path="/kurtaslist/seller"
+              element={
+                <SellerRoute>
+                  <KurtasListScreen />
+                </SellerRoute>
+              }
+              exact
+            ></Route>
             {/* <Route
               path="/blazerlist/seller"
               element={
@@ -4572,6 +4711,31 @@ function App() {
               exact
             ></Route>
             <Route
+              path="/dhotis/:id/edit"
+              element={<DhotisEditScreen />}
+              exact
+            ></Route>
+            <Route
+              path="/nehru/:id/edit"
+              element={<NehruEditScreen />}
+              exact
+            ></Route>
+            <Route
+              path="/sherwani/:id/edit"
+              element={<SherwaniEditScreen />}
+              exact
+            ></Route>
+            <Route
+              path="/indian/:id/edit"
+              element={<IndianEditScreen />}
+              exact
+            ></Route>
+            <Route
+              path="/kurtas/:id/edit"
+              element={<KurtasEditScreen />}
+              exact
+            ></Route>
+            <Route
               path="/saree/:id/edit"
               element={<SareeEditScreen />}
               exact
@@ -4638,6 +4802,15 @@ function App() {
                 </AdminRoute>
               }
             />
+
+            <Route
+              path="/suitlist/pageNumber/:pageNumber"
+              element={
+                <AdminRoute>
+                  <SuitListScreen />
+                </AdminRoute>
+              }
+            />
             <Route
               path="/Home"
               element={
@@ -4647,7 +4820,7 @@ function App() {
               }
             />
             <Route
-              path="/casualshirt"
+              path="/casual-shirt"
               element={
                 <AdminRoute>
                   <CasualShirtScreens />
@@ -4664,7 +4837,7 @@ function App() {
               }
             />
             <Route
-              path="/Formalshirt"
+              path="/Formal-shirt"
               element={
                 <AdminRoute>
                   <FormalshirtScreens />
@@ -4710,6 +4883,46 @@ function App() {
               element={
                 <AdminRoute>
                   <BlazerScreens />
+                </AdminRoute>
+              }
+            />
+            <Route
+              path="/Dhotis"
+              element={
+                <AdminRoute>
+                  <DhotisScreens />
+                </AdminRoute>
+              }
+            />
+            <Route
+              path="/Kurtas"
+              element={
+                <AdminRoute>
+                  <KurtasScreens />
+                </AdminRoute>
+              }
+            />
+            <Route
+              path="/Indian"
+              element={
+                <AdminRoute>
+                  <IndianScreens />
+                </AdminRoute>
+              }
+            />
+            <Route
+              path="/Sherwani"
+              element={
+                <AdminRoute>
+                  <SherwaniScreens />
+                </AdminRoute>
+              }
+            />
+            <Route
+              path="/Nehru"
+              element={
+                <AdminRoute>
+                  <NehruScreens />
                 </AdminRoute>
               }
             />
@@ -4769,6 +4982,11 @@ function App() {
               exact
             ></Route>
             <Route path="/suit/:id" element={<SuitScreen />} exact></Route>
+            <Route path="/sherwani/:id" element={<SherwaniScreen />} exact></Route>
+            <Route path="/nehru/:id" element={<NehruScreen />} exact></Route>
+            <Route path="/dhotis/:id" element={<DhotisScreen />} exact></Route>
+            <Route path="/indian/:id" element={<IndianScreen />} exact></Route>
+            <Route path="/kurtas/:id" element={<KurtasScreen />} exact></Route>
             <Route
               path="/orderhistory"
               element={<OrderHistoryScreen />}

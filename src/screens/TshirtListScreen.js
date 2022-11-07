@@ -21,6 +21,7 @@ export default function TshirtListScreen(props) {
   const tshirtList = useSelector((state) => state.tshirtList);
   const { loading, error, tshirts, page, pages } = tshirtList;
   const tshirtCreate = useSelector((state) => state.tshirtCreate);
+  console.log("called------->tshirtCreate",tshirtCreate);
   const {
     loading: loadingCreate,
     error: errorCreate,
