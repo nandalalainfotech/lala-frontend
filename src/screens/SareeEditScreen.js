@@ -67,8 +67,8 @@ export default function SareeEditScreen(props) {
   const [errorUpload, setErrorUpload] = useState('');
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
+
   const uploadFileHandler = async (e) => {
-    console.log("xxx", e);
     const file = e.target.files[0];
     const bodyFormData = new FormData();
     bodyFormData.append('image', file);
@@ -81,13 +81,13 @@ export default function SareeEditScreen(props) {
         },
       });
       setImage(data);
-      console.log("iii.....", setImage);
       setLoadingUpload(false);
     } catch (error) {
       setErrorUpload(error.message);
       setLoadingUpload(false);
     }
   };
+  
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>

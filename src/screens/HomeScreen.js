@@ -1,38 +1,88 @@
-import React, { useEffect } from 'react';
-import Product from '../components/Product';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
-import { useDispatch, useSelector } from 'react-redux';
-import { listProducts } from '../actions/productAction';
-import { listTopSellers } from '../actions/userAction';
+import React, { useEffect } from "react";
+import Product from "../components/Product";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
+import { useDispatch, useSelector } from "react-redux";
+import { listProducts } from "../actions/productAction";
+import { listTopSellers } from "../actions/userAction";
 // import { Link } from 'react-router-dom';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
-import { Link } from 'react-router-dom';
-
-
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+import { Link } from "react-router-dom";
+import { listKids } from "../actions/kidAction";
+import { listWomens } from "../actions/womenAction";
+import Women from "../components/women";
+import Kid from "../components/Kid";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
-  // console.log(productList)
-  const { loading, error, products } = productList;
+  const { products } = productList;
   const userTopSellersList = useSelector((state) => state.userTopSellersList);
+  const womenList = useSelector((state) => state.womenList);
+  const { womens } = womenList;
+  const kidList = useSelector((state) => state.kidList);
+  const { loading, error, kids } = kidList;
   const {
     loading: loadingSellers,
     error: errorSellers,
     users: sellers,
   } = userTopSellersList;
-
-
   useEffect(() => {
     dispatch(listProducts({}));
+    dispatch(listKids({}));
+    dispatch(listWomens({}));
     dispatch(listTopSellers());
   }, [dispatch]);
+
+  var settings = {
+    autoplay: false,
+    autoplaySpeed: 1300,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    dots: false,
+    arrows: true,
+    infinite: false,
+    speed: 800,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    draggable: true,
+    swipeToSlide: true,
+    variableWidth: true,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div>
-
-      <div className='convey'>
+      <div className="convey">
         {/* <img src="../image/ama1.jpg" alt="home" height="500px" width="1320px"/> */}
         <h2>Top Sellers</h2>
         {loadingSellers ? (
@@ -41,399 +91,151 @@ export default function HomeScreen() {
           <MessageBox variant="danger">{errorSellers}</MessageBox>
         ) : (
           <>
-            {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
+            {sellers?.length === 0 && <MessageBox>No Seller Found</MessageBox>}
 
-            {sellers.map((seller) => (
-
+            {sellers?.map((seller) => (
               <div key={seller._id}>
-
                 {/* <div className="carousel-item"> */}
 
                 <Carousel showArrows autoPlay showThumbs={false}>
                   {/* <Carousel showArrows active showThumbs={true}> */}
                   <Link to={`/seller/${seller._id}`}>
+                    <img
+                      className="sellerimg"
+                      src={seller.seller.logo1}
+                      alt={seller.seller.name}
+                    />
 
+                    <img
+                      className="sellerimg"
+                      src={seller.seller.logo2}
+                      alt={seller.seller.name}
+                    />
 
-                    <img className='sellerimg' src={seller.seller.logo1} alt={seller.seller.name} />
+                    <img
+                      className="sellerimg"
+                      src={seller.seller.logo3}
+                      alt={seller.seller.name}
+                    />
 
-                    <img className='sellerimg' src={seller.seller.logo2} alt={seller.seller.name} />
-
-                    <img className='sellerimg' src={seller.seller.logo3} alt={seller.seller.name} />
-
-                    <img className='sellerimg' src={seller.seller.logo4} alt={seller.seller.name} />
-
-
+                    <img
+                      className="sellerimg"
+                      src={seller.seller.logo4}
+                      alt={seller.seller.name}
+                    />
                   </Link>
 
                   <Link to={`/seller/${seller._id}`}>
+                    <img
+                      className="sellerimg"
+                      src={seller.seller.logo1}
+                      alt={seller.seller.name}
+                    />
 
+                    <img
+                      className="sellerimg"
+                      src={seller.seller.logo2}
+                      alt={seller.seller.name}
+                    />
 
-                    <img className='sellerimg' src={seller.seller.logo1} alt={seller.seller.name} />
+                    <img
+                      className="sellerimg"
+                      src={seller.seller.logo3}
+                      alt={seller.seller.name}
+                    />
 
-                    <img className='sellerimg' src={seller.seller.logo2} alt={seller.seller.name} />
-
-                    <img className='sellerimg' src={seller.seller.logo3} alt={seller.seller.name} />
-
-                    <img className='sellerimg' src={seller.seller.logo4} alt={seller.seller.name} />
-
-
+                    <img
+                      className="sellerimg"
+                      src={seller.seller.logo4}
+                      alt={seller.seller.name}
+                    />
                   </Link>
-
                 </Carousel>
-
-
               </div>
 
               // </div>
             ))}
-
           </>
-        )
-        }
+        )}
       </div>
 
-
+      <h2>Product's collection</h2>
+      {loading ? (
+        <LoadingBox></LoadingBox>
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
+        <>
+          <Slider {...settings}>
+            {products?.map((menProduct) => (
+              <div>
+                <Product key={menProduct._id} product={menProduct}></Product>
+              </div>
+            ))}
+          </Slider>
+        </>
+      )}
 
       <h2>Men's collection</h2>
-      {
-        loading ? (
-          <LoadingBox></LoadingBox>
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <>
-            {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
-            {/* {sarees.length === 0 && <MessageBox>No Product Found</MessageBox>} */}
-            <div className="row center">
-              {products.map((product) => (
-                <Product key={product._id} product={product}></Product>
+      {loading ? (
+        <LoadingBox></LoadingBox>
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
+        <>
+          <Slider {...settings}>
+            {products.filter((menProduct) => {
+                return menProduct.category === "men-casual";
+              })
+              .map((menProduct) => (
+                <div>
+                  <Product key={menProduct._id} product={menProduct}></Product>
+                </div>
               ))}
-            </div>
-            {/* <div className="row center">
-              {sarees.map((saree) => (
-                <Saree key={saree._id} product={saree}></Saree>
+          </Slider>
+        </>
+      )}
+
+      <h2>Women collection</h2>
+      {loading ? (
+        <LoadingBox></LoadingBox>
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
+        <>
+          <Slider {...settings}>
+            {products.filter((product) => {
+                return product.category === "women";
+              })
+              .map((product) => (
+                <div>
+                  <Product key={product._id} product={product}></Product>
+                </div>
               ))}
-            </div> */}
+          </Slider>
+        </>
+      )}
 
-          </>
-        )
-      }
-      {/* <h2>Men's collection</h2> */}
-
-      <h2>Women's collection</h2>
-
-      <div className='armour'>
-        <div className="carousel-item">
-          <Carousel showArrows autoPlay showThumbs={true}>
-            <div className='row'>
-
-              <div className='col-sm-2'>
-                <div className="card1">
-                  <img src="/image/p7.jpg" alt="Avatar" height="300px" />
-
-
-                  <div className="card-body">
-                    <div class="Name">
-                      <p>purly saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $580
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
+      <h2>Kids collection</h2>
+      {loading ? (
+        <LoadingBox></LoadingBox>
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
+        <>
+          <Slider {...settings}>
+            {products
+              .filter((kidProduct) => {
+                return kidProduct?.category === "Kids";
+              })
+              .map((kidProduct) => (
+                <div>
+                  <Product key={kidProduct._id} product={kidProduct}></Product>
                 </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card2">
-                  <img src="/image/p8.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body">
-                    <div class="Name">
-                      <p>traditional saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $420
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card3">
-                  <img src="/image/p9.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body">
-                    <div class="Name">
-                      <p>maskar saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      {/* <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span> */}
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $720
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card4">
-                  <img src="/image/p91.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body">
-                    <div class="Name">
-                      <p>Pinaky saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      {/* <span><i class="fa fa-star"></i></span> */}
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $920
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div className='row'>
-
-              <div className='col-sm-2'>
-                <div className="card1">
-                  <img src="/image/p10.jpg" alt="Avatar" height="300px" />
-
-
-                  <div class="card-body" >
-                    <div class="Name">
-                      <p>paper saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $580
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card2">
-                  <img src="/image/p11.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body" >
-                    <div class="Name">
-                      <p>maska saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $420
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card3">
-                  <img src="/image/p12.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body" >
-                    <div class="Name">
-                      <p>arutha saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      {/* <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span> */}
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $720
-                    </div>
-                    {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-                  </div>
-                </div>
-              </div>
-              <div className='col-sm-2'>
-                <div className="card4">
-                  <img src="/image/p45.jpg" alt="Avatar" height="300px" />
-                  <div class="card-body" >
-                    <div class="Name">
-                      <p>jimka saree</p>
-                    </div>
-                    <div class="rating">
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      <span><i class="fa fa-star"></i></span>
-                      {/* <span><i class="fa fa-star"></i></span> */}
-                      <span><i class="fa fa-star-half-o"></i></span>
-                    </div>
-                    <div class="price">
-                      $920
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </Carousel>
-        </div>
-      </div>
-      <h2>Kid's collection</h2>
-      <div className='container'>
-        <div className='row'>
-
-          <div className='col-sm-2'>
-            <div class="card5">
-              <img src="/image/kid5.jpg" alt="Avatar" height="300px" width="280px" />
-
-
-              <div class="card-body">
-                <div class="Name">
-                  <p>angel medi</p>
-                </div>
-                <div class="rating">
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star-half-o"></i></span>
-                </div>
-                <div class="price">
-                  $980
-                </div>
-                {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-              </div>
-            </div>
-          </div>
-          <div className='col-sm-2'>
-            <div class="card6">
-              <img src="/image/kid2.jpg" alt="Avatar" height="300px" width="280px"/>
-              <div class="card-body">
-                <div class="Name">
-                  <p>hansa inskert</p>
-                </div>
-                <div class="rating">
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star-half-o"></i></span>
-                </div>
-                <div class="price">
-                  $520
-                </div>
-                {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-              </div>
-            </div>
-          </div>
-          <div className='col-sm-2'>
-            <div class="card7">
-              <img src="/image/kid3.jpg" alt="Avatar" height="300px" width="280px" />
-              <div class="card-body" >
-                <div class="Name">
-                  <p>umberalla harie</p>
-                </div>
-                <div class="rating">
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  {/* <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span> */}
-                  <span><i class="fa fa-star-half-o"></i></span>
-                </div>
-                <div class="price">
-                  $920
-                </div>
-                {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-              </div>
-            </div>
-          </div>
-          <div className='col-sm-2'>
-            <div class="card8" >
-              <img src="/image/kid4.jpg" alt="aval8" height="300px" width="280px" />
-              <div className="card-body">
-                <div className="Name">
-                  <p>classic medie</p>
-                </div>
-                <div class="rating">
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  <span><i class="fa fa-star"></i></span>
-                  {/* <span><i class="fa fa-star"></i></span> */}
-                  <span><i class="fa fa-star-half-o"></i></span>
-                </div>
-                <div class="price">
-                  $1220
-                </div>
-                {/* <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> */}
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-
-      {/* {
-        loading ? (
-          <LoadingBox></LoadingBox>
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <>
-            {sarees.length === 0 && <MessageBox>No Product Found</MessageBox>}
-            <div className="row center">
-              {products.map((saree) => (
-                <Saree key={saree._id} saree={saree}></Saree>
               ))}
-            </div>
-
-
-          </>
-        )
-      } */}
-
-
-
-    </div >
-
-
+          </Slider>
+        </>
+      )}
+    </div>
   );
 }

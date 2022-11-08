@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-// import { Link } from '../../node_modules/react-router-dom/index';
 import { signin } from '../actions/userAction';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
@@ -25,17 +24,17 @@ export default function SigninScreen(props) {
     }
   }, [navigate, redirect, userInfo]);
   return (
-    <div className='formtion'>
-      <div className="formation-body">
-        <form className="form" onSubmit={submitHandler}>
+    <div className='formtion tempimg'>
+      <div className='signincard' >
+        <form className="signinform" onSubmit={submitHandler}>
           <div>
-            <h1>Sign In</h1>
+            <label style={{ textAlign: 'center', fontSize: '18px' }}><i className="fa fa-user"></i>&nbsp;<b>Sign In</b></label>
           </div>
           {loading && <LoadingBox></LoadingBox>}
           {error && <MessageBox variant="danger">{error}</MessageBox>}
           <div>
-            <label htmlFor="email">Email address</label>
-            <input
+            <label className="signinlabel" htmlFor="email">Email Address</label>
+            <input className="signininput" style={{ margin: '0px 50px' }}
               type="email"
               id="email"
               placeholder="Enter email"
@@ -44,8 +43,8 @@ export default function SigninScreen(props) {
             ></input>
           </div>
           <div>
-            <label htmlFor="password">Password</label>
-            <input
+            <label className="signinlabel" htmlFor="password">Password</label>
+            <input className="signininput" style={{ margin: '0px 50px' }}
               type="password"
               id="password"
               placeholder="Enter password"
@@ -54,24 +53,18 @@ export default function SigninScreen(props) {
             ></input>
           </div>
           <div>
-            <label />
-            <button className="primary" type="submit">
-              Sign In
+          <label />
+            <button className="signsubmit" type="submit">
+              Login
             </button>
           </div>
           <div>
             <label />
-            {/* <div>
-              New customer?{' '}
-              <Link to={`/register?redirect=${redirect}`}>
-                Start here
-              </Link>
-            </div> */}
-
             <>
-              New customer?{''}
-              <div className='round'
-                onClick={() => navigate("/register")}>Start here</div>
+              <label className='reglink' style={{ textAlign: 'center' }}>
+                New customer?&nbsp;&nbsp;{''}
+                <span onClick={() => navigate("/register")}><b>Start here</b></span>
+              </label>
             </>
           </div>
         </form>

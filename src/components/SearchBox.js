@@ -11,9 +11,10 @@ export default function SearchBox(props) {
   return (
     <form className="search" onSubmit={submitHandler} >
       <div className="row">
-        <div class="form-group has-search">
-          <span class="fa fa-search form-control-feedback"></span>
-          <input type="text" class="form-control" placeholder="Search for Products,brands and more" onChange={(e)=>setName(e.target.value)}></input>
+        <div className="form-group has-search">
+          <span className="fa fa-camera form-control-feedback"></span>
+          <input type="text" className="form-control" placeholder="Search for Products,brands and more" onChange={(e)=>setName(e.target.value)}></input>
+          <button type="submit" className="search-submit"><i className="fa fa-search">Search</i></button>
         </div>
 
 

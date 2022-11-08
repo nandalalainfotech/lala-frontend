@@ -17,11 +17,13 @@ import { Link } from "react-router-dom";
 export default function ProductListScreen(props) {
   const navigate = useNavigate();
   const { pageNumber = 1 } = useParams();
+  const pageSize = 15;
   const { pathname } = useLocation();
   const sellerMode = pathname.indexOf('/seller') >= 0;
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
   const productCreate = useSelector((state) => state.productCreate);
+  console.log("called----->productCreate",productCreate);
   const {
     loading: loadingCreate,
     error: errorCreate,
@@ -64,12 +66,13 @@ export default function ProductListScreen(props) {
       dispatch(deleteProduct(product._id));
     }
   };
+  console.log("called----->createProduct",createProduct);
   const createHandler = () => {
-    dispatch(createProduct());
+        dispatch(createProduct());
   };
   return (
     <div>
-      <div className="row">
+      <div className="row productsLists">
         <h1>Products</h1>
         <button type="button" className="primary" onClick={createHandler}>
           Create Product
@@ -156,7 +159,7 @@ export default function ProductListScreen(props) {
             </tbody>
           </table>
           <div className="row center pagination">
-            {[...Array(pages).keys()].map((x) => (
+            {[...Array(pages,pageSize).keys()].map((x) => (
               <Link
                 className={x + 1 === page ? 'active' : ''}
                 key={x + 1}
