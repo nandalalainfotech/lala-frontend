@@ -85,62 +85,6 @@ export default function PlaceOrderScreen() {
                   ))}
                 </ul>
               </div>
-
-
-              <div className="card card-body">
-                <h2>Order Items</h2>
-                <ul>
-                  {cart.cartItems.map((item) => (
-                    <li key={item.women}>
-                      <div className="row">
-                        <div>
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            className="small"
-                          ></img>
-                        </div>
-                        <div className="min-30">
-                          <Link to={`/women/${item.women}`}>
-                            {item.name}
-                          </Link>
-                        </div>
-                        <div>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="card card-body">
-                <h2>Order Items</h2>
-                <ul>
-                  {cart.cartItems.map((item) => (
-                    <li key={item.kid}>
-                      <div className="row">
-                        <div>
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            className="small"
-                          ></img>
-                        </div>
-                        <div className="min-30">
-                          <Link to={`/kid/${item.kid}`}>
-                            {item.name}
-                          </Link>
-                        </div>
-                        <div>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-
             </li>
           </ul>
         </div>

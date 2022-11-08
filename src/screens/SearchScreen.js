@@ -210,6 +210,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { useNavigate } from '../../node_modules/react-router-dom/dist/index';
 import { listProducts } from '../actions/productAction';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
@@ -228,6 +229,7 @@ export default function SearchScreen(props) {
     pageNumber = 1,
   } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
   const productCategoryList = useSelector((state) => state.productCategoryList);
@@ -270,12 +272,12 @@ export default function SearchScreen(props) {
         ) : (
           <div>{products.length} Results</div>
         )}
-        <div>
+        <div className='sort'>
           Sort by{' '}
           <select
             value={order}
             onChange={(e) => {
-              props.history.push(getFilterUrl({ order: e.target.value }));
+              navigate(getFilterUrl({ order: e.target.value }));
             }}
           >
             <option value="newest">Newest Arrivals</option>

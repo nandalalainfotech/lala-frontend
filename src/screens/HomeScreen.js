@@ -39,7 +39,7 @@ export default function HomeScreen() {
   }, [dispatch]);
 
   var settings = {
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1300,
     pauseOnFocus: true,
     pauseOnHover: true,
@@ -167,7 +167,6 @@ export default function HomeScreen() {
       ) : (
         <>
           <Slider {...settings}>
-            {/* {products?.filter(product => product.includes('men') ( */}
             {products?.map((menProduct) => (
               <div>
                 <Product key={menProduct._id} product={menProduct}></Product>
@@ -185,9 +184,8 @@ export default function HomeScreen() {
       ) : (
         <>
           <Slider {...settings}>
-            {/* {products?.filter(product => product.includes('men') ( */}
             {products.filter((menProduct) => {
-                return menProduct.category === "men";
+                return menProduct.category === "men-casual";
               })
               .map((menProduct) => (
                 <div>
@@ -206,7 +204,6 @@ export default function HomeScreen() {
       ) : (
         <>
           <Slider {...settings}>
-            {/* {products?.filter(product => product.includes('men') ( */}
             {products.filter((product) => {
                 return product.category === "women";
               })

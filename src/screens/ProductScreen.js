@@ -1,4 +1,4 @@
-import React, { useEffect, useState  } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import LoadingBox from "../components/LoadingBox";
@@ -7,20 +7,19 @@ import Rating from "../components/Rating";
 import { createReview, detailsProduct } from "../actions/productAction";
 import { PRODUCT_REVIEW_CREATE_RESET } from "../constants/productConstants";
 // import ModalImage from "react-modal-image";
-import ReactImageMagnify from 'react-image-magnify';
-import Axios from 'axios';
-
+import ReactImageMagnify from "react-image-magnify";
+import Axios from "axios";
 
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const params = useParams();
   const { id: productId } = params;
-  
+
   const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
-  
+
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
@@ -32,8 +31,8 @@ export default function ProductScreen(props) {
   } = productReviewCreate;
 
   const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState('');
-  const [image, setImage] = useState()
+  const [comment, setComment] = useState("");
+  const [image, setImage] = useState();
 
   useEffect(() => {
     if (successReviewCreate) {
@@ -42,19 +41,19 @@ export default function ProductScreen(props) {
       setComment("");
       dispatch({ type: PRODUCT_REVIEW_CREATE_RESET });
     }
-      dispatch(detailsProduct(productId));
-    
-  },[dispatch, productId, successReviewCreate]);
-
+    dispatch(detailsProduct(productId));
+  }, [dispatch, productId, successReviewCreate]);
 
   useEffect(() => {
-    if(!loading && !product) return;
+    if (!loading && !product) return;
     const fetchBusinesses = async () => {
-      const img = await Axios.get(`/api/uploads/show/${product.fileId}`, { responseType: 'blob' });
+      const img = await Axios.get(`/api/uploads/show/${product.fileId}`, {
+        responseType: "blob",
+      });
       setImage(URL.createObjectURL(img.data));
     };
-    fetchBusinesses()
-  },[loading, product]);
+    fetchBusinesses();
+  }, [loading, product]);
 
   const addToCartHandler = () => {
     navigate(`/cart/${productId}?qty=${qty}`);
@@ -72,7 +71,7 @@ export default function ProductScreen(props) {
   };
 
   return (
-    <div>
+    <div className="container-fluid">
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -86,13 +85,13 @@ export default function ProductScreen(props) {
                   {...{
                     smallImage: {
                       className: "large",
-                      src:`${image}`,
+                      src: `${image}`,
                       width: 380,
                       height: 480,
                     },
                     largeImage: {
                       className: "small",
-                      src:`${image}`,
+                      src: `${image}`,
                       width: 600,
                       height: 600,
                     },
@@ -100,44 +99,67 @@ export default function ProductScreen(props) {
                 />
               </div>
             </div>
-
+            <div className="col-md-4">
+              <label>
+                {" "}
+                Filter Size
+                <select
+                  className="form-control"
+                  value={this?.props.size}
+                  onChange={(event) => {
+                    this?.props.filterProducts(
+                      this?.props.products,
+                      event.target.value
+                    );
+                  }}
+                >
+                  <option value="">ALL</option>
+                  <option value="x">XS</option>
+                  <option value="s">S</option>
+                  <option value="m">M</option>
+                  <option value="l">L</option>
+                  <option value="xl">XL</option>
+                  <option value="xxl">XXL</option>
+                </select>
+              </label>
+            </div>
             <div className="col-1">
               {/* <Link to="/">
                 <h2>Back to result</h2>
               </Link> */}
-            <div className="card card-body">
-              <div className="step1">
-                <ul>
-                  <li>
-                    <h1 style={{ textTransform: "uppercase" }}>
-                      {product.name}
-                    </h1>
-                  </li>
-                  <li>
-                    <Rating
-                      rating={product.rating}
-                      numReviews={product.numReviews}
-                    ></Rating>
-                  </li>
-                  <li>Pirce : ₹{product.price}</li>
-                  <li>
-                    Category:
-                    <span> {product.category}</span>
-                  </li>
-                  <li>
-                    Brand:
-                    <span> {product.brand}</span>
-                  </li>
-                  <li>
-                    Description:
-                    <span> {product.description}</span>
-                  </li>
-                </ul>
-              </div>
+              <div className="card card-body">
+                <div className="step1">
+                  <ul>
+                    <li>
+                      <h1 style={{ textTransform: "uppercase" }}>
+                        {product.name}
+                      </h1>
+                    </li>
+                    <li>
+                      <Rating
+                        rating={product.rating}
+                        numReviews={product.numReviews}
+                      ></Rating>
+                    </li>
+                    <li>Pirce : ₹{product.price}</li>
+                    <li>
+                      Category:
+                      <span> {product.category}</span>
+                    </li>
+                    <li>
+                      Brand:
+                      <span> {product.brand}</span>
+                    </li>
+                    <li>
+                      Description:
+                      <span> {product.description}</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               <div className="step2">
-                <div className="card card-body" style={{marginTop: '40px'}}>
+                <div className="card card-body" style={{ margin: "30px" }}>
                   <ul>
                     <li>
                       <div className="row">
@@ -192,7 +214,7 @@ export default function ProductScreen(props) {
                 </div>
               </div>
 
-              <div className="card card-body" style={{marginTop: '40px'}}>
+              <div className="card card-body" style={{ marginTop: "40px" }}>
                 <div className="step3">
                   <h2 style={{ marginLeft: "20px" }}>Reviews & Ratings</h2>
                   {product.reviews.length === 0 && (
