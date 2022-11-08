@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 export default function ProductListScreen(props) {
   const navigate = useNavigate();
   const { pageNumber = 1 } = useParams();
+  const pageSize = 15;
   const { pathname } = useLocation();
   const sellerMode = pathname.indexOf('/seller') >= 0;
   const productList = useSelector((state) => state.productList);
@@ -158,7 +159,7 @@ export default function ProductListScreen(props) {
             </tbody>
           </table>
           <div className="row center pagination">
-            {[...Array(pages).keys()].map((x) => (
+            {[...Array(pages,pageSize).keys()].map((x) => (
               <Link
                 className={x + 1 === page ? 'active' : ''}
                 key={x + 1}
