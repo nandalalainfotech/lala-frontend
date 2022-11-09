@@ -97,58 +97,34 @@ export default function HomeScreen() {
               <div key={seller._id}>
                 {/* <div className="carousel-item"> */}
 
-                <Carousel showArrows autoPlay showThumbs={false}>
+                <Carousel showArrows autoPlay showThumbs={false} infiniteLoop={true} > 
                   {/* <Carousel showArrows active showThumbs={true}> */}
-                  <Link to={`/seller/${seller._id}`}>
-                    <img
-                      className="sellerimg"
-                      src={seller.seller.logo1}
-                      alt={seller.seller.name}
-                    />
+                  <Link to={`/seller`}>
+                    <ul data-slides>
+                      <li className="slide" >
+                        <img className="sellerimg" src="/image/p10.jpg" />
 
-                    <img
-                      className="sellerimg"
-                      src={seller.seller.logo2}
-                      alt={seller.seller.name}
-                    />
+                        <img className="sellerimg" src="/image/p91.jpg" />
 
-                    <img
-                      className="sellerimg"
-                      src={seller.seller.logo3}
-                      alt={seller.seller.name}
-                    />
+                        <img className="sellerimg" src="/image/sa4.jpg" />
 
-                    <img
-                      className="sellerimg"
-                      src={seller.seller.logo4}
-                      alt={seller.seller.name}
-                    />
+                        <img className="sellerimg" src="/image/p11.jpg" />
+                      </li>
+                    </ul>
                   </Link>
 
-                  <Link to={`/seller/${seller._id}`}>
-                    <img
-                      className="sellerimg"
-                      src={seller.seller.logo1}
-                      alt={seller.seller.name}
-                    />
+                  <Link to={`/seller`}>
+                    <ul>
+                      <li className="slide" data-active>
+                        <img className="sellerimg" src="/image/p12.jpg" />
 
-                    <img
-                      className="sellerimg"
-                      src={seller.seller.logo2}
-                      alt={seller.seller.name}
-                    />
+                        <img className="sellerimg" src="/image/sa5.jpg" />
 
-                    <img
-                      className="sellerimg"
-                      src={seller.seller.logo3}
-                      alt={seller.seller.name}
-                    />
+                        <img className="sellerimg" src="/image/sa9.jpg" />
 
-                    <img
-                      className="sellerimg"
-                      src={seller.seller.logo4}
-                      alt={seller.seller.name}
-                    />
+                        <img className="sellerimg" src="/image/sa10.jpg" />
+                      </li>
+                    </ul>
                   </Link>
                 </Carousel>
               </div>
@@ -184,7 +160,8 @@ export default function HomeScreen() {
       ) : (
         <>
           <Slider {...settings}>
-            {products.filter((menProduct) => {
+            {products
+              .filter((menProduct) => {
                 return menProduct.category === "men-casual";
               })
               .map((menProduct) => (
@@ -204,7 +181,8 @@ export default function HomeScreen() {
       ) : (
         <>
           <Slider {...settings}>
-            {products.filter((product) => {
+            {products
+              .filter((product) => {
                 return product.category === "women";
               })
               .map((product) => (

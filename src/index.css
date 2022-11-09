@@ -3982,3 +3982,18 @@ margin-top: 20px;
 .sort{
   margin-top: 60px;
 }
+
+
+/* top seller*/
+.carousel .slide img {
+  max-width: 30rem;
+}
+/* Sellering image*/
+img.sellerimg {
+  width: 400px;
+  height: 400px;
+  size: 400px;
+  margin: 5px;
+  animation: blinker 2s linear infinite;
+  cursor: pointer !important;
+  }
