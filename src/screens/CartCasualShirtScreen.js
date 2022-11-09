@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { removeFromCartCasual } from "../actions/cartCasualShirtAction";
 import { addToCart, removeFromCartTshirt } from "../actions/carttshirtAction";
 import MessageBox from "../components/MessageBox";
 
@@ -23,7 +24,7 @@ export default function CartCasualShirtScreen(props) {
   }, [dispatch, casualshirtId, qty]);
   const removeFromCartHandler = (id) => {
     // delete action
-    dispatch(removeFromCartTshirt(id));
+    dispatch(removeFromCartCasual(id));
   };
 
   const checkoutHandler = () => {

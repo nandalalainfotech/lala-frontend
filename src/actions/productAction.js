@@ -18,6 +18,12 @@ import {
   PRODUCT_CATEGORY_LIST_SUCCESS,
   PRODUCT_CATEGORY_LIST_REQUEST,
   PRODUCT_CATEGORY_LIST_FAIL,
+  PRODUCT_CATEGORYGROUP_LIST_SUCCESS,
+  PRODUCT_CATEGORYGROUP_LIST_REQUEST,
+  PRODUCT_CATEGORYGROUP_LIST_FAIL,
+  PRODUCT_CATEGORYTYPE_LIST_SUCCESS,
+  PRODUCT_CATEGORYTYPE_LIST_REQUEST,
+  PRODUCT_CATEGORYTYPE_LIST_FAIL,
   PRODUCT_REVIEW_CREATE_REQUEST,
   PRODUCT_REVIEW_CREATE_SUCCESS,
   PRODUCT_REVIEW_CREATE_FAIL,
@@ -29,6 +35,8 @@ export const listProducts =
     seller = '',
     name = '',
     category = '',
+    categorygroup = '',
+    categorytype = '',
     order = '',
     min = 0,
     max = 0,
@@ -40,7 +48,7 @@ export const listProducts =
     });
     try {
       const { data } = await Axios.get(
-        `/api/products?pageNumber=${pageNumber}&seller=${seller}&name=${name}&category=${category}&min=${min}&max=${max}&rating=${rating}&order=${order}`
+        `/api/products?pageNumber=${pageNumber}&seller=${seller}&name=${name}&category=${category}&categorygroup=${categorygroup}&categorytype=${categorytype}&min=${min}&max=${max}&rating=${rating}&order=${order}`
       );
      
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
@@ -56,10 +64,38 @@ export const listProductCategories = () => async (dispatch) => {
   try {
     const { data } = await Axios.get(`/api/products/categories`);
     dispatch({ type: PRODUCT_CATEGORY_LIST_SUCCESS, payload: data });
+   
   } catch (error) {
     dispatch({ type: PRODUCT_CATEGORY_LIST_FAIL, payload: error.message });
   }
 };
+
+export const listProductCategoriesgroup = () => async (dispatch) => {
+  dispatch({
+    type: PRODUCT_CATEGORYGROUP_LIST_REQUEST,
+  });
+  try {
+    const { data } = await Axios.get(`/api/products/categoriesgroup`);
+    dispatch({ type: PRODUCT_CATEGORYGROUP_LIST_SUCCESS, payload: data });
+   
+  } catch (error) {
+    dispatch({ type: PRODUCT_CATEGORYGROUP_LIST_FAIL, payload: error.message });
+  }
+};
+
+export const listProductCategoriestype = () => async (dispatch) => {
+  dispatch({
+    type: PRODUCT_CATEGORYTYPE_LIST_REQUEST,
+  });
+  try {
+    const { data } = await Axios.get(`/api/products/categoriestype`);
+    dispatch({ type: PRODUCT_CATEGORYTYPE_LIST_SUCCESS, payload: data });
+   
+  } catch (error) {
+    dispatch({ type: PRODUCT_CATEGORYTYPE_LIST_FAIL, payload: error.message });
+  }
+};
+
 
 export const detailsProduct = (productId) => async (dispatch) => {
   dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });

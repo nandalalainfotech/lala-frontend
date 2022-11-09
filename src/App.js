@@ -32,7 +32,7 @@ import SellerRoute from "./components/SellerRoute";
 import SellerScreen from "./screens/SellerScreen";
 import SearchBox from "./components/SearchBox";
 import SearchScreen from "./screens/SearchScreen";
-import { listProductCategories } from "./actions/productAction";
+import { listProductCategories, listProductCategoriesgroup, listProductCategoriestype } from "./actions/productAction";
 import { listSareeCategories } from "./actions/sareeAction";
 import MessageBox from "./components/MessageBox";
 import LoadingBox from "./components/LoadingBox";
@@ -162,8 +162,24 @@ function App() {
     error: errorCategories,
     categories,
   } = productCategoryList;
+  
+  const productCategorygroupList = useSelector((state) => state.productCategorygroupList);
+  const {
+    loadinggrp: loadingCategoriesGroup,
+    errorcategrp: errorCategoriesGroup,
+    categoriesGroup,
+  } = productCategorygroupList;
+
+  const productCategorytypeList = useSelector((state) => state.productCategorytypeList);
+  const {
+    loadingtype: loadingCategoriesType,
+    errorcategtype: errorCategoriesType,
+    categoriesType,
+  } = productCategorytypeList;
   useEffect(() => {
     dispatch(listProductCategories());
+    dispatch(listProductCategoriesgroup());
+    dispatch(listProductCategoriestype());
     dispatch(listSareeCategories());
   }, [dispatch]);
 
@@ -176,11 +192,10 @@ function App() {
   // useEffect(() => {
   //   dispatch(listSareeCategories());
   // }, [dispatch]);
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
     <BrowserRouter>
       <div className="grid-container">
-      <header>
+        <header>
           <div className="row navigation">
             <button
               type="button"
@@ -190,15 +205,15 @@ function App() {
               <i className="fa fa-bars"></i>
             </button>
             <div className="brand-name">
-              <img
-                src="/image/logo.png"
-                alt="lala"
-                height="35px"
-                width="30px"
-                className="logo img"
-                margin-right="250px"
-              />
               <Link to="/">
+                <img
+                  src="/image/logo.png"
+                  alt="lala"
+                  height="35px"
+                  width="30px"
+                  className="logo img"
+                  margin-right="250px"
+                />
                 <span className="nandalala">&nbsp;</span>lala
                 <span className="in"></span>
               </Link>
@@ -208,20 +223,10 @@ function App() {
                 <SearchBox />
               </div>
             )}
-            {/* <button
-              className="hamburger"
-              onClick={() => {
-                setIsNavExpanded(!isNavExpanded);
-              }}
+            <div
+              className= "navigation-menu"
+             
             >
-              <i className="fa fa-bars"></i>
-            </button> */}
-            {/* <div
-              className={
-                isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
-              }
-            > */}
-            <div className="navigation-menu">
               <ul>
                 <li>
                   <div className="dropdown">
@@ -317,14 +322,14 @@ function App() {
               </ul>
             </div>
           </div>
-             
-         {/* {userInfo && (<div class="second-nav">
-            <div class="wrapper">
+          
+       {userInfo && (   <div className="second-nav">
+            <div className="wrapper">
               <input type="radio" name="slider" id="menu-btn" />
               <input type="radio" name="slider" id="close-btn" />
-              <ul class="nav-links">
-                <label for="close-btn" class="btn close-btn">
-                  <i class="fa fa-times"></i>
+              <ul className="nav-links">
+                <label htmlFor="close-btn" className="btn close-btn">
+                  <i className="fa fa-times"></i>
                 </label>
                 {userInfo && userInfo && (
                   <li>
@@ -332,17 +337,17 @@ function App() {
                       Men
                     </Link>
                     <input type="checkbox" id="showMega" />
-                    <label for="showMega" class="mobile-item">
+                    <label htmlFor="showMega" className="mobile-item">
                       MEN
                     </label>
-                    <div class="mega-box">
-                      <div class="content">
-                        <div class="row">
-                          <ul class="mega-links">
+                    <div className="mega-box">
+                      <div className="content">
+                        <div className="row">
+                          <ul className="mega-links">
                             <li>
                               <h3>
                                 <Link
-                                  to="/Topwear"
+                                  to="search/name/topwear"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Topwear
@@ -351,37 +356,37 @@ function App() {
                               {""}
                             </li>
                             <li>
-                              <Link to="/Tshirt">T-shirts</Link>
+                              <Link to="search/name/t-shirt">T-shirts</Link>
                             </li>
                             <li>
-                              <Link to="/casual">casual shirts</Link>
+                              <Link to="search/name/men-casual">casual shirts</Link>
                             </li>
                             <li>
-                              <Link to="/formal-shirts">formal shirts</Link>
-                            </li>
-
-                            <li>
-                              <Link to="/sweater">sweater</Link>
+                              <Link to="search/name/men-formal-shirt">formal shirts</Link>
                             </li>
 
                             <li>
-                              <Link to="/Jackets">Jackets</Link>
-                            </li>
-                            <li>
-                              <Link to="/Blazer-coats">Blazer&coats</Link>
+                              <Link to="search/name/men-sweater">sweater</Link>
                             </li>
 
                             <li>
-                              <Link to="/suits">suits</Link>
+                              <Link to="search/name/men-jacket">Jackets</Link>
                             </li>
                             <li>
-                              <Link to="/Rain-jackets">Rain Jackets</Link>
+                              <Link to="search/name/men-blazer">Blazer&coats</Link>
+                            </li>
+
+                            <li>
+                              <Link to="search/name/men-suit">suits</Link>
+                            </li>
+                            <li>
+                              <Link to="search/name/men-rain-jacket">Rain Jackets</Link>
                             </li>
 
                             <li>
                               <h3>
                                 <Link
-                                  to="/Indian-Festival-Wear"
+                                  to="search/name/men-indian"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Indian festival wear
@@ -390,28 +395,28 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="/Kurtas-kurtaseats">
+                              <Link to="search/name/men-kurtas">
                                 Kurtas&kurtaseats
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Sherwanis">Sherwanis</Link>
+                              <Link to="search/name/men-sherwani">Sherwanis</Link>
                             </li>
                             <li>
-                              <Link to="/Nehru-Jackets">NehruJackets</Link>
+                              <Link to="search/name/men-nehru">NehruJackets</Link>
                             </li>
 
                             <li>
-                              <Link to="/Dhotis">Dhotis</Link>
+                              <Link to="search/name/men-dhotis">Dhotis</Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links">
+                        <div className="row">
+                          <ul className="mega-links">
                             <li>
                               <h3>
                                 <Link
-                                  to="/Bottom-Wear"
+                                  to="search/name/men-Bottom-Wear"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Bottom Wear
@@ -419,20 +424,20 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Jeans">Jeans</Link>
+                              <Link to="search/name/men-jeans">Jeans</Link>
                             </li>
                             <li>
-                              <Link to="/Casual-trousers">Casual trousers</Link>
+                              <Link to="search/name/men-casual-trousers">Casual trousers</Link>
                             </li>
                             <li>
-                              <Link to="/formal-trousers">formal trousers</Link>
+                              <Link to="search/name/men-formal-trousers">formal trousers</Link>
                             </li>
                             <li>
-                              <Link to="/shorts">shorts</Link>
+                              <Link to="search/name/men-shorts">shorts</Link>
                             </li>
 
                             <li>
-                              <Link to="/trackpants-joggers">
+                              <Link to="search/name/men-trackpants-joggers">
                                 trackpants&joggers
                               </Link>
                             </li>
@@ -440,7 +445,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="/InnearWear-Sleepe"
+                                  to="search/name/men-InnearWear-Sleepe"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Innear Wear&Sleepe Wear
@@ -448,34 +453,34 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/briefs-trunks">briefs&trunks</Link>
+                              <Link to="search/name/men-briefs-trunks">briefs&trunks</Link>
                             </li>
                             <li>
-                              <Link to="/boxers">boxers</Link>
+                              <Link to="search/name/men-boxers">boxers</Link>
                             </li>
                             <li>
-                              <Link to="/formal-trousers">formal trousers</Link>
+                              <Link to="search/name/men-formal-trousers">formal trousers</Link>
                             </li>
                             <li>
-                              <Link to="/shorts">shorts</Link>
+                              <Link to="search/name/men-shorts">shorts</Link>
                             </li>
                             <li>
-                              <Link to="/vests">vests</Link>
+                              <Link to="search/name/men-vests">vests</Link>
                             </li>
                             <li>
-                              <Link to="/sleepwear-loungewear">
+                              <Link to="search/name/men-sleepwear-loungewear">
                                 sleepwear&loungewear
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="/thermals">thermals</Link>
+                              <Link to="search/name/men-thermals">thermals</Link>
                             </li>
 
                             <li>
                               <h3>
                                 <Link
-                                  to="/Plus-Size"
+                                  to="search/name/men-plus"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Plus Size
@@ -484,13 +489,13 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links">
+                        <div className="row">
+                          <ul className="mega-links">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Foot-Wear"
+                                  to="search/name/men-Foot-Wear"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Foot Wear
@@ -498,32 +503,32 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/casual-shoes">casual shoes</Link>
+                              <Link to="search/name/men-casual-shoes">casual shoes</Link>
                             </li>
                             <li>
-                              <Link to="/sports-shoes">sports shoes</Link>
+                              <Link to="search/name/men-sports-shoes">sports shoes</Link>
                             </li>
                             <li>
-                              <Link to="/formal-shoes">formal shoes</Link>
+                              <Link to="search/name/men-formal-shoes">formal shoes</Link>
                             </li>
                             <li>
-                              <Link to="/sneakers">sneakers</Link>
+                              <Link to="search/name/men-sneakers">sneakers</Link>
                             </li>
                             <li>
-                              <Link to="/sandals-floaters">
+                              <Link to="search/name/men-sandals-floaters">
                                 sandals&floaters
                               </Link>
                             </li>
                             <li>
-                              <Link to="/flipfloaps">flipfloaps</Link>
+                              <Link to="search/name/men-flipfloaps">flipfloaps</Link>
                             </li>
                             <li>
-                              <Link to="/socks">socks</Link>
+                              <Link to="search/name/men-socks">socks</Link>
                             </li>
                             <li>
                               <h3>
                                 <Link
-                                  to="/Personal-Care-Grooming"
+                                  to="search/name/men-Personal-Care-Grooming"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   personalCareGrooming
@@ -532,25 +537,25 @@ function App() {
                             </li>
                             <li>
                               <Link
-                                to="/Sunglasses-Frames"
+                                to="search/name/men-sunglasses-Frames"
                                 style={{ color: "#ee5f73" }}
                               >
                                 Sunglasses&Frames
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Watches" style={{ color: "#ee5f73" }}>
+                              <Link to="search/name/men-Watches" style={{ color: "#ee5f73" }}>
                                 Watches
                               </Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links">
+                        <div className="row">
+                          <ul className="mega-links">
                             <li>
                               <h3>
                                 <Link
-                                  to="/Sports-activy-Wear"
+                                  to="search/name/men-Sports-activy-Wear"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Sports activy Wear
@@ -558,44 +563,42 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/sports-shoes">sports shoes</Link>
+                              <Link to="search/name/men-sports-shoes">sports shoes</Link>
                             </li>
                             <li>
-                              <Link to="/sandal-shoes">sandal shoes</Link>
+                              <Link to="search/name/men-sandal-shoes">sandal shoes</Link>
                             </li>
                             <li>
-                              <Link to="/active-t-shirts">active t-shirts</Link>
+                              <Link to="search/name/men-active-t-shirts">active t-shirts</Link>
                             </li>
                             <li>
-                              <Link to="/trackpants-shorts">
+                              <Link to="search/name/men-trackpants-shorts">
                                 trackpants&shorts
                               </Link>
                             </li>
                             <li>
-                              <Link to="/tracksuits">tracksuits</Link>
+                              <Link to="search/name/men-tracksuits">tracksuits</Link>
                             </li>
                             <li>
-                              <Link to="/Jackets-sweetshirts">
+                              <Link to="search/name/men-jackets-sweetshirts">
                                 Jackets&sweetshirts
                               </Link>
                             </li>
-                            <li>
-                              <Link to="/active-t-shirts">active t-shirts</Link>
-                            </li>
+                           
 
                             <li>
-                              <Link to="/sports-accessories">
+                              <Link to="search/name/men-sports-accessories">
                                 sportsaccessories
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="/swirm-wears">swirm wears</Link>
+                              <Link to="search/name/men-swirm-wears">swirm wears</Link>
                             </li>
                             <li>
                               <h3>
                                 <Link
-                                  to="/gadgets"
+                                  to="search/name/men-gadgets"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   gadgets
@@ -603,25 +606,25 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/small-wearables">small wearables</Link>
+                              <Link to="search/name/men-small-wearables">small wearables</Link>
                             </li>
                             <li>
-                              <Link to="/fitness-gadgets">fitness gadgets</Link>
+                              <Link to="search/name/men-fitness-gadgets">fitness gadgets</Link>
                             </li>
                             <li>
-                              <Link to="/headphone">headphone</Link>
+                              <Link to="search/name/men-headphone">headphone</Link>
                             </li>
                             <li>
-                              <Link to="/speakers">speakers</Link>
+                              <Link to="search/name/men-speakers">speakers</Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links">
+                        <div className="row">
+                          <ul className="mega-links">
                             <li>
                               <h3>
                                 <Link
-                                  to="/Faschion-Accessories"
+                                  to="search/name/men-faschion"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Faschion Accessories
@@ -629,62 +632,62 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/wallets">wallets</Link>
+                              <Link to="search/name/men-wallets">wallets</Link>
                             </li>
 
                             <li>
-                              <Link to="/belts">belts</Link>
+                              <Link to="search/name/men-belts">belts</Link>
                             </li>
 
                             <li>
-                              <Link to="/perfume-bodymists">
+                              <Link to="search/name/men-perfume-bodymists">
                                 perfume&bodymists
                               </Link>
                             </li>
                             <li>
-                              <Link to="/belts">helmets</Link>
+                              <Link to="search/name/men-belts">helmets</Link>
                             </li>
                             <li>
-                              <Link to="/trimmers">trimmers</Link>
+                              <Link to="search/name/men-trimmers">trimmers</Link>
                             </li>
                             <li>
-                              <Link to="/Deodorants">Deodorants</Link>
+                              <Link to="search/name/men-Deodorants">Deodorants</Link>
                             </li>
                             <li>
-                              <Link to="/tiles-cuffkins-pocketsquares">
+                              <Link to="search/name/men-tiles-cuffkins-pocketsquares">
                                 tiles,cuffkins&pocketsquares
                               </Link>
                             </li>
                             <li>
-                              <Link to="/accessory-gift-seat">
+                              <Link to="search/name/men-accessory-gift-seat">
                                 accessory gift seat
                               </Link>
                             </li>
                             <li>
-                              <Link to="/caps-hates">caps&hates</Link>
+                              <Link to="search/name/men-caps-hates">caps&hates</Link>
                             </li>
                             <li>
-                              <Link to="/muffalear-scarves-gloves">
+                              <Link to="search/name/men-muffalear-scarves-gloves">
                                 muffalear,scarves&gloves
                               </Link>
                             </li>
                             <li>
-                              <Link to="/perfume-bodymists">
+                              <Link to="search/name/men-perfume-bodymists">
                                 perfume&bodymists
                               </Link>
                             </li>
                             <li>
-                              <Link to="/phone-cases">phone cases</Link>
+                              <Link to="search/name/men-phone-cases">phone cases</Link>
                             </li>
                             <li>
-                              <Link to="/rings-wrist-wear">
+                              <Link to="search/name/men-rings-wrist-wear">
                                 rings&wrist wear
                               </Link>
                             </li>
                             <li>
                               <h3>
                                 <Link
-                                  to="/Bags-Backpacks"
+                                  to="search/name/men-Bags-Backpacks"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Bags&Backpacks
@@ -694,7 +697,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="/Luggages-trolleys"
+                                  to="search/name/men-Luggages-trolleys"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Luggages&trolleys
@@ -713,17 +716,17 @@ function App() {
                       Women
                     </Link>
                     <input type="checkbox" id="showMega1" />
-                    <label for="showMega1" class="mobile-item1">
+                    <label htmlFor="showMega1" className="mobile-item1">
                       Women
                     </label>
-                    <div class="mega-box1">
-                      <div class="content">
-                        <div class="row">
-                          <ul class="mega-links1">
+                    <div className="mega-box1">
+                      <div className="content">
+                        <div className="row">
+                          <ul className="mega-links1">
                             <li>
                               <h3>
                                 <Link
-                                  to="/Indian-fusion-wear"
+                                  to="search/category/women-Indian-fusion-wear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Indian&fusion wear
@@ -731,51 +734,51 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/kurtas-suits">kurtas&suits</Link>
+                              <Link to="search/category/women-kurtas-suits">kurtas&suits</Link>
                             </li>
                             <li>
-                              <Link to="/kurits-tunics&tops">
+                              <Link to="search/category/women-kurits-tunics&tops">
                                 kurits,tunics&tops
                               </Link>
                             </li>
                             <li>
-                              <Link to="/sarees">sarees</Link>
+                              <Link to="search/category/women-sarees">sarees</Link>
                             </li>
 
                             <li>
-                              <Link to="/ethnic-wear">ethnic wear</Link>
+                              <Link to="search/category/women-ethnic-wear">ethnic wear</Link>
                             </li>
                             <li>
-                              <Link to="/laggins-salwars-chudidars">
+                              <Link to="search/category/women-laggins-salwars-chudidars">
                                 laggins,salwars&chudidars
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Skirts-Palazzos">
+                              <Link to="search/category/women-Skirts-Palazzos">
                                 Skirts & Palazzos
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="/Dress-Materials">Dress Materials</Link>
+                              <Link to="search/category/women-Dress-Materials">Dress Materials</Link>
                             </li>
                             <li>
-                              <Link to="/Lehenga-Cholis">Lehenga Cholis</Link>
+                              <Link to="search/category/women-Lehenga-Cholis">Lehenga Cholis</Link>
                             </li>
                             <li>
-                              <Link to="/Dupattas-Shawls">
+                              <Link to="search/category/women-Dupattas-Shawls">
                                 Dupattas & Shawls
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="/Jackets">Jackets</Link>
+                              <Link to="search/category/women-Jackets">Jackets</Link>
                             </li>
 
                             <li>
                               <h3>
                                 <Link
-                                  to="/Belts-Scarves-More"
+                                  to="search/category/women-Belts-Scarves-More"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Belts, Scarves & More
@@ -787,7 +790,7 @@ function App() {
                               {" "}
                               <h3>
                                 <Link
-                                  to="/Watches-Wearables"
+                                  to="search/category/women-Watches-Wearables"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Watches & Wearables
@@ -796,13 +799,13 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links1">
+                        <div className="row">
+                          <ul className="mega-links1">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Western-Wear"
+                                  to="search/category/women-Western-Wear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Western Wear
@@ -810,42 +813,42 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Dresses">Dresses</Link>
+                              <Link to="search/category/women-Dresses">Dresses</Link>
                             </li>
                             <li>
-                              <Link to="/Tops">Tops</Link>
+                              <Link to="search/category/women-Tops">Tops</Link>
                             </li>
                             <li>
-                              <Link to="/T-shirts">Tshirts</Link>
+                              <Link to="search/category/women-T-shirts">Tshirts</Link>
                             </li>
                             <li>
-                              <Link to="/Jeans">Jeans</Link>
+                              <Link to="search/category/women-Jeans">Jeans</Link>
                             </li>
                             <li>
-                              <Link to="/Shorts-Skirts">Shorts & Skirts</Link>
+                              <Link to="search/category/women-Shorts-Skirts">Shorts & Skirts</Link>
                             </li>
                             <li>
-                              <Link to="/Co-ords">Co-ords</Link>
+                              <Link to="search/category/women-Co-ords">Co-ords</Link>
                             </li>
                             <li>
-                              <Link to="/Playsuits">Playsuits</Link>
+                              <Link to="search/category/women-Playsuits">Playsuits</Link>
                             </li>
                             <li>
-                              <Link to="/Jumpsuits">Jumpsuits</Link>
+                              <Link to="search/category/women-Jumpsuits">Jumpsuits</Link>
                             </li>
                             <li>
-                              <Link to="/Shrugs">Shrugs</Link>
+                              <Link to="search/category/women-Shrugs">Shrugs</Link>
                             </li>
                             <li>
-                              <Link to="/Sweaters-Sweatshirts">
+                              <Link to="search/category/women-Sweaters-Sweatshirts">
                                 Sweaters&Sweatshirts
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Jackets-Coats">Jackets & Coats</Link>
+                              <Link to="search/category/women-Jackets-Coats">Jackets & Coats</Link>
                             </li>
                             <li>
-                              <Link to="/Blazers-Waistcoats">
+                              <Link to="search/category/women-Blazers-Waistcoats">
                                 Blazers & Waistcoats
                               </Link>
                             </li>
@@ -854,7 +857,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Plus-Size"
+                                  to="search/category/women-Plus-Size"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Plus Size
@@ -863,13 +866,13 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links1">
+                        <div className="row">
+                          <ul className="mega-links1">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Maternity"
+                                  to="search/category/women-Maternity"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Maternity
@@ -880,7 +883,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Sunglasses-Frames"
+                                  to="search/category/women-Sunglasses-Frames"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Sunglasses & Frames
@@ -891,7 +894,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Foot-Wear"
+                                  to="search/category/women-Foot-Wear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Foot Wear
@@ -899,19 +902,19 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Flats">Flats</Link>
+                              <Link to="search/category/women-Flats">Flats</Link>
                             </li>
                             <li>
-                              <Link to="/Casual-Shoes">Casual Shoes</Link>
+                              <Link to="search/category/women-Casual-Shoes">Casual Shoes</Link>
                             </li>
                             <li>
-                              <Link to="/Heels">Heels</Link>
+                              <Link to="search/category/women-Heels">Heels</Link>
                             </li>
                             <li>
-                              <Link to="/Boots">Boots</Link>
+                              <Link to="search/category/women-Boots">Boots</Link>
                             </li>
                             <li>
-                              <Link to="/Sports-Shoes-Floaters">
+                              <Link to="search/category/women-Sports-Shoes-Floaters">
                                 SportsShoes&Floaters
                               </Link>
                             </li>
@@ -919,7 +922,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Sports-activy-Wear"
+                                  to="/search/category/women-ports-activy-Wear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Sports &activy Wear
@@ -927,30 +930,30 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/clothing">Clothing</Link>
+                              <Link to="search/category/women-clothing">Clothing</Link>
                             </li>
                             <li>
-                              <Link to="/Footwear">Footwear</Link>
+                              <Link to="search/category/women-Footwear">Footwear</Link>
                             </li>
                             <li>
-                              <Link to="/Sports-Accessories">
+                              <Link to="search/category/women-Sports-Accessories">
                                 Sports Accessories
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Sports-Equipment">
+                              <Link to="search/category/women-Sports-Equipment">
                                 Sports Equipment
                               </Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links1">
+                        <div className="row">
+                          <ul className="mega-links1">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Lingerie-Sleepwear"
+                                  to="search/category/women-Lingerie-Sleepwear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   {" "}
@@ -959,32 +962,32 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Bra">Bra</Link>
+                              <Link to="search/category/women-Bra">Bra</Link>
                             </li>
 
                             <li>
-                              <Link to="/Briefs">Briefs</Link>
+                              <Link to="search/category/women-Briefs">Briefs</Link>
                             </li>
                             <li>
-                              <Link to="/Shapewear">Shapewear</Link>
+                              <Link to="search/category/women-Shapewear">Shapewear</Link>
                             </li>
                             <li>
-                              <Link to="/Sleepwear-Loungewear">
+                              <Link to="search/category/women-Sleepwear-Loungewear">
                                 Sleepwear&Loungewear
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Swimwear">Swimwear</Link>
+                              <Link to="search/category/women-Swimwear">Swimwear</Link>
                             </li>
                             <li>
-                              <Link to="/Camisoles-Thermals">
+                              <Link to="search/category/women-Camisoles-Thermals">
                                 Camisoles & Thermals
                               </Link>
                             </li>
                             <li>
                               <h3>
                                 <Link
-                                  to="/Beauty-Personal-Care"
+                                  to="search/category/women-Beauty-Personal-Care"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Beauty & Personal Care
@@ -992,24 +995,24 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Makeup">Makeup</Link>
+                              <Link to="search/category/women-Makeup">Makeup</Link>
                             </li>
                             <li>
-                              <Link to="/Skincare">Skincare</Link>
+                              <Link to="search/category/women-Skincare">Skincare</Link>
                             </li>
                             <li>
-                              <Link to="/Premium-Beauty">Premium Beauty</Link>
+                              <Link to="search/category/women-Premium-Beauty">Premium Beauty</Link>
                             </li>
                             <li>
-                              <Link to="/Lipsticks">Lipsticks</Link>
+                              <Link to="search/category/women-Lipsticks">Lipsticks</Link>
                             </li>
                             <li>
-                              <Link to="/Fragrances">Fragrances</Link>
+                              <Link to="search/category/women-Fragrances">Fragrances</Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links1">
+                        <div className="row">
+                          <ul className="mega-links1">
                             <li>
                               <h3>
                                 <Link
@@ -1021,23 +1024,23 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Smart-Wearables">SmartWearables</Link>
+                              <Link to="search/category/women-Smart-Wearables">SmartWearables</Link>
                             </li>
                             <li>
-                              <Link to="/Fitness-Gadgets">FitnessGadgets</Link>
+                              <Link to="search/category/women-Fitness-Gadgets">FitnessGadgets</Link>
                             </li>
                             <li>
-                              <Link to="/Headphones">Headphones</Link>
+                              <Link to="search/category/women-Headphones">Headphones</Link>
                             </li>
 
                             <li>
-                              <Link to="/Speakers">Speakers</Link>
+                              <Link to="search/category/women-Speakers">Speakers</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Jewellery"
+                                  to="search/category/women-Jewellery"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Jewellery
@@ -1045,22 +1048,22 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Fashion-Jewellery">
+                              <Link to="search/category/women-Fashion-Jewellery">
                                 FashionJewellery
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Fine-Jewellery">Fine Jewellery</Link>
+                              <Link to="search/category/women-Fine-Jewellery">Fine Jewellery</Link>
                             </li>
                             <li>
-                              <Link to="/Earrings">Earrings</Link>
+                              <Link to="search/category/women-Earrings">Earrings</Link>
                             </li>
 
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Gadgets"
+                                  to="search/category/women-Gadgets"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Backpacks
@@ -1071,7 +1074,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Handbags-Bags-Wallets"
+                                  to="search/category/women-Handbags-Bags-Wallets"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Handbags,Bags&Wallets
@@ -1082,7 +1085,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Luggages-Trolleys"
+                                  to="search/category/women-Luggages-Trolleys"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Luggages & Trolleys
@@ -1097,22 +1100,22 @@ function App() {
                 )}
                 {userInfo && userInfo && (
                   <li>
-                    <Link className="desktop-item2" to="#men">
+                    <Link className="desktop-item1" to="#men">
                       Kids
                     </Link>
                     <input type="checkbox" id="showMega2" />
-                    <label for="showMega2" class="mobile-item2">
+                    <label htmlFor="showMega2" className="mobile-item2">
                       Kids
                     </label>
-                    <div class="mega-box2">
-                      <div class="content">
-                        <div class="row">
-                          <ul class="mega-links2">
+                    <div className="mega-box2">
+                      <div className="content">
+                        <div className="row">
+                          <ul className="mega-links2">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Boys-Clothing"
+                                  to="search/category/kids-Boys-Clothing"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Boys Clothing
@@ -1120,30 +1123,30 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/T-Shirts">T-Shirts</Link>
+                              <Link to="search/category/kids-T-Shirts">T-Shirts</Link>
                             </li>
                             <li>
-                              <Link to="/Shirts">Shirts</Link>
+                              <Link to="search/category/kids-Shirts">Shirts</Link>
                             </li>
                             <li>
-                              <Link to="/Shorts">Shorts</Link>
-                            </li>
-
-                            <li>
-                              <Link to="/Jeans">Jeans</Link>
-                            </li>
-                            <li>
-                              <Link to="/Trousers">Trousers</Link>
-                            </li>
-                            <li>
-                              <Link to="/Clothing-Sets">Clothing Sets</Link>
+                              <Link to="search/category/kids-Shorts">Shorts</Link>
                             </li>
 
                             <li>
-                              <Link to="/Ethnic-Wear">Ethnic Wear</Link>
+                              <Link to="search/category/kids-Jeans">Jeans</Link>
                             </li>
                             <li>
-                              <Link to="/Track-Pants-Pyjamas">
+                              <Link to="search/category/kids-Trousers">Trousers</Link>
+                            </li>
+                            <li>
+                              <Link to="search/category/kids-Clothing-Sets">Clothing Sets</Link>
+                            </li>
+
+                            <li>
+                              <Link to="search/category/kids-Ethnic-Wear">Ethnic Wear</Link>
+                            </li>
+                            <li>
+                              <Link to="search/category/kids-Track-Pants-Pyjamas">
                                 Track Pants & Pyjamas
                               </Link>
                             </li>
@@ -1154,31 +1157,31 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="/Party-Wear">Party Wear</Link>
+                              <Link to="search/category/kids-Party-Wear">Party Wear</Link>
                             </li>
                             <li>
-                              <Link to="/Innerwear-Thermals">
+                              <Link to="search/category/kids-Innerwear-Thermals">
                                 Innerwear & Thermals
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Nightwear-Loungewear">
+                              <Link to="search/category/kids-Nightwear-Loungewear">
                                 Nightwear & Loungewear
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="/Value-Packs">Value Packs</Link>
+                              <Link to="search/category/kids-Value-Packs">Value Packs</Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links2">
+                        <div className="row">
+                          <ul className="mega-links2">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Western-Wear"
+                                  to="search/category/kids-Western-Wear"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Western-Wear
@@ -1186,71 +1189,71 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Dresses">Dresses</Link>
+                              <Link to="search/category/kids-Dresses">Dresses</Link>
                             </li>
                             <li>
-                              <Link to="/Tops">Tops</Link>
+                              <Link to="search/category/kids-Tops">Tops</Link>
                             </li>
                             <li>
-                              <Link to="/T-shirts">Tshirts</Link>
+                              <Link to="search/category/kids-T-shirts">Tshirts</Link>
                             </li>
                             <li>
-                              <Link to="/Clothing-Sets">Clothing Sets</Link>
+                              <Link to="search/category/kids-Clothing-Sets">Clothing Sets</Link>
                             </li>
                             <li>
-                              <Link to="/Lehenga-choli">Lehenga choli</Link>
+                              <Link to="search/category/kids-Lehenga-choli">Lehenga choli</Link>
                             </li>
                             <li>
-                              <Link to="/Kurta-Sets">Kurta Sets</Link>
+                              <Link to="search/category/kids-Kurta-Sets">Kurta Sets</Link>
                             </li>
                             <li>
-                              <Link to="/Party-wear">Party wear</Link>
+                              <Link to="search/category/kids-Party-wear">Party wear</Link>
                             </li>
                             <li>
-                              <Link to="/Dungarees-Jumpsuits">
+                              <Link to="search/category/kids-Dungarees-Jumpsuits">
                                 Dungarees & Jumpsuits
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Skirts-shorts">Skirts & shorts</Link>
+                              <Link to="search/category/kids-Skirts-shorts">Skirts & shorts</Link>
                             </li>
                             <li>
-                              <Link to="/Tights-Leggings">
+                              <Link to="search/category/kids-Tights-Leggings">
                                 Tights & Leggings
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Jeans-Trousers-Capris">
+                              <Link to="search/category/kids-Jeans-Trousers-Capris">
                                 Jeans,Trousers &Capris
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Jacket-Sweater-Sweatshirts">
+                              <Link to="search/category/kids-Jacket-Sweater-Sweatshirts">
                                 Jacket,Sweater&Sweatshirts
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Innerwear-Thermals">
+                              <Link to="search/category/kids-Innerwear-Thermals">
                                 Innerwear & Thermals
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Nightwear-Loungewear">
+                              <Link to="search/category/kids-Nightwear-Loungewear">
                                 Nightwear & Loungewear
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Value-Packs">Value Packs</Link>
+                              <Link to="search/category/kids-Value-Packs">Value Packs</Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links2">
+                        <div className="row">
+                          <ul className="mega-links2">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Foot-Wear"
+                                  to="search/category/kids-Foot-Wear"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Foot Wear
@@ -1258,59 +1261,59 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Casual-Shoes">Casual Shoes</Link>
+                              <Link to="search/category/kids-Casual-Shoes">Casual Shoes</Link>
                             </li>
                             <li>
-                              <Link to="/Flipflops">Flipflops</Link>
+                              <Link to="search/category/kids-Flipflops">Flipflops</Link>
                             </li>
                             <li>
-                              <Link to="/Sports Shoes">Sports Shoes</Link>
+                              <Link to="search/category/kids-Sports Shoes">Sports Shoes</Link>
                             </li>
                             <li>
-                              <Link to="/Flats">Flats</Link>
+                              <Link to="search/category/kids-Flats">Flats</Link>
                             </li>
                             <li>
-                              <Link to="/Sandals">Sandals</Link>
+                              <Link to="search/category/kids-Sandals">Sandals</Link>
                             </li>
                             <li>
-                              <Link to="/School-Shoes">School Shoes</Link>
+                              <Link to="search/category/kids-School-Shoes">School Shoes</Link>
                             </li>
                             <li>
-                              <Link to="/Socks">Socks</Link>
+                              <Link to="search/category/kids-Socks">Socks</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
-                                <Link to="/Toys" style={{ color: "#f26a10" }}>
+                                <Link to="search/category/kids-Toys" style={{ color: "#f26a10" }}>
                                   Toys
                                 </Link>{" "}
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Learning-Development">
+                              <Link to="search/category/kids-Learning-Development">
                                 Learning&Development
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Activity-Toys">Activity Toys</Link>
+                              <Link to="search/category/kids-Activity-Toys">Activity Toys</Link>
                             </li>
                             <li>
-                              <Link to="/Soft-Toys">Soft Toys</Link>
+                              <Link to="search/category/kids-Soft-Toys">Soft Toys</Link>
                             </li>
                             <li>
-                              <Link to="/Action-Figure-Play">
+                              <Link to="search/category/kids-Action-Figure-Play">
                                 Action Figure / Play set
                               </Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links2">
+                        <div className="row">
+                          <ul className="mega-links2">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Infants"
+                                  to="search/category/kids-Infants"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Infants
@@ -1318,40 +1321,40 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Bodysuits">Bodysuits</Link>
+                              <Link to="search/category/kids-Bodysuits">Bodysuits</Link>
                             </li>
                             <li>
-                              <Link to="/Rompers-Sleepsuits">
+                              <Link to="search/category/kids-Rompers-Sleepsuits">
                                 Rompers&Sleepsuits
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Clothing-Sets">Clothing Sets</Link>
+                              <Link to="search/category/kids-Clothing-Sets">Clothing Sets</Link>
                             </li>
                             <li>
-                              <Link to="/Tshirts-Tops">Tshirts & Tops</Link>
+                              <Link to="search/category/kids-Tshirts-Tops">Tshirts & Tops</Link>
                             </li>
                             <li>
-                              <Link to="/Dresses">Dresses</Link>
+                              <Link to="search/category/kids-Dresses">Dresses</Link>
                             </li>
                             <li>
-                              <Link to="/Bottom-wear">Bottom wear</Link>
+                              <Link to="search/category/kids-Bottom-wear">Bottom wear</Link>
                             </li>
                             <li>
-                              <Link to="/Winter-Wear">Winter Wear</Link>
+                              <Link to="search/category/kids-Winter-Wear">Winter Wear</Link>
                             </li>
                             <li>
-                              <Link to="/Innerwear-Sleepwear">
+                              <Link to="search/category/kids-Innerwear-Sleepwear">
                                 Innerwear&Sleepwear
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Infant-Care">Infant Care</Link>
+                              <Link to="search/category/kids-Infant-Care">Infant Care</Link>
                             </li>
                             <li>
                               <h3>
                                 <Link
-                                  to="/Home-Bath"
+                                  to="search/category/kids-Home-Bath"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Home & Bath
@@ -1361,7 +1364,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="/Personal-Care"
+                                  to="search/category/kids-Personal-Care"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Personal Care
@@ -1370,12 +1373,12 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links2">
+                        <div className="row">
+                          <ul className="mega-links2">
                             <li>
                               <h3>
                                 <Link
-                                  to="/Kids-Accessories"
+                                  to="search/category/kids-Accessories"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Kids Accessories
@@ -1383,60 +1386,60 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Bags-Backpacks">Bags&Backpacks</Link>
+                              <Link to="search/category/kids-Bags-Backpacks">Bags&Backpacks</Link>
                             </li>
                             <li>
-                              <Link to="/Watches">Watches</Link>
+                              <Link to="search/category/kids-Watches">Watches</Link>
                             </li>
                             <li>
-                              <Link to="/Jewellery-Hair-accessory">
+                              <Link to="search/category/kids-Jewellery-Hair-accessory">
                                 Jewellery&Hairaccessory
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Sunglasses">Sunglasses</Link>
+                              <Link to="search/category/kids-Sunglasses">Sunglasses</Link>
                             </li>
                             <li>
-                              <Link to="/Masks-Protective-Gears">
+                              <Link to="search/category/kids-Masks-Protective-Gears">
                                 Masks&ProtectiveGears
                               </Link>
                             </li>
                             <li>
-                              <Link to="Caps-Hats">Caps & Hats</Link>
+                              <Link to="search/category/kids-Caps-Hats">Caps & Hats</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
-                                <Link to="/Brands" style={{ color: "#f26a10" }}>
+                                <Link to="search/category/kids-Brands" style={{ color: "#f26a10" }}>
                                   Brands
                                 </Link>
                               </h3>
                             </li>
                             <li>
-                              <Link to="/H&M">H&M</Link>
+                              <Link to="search/category/kids-H&M">H&M</Link>
                             </li>
                             <li>
-                              <Link to="/Max-Kids">Max Kids</Link>
+                              <Link to="search/category/kids-Max-Kids">Max Kids</Link>
                             </li>
                             <li>
-                              <Link to="/Pantaloons">Pantaloons</Link>
+                              <Link to="search/category/kids-Pantaloons">Pantaloons</Link>
                             </li>
                             <li>
-                              <Link to="/United-Colors">
+                              <Link to="search/category/kids-United-Colors">
                                 UnitedColorsofBenettonKids
                               </Link>
                             </li>
                             <li>
-                              <Link to="/YK">YK</Link>
+                              <Link to="search/category/kids-YK">YK</Link>
                             </li>
                             <li>
-                              <Link to="/Kids">U.S. Polo Assn. Kids</Link>
+                              <Link to="search/category/kids-Kids">U.S. Polo Assn. Kids</Link>
                             </li>
                             <li>
-                              <Link to="/Mothercare">Mothercare</Link>
+                              <Link to="search/category/kids-Mothercare">Mothercare</Link>
                             </li>
                             <li>
-                              <Link to="/HRX">HRX</Link>
+                              <Link to="search/category/kids-HRX">HRX</Link>
                             </li>
                           </ul>
                         </div>
@@ -1450,18 +1453,18 @@ function App() {
                       Home & Living
                     </Link>
                     <input type="checkbox" id="showMega3" />
-                    <label for="showMega3" class="mobile-item3">
+                    <label htmlFor="showMega3" className="mobile-item3">
                       Home & Living
                     </label>
-                    <div class="mega-box3">
-                      <div class="content">
-                        <div class="row">
-                          <ul class="mega-links3">
+                    <div className="mega-box3">
+                      <div className="content">
+                        <div className="row">
+                          <ul className="mega-links3">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Bed-Linen-Furnishing"
+                                  to="search/category/home-Bed-Linen"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Bed Linen & Furnishing
@@ -1469,50 +1472,50 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Bed-Runners"> Bed Runners</Link>
+                              <Link to="search/category/home-Bed-Runners"> Bed Runners</Link>
                             </li>
                             <li>
-                              <Link to="/Mattress-Protectors">
+                              <Link to="search/category/home-Mattress-Protectors">
                                 Mattress Protectors
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Bedsheets">Bedsheets</Link>
+                              <Link to="search/category/home-Bedsheets">Bedsheets</Link>
                             </li>
 
                             <li>
-                              <Link to="/Bedding-Sets">Bedding Sets</Link>
+                              <Link to="search/category/home-Bedding-Sets">Bedding Sets</Link>
                             </li>
                             <li>
-                              <Link to="/Blankets-Quilts-Dohars">
+                              <Link to="search/category/home-Blankets-Quilts-Dohars">
                                 Blankets,Quilts&Dohars
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Pillows-Pillow-Covers">
+                              <Link to="search/category/home-Pillows-Pillow-Covers">
                                 Pillows & Pillow Covers
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="/Bed-Covers">Bed Covers</Link>
+                              <Link to="search/category/home-Bed-Covers">Bed Covers</Link>
                             </li>
                             <li>
-                              <Link to="/Diwan-Sets">Diwan Sets</Link>
+                              <Link to="search/category/home-Diwan-Sets">Diwan Sets</Link>
                             </li>
                             <li>
-                              <Link to="/Chair-Pads-Covers">
+                              <Link to="search/category/home-Chair-Pads-Covers">
                                 Chair Pads & Covers
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Sofa-Covers">Sofa Covers</Link>
+                              <Link to="search/category/home-Sofa-Covers">Sofa Covers</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Flooring"
+                                  to="search/category/home-Flooring"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Flooring
@@ -1520,64 +1523,64 @@ function App() {
                               </h3>{" "}
                             </li>
                             <li>
-                              <Link to="/Floor-Runners">Floor Runners</Link>
+                              <Link to="search/category/home-Floor-Runners">Floor Runners</Link>
                             </li>
                             <li>
-                              <Link to="/Carpets">Carpets</Link>
+                              <Link to="search/category/home-Carpets">Carpets</Link>
                             </li>
 
                             <li>
-                              <Link to="/Floor-Mats-Dhurries">
+                              <Link to="search/category/home-Floor-Mats-Dhurries">
                                 Floor Mats& Dhurries
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Door-Mats">Door Mats</Link>
+                              <Link to="search/category/home-Door-Mats">Door Mats</Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links3">
+                        <div className="row">
+                          <ul className="mega-links3">
                             <li>
                               <h3>
-                                <Link to="/Bath" style={{ color: "#f2c210" }}>
+                                <Link to="search/category/home-Bath" style={{ color: "#f2c210" }}>
                                   Bath
                                 </Link>
                               </h3>{" "}
                             </li>
                             <li>
-                              <Link to="/Bath-Towels">Bath Towels</Link>
+                              <Link to="search/category/home-Bath-Towels">Bath Towels</Link>
                             </li>
                             <li>
-                              <Link to="/Hand-Face-Towels">
+                              <Link to="search/category/home-Hand-Face-Towels">
                                 Hand &Face Towels
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Beach-Towels">Beach Towels</Link>
+                              <Link to="search/category/home-Beach-Towels">Beach Towels</Link>
                             </li>
                             <li>
-                              <Link to="/Towels-Set">Towels Set</Link>
+                              <Link to="search/category/home-Towels-Set">Towels Set</Link>
                             </li>
                             <li>
-                              <Link to="/Bath-Rugs">Bath Rugs</Link>
+                              <Link to="search/category/home-Bath-Rugs">Bath Rugs</Link>
                             </li>
                             <li>
-                              <Link to="/Bath-Robes">Bath Robes</Link>
+                              <Link to="search/category/home-Bath-Robes">Bath Robes</Link>
                             </li>
                             <li>
-                              <Link to="/Bathroom-Accessories">
+                              <Link to="search/category/home-Bathroom-Accessories">
                                 BathroomAccessories
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Shower-Curtains">ShowerCurtains</Link>
+                              <Link to="search/category/home-Shower-Curtains">ShowerCurtains</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Lamps-Lighting"
+                                  to="search/category/home-Lamps-Lighting"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Lamps&Lighting
@@ -1585,32 +1588,32 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Floor-Lamps">Floor Lamps</Link>
+                              <Link to="search/category/home-Floor-Lamps">Floor Lamps</Link>
                             </li>
                             <li>
-                              <Link to="/Ceiling-Lamps">CeilingLamps</Link>
+                              <Link to="search/category/home-Ceiling-Lamps">CeilingLamps</Link>
                             </li>
                             <li>
-                              <Link to="/Table-Lamps">Table Lamps</Link>
+                              <Link to="search/category/home-Table-Lamps">Table Lamps</Link>
                             </li>
                             <li>
-                              <Link to="/Wall-Lamps">Wall Lamps</Link>
+                              <Link to="search/category/home-Wall-Lamps">Wall Lamps</Link>
                             </li>
                             <li>
-                              <Link to="/Outdoor-Lamps">Outdoor Lamps</Link>
+                              <Link to="search/category/home-Outdoor-Lamps">Outdoor Lamps</Link>
                             </li>
                             <li>
-                              <Link to="/String-Lights">String Lights</Link>
+                              <Link to="search/category/home-String-Lights">String Lights</Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links3">
+                        <div className="row">
+                          <ul className="mega-links3">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Home-Decor"
+                                  to="search/category/home-Decor"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Home Decor
@@ -1618,51 +1621,51 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Plants-Planters">
+                              <Link to="search/category/home-Plants-Planters">
                                 Plants & Planters
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Aromas-Candles">Aromas & Candles</Link>
+                              <Link to="search/category/home-Aromas-Candles">Aromas & Candles</Link>
                             </li>
                             <li>
-                              <Link to="/Clocks">Clocks</Link>
-                            </li>
-
-                            <li>
-                              <Link to="/Mirrors">Mirrors</Link>
-                            </li>
-                            <li>
-                              <Link to="/Wall-Decor">Wall Decor</Link>
-                            </li>
-                            <li>
-                              <Link to="/Festive-Decor">Festive Decor</Link>
+                              <Link to="search/category/home-Clocks">Clocks</Link>
                             </li>
 
                             <li>
-                              <Link to="/Pooja-Essentials">
+                              <Link to="search/category/home-Mirrors">Mirrors</Link>
+                            </li>
+                            <li>
+                              <Link to="search/category/home-Wall-Decor">Wall Decor</Link>
+                            </li>
+                            <li>
+                              <Link to="search/category/home-Festive-Decor">Festive Decor</Link>
+                            </li>
+
+                            <li>
+                              <Link to="search/category/home-Pooja-Essentials">
                                 Pooja Essentials
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Wall-Shelves">Wall Shelves</Link>
+                              <Link to="search/category/home-Wall-Shelves">Wall Shelves</Link>
                             </li>
                             <li>
-                              <Link to="/Fountains">Fountains</Link>
+                              <Link to="search/category/home-Fountains">Fountains</Link>
                             </li>
                             <li>
-                              <Link to="/Showpieces-Vases">
+                              <Link to="search/category/home-Showpieces-Vases">
                                 Show pieces& Vases
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Ottoman">Ottoman</Link>
+                              <Link to="search/category/home-Ottoman">Ottoman</Link>
                             </li>
 
                             <li>
                               <h3>
                                 <Link
-                                  to="/Cushions-Cushion-Covers"
+                                  to="search/category/home-Cushions-Cushion-Covers"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Cushions&CushionCovers
@@ -1681,12 +1684,12 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links3">
+                        <div className="row">
+                          <ul className="mega-links3">
                             <li>
                               <h3>
                                 <Link
-                                  to="/Home-Gift-Sets"
+                                  to="search/category/home-Home-Gift-Sets"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Home Gift Sets
@@ -1696,7 +1699,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="/Kitchen-Table"
+                                  to="search/category/home-Kitchen-Table"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Kitchen & Table
@@ -1704,31 +1707,31 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Table-Runners">Table Runners</Link>
+                              <Link to="search/category/home-Table-Runners">Table Runners</Link>
                             </li>
                             <li>
-                              <Link to="/Dinnerware-Serveware">
+                              <Link to="search/category/home-Dinnerware-Serveware">
                                 Dinnerware & Serveware
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Cups-and-Mugs">Cups and Mugs</Link>
+                              <Link to="search/category/home-Cups-and-Mugs">Cups and Mugs</Link>
                             </li>
                             <li>
-                              <Link to="/Bakeware-Cookware">
+                              <Link to="search/category/home-Bakeware-Cookware">
                                 Bakeware & Cookware
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Kitchen-Storage-Tools">
+                              <Link to="search/category/home-Kitchen-Storage-Tools">
                                 Kitchen Storage & Tools
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Bar-Drinkware">Bar & Drinkware</Link>
+                              <Link to="search/category/home-Bar-Drinkware">Bar & Drinkware</Link>
                             </li>
                             <li>
-                              <Link to="/Table-Covers-Furnishings">
+                              <Link to="search/category/home-Table-Covers-Furnishings">
                                 TableCovers&Furnishings
                               </Link>
                             </li>
@@ -1736,7 +1739,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Gadgets"
+                                  to="search/category/home-Gadgets"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Storage
@@ -1744,82 +1747,82 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Bins">Bins</Link>
+                              <Link to="search/category/home-Bins">Bins</Link>
                             </li>
                             <li>
-                              <Link to="/Hangers">Hangers</Link>
+                              <Link to="search/category/home-Hangers">Hangers</Link>
                             </li>
                             <li>
-                              <Link to="/Organisers">Organisers</Link>
+                              <Link to="search/category/home-Organisers">Organisers</Link>
                             </li>
                             <li>
-                              <Link to="/Hooks-Holders">Hooks & Holders</Link>
+                              <Link to="search/category/home-Hooks-Holders">Hooks & Holders</Link>
                             </li>
                             <li>
-                              <Link to="/Laundry-Bags">Laundry Bags</Link>
+                              <Link to="search/category/home-Laundry-Bags">Laundry Bags</Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links3">
+                        <div className="row">
+                          <ul className="mega-links3">
                             <li>
                               <h3>
                                 {" "}
-                                <Link to="/Brands" style={{ color: "#f2c210" }}>
+                                <Link to="search/category/home-Brands" style={{ color: "#f2c210" }}>
                                   Brands
                                 </Link>
                               </h3>
                             </li>
                             <li>
-                              <Link to="/H&M">H&M</Link>
+                              <Link to="search/category/home-H&M">H&M</Link>
                             </li>
                             <li>
-                              <Link to="/Marks-Spencer">Marks & Spencer</Link>
+                              <Link to="search/category/home-Marks-Spencer">Marks & Spencer</Link>
                             </li>
                             <li>
-                              <Link to="/Home-Centre">Home Centre</Link>
+                              <Link to="search/category/home-Home-Centre">Home Centre</Link>
                             </li>
                             <li>
-                              <Link to="/Spaces">Spaces</Link>
+                              <Link to="search/category/home-Spaces">Spaces</Link>
                             </li>
                             <li>
-                              <Link to="/D-Decor">D'Decor</Link>
+                              <Link to="search/category/home-D-Decor">D'Decor</Link>
                             </li>
                             <li>
-                              <Link to="/Story-Home">Story@Home</Link>
+                              <Link to="search/category/home-Story-Home">Story@Home</Link>
                             </li>
                             <li>
-                              <Link to="/Pure-Home-Living">
+                              <Link to="search/category/home-Pure-Home-Living">
                                 PureHome&Living
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Swayam">Swayam</Link>
+                              <Link to="search/category/home-Swayam">Swayam</Link>
                             </li>
                             <li>
-                              <Link to="/Raymond-Home">Raymond Home</Link>
+                              <Link to="search/category/home-Raymond-Home">Raymond Home</Link>
                             </li>
                             <li>
-                              <Link to="/Maspar">Maspar</Link>{" "}
+                              <Link to="search/category/home-Maspar">Maspar</Link>{" "}
                             </li>
 
                             <li>
-                              <Link to="/Trident">Trident</Link>
+                              <Link to="search/category/home-Trident">Trident</Link>
                             </li>
                             <li>
-                              <Link to="/Cortina">Cortina</Link>
+                              <Link to="search/category/home-Cortina">Cortina</Link>
                             </li>
                             <li>
-                              <Link to="/Random">Random</Link>
+                              <Link to="search/category/home-Random">Random</Link>
                             </li>
                             <li>
-                              <Link to="/Ellementry">Ellementry</Link>
+                              <Link to="search/category/home-Ellementry">Ellementry</Link>
                             </li>
                             <li>
-                              <Link to="/ROMEE">ROMEE</Link>
+                              <Link to="search/category/home-ROMEE">ROMEE</Link>
                             </li>
                             <li>
-                              <Link to="/Story-Home">SEJby NishaGupta</Link>
+                              <Link to="search/category/home-Story-Home">SEJby NishaGupta</Link>
                             </li>
                           </ul>
                         </div>
@@ -1834,62 +1837,62 @@ function App() {
                       Beauty
                     </Link>
                     <input type="checkbox" id="showMega4" />
-                    <label for="showMega4" class="mobile-item4">
+                    <label htmlFor="showMega4" className="mobile-item4">
                       Beauty
                     </label>
-                    <div class="mega-box4">
-                      <div class="content">
-                        <div class="row">
-                          <ul class="mega-links4">
+                    <div className="mega-box4">
+                      <div className="content">
+                        <div className="row">
+                          <ul className="mega-links4">
                             <li>
                               <h3>
                                 {" "}
-                                <Link to="/Makeup" style={{ color: "#0db7af" }}>
+                                <Link to="search/category/beauty-Makeup" style={{ color: "#0db7af" }}>
                                   Makeup
                                 </Link>
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Lipstick">Lipstick</Link>
+                              <Link to="search/category/beauty-Lipstick">Lipstick</Link>
                             </li>
                             <li>
-                              <Link to="/Lip-Gloss">Lip Gloss</Link>
+                              <Link to="search/category/beauty-Lip-Gloss">Lip Gloss</Link>
                             </li>
                             <li>
-                              <Link to="/Lip-Liner">Lip Liner</Link>
+                              <Link to="search/category/beauty-Lip-Liner">Lip Liner</Link>
                             </li>
                             <li>
-                              <Link to="/Mascara">Mascara</Link>
+                              <Link to="search/category/beauty-Mascara">Mascara</Link>
                             </li>
                             <li>
-                              <Link to="/Eyeliner">Eyeliner</Link>
+                              <Link to="search/category/beauty-Eyeliner">Eyeliner</Link>
                             </li>
                             <li>
-                              <Link to="/Kajal">Kajal</Link>
+                              <Link to="search/category/beauty-Kajal">Kajal</Link>
                             </li>
 
                             <li>
-                              <Link to="/Eyeshadow">Eyeshadow</Link>
+                              <Link to="search/category/beauty-Eyeshadow">Eyeshadow</Link>
                             </li>
                             <li>
-                              <Link to="/Foundation">Foundation</Link>
+                              <Link to="search/category/beauty-Foundation">Foundation</Link>
                             </li>
                             <li>
-                              <Link to="/Primer">Primer</Link>
+                              <Link to="search/category/beauty-Primer">Primer</Link>
                             </li>
                             <li>
-                              <Link to="/Concealer">Concealer</Link>
+                              <Link to="search/category/beauty-Concealer">Concealer</Link>
                             </li>
                             <li>
-                              <Link to="/Compact">Compact</Link>
+                              <Link to="search/category/beauty-Compact">Compact</Link>
                             </li>
                             <li>
-                              <Link to="/Nail-Polish">Nail Polish</Link>
+                              <Link to="search/category/beauty-Nail-Polish">Nail Polish</Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links4">
+                        <div className="row">
+                          <ul className="mega-links4">
                             <li>
                               <h3>
                                 {" "}
@@ -1902,49 +1905,49 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Face-Moisturiser">
+                              <Link to="search/category/beauty-Face-Moisturiser">
                                 Face Moisturiser
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Cleanser">Cleanser</Link>
+                              <Link to="search/category/beauty-Cleanser">Cleanser</Link>
                             </li>
                             <li>
-                              <Link to="/Masks-Peel">Masks & Peel</Link>
+                              <Link to="search/category/beauty-Masks-Peel">Masks & Peel</Link>
                             </li>
                             <li>
-                              <Link to="/Sunscreen">Sunscreen</Link>
+                              <Link to="search/category/beauty-Sunscreen">Sunscreen</Link>
                             </li>
                             <li>
-                              <Link to="/Serum">Serum</Link>
+                              <Link to="search/category/beauty-Serum">Serum</Link>
                             </li>
                             <li>
-                              <Link to="/Face-Wash">Face Wash</Link>
+                              <Link to="search/category/beauty-Face-Wash">Face Wash</Link>
                             </li>
 
                             <li>
-                              <Link to="/Eye-Cream">Eye Cream</Link>
+                              <Link to="search/category/beauty-Eye-Cream">Eye Cream</Link>
                             </li>
                             <li>
-                              <Link to="/Lip-Balm">Lip Balm</Link>
+                              <Link to="search/category/beauty-Lip-Balm">Lip Balm</Link>
                             </li>
                             <li>
-                              <Link to="/Body-Lotion ">Body Lotion </Link>
+                              <Link to="search/category/beauty-Body-Lotion ">Body Lotion </Link>
                             </li>
                             <li>
-                              <Link to="/Body-Wash">Body Wash</Link>
+                              <Link to="search/category/beauty-Body-Wash">Body Wash</Link>
                             </li>
                             <li>
-                              <Link to="/Body-Scrup"> Body Scrub</Link>
+                              <Link to="search/category/beauty-Body-Scrup"> Body Scrub</Link>
                             </li>
                             <li>
-                              <Link to="/Hand-cream">Hand Cream </Link>
+                              <Link to="search/category/beauty-Hand-cream">Hand Cream </Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Baby-Care"
+                                  to="search/category/beauty-Baby-Care"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Baby Care
@@ -1954,20 +1957,20 @@ function App() {
                             <li>
                               <h3>
                                 {" "}
-                                <Link to="/Masks" style={{ color: "#0db7af" }}>
+                                <Link to="search/category/beauty-Masks" style={{ color: "#0db7af" }}>
                                   Masks
                                 </Link>{" "}
                               </h3>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links4">
+                        <div className="row">
+                          <ul className="mega-links4">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Haircare"
+                                  to="search/category/beauty-Haircare"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Haircare
@@ -1975,34 +1978,34 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Shampoo">Shampoo</Link>
+                              <Link to="search/category/beauty-Shampoo">Shampoo</Link>
                             </li>
                             <li>
-                              <Link to="/Conditioner">Conditioners</Link>
+                              <Link to="search/category/beauty-Conditioner">Conditioners</Link>
                             </li>
                             <li>
-                              <Link to="/Hair-Cream">Hair Cream</Link>
+                              <Link to="search/category/beauty-Hair-Cream">Hair Cream</Link>
                             </li>
                             <li>
-                              <Link to="/Hair-Oil">Hair Oil</Link>
+                              <Link to="search/category/beauty-Hair-Oil">Hair Oil</Link>
                             </li>
                             <li>
-                              <Link to="/Hair-Gel">Hair Gel</Link>
+                              <Link to="search/category/beauty-Hair-Gel">Hair Gel</Link>
                             </li>
                             <li>
-                              <Link to="/Hair-Color">Hair Color</Link>
+                              <Link to="search/category/beauty-Hair-Color">Hair Color</Link>
                             </li>
                             <li>
-                              <Link to="/Hair-Serum">Hair Serum</Link>
+                              <Link to="search/category/beauty-Hair-Serum">Hair Serum</Link>
                             </li>
                             <li>
-                              <Link to="/Hair-Accessory">Hair Accessory</Link>
+                              <Link to="search/category/beauty-Hair-Accessory">Hair Accessory</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Fragrances"
+                                  to="search/category/beauty-Fragrances"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Fragrances
@@ -2010,23 +2013,23 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Perfume">Perfume</Link>
+                              <Link to="search/category/beauty-Perfume">Perfume</Link>
                             </li>
                             <li>
-                              <Link to="/Deodorant">Deodorant</Link>
+                              <Link to="search/category/beauty-Deodorant">Deodorant</Link>
                             </li>
                             <li>
-                              <Link to="/Body-Mist">Body Mist</Link>
+                              <Link to="search/category/beauty-Body-Mist">Body Mist</Link>
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links4">
+                        <div className="row">
+                          <ul className="mega-links4">
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Appliances"
+                                  to="search/category/beauty-Appliances"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Appliances
@@ -2034,22 +2037,22 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="/Hair-Straightener">
+                              <Link to="search/category/beauty-Hair-Straightener">
                                 Hair Straightener
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Hair-Dryer">Hair Dryer</Link>
+                              <Link to="search/category/beauty-Hair-Dryer">Hair Dryer</Link>
                             </li>
                             <li>
-                              <Link to="/Epilator">Epilator</Link>
+                              <Link to="search/category/beauty-Epilator">Epilator</Link>
                             </li>
 
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Men-Grooming"
+                                  to="search/category/beauty-Men-Grooming"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Men's Grooming
@@ -2058,21 +2061,21 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="/Trimmers">Trimmers</Link>
+                              <Link to="search/category/beauty-Trimmers">Trimmers</Link>
                             </li>
                             <li>
-                              <Link to="/Beard-Oil">Beard Oil</Link>
+                              <Link to="search/category/beauty-Beard-Oil">Beard Oil</Link>
                             </li>
 
                             <li>
-                              <Link to="/Hair-Wax">Hair Wax</Link>
+                              <Link to="search/category/beauty-Hair-Wax">Hair Wax</Link>
                             </li>
 
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Beauty-Gift-Makeup"
+                                  to="search/category/beauty-Beauty-Gift-Makeup"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Beauty Gift & Makeup Set
@@ -2081,16 +2084,16 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="/Beauty-Gift">Beauty Gift</Link>
+                              <Link to="search/category/beauty-Beauty-Gift">Beauty Gift</Link>
                             </li>
                             <li>
-                              <Link to="/Makeup-Kit">Makeup Kit</Link>
+                              <Link to="search/category/beauty-Makeup-Kit">Makeup Kit</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Premium-Beauty"
+                                  to="search/category/beauty-Premium-Beauty"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Premium Beauty
@@ -2101,7 +2104,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Wellness-Hygiene"
+                                  to="search/category/beauty-Wellness-Hygiene"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Wellness & Hygiene
@@ -2110,12 +2113,12 @@ function App() {
                             </li>
                           </ul>
                         </div>
-                        <div class="row">
-                          <ul class="mega-links4">
+                        <div className="row">
+                          <ul className="mega-links4">
                             <li>
                               <h3>
                                 <Link
-                                  to="/Top-Brands"
+                                  to="search/category/beauty-Top-Brands"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Top Brands
@@ -2124,51 +2127,51 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="/Lakme">Lakme</Link>
+                              <Link to="search/category/beauty-Lakme">Lakme</Link>
                             </li>
                             <li>
-                              <Link to="/Maybelline">Maybelline</Link>
+                              <Link to="search/category/beauty-Maybelline">Maybelline</Link>
                             </li>
                             <li>
-                              <Link to="/Loreal">Loreal</Link>
+                              <Link to="search/category/beauty-Loreal">Loreal</Link>
                             </li>
                             <li>
-                              <Link to="/Philips">Philips</Link>
+                              <Link to="search/category/beauty-Philips">Philips</Link>
                             </li>
                             <li>
-                              <Link to="/Bath-Body-Works">
+                              <Link to="search/category/beauty-Bath-Body-Works">
                                 Bath & Body Works
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Body-Shop">The Body Shop</Link>
+                              <Link to="search/category/beauty-Body-Shop">The Body Shop</Link>
                             </li>
                             <li>
-                              <Link to="/Biotique">Biotique</Link>
+                              <Link to="search/category/beauty-Biotique">Biotique</Link>
                             </li>
                             <li>
-                              <Link to="/Mamaearth">Mamaearth</Link>
+                              <Link to="search/category/beauty-Mamaearth">Mamaearth</Link>
                             </li>
                             <li>
-                              <Link to="/MCaffeine">MCaffeine</Link>
+                              <Link to="search/category/beauty-MCaffeine">MCaffeine</Link>
                             </li>
                             <li>
-                              <Link to="/Nivea">Nivea</Link>
+                              <Link to="search/category/beauty-Nivea">Nivea</Link>
                             </li>
                             <li>
-                              <Link to="/Loreal-Professionnel">
+                              <Link to="search/category/beauty-Loreal-Professionnel">
                                 Loreal Professionnel
                               </Link>{" "}
                             </li>
 
                             <li>
-                              <Link to="/KAMA-AYURVEDA">Kama Ayerveda</Link>
+                              <Link to="search/category/beauty-KAMA-AYURVEDA">Kama Ayerveda</Link>
                             </li>
                             <li>
-                              <Link to="/m.a.c">M.A.C</Link>
+                              <Link to="search/category/beauty-m.a.c">M.A.C</Link>
                             </li>
                             <li>
-                              <Link to="/Forest-Essentials">
+                              <Link to="search/category/beauty-Forest-Essentials">
                                 Forest Essentials
                               </Link>
                             </li>
@@ -2179,11 +2182,12 @@ function App() {
                   </li>
                 )}
               </ul>
-              <label for="menu-btn" class="btn menu-btn">
-                <i class="fa fa-bars"></i>
-              </label>
+              {/* <label htmlFor="menu-btn" className="btn menu-btn">
+                <i className="fa fa-bars"></i>
+              </label> */}
             </div>
-          </div>)} */}
+          </div>)}
+         
         </header>
         <aside className={sidebarIsOpen ? "open" : ""}>
           <ul className="categories">
@@ -2315,6 +2319,7 @@ function App() {
             <Route path="/cartwomen/:id" element={<CartWomenScreen />}></Route>
             <Route path="/cartkid/:id" element={<CartKidScreen />}></Route>
             <Route path="/carttshirt/:id" element={<CartScreen />}></Route>
+            <Route path="/search/name" element={<SearchScreen />} exact></Route>
             <Route
               path="/cartcasualshirt/:id"
               element={<CartCasualShirtScreen />}
@@ -2672,18 +2677,24 @@ function App() {
               element={<SearchScreen />}
               exact
             ></Route>
+            
             <Route
-              path="/search/category/:category"
+              path="/search/categorygroup:categorygroup"
               element={<SearchScreen />}
               exact
             ></Route>
             <Route
+              path="/search/categorytype:categorytype"
+              element={<SearchScreen />}
+              exact
+            ></Route>
+            {/* <Route
               path="/search/category/:category/name/:name"
               element={<SearchScreen />}
               exact
-            ></Route>
+            ></Route> */}
             <Route
-              path="/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order/pageNumber/:pageNumber"
+              path="/search/category:category/name/:name/min/:min/max/:max/rating/:rating/order/:order/pageNumber/:pageNumber"
               element={<SearchScreen />}
               exact
             ></Route>
@@ -3126,6 +3137,16 @@ function App() {
                 </AdminRoute>
               }
             />
+            <Route
+              path="/search/category/:category"
+              element={<SearchScreen />}
+              exact
+            ></Route>
+            <Route
+              path="/search/category/:category/name/:name"
+              element={<SearchScreen />}
+              exact
+            ></Route>
             <Route
               path="/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order/pageNumber/:pageNumber"
               element={<SearchScreen />}

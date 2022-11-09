@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { addressListReducer } from './reducers/addressReducers';
 import { cartReducer } from './reducers/cartReducers';
 import { orderCreateReducer, orderDeleteReducer, orderDeliverReducer, orderDetailsReducer, orderListReducer, orderMineListReducer, orderPayReducer, orderSummaryReducer } from './reducers/orderReducers';
-import { productCategoryListReducer, productCreateReducer, productDeleteReducer, productDetailsReducer, productListReducer, productReviewCreateReducer, productUpdateReducer } from './reducers/productReducers';
+import { productCategoryListReducer,productCategorygroupListReducer,productCategorytypeListReducer, productCreateReducer, productDeleteReducer, productDetailsReducer, productListReducer, productReviewCreateReducer, productUpdateReducer } from './reducers/productReducers';
 import { userAddressMapReducer, userDeleteReducer, userDetailsReducer, userListReducer, userRegisterReducer, userSigninReducer, userAccountReducer, userAccountcreationReducer, userAdmininReducer, userTopSellerListReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
 import { SareeListReducer, SareeDetailsReducer } from './reducers/sareeReducer';
 import { womenCategoryListReducer, womenCreateReducer, womenDeleteReducer, womenDetailsReducer, womenListReducer, womenReviewCreateReducer, womenUpdateReducer } from './reducers/womenReducers';
@@ -80,15 +80,15 @@ const initialState = {
       : {},
     paymentMethod: 'PayPal',
   },
-  cartTshirt: {
-    cartTshirtItem: localStorage.getItem('cartTshirtItem')
-      ? JSON.parse(localStorage.getItem('cartTshirtItem'))
-      : [],
-    shippingAddress: localStorage.getItem('shippingAddress')
-      ? JSON.parse(localStorage.getItem('shippingAddress'))
-      : {},
-    paymentMethod: 'PayPal',
-  },
+  // cart: {
+  //   cartItems: localStorage.getItem('cartItems')
+  //     ? JSON.parse(localStorage.getItem('cartItems'))
+  //     : [],
+  //   shippingAddress: localStorage.getItem('shippingAddress')
+  //     ? JSON.parse(localStorage.getItem('shippingAddress'))
+  //     : {},
+  //   paymentMethod: 'PayPal',
+  // },
   cartCasualshirt: {
     cartCasualshirtItem: localStorage.getItem('cartCasualshirtItem')
       ? JSON.parse(localStorage.getItem('cartCasualshirtItem'))
@@ -295,6 +295,8 @@ const reducer = combineReducers({
   userDelete: userDeleteReducer,
   userTopSellersList: userTopSellerListReducer,
   productCategoryList: productCategoryListReducer,
+  productCategorygroupList: productCategorygroupListReducer,
+  productCategorytypeList: productCategorytypeListReducer,
   womenCategoryList: womenCategoryListReducer,
   kidCategoryList: kidCategoryListReducer,
   productReviewCreate: productReviewCreateReducer,

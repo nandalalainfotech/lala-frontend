@@ -21,7 +21,7 @@ export default function CartScreen(props) {
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
-    // if (tshirtId) {
+    // else if (tshirtId) {
     //   dispatch(addToCart(tshirtId, qty));
     // }
   }, [dispatch, productId, qty]);

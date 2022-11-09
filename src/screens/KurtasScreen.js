@@ -44,7 +44,7 @@ export default function KurtasScreen(props) {
     dispatch(detailsKurtas(kurtasId));
   }, [dispatch, kurtasId, successReviewCreate]);
   const addToCartHandler = () => {
-    navigate(`/kurtass/${kurtasId}?qty=${qty}`);
+    navigate(`/cart/${kurtasId}?qty=${qty}`);
   };
 console.log("called-->addToCartHandler",kurtasId);
   const submitHandler = (e) => {

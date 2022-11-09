@@ -10,10 +10,8 @@ export default function Product(props) {
 
   useEffect(() => {
     async function fetchData() {
-    
-      const  imageData =  await Axios.get(`/api/uploads/show/${product.fileId}`, { responseType: 'blob' });
+      const  imageData =  await Axios.get(`/api/uploads/show/${product._id}`, { responseType: 'blob' });
       setImage(URL.createObjectURL(imageData.data));
-    
     }
     fetchData();
   }, [product]); 
