@@ -229,14 +229,25 @@ function App() {
             >
               <ul>
                 <li>
-                  <div className="dropdown">
-                    <Link className="home" to="/cart">
-                      <i className="fa fa-shopping-cart"></i>&nbsp;Cart
-                      {cartItems.length > 0 && (
-                        <span className="badge">{cartItems.length}</span>
-                      )}
-                    </Link>
-                  </div>
+                  {userInfo ? (
+                    <div className="dropdown">
+                      <Link className="home" to="/cart">
+                        <i className="fa fa-shopping-cart"></i>&nbsp;Cart
+                        {cartItems.length > 0 && (
+                          <span className="badge">{cartItems.length}</span>
+                        )}
+                      </Link>
+                    </div>
+                  ) : (
+                    <div className="dropdown">
+                      <Link className="home" to="/cart">
+                        <i className="fa fa-shopping-cart"></i>&nbsp;Cart
+                        {cartItems.length > 0 && (
+                          <span className="badge">{cartItems.length}</span>
+                        )}
+                      </Link>
+                    </div>
+                  )}
                 </li>
                 <li>
                   {userInfo ? (

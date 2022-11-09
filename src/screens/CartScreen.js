@@ -14,7 +14,8 @@ export default function CartScreen(props) {
   const qtyInUrl = new URLSearchParams(search).get("qty");
   const qty = qtyInUrl ? Number(qtyInUrl) : 1;
   const dispatch = useDispatch();
-
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
   const cart = useSelector((state) => state.cart);
   const { cartItems, error } = cart;
   useEffect(() => {
@@ -39,9 +40,31 @@ export default function CartScreen(props) {
         <h1>Shopping Cart</h1>
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         {cartItems.length === 0 ? (
-          <MessageBox>
-            Cart is empty. <Link to="/">Go Shopping</Link>
-          </MessageBox>
+          <>
+            {userInfo ? (
+              <div className="cart">
+                <div className="card card21">
+                  <img className="cartin" src="/image/carts.jpg" />
+                  <MessageBox>Cart is empty.</MessageBox>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="cart">
+                  <div className="card card22">
+                    <img className="cartin" src="/image/carts.jpg" />
+                    <MessageBox style={"color:red"}>Cart is empty.</MessageBox>
+                    <Link to="/signin">
+                      <button className="carts1">Sign In</button>
+                    </Link>
+                    <Link to="/register">
+                      <button className="carts2">Register</button>
+                    </Link>
+                  </div>
+                </div>
+              </>
+            )}
+          </>
         ) : (
           <ul>
             {cartItems.map((item) => (
