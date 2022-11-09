@@ -20,6 +20,14 @@ const {
   PRODUCT_CATEGORY_LIST_REQUEST,
   PRODUCT_CATEGORY_LIST_SUCCESS,
   PRODUCT_CATEGORY_LIST_FAIL,
+
+  PRODUCT_CATEGORYGROUP_LIST_REQUEST,
+  PRODUCT_CATEGORYGROUP_LIST_SUCCESS,
+  PRODUCT_CATEGORYGROUP_LIST_FAIL,
+  PRODUCT_CATEGORYTYPE_LIST_REQUEST,
+  PRODUCT_CATEGORYTYPE_LIST_SUCCESS,
+  PRODUCT_CATEGORYTYPE_LIST_FAIL,
+
   PRODUCT_REVIEW_CREATE_REQUEST,
   PRODUCT_REVIEW_CREATE_SUCCESS,
   PRODUCT_REVIEW_CREATE_FAIL,
@@ -62,6 +70,38 @@ export const productCategoryListReducer = (
         return state;
     }
   };
+
+  export const productCategorygroupListReducer = (
+    state = { loading: true, products: [] },
+    action
+    ) => {
+      switch (action.type) {
+        case PRODUCT_CATEGORYGROUP_LIST_REQUEST:
+          return { loadingfrp: true };
+        case PRODUCT_CATEGORYGROUP_LIST_SUCCESS:
+          return { loadinggrp: false, categoriesGroup: action.payload };
+        case PRODUCT_CATEGORYGROUP_LIST_FAIL:
+          return { loadinggrp: false, errorcategrp: action.payload };
+        default:
+          return state;
+      }
+    };
+
+    export const productCategorytypeListReducer = (
+      state = { loading: true, products: [] },
+      action
+      ) => {
+        switch (action.type) {
+          case PRODUCT_CATEGORYTYPE_LIST_REQUEST:
+            return { loadingtype: true };
+          case PRODUCT_CATEGORYTYPE_LIST_SUCCESS:
+            return { loadingtype: false, categoriesType: action.payload };
+          case PRODUCT_CATEGORYTYPE_LIST_FAIL:
+            return { loadingtype: false, errorcategtype: action.payload };
+          default:
+            return state;
+        }
+      };
 
 export const productDetailsReducer = (state = { loading: true }, action) => {
   switch (action.type) {
