@@ -20,6 +20,8 @@ export default function ProductEditScreen(props) {
   const [image, setImage] = useState("");
   const [imageFile, setImageFile] = useState("");
   const [category, setCategory] = useState("");
+  const [categorygroup, setCategorygroup] = useState("");
+  const [categorytype, setCategorytype] = useState("");
   const [countInStock, setCountInStock] = useState("");
   const [brand, setBrand] = useState("");
   const [description, setDescription] = useState("");
@@ -44,6 +46,9 @@ export default function ProductEditScreen(props) {
       setPrice(product.price);
       setImage(product.image);
       setCategory(product.category);
+      setCategorygroup(product.categorygroup);
+      setCategorytype(product.categorytype);
+
       setCountInStock(product.countInStock);
       setBrand(product.brand);
       setDescription(product.description);
@@ -60,6 +65,8 @@ export default function ProductEditScreen(props) {
         image,
         imageFile,
         category,
+        categorygroup,
+        categorytype,
         brand,
         countInStock,
         description,
@@ -78,7 +85,7 @@ export default function ProductEditScreen(props) {
     setLoadingUpload(true);
     try {
       const { data } = await Axios.post('/api/uploads', bodyFormData, {
-        
+
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${userInfo.token}`,
@@ -163,6 +170,26 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div>
+              <label htmlFor="category group">Category group</label>
+              <input
+                id="category group"
+                type="text"
+                placeholder="Enter category group"
+                value={categorygroup}
+                onChange={(e) => setCategorygroup(e.target.value)}
+              ></input>
+            </div>
+            <div>
+              <label htmlFor="category group text">Category text</label>
+              <input
+                id="category text"
+                type="text"
+                placeholder="Enter category  text"
+                value={categorytype}
+                onChange={(e) => setCategorytype(e.target.value)}
+              ></input>
+            </div>
+            <div>
               <label htmlFor="brand">Brand</label>
               <input
                 id="brand"
@@ -200,8 +227,9 @@ export default function ProductEditScreen(props) {
               </button>
             </div>
           </>
-        )}
-      </form>
-    </div>
+        )
+        }
+      </form >
+    </div >
   );
 }

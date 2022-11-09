@@ -5,6 +5,7 @@ import Rating from './Rating';
 
 export default function Tshirt(props) {
   const { tshirt } = props;
+  
   return (
     <div key={tshirt._id} className="card">
       <Link to={`/tshirt/${tshirt._id}`}>

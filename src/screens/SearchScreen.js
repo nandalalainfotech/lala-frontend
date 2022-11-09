@@ -222,6 +222,8 @@ export default function SearchScreen(props) {
   const {
     name = 'all',
     category = 'all',
+    categorygroup = 'all',
+    categorytype = 'all',
     min = 0,
     max = 0,
     rating = 0,
@@ -238,29 +240,48 @@ export default function SearchScreen(props) {
     error: errorCategories,
     categories,
   } = productCategoryList;
+  const productCategorygroupList = useSelector((state) => state.productCategorygroupList);
+  const {
+    loadinggrp: loadingCategoriesGroup,
+    errorcategrp: errorCategoriesGroup,
+    categoriesGroup,
+  } = productCategorygroupList;
+
+  const productCategorytypeList = useSelector((state) => state.productCategorytypeList);
+  const {
+    loadingtype: loadingCategoriesType,
+    errorcategtype: errorCategoriesType,
+    categoriesType,
+  } = productCategorytypeList;
+  console.log("categoriesGroup----------------->>>", categoriesGroup)
+  console.log("categoriesType----------------->>>", categoriesType)
   useEffect(() => {
     dispatch(
       listProducts({
         pageNumber,
         name: name !== 'all' ? name : '',
         category: category !== 'all' ? category : '',
+        categorygroup: categorygroup !== 'all' ? categorygroup : '',
+        categorytext: categorytype !== 'all' ? categorytype : '',
         min,
         max,
         rating,
         order,
       })
     );
-  }, [category, dispatch, max, min, name, order, rating, pageNumber]);
+  }, [category,categorygroup, categorytype,dispatch, max, min, name, order, rating, pageNumber]);
 
   const getFilterUrl = (filter) => {
     const filterCategory = filter.category || category;
+    const filterCategorygroup = filter.categorygroup || categorygroup;
+    const filterCategorytype = filter.categorytype || categorytype;
     const filterName = filter.name || name;
     const filterMin = filter.min ? filter.min : filter.min === 0 ? 0 : min;
     const filterMax = filter.max ? filter.max : filter.max === 0 ? 0 : max;
     const filterRating = filter.rating || rating;
     const sortOrder = filter.order || order;
     const filterPage = filter.page || pageNumber;
-    return `/search/category/${filterCategory}/name/${filterName}/min/${filterMin}/max/${filterMax}/rating/${filterRating}/order/${sortOrder}/pageNumber/${filterPage}`;
+    return `/search/category/${filterCategory}/categorygroup/${filterCategorygroup}/categorytype/${filterCategorytype}/name/${filterName}/min/${filterMin}/max/${filterMax}/rating/${filterRating}/order/${sortOrder}/pageNumber/${filterPage}`;
   };
   return (
     <div>
@@ -272,7 +293,7 @@ export default function SearchScreen(props) {
         ) : (
           <div>{products.length} Results</div>
         )}
-        <div className='sort'>
+        <div>
           Sort by{' '}
           <select
             value={order}

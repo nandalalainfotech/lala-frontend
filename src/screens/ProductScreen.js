@@ -147,6 +147,14 @@ export default function ProductScreen(props) {
                       <span> {product.category}</span>
                     </li>
                     <li>
+   categorygroup:
+                    <span> {product.categorygroup}</span>
+                  </li>
+                  <li>
+                    categorytype:
+                    <span> {product.categorytype}</span>
+                  </li>
+                  <li>
                       Brand:
                       <span> {product.brand}</span>
                     </li>
