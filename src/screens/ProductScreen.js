@@ -41,19 +41,14 @@ export default function ProductScreen(props) {
       setComment("");
       dispatch({ type: PRODUCT_REVIEW_CREATE_RESET });
     }
-    dispatch(detailsProduct(productId));
-  }, [dispatch, productId, successReviewCreate]);
-
-  useEffect(() => {
-    if (!loading && !product) return;
-    const fetchBusinesses = async () => {
-      const img = await Axios.get(`/api/uploads/show/${product.fileId}`, {
-        responseType: "blob",
-      });
-      setImage(URL.createObjectURL(img.data));
-    };
-    fetchBusinesses();
-  }, [loading, product]);
+      dispatch(detailsProduct(productId));
+      const fetchBusinesses = async () => {
+        const img = await Axios.get(`/api/uploads/show/${productId}`, { responseType: 'blob' });
+        setImage(URL.createObjectURL(img.data));
+      };
+      fetchBusinesses();
+    
+  },[dispatch, productId, successReviewCreate]);
 
   const addToCartHandler = () => {
     navigate(`/cart/${productId}?qty=${qty}`);
