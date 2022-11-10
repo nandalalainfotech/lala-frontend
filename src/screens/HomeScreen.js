@@ -11,8 +11,6 @@ import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import { listKids } from "../actions/kidAction";
 import { listWomens } from "../actions/womenAction";
-import Women from "../components/women";
-import Kid from "../components/Kid";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -20,12 +18,9 @@ import "slick-carousel/slick/slick-theme.css";
 export default function HomeScreen() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
-  const { products } = productList;
+  const { loading, error, products } = productList;
   const userTopSellersList = useSelector((state) => state.userTopSellersList);
-  const womenList = useSelector((state) => state.womenList);
-  const { womens } = womenList;
-  const kidList = useSelector((state) => state.kidList);
-  const { loading, error, kids } = kidList;
+
   const {
     loading: loadingSellers,
     error: errorSellers,
@@ -57,29 +52,29 @@ export default function HomeScreen() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           infinite: true,
-          dots: true,
-        },
+          // dots: true
+        }
       },
       {
-        breakpoint: 600,
+        breakpoint: 850,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2,
-        },
+          initialSlide: 2
+        }
       },
       {
-        breakpoint: 480,
+        breakpoint: 550,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
   return (
     <div>
       <div className="convey">
@@ -102,13 +97,13 @@ export default function HomeScreen() {
                   <Link to={`/seller`}>
                     <ul data-slides>
                       <li className="slide" >
-                        <img className="sellerimg" src="/image/p10.jpg" />
+                        <img className="sellerimg" src="/image/p10.jpg" alt="Sarees" />
 
-                        <img className="sellerimg" src="/image/p91.jpg" />
+                        <img className="sellerimg" src="/image/p91.jpg" alt="Sarees" />
 
-                        <img className="sellerimg" src="/image/sa4.jpg" />
+                        <img className="sellerimg" src="/image/sa4.jpg" alt="Sarees" />
 
-                        <img className="sellerimg" src="/image/p11.jpg" />
+                        <img className="sellerimg" src="/image/p11.jpg" alt="Sarees" />
                       </li>
                     </ul>
                   </Link>
@@ -116,13 +111,13 @@ export default function HomeScreen() {
                   <Link to={`/seller`}>
                     <ul>
                       <li className="slide" data-active>
-                        <img className="sellerimg" src="/image/p12.jpg" />
+                        <img className="sellerimg" src="/image/p12.jpg" alt="Sarees" />
 
-                        <img className="sellerimg" src="/image/sa5.jpg" />
+                        <img className="sellerimg" src="/image/sa5.jpg" alt="Sarees" />
 
-                        <img className="sellerimg" src="/image/sa9.jpg" />
+                        <img className="sellerimg" src="/image/sa9.jpg" alt="Sarees" />
 
-                        <img className="sellerimg" src="/image/sa10.jpg" />
+                        <img className="sellerimg" src="/image/sa10.jpg" alt="Sarees" />
                       </li>
                     </ul>
                   </Link>
@@ -152,7 +147,7 @@ export default function HomeScreen() {
         </>
       )}
 
-      <h2>Men's collection</h2>
+      <h2  className="product" >Men's collection</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -172,7 +167,7 @@ export default function HomeScreen() {
         </>
       )}
 
-      <h2>Women collection</h2>
+      <h2 className="product">Women's collection</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -192,7 +187,7 @@ export default function HomeScreen() {
         </>
       )}
 
-      <h2>Kids collection</h2>
+      <h2 className="product">Kid's collection</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
