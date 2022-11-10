@@ -168,7 +168,7 @@
 //               </div>
 //             </>
 
-            
+
 //           )}
 //         </div>
 //         <div className="col-3">
@@ -199,7 +199,7 @@
 //               </div>
 //             </>
 
-            
+
 //           )}
 //         </div>
 //       </div>
@@ -240,21 +240,21 @@ export default function SearchScreen(props) {
     error: errorCategories,
     categories,
   } = productCategoryList;
-  const productCategorygroupList = useSelector((state) => state.productCategorygroupList);
-  const {
-    loadinggrp: loadingCategoriesGroup,
-    errorcategrp: errorCategoriesGroup,
-    categoriesGroup,
-  } = productCategorygroupList;
+  // const productCategorygroupList = useSelector((state) => state.productCategorygroupList);
+  // const {
+  //   loadinggrp: loadingCategoriesGroup,
+  //   errorcategrp: errorCategoriesGroup,
+  //   categoriesGroup,
+  // } = productCategorygroupList;
 
-  const productCategorytypeList = useSelector((state) => state.productCategorytypeList);
-  const {
-    loadingtype: loadingCategoriesType,
-    errorcategtype: errorCategoriesType,
-    categoriesType,
-  } = productCategorytypeList;
-  console.log("categoriesGroup----------------->>>", categoriesGroup)
-  console.log("categoriesType----------------->>>", categoriesType)
+  // const productCategorytypeList = useSelector((state) => state.productCategorytypeList);
+  // const {
+  //   loadingtype: loadingCategoriesType,
+  //   errorcategtype: errorCategoriesType,
+  //   categoriesType,
+  // } = productCategorytypeList;
+  // console.log("categoriesGroup----------------->>>", categoriesGroup)
+  // console.log("categoriesType----------------->>>", categoriesType)
   useEffect(() => {
     dispatch(
       listProducts({
@@ -262,14 +262,14 @@ export default function SearchScreen(props) {
         name: name !== 'all' ? name : '',
         category: category !== 'all' ? category : '',
         categorygroup: categorygroup !== 'all' ? categorygroup : '',
-        categorytext: categorytype !== 'all' ? categorytype : '',
+        categorytype: categorytype !== 'all' ? categorytype : '',
         min,
         max,
         rating,
         order,
       })
     );
-  }, [category,categorygroup, categorytype,dispatch, max, min, name, order, rating, pageNumber]);
+  }, [category, categorygroup, categorytype, dispatch, max, min, name, order, rating, pageNumber]);
 
   const getFilterUrl = (filter) => {
     const filterCategory = filter.category || category;
@@ -281,7 +281,9 @@ export default function SearchScreen(props) {
     const filterRating = filter.rating || rating;
     const sortOrder = filter.order || order;
     const filterPage = filter.page || pageNumber;
-    return `/search/category/${filterCategory}/categorygroup/${filterCategorygroup}/categorytype/${filterCategorytype}/name/${filterName}/min/${filterMin}/max/${filterMax}/rating/${filterRating}/order/${sortOrder}/pageNumber/${filterPage}`;
+    return (`/search/category/${filterCategory}/name/${filterName}/min/${filterMin}/max/${filterMax}/rating/${filterRating}/order/${sortOrder}/pageNumber/${filterPage}`);
+      // `/search/categorygroup/${filterCategorygroup}/name/${filterName}/min/${filterMin}/max/${filterMax}/rating/${filterRating}/order/${sortOrder}/pageNumber/${filterPage}`,
+      // `/search/categorytype/${filterCategorytype}/name/${filterName}/min/${filterMin}/max/${filterMax}/rating/${filterRating}/order/${sortOrder}/pageNumber/${filterPage}`);
   };
   return (
     <div>
@@ -322,7 +324,7 @@ export default function SearchScreen(props) {
                   <Link
                     className={'all' === category ? 'active' : ''}
                     to={getFilterUrl({ category: 'all' })}
-                    // to={`/search/category/sample category`}
+                  // to={`/search/category/sample category`}
                   >
                     Any
                   </Link>
@@ -332,7 +334,39 @@ export default function SearchScreen(props) {
                     <Link
                       className={c === category ? 'active' : ''}
                       to={getFilterUrl({ category: c })}
-                      // to={`/search/category/${c}`}
+                    // to={`/search/category/${c}`}
+
+
+                    >
+                      {c}
+                    </Link>
+                  </li>
+                ))}
+
+
+              </ul>
+            )}
+
+            {/* {loadingCategoriesGroup ? (
+              <LoadingBox></LoadingBox>
+            ) : errorCategoriesGroup ? (
+              <MessageBox variant="danger">{errorCategories}</MessageBox>
+            ) : (
+              <ul>
+
+                <li>
+                  <Link
+                    className={'all' === categorygroup ? 'active' : ''}
+                    to={getFilterUrl({ categorygroup: 'all' })}
+                  />
+
+                </li>
+                {categoriesGroup.map((c) => (
+                  <li key={c}>
+                    <Link
+                      className={c === categorygroup ? 'active' : ''}
+                      to={getFilterUrl({ categorygroup: c })}
+                    // to={`/search/category/${c}`}
 
 
                     >
@@ -341,7 +375,7 @@ export default function SearchScreen(props) {
                   </li>
                 ))}
               </ul>
-            )}
+            )} */}
           </div>
           <div>
             <h3>Price</h3>

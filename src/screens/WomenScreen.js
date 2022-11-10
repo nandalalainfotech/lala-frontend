@@ -104,7 +104,7 @@ export default function WomenScreen(props) {
                     numReviews={women.numReviews}
                   ></Rating>
                 </li>
-                <li>Pirce : ${women.price}</li>
+                <li>Price : ${women.price}</li>
                
                 <li>
                   Description:

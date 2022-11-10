@@ -48,7 +48,6 @@ export default function ProductEditScreen(props) {
       setCategory(product.category);
       setCategorygroup(product.categorygroup);
       setCategorytype(product.categorytype);
-
       setCountInStock(product.countInStock);
       setBrand(product.brand);
       setDescription(product.description);
@@ -180,11 +179,11 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="category group text">Category text</label>
+              <label htmlFor="category type">Category type</label>
               <input
-                id="category text"
+                id="category type"
                 type="text"
-                placeholder="Enter category  text"
+                placeholder="Enter category  type"
                 value={categorytype}
                 onChange={(e) => setCategorytype(e.target.value)}
               ></input>

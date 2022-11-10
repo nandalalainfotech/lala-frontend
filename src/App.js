@@ -32,7 +32,7 @@ import SellerRoute from "./components/SellerRoute";
 import SellerScreen from "./screens/SellerScreen";
 import SearchBox from "./components/SearchBox";
 import SearchScreen from "./screens/SearchScreen";
-import { listProductCategories, listProductCategoriesgroup, listProductCategoriestype } from "./actions/productAction";
+import { listProductCategories, listProductCategorygroup, listProductCategorytype } from "./actions/productAction";
 import { listSareeCategories } from "./actions/sareeAction";
 import MessageBox from "./components/MessageBox";
 import LoadingBox from "./components/LoadingBox";
@@ -43,92 +43,15 @@ import SupportScreen from "./screens/SupportScreen";
 import SareeScreen from "./screens/SareeScreen";
 import BookScreen from "./screens/BookScreen";
 import SareeEditScreen from "./screens/SareeEditScreen";
-import TshirtListScreen from "./screens/TshirtListScreen";
-import CasualShirtListScreen from "./screens/CasualShirtListScreen";
 import CartWomenScreen from "./screens/CartWomenScreen";
 import CartKidScreen from "./screens/CartKidScreen";
-import CartCasualShirtScreen from "./screens/CartCasualShirtScreen";
-import CartFormalShirtScreen from "./screens/CartFormalShirtScreen";
 import WomenListScreen from "./screens/WomenListScreen";
 import KidListScreen from "./screens/KidListScreen";
 import WomenEditScreen from "./screens/WomenEditScreen";
-import CasualShirtEditScreen from "./screens/CasualShirtEditScreen";
 import KidEditScreen from "./screens/KidEditScreen";
 import WomenScreen from "./screens/WomenScreen";
-
 import KidScreen from "./screens/KidsScreen";
-import TshirtEditScreen from "./screens/TshirtEditScreen";
-import TshirtScreens from "./screens/TshirtScreens";
-import CartTshirtScreen from "./screens/CartTshirtScreen";
-import HomeScreens from "./screens/HomeScreens";
-import CasualShirtScreens from "./screens/CasualShirtScreens";
-import TshirtScreen from "./screens/TshirtScreen";
-import CasualShirtScreen from "./screens/CasualShirtScreen";
-import FormalshirtScreen from "./screens/FormalshirtScreen";
-import FormalshirtScreens from "./screens/FormalshirtScreens";
-import FormalShirtListScreen from "./screens/FormalShirtListScreen";
-import FormalShirtEditScreen from "./screens/FormalShirtEditScreen";
 
-import JacketScreen from "./screens/JacketScreen";
-import JacketScreens from "./screens/JacketScreens";
-import JacketListScreen from "./screens/JacketListScreen";
-import JacketEditScreen from "./screens/JacketEditScreen";
-import CartJacketScreen from "./screens/CartJacketScreen";
-
-import SweaterScreen from "./screens/SweaterScreen";
-import SweaterScreens from "./screens/SweaterScreens";
-import SweaterListScreen from "./screens/SweaterListScreen";
-import SweaterEditScreen from "./screens/SweaterEditScreen";
-import CartSweaterScreen from "./screens/CartSweaterScreen";
-
-import SuitScreen from "./screens/SuitScreen";
-import SuitScreens from "./screens/SuitScreens";
-import SuitListScreen from "./screens/SuitListScreen";
-import SuitEditScreen from "./screens/SuitEditScreen";
-import CartSuitScreen from "./screens/CartSuitScreen";
-
-import RainjacketScreen from "./screens/RainjacketScreen";
-import RainjacketScreens from "./screens/RainjacketScreens";
-import RainJacketListScreen from "./screens/RainJacketListScreen";
-import RainJacketEditScreen from "./screens/RainJacketEditScreen";
-import CartRainjacketScreen from "./screens/CartRainjacketScreen";
-
-import BlazerScreen from "./screens/BlazerScreen";
-import BlazerScreens from "./screens/BlazerScreens";
-import BlazerListScreen from "./screens/BlazerListScreen";
-import BlazerEditScreen from "./screens/BlazerEditScreen";
-import CartBlazerScreen from "./screens/CartBlazerScreen";
-
-
-import KurtasScreen from "./screens/KurtasScreen";
-import KurtasScreens from "./screens/KurtasScreens";
-import KurtasListScreen from "./screens/KurtasListScreen";
-import KurtasEditScreen from "./screens/KurtasEditScreen";
-import CartKurtasScreen from "./screens/CartKurtasScreen";
-
-import IndianScreen from "./screens/IndianScreen";
-import IndianScreens from "./screens/IndianScreens";
-import IndianListScreen from "./screens/IndianListScreen";
-import IndianEditScreen from "./screens/IndianEditScreen";
-import CartIndianScreen from "./screens/CartIndianScreen";
-
-import NehruScreen from "./screens/NehruScreen";
-import NehruScreens from "./screens/NehruScreens";
-import NehruListScreen from "./screens/NehruListScreen";
-import NehruEditScreen from "./screens/NehruEditScreen";
-import CartNehruScreen from "./screens/CartNehruScreen";
-
-import SherwaniScreen from "./screens/SherwaniScreen";
-import SherwaniScreens from "./screens/SherwaniScreens";
-import SherwaniListScreen from "./screens/SherwaniListScreen";
-import SherwaniEditScreen from "./screens/SherwaniEditScreen";
-import CartSherwaniScreen from "./screens/CartSherwaniScreen";
-
-import DhotisScreen from "./screens/DhotisScreen";
-import DhotisScreens from "./screens/DhotisScreens";
-import DhotisListScreen from "./screens/DhotisListScreen";
-import DhotisEditScreen from "./screens/DhotisEditScreen";
-import CartDhotisScreen from "./screens/CartDhotisScreen";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -162,24 +85,24 @@ function App() {
     error: errorCategories,
     categories,
   } = productCategoryList;
-  
-  const productCategorygroupList = useSelector((state) => state.productCategorygroupList);
-  const {
-    loadinggrp: loadingCategoriesGroup,
-    errorcategrp: errorCategoriesGroup,
-    categoriesGroup,
-  } = productCategorygroupList;
 
-  const productCategorytypeList = useSelector((state) => state.productCategorytypeList);
-  const {
-    loadingtype: loadingCategoriesType,
-    errorcategtype: errorCategoriesType,
-    categoriesType,
-  } = productCategorytypeList;
+  // const productCategorygroupList = useSelector((state) => state.productCategorygroupList);
+  // const {
+  //   loadinggrp: loadingCategoriesGroup,
+  //   errorcategrp: errorCategoriesGroup,
+  //   categoriesGroup,
+  // } = productCategorygroupList;
+
+  // const productCategorytypeList = useSelector((state) => state.productCategorytypeList);
+  // const {
+  //   loadingtype: loadingCategoriesType,
+  //   errorcategtype: errorCategoriesType,
+  //   categoriesType,
+  // } = productCategorytypeList;
   useEffect(() => {
     dispatch(listProductCategories());
-    dispatch(listProductCategoriesgroup());
-    dispatch(listProductCategoriestype());
+    dispatch(listProductCategorygroup());
+    dispatch(listProductCategorytype());
     dispatch(listSareeCategories());
   }, [dispatch]);
 
@@ -192,6 +115,7 @@ function App() {
   // useEffect(() => {
   //   dispatch(listSareeCategories());
   // }, [dispatch]);
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -224,8 +148,9 @@ function App() {
               </div>
             )}
             <div
-              className= "navigation-menu"
-             
+              className={
+                isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+              }
             >
               <ul>
                 <li>
@@ -358,7 +283,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/topwear"
+                                  to="search/categorygroup/topwear"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Topwear
@@ -367,37 +292,37 @@ function App() {
                               {""}
                             </li>
                             <li>
-                              <Link to="search/name/t-shirt">T-shirts</Link>
+                              <Link to="search/categorytype/t-shirt">T-shirts</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-casual">casual shirts</Link>
+                              <Link to="search/categorytype/casual">casual shirts</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-formal-shirt">formal shirts</Link>
-                            </li>
-
-                            <li>
-                              <Link to="search/name/men-sweater">sweater</Link>
+                              <Link to="search/categorytype/formal">formal shirts</Link>
                             </li>
 
                             <li>
-                              <Link to="search/name/men-jacket">Jackets</Link>
-                            </li>
-                            <li>
-                              <Link to="search/name/men-blazer">Blazer&coats</Link>
+                              <Link to="search/categorytype/sweater">sweater</Link>
                             </li>
 
                             <li>
-                              <Link to="search/name/men-suit">suits</Link>
+                              <Link to="search/categorytype/jacket">Jackets</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-rain-jacket">Rain Jackets</Link>
+                              <Link to="search/categorytype/blazer">Blazer&coats</Link>
+                            </li>
+
+                            <li>
+                              <Link to="search/categorytype/suit">suits</Link>
+                            </li>
+                            <li>
+                              <Link to="search/categorytype/rain-jacket">Rain Jackets</Link>
                             </li>
 
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/men-indian"
+                                  to="search/categorygroup/indian"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Indian festival wear
@@ -406,19 +331,19 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="search/name/men-kurtas">
+                              <Link to="search/categorytype/kurtas">
                                 Kurtas&kurtaseats
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-sherwani">Sherwanis</Link>
+                              <Link to="search/categorytype/sherwani">Sherwanis</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-nehru">NehruJackets</Link>
+                              <Link to="search/categorytype/nehru">NehruJackets</Link>
                             </li>
 
                             <li>
-                              <Link to="search/name/men-dhotis">Dhotis</Link>
+                              <Link to="search/categorytype/dhotis">Dhotis</Link>
                             </li>
                           </ul>
                         </div>
@@ -427,7 +352,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/men-Bottom-Wear"
+                                  to="search/categorygroup/bottom"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Bottom Wear
@@ -435,20 +360,20 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/name/men-jeans">Jeans</Link>
+                              <Link to="search/categorytype/jean">Jeans</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-casual-trousers">Casual trousers</Link>
+                              <Link to="search/categorytype/casual-trouser">Casual trousers</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-formal-trousers">formal trousers</Link>
+                              <Link to="search/categorytype/formal-trouser">formal trousers</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-shorts">shorts</Link>
+                              <Link to="search/categorytype/short">shorts</Link>
                             </li>
 
                             <li>
-                              <Link to="search/name/men-trackpants-joggers">
+                              <Link to="search/categorytype/trackpant">
                                 trackpants&joggers
                               </Link>
                             </li>
@@ -456,7 +381,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/men-InnearWear-Sleepe"
+                                  to="search/categorygroup/inner-wear"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Innear Wear&Sleepe Wear
@@ -464,34 +389,29 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/name/men-briefs-trunks">briefs&trunks</Link>
+                              <Link to="search/categorytype/brief">briefs&trunks</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-boxers">boxers</Link>
+                              <Link to="search/categorytype/boxer">boxers</Link>
+                            </li>
+                                                       
+                            <li>
+                              <Link to="search/categorytype/vest">vests</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-formal-trousers">formal trousers</Link>
-                            </li>
-                            <li>
-                              <Link to="search/name/men-shorts">shorts</Link>
-                            </li>
-                            <li>
-                              <Link to="search/name/men-vests">vests</Link>
-                            </li>
-                            <li>
-                              <Link to="search/name/men-sleepwear-loungewear">
+                              <Link to="search/categorytype/sleep-wear">
                                 sleepwear&loungewear
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="search/name/men-thermals">thermals</Link>
+                              <Link to="search/categorytype/thermal">thermals</Link>
                             </li>
 
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/men-plus"
+                                  to="search/categorygroup/plus"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Plus Size
@@ -506,7 +426,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/name/men-Foot-Wear"
+                                  to="search/categorygroup/foot-wear"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Foot Wear
@@ -514,32 +434,32 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/name/men-casual-shoes">casual shoes</Link>
+                              <Link to="search/categorytype/casual-shoe">casual shoes</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-sports-shoes">sports shoes</Link>
+                              <Link to="search/categorytype/sport-shoe">sports shoes</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-formal-shoes">formal shoes</Link>
+                              <Link to="search/categorytype/formal-shoe">formal shoes</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-sneakers">sneakers</Link>
+                              <Link to="search/categorytype/sneaker">sneakers</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-sandals-floaters">
+                              <Link to="search/categorytype/sandal">
                                 sandals&floaters
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-flipfloaps">flipfloaps</Link>
+                              <Link to="search/categorytype/flipfloap">flipfloaps</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-socks">socks</Link>
+                              <Link to="search/categorytype/sock">socks</Link>
                             </li>
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/men-Personal-Care-Grooming"
+                                  to="search/categorygroup/personal-care-grooming"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   personalCareGrooming
@@ -548,14 +468,14 @@ function App() {
                             </li>
                             <li>
                               <Link
-                                to="search/name/men-sunglasses-Frames"
+                                to="search/categorygroup/sunglasses"
                                 style={{ color: "#ee5f73" }}
                               >
                                 Sunglasses&Frames
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-Watches" style={{ color: "#ee5f73" }}>
+                              <Link to="search/categorygroup/watch" style={{ color: "#ee5f73" }}>
                                 Watches
                               </Link>
                             </li>
@@ -566,7 +486,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/men-Sports-activy-Wear"
+                                  to="search/categorygroup/sports-activy-wear"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Sports activy Wear
@@ -574,42 +494,42 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/name/men-sports-shoes">sports shoes</Link>
+                              <Link to="search/categorytype/sports-shoe">sports shoes</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-sandal-shoes">sandal shoes</Link>
+                              <Link to="search/categorytype/sports-sandal">sports sandal</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-active-t-shirts">active t-shirts</Link>
+                              <Link to="search/categorytype/active-t-shirts">active t-shirts</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-trackpants-shorts">
+                              <Link to="search/categorytype/trackpants-shorts">
                                 trackpants&shorts
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-tracksuits">tracksuits</Link>
+                              <Link to="search/categorytype/tracksuits">tracksuits</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-jackets-sweetshirts">
+                              <Link to="search/categorytype/jackets-sweetshirts">
                                 Jackets&sweetshirts
                               </Link>
                             </li>
                            
 
                             <li>
-                              <Link to="search/name/men-sports-accessories">
+                              <Link to="search/categorytype/sports-accessories">
                                 sportsaccessories
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="search/name/men-swirm-wears">swirm wears</Link>
+                              <Link to="search/categorytype/swirm-wears">swirm wears</Link>
                             </li>
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/men-gadgets"
+                                  to="search/categorygroup/gadgets"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   gadgets
@@ -617,16 +537,16 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/name/men-small-wearables">small wearables</Link>
+                              <Link to="search/categorytype/small-wearables">small wearables</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-fitness-gadgets">fitness gadgets</Link>
+                              <Link to="search/categorytype/fitness-gadgets">fitness gadgets</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-headphone">headphone</Link>
+                              <Link to="search/categorytype/headphone">headphone</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-speakers">speakers</Link>
+                              <Link to="search/categorytype/speakers">speakers</Link>
                             </li>
                           </ul>
                         </div>
@@ -2321,6 +2241,22 @@ function App() {
                 </li>
               ))
             )}
+            {/* {loadingCategories ? (
+              <LoadingBox></LoadingBox>
+            ) : errorCategories ? (
+              <MessageBox variant="danger">{errorCategories}</MessageBox>
+            ) : (
+              categories.map((c) => (
+                <li key={c}>
+                  <Link
+                    to={`/search/category/${c}`}
+                    onClick={() => setSidebarIsOpen(false)}
+                  >
+                    {c}
+                  </Link>
+                </li>
+              ))
+            )} */}
           </ul>
         </aside>
         <main>
@@ -2331,57 +2267,11 @@ function App() {
             <Route path="/cartkid/:id" element={<CartKidScreen />}></Route>
             <Route path="/carttshirt/:id" element={<CartScreen />}></Route>
             <Route path="/search/name" element={<SearchScreen />} exact></Route>
-            <Route
-              path="/cartcasualshirt/:id"
-              element={<CartCasualShirtScreen />}
-            ></Route>
-            <Route
-              path="/cartformalshirt/:id"
-              element={<CartFormalShirtScreen />}
-            ></Route>
-            <Route
-              path="/cartsweater/:id"
-              element={<CartSweaterScreen />}
-            ></Route>
-            <Route
-              path="/cartjacket/:id"
-              element={<CartJacketScreen />}
-            ></Route>
-            <Route path="/cartsuit/:id" element={<CartSuitScreen />}></Route>
-            <Route path="/cartrainjacket/:id" element={<CartRainjacketScreen />}></Route>
-            <Route path="/cartblazer/:id" element={<CartBlazerScreen />}></Route>
-
-            <Route path="/cartdhotis/:id" element={<CartDhotisScreen />}></Route>
-            <Route path="/cartkurtas/:id" element={<CartKurtasScreen />}></Route>
-            <Route path="/cartnehru/:id" element={<CartNehruScreen />}></Route>
-            <Route path="/cartindian/:id" element={<CartIndianScreen />}></Route>
-            <Route path="/cartsherwani/:id" element={<CartSherwaniScreen />}></Route>
-
+            
             <Route path="/cart" element={<CartScreen />}></Route>
             <Route path="/cartwomen" element={<CartWomenScreen />}></Route>
             <Route path="/cartkid" element={<CartKidScreen />}></Route>
-            <Route path="/cartTshirt" element={<CartTshirtScreen />}></Route>
-            <Route
-              path="/cartCasualShirt"
-              element={<CartCasualShirtScreen />}
-            ></Route>
-            <Route
-              path="/cartFormalShirt"
-              element={<CartFormalShirtScreen />}
-            ></Route>
-            <Route path="/cartJacket" element={<CartJacketScreen />}></Route>
-            <Route path="/cartSweater" element={<CartSweaterScreen />}></Route>
-            <Route path="/cartSuit" element={<CartSuitScreen />}></Route>
-            <Route
-              path="/cartRainJacket"
-              element={<CartRainjacketScreen />}
-            ></Route>
-            <Route path="/cartBlazer" element={<CartBlazerScreen />}></Route>
-            <Route path="/cartsherwani" element={<CartSherwaniScreen />}></Route>
-            <Route path="/cartkurtas" element={<CartKurtasScreen />}></Route>
-            <Route path="/cartnehru" element={<CartNehruScreen />}></Route>
-            <Route path="/cartindian" element={<CartIndianScreen />}></Route>
-            <Route path="/cartdhotis" element={<CartDhotisScreen />}></Route>
+                 
 
             <Route path="/signin" element={<SigninScreen />}></Route>
             <Route path="/account" element={<AccountScreen />}></Route>
@@ -2405,83 +2295,9 @@ function App() {
               }
               exact
             ></Route>
-            <Route
-              path="/tshirtlist/seller"
-              element={
-                <SellerRoute>
-                  <TshirtListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/casualshirtlist/seller"
-              element={
-                <SellerRoute>
-                  <CasualShirtListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/formalshirtlist/seller"
-              element={
-                <SellerRoute>
-                  <FormalShirtListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/jacketlist/seller"
-              element={
-                <SellerRoute>
-                  <JacketListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/sweaterlist/seller"
-              element={
-                <SellerRoute>
-                  <SweaterListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/suitlist/seller"
-              element={
-                <SellerRoute>
-                  <SuitListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/rainjacketlist/seller"
-              element={
-                <SellerRoute>
-                  <RainJacketListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/blazerlist/seller"
-              element={
-                <SellerRoute>
-                  <BlazerListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-  <Route path="/kurtaslist/seller" element={<SellerRoute><KurtasListScreen /></SellerRoute>} exact></Route>
-            <Route path="/nehrulist/seller" element={<SellerRoute><NehruListScreen /></SellerRoute>} exact></Route>
-            <Route path="/indianlist/seller" element={<SellerRoute><IndianListScreen /></SellerRoute>} exact></Route>
-            <Route path="/dhotislist/seller" element={<SellerRoute><DhotisListScreen /></SellerRoute>} exact></Route>
-            <Route path="/sherwanilist/seller" element={<SellerRoute><SherwaniListScreen /></SellerRoute>} exact></Route>
+
+
+
             <Route
               path="/Sareelist/seller"
               element={
@@ -2537,135 +2353,6 @@ function App() {
             />
 
             <Route
-              path="/tshirtlist"
-              element={
-                <AdminRoute>
-                  <TshirtListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-            <Route
-              path="/casualshirtlist"
-              element={
-                <AdminRoute>
-                  <CasualShirtListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-            <Route
-              path="/formalshirtlist"
-              element={
-                <AdminRoute>
-                  <FormalShirtListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-            <Route
-              path="/jacketlist"
-              element={
-                <AdminRoute>
-                  <JacketListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-
-            <Route
-              path="/sweaterlist"
-              element={
-                <AdminRoute>
-                  <SweaterListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-            <Route
-              path="/suitlist"
-              element={
-                <AdminRoute>
-                  <SuitListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-            <Route
-              path="/rainjacketlist"
-              element={
-                <AdminRoute>
-                  <RainJacketListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-            <Route
-              path="/blazerlist"
-              element={
-                <AdminRoute>
-                  <BlazerListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-
-            <Route
-              path="/kurtastlist"
-              element={
-                <AdminRoute>
-                  <KurtasListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-
-
-            <Route
-              path="/nehrulist"
-              element={
-                <AdminRoute>
-                  <NehruListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-
-
-
-            <Route
-              path="/dhotislist"
-              element={
-                <AdminRoute>
-                  <DhotisListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-
-
-
-            <Route
-              path="/indianlist"
-              element={
-                <AdminRoute>
-                  <IndianListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-
-
-            <Route
-              path="/dhotislist"
-              element={
-                <AdminRoute>
-                  <DhotisListScreen />
-                </AdminRoute>
-              }
-              exact
-            />
-            <Route
               path="/orderlist"
               element={
                 <AdminRoute>
@@ -2690,12 +2377,12 @@ function App() {
             ></Route>
             
             <Route
-              path="/search/categorygroup:categorygroup"
+              path="/search/categorygroup/:categorygroup"
               element={<SearchScreen />}
               exact
             ></Route>
             <Route
-              path="/search/categorytype:categorytype"
+              path="/search/categorytype/:categorytype"
               element={<SearchScreen />}
               exact
             ></Route>
@@ -2737,123 +2424,7 @@ function App() {
               }
               exact
             ></Route>
-            <Route
-              path="/tshirtlist/seller"
-              element={
-                <SellerRoute>
-                  <TshirtListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/casualshirtlist/seller"
-              element={
-                <SellerRoute>
-                  <CasualShirtListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/formalshirtlist/seller"
-              element={
-                <SellerRoute>
-                  <CasualShirtListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/jacketlist/seller"
-              element={
-                <SellerRoute>
-                  <jacketListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/sweaterlist/seller"
-              element={
-                <SellerRoute>
-                  <SweaterListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/dhotislist/seller"
-              element={
-                <SellerRoute>
-                  <DhotisListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/nehrulist/seller"
-              element={
-                <SellerRoute>
-                  <NehruListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/sherwanilist/seller"
-              element={
-                <SellerRoute>
-                  <SherwaniListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/indianlist/seller"
-              element={
-                <SellerRoute>
-                  <IndianListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            <Route
-              path="/kurtaslist/seller"
-              element={
-                <SellerRoute>
-                  <KurtasListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            {/* <Route
-              path="/blazerlist/seller"
-              element={
-                <SellerRoute>
-                  <BlazerListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route> */}
-            <Route
-              path="/suitlist/seller"
-              element={
-                <SellerRoute>
-                  <SuitListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route>
-            {/* <Route
-              path="/rainjacketlist/seller"
-              element={
-                <SellerRoute>
-                  <RainJacketListScreen />
-                </SellerRoute>
-              }
-              exact
-            ></Route> */}
+           
             <Route
               path="/sareelist/seller"
               element={
@@ -2887,76 +2458,6 @@ function App() {
               exact
             ></Route>
 
-            <Route
-              path="/tshirt/:id/edit"
-              element={<TshirtEditScreen />}
-              exact
-            ></Route>
-            <Route
-              path="/formalshirt/:id/edit"
-              element={<FormalShirtEditScreen />}
-              exact
-            ></Route>
-            <Route
-              path="/casualshirt/:id/edit"
-              element={<CasualShirtEditScreen />}
-              exact
-            ></Route>
-
-            <Route
-              path="/sweater/:id/edit"
-              element={<SweaterEditScreen />}
-              exact
-            ></Route>
-
-            <Route
-              path="/jacket/:id/edit"
-              element={<JacketEditScreen />}
-              exact
-            ></Route>
-
-            <Route
-              path="/blazer/:id/edit"
-              element={<BlazerEditScreen />}
-              exact
-            ></Route>
-
-            <Route
-              path="/rainjacket/:id/edit"
-              element={<RainJacketEditScreen />}
-              exact
-            ></Route>
-
-            <Route
-              path="/suit/:id/edit"
-              element={<SuitEditScreen />}
-              exact
-            ></Route>
-            <Route
-              path="/dhotis/:id/edit"
-              element={<DhotisEditScreen />}
-              exact
-            ></Route>
-            <Route
-              path="/nehru/:id/edit"
-              element={<NehruEditScreen />}
-              exact
-            ></Route>
-            <Route
-              path="/sherwani/:id/edit"
-              element={<SherwaniEditScreen />}
-              exact
-            ></Route>
-            <Route
-              path="/indian/:id/edit"
-              element={<IndianEditScreen />}
-              exact
-            ></Route>
-            <Route
-              path="/kurtas/:id/edit"
-              element={<KurtasEditScreen />}
-              exact
-            ></Route>
             <Route
               path="/saree/:id/edit"
               element={<SareeEditScreen />}
@@ -3024,130 +2525,15 @@ function App() {
                 </AdminRoute>
               }
             />
-
-            <Route
-              path="/suitlist/pageNumber/:pageNumber"
-              element={
-                <AdminRoute>
-                  <SuitListScreen />
-                </AdminRoute>
-              }
-            />
-            <Route
+            {/* <Route
               path="/Home"
               element={
                 <AdminRoute>
                   <HomeScreens />
                 </AdminRoute>
               }
-            />
-            <Route
-              path="/casual-shirt"
-              element={
-                <AdminRoute>
-                  <CasualShirtScreens />
-                </AdminRoute>
-              }
-            />
+            /> */}
 
-            <Route
-              path="/Tshirt"
-              element={
-                <AdminRoute>
-                  <TshirtScreens />
-                </AdminRoute>
-              }
-            />
-            <Route
-              path="/Formal-shirt"
-              element={
-                <AdminRoute>
-                  <FormalshirtScreens />
-                </AdminRoute>
-              }
-            />
-
-            <Route
-              path="/Sweater"
-              element={
-                <AdminRoute>
-                  <SweaterScreens />
-                </AdminRoute>
-              }
-            />
-
-            <Route
-              path="/Jacket"
-              element={
-                <AdminRoute>
-                  <JacketScreens />
-                </AdminRoute>
-              }
-            />
-            <Route
-              path="/suit"
-              element={
-                <AdminRoute>
-                  <SuitScreens />
-                </AdminRoute>
-              }
-            />
-            <Route
-              path="/Rain-Jacket"
-              element={
-                <AdminRoute>
-                  <RainjacketScreens />
-                </AdminRoute>
-              }
-            />
-            <Route
-              path="/Blazer"
-              element={
-                <AdminRoute>
-                  <BlazerScreens />
-                </AdminRoute>
-              }
-            />
-            <Route
-              path="/Dhotis"
-              element={
-                <AdminRoute>
-                  <DhotisScreens />
-                </AdminRoute>
-              }
-            />
-            <Route
-              path="/Kurtas"
-              element={
-                <AdminRoute>
-                  <KurtasScreens />
-                </AdminRoute>
-              }
-            />
-            <Route
-              path="/Indian"
-              element={
-                <AdminRoute>
-                  <IndianScreens />
-                </AdminRoute>
-              }
-            />
-            <Route
-              path="/Sherwani"
-              element={
-                <AdminRoute>
-                  <SherwaniScreens />
-                </AdminRoute>
-              }
-            />
-            <Route
-              path="/Nehru"
-              element={
-                <AdminRoute>
-                  <NehruScreens />
-                </AdminRoute>
-              }
-            />
             <Route
               path="/search/category/:category"
               element={<SearchScreen />}
@@ -3189,36 +2575,7 @@ function App() {
 
             <Route path="/women/:id" element={<WomenScreen />} exact></Route>
             <Route path="/kid/:id" element={<KidScreen />} exact></Route>
-            <Route path="/tshirt/:id" element={<TshirtScreen />} exact></Route>
-            <Route
-              path="/casualshirt/:id"
-              element={<CasualShirtScreen />}
-              exact
-            ></Route>
-            <Route
-              path="/formalshirt/:id"
-              element={<FormalshirtScreen />}
-              exact
-            ></Route>
-            <Route path="/jacket/:id" element={<JacketScreen />} exact></Route>
-            <Route
-              path="/sweater/:id"
-              element={<SweaterScreen />}
-              exact
-            ></Route>
 
-            <Route path="/blazer/:id" element={<BlazerScreen />} exact></Route>
-            <Route
-              path="/rainjacket/:id"
-              element={<RainjacketScreen />}
-              exact
-            ></Route>
-            <Route path="/suit/:id" element={<SuitScreen />} exact></Route>
-            <Route path="/sherwani/:id" element={<SherwaniScreen />} exact></Route>
-            <Route path="/nehru/:id" element={<NehruScreen />} exact></Route>
-            <Route path="/dhotis/:id" element={<DhotisScreen />} exact></Route>
-            <Route path="/indian/:id" element={<IndianScreen />} exact></Route>
-            <Route path="/kurtas/:id" element={<KurtasScreen />} exact></Route>
             <Route
               path="/orderhistory"
               element={<OrderHistoryScreen />}

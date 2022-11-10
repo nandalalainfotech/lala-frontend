@@ -1,3 +1,4 @@
+/* eslint-disable no-array-constructor */
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -23,7 +24,7 @@ export default function ProductListScreen(props) {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
   const productCreate = useSelector((state) => state.productCreate);
-  console.log("called----->productCreate",productCreate);
+  console.log("called----->productCreate", productCreate);
   const {
     loading: loadingCreate,
     error: errorCreate,
@@ -66,9 +67,9 @@ export default function ProductListScreen(props) {
       dispatch(deleteProduct(product._id));
     }
   };
-  console.log("called----->createProduct",createProduct);
+  console.log("called----->createProduct", createProduct);
   const createHandler = () => {
-        dispatch(createProduct());
+    dispatch(createProduct());
   };
   return (
     <div>
@@ -106,8 +107,6 @@ export default function ProductListScreen(props) {
                   <td>{product.name}</td>
                   <td>{product.price}</td>
                   <td>{product.category}</td>
-                  {/* <td>{product.categorygroup}</td>
-                  <td>{product.categorytext}</td> */}
                   <td>{product.brand}</td>
                   <td>
                     <button
@@ -161,7 +160,7 @@ export default function ProductListScreen(props) {
             </tbody>
           </table>
           <div className="row center pagination">
-            {[...Array(pages,pageSize).keys()].map((x) => (
+            {[...Array(pages, pageSize).keys()].map((x) => (
               <Link
                 className={x + 1 === page ? 'active' : ''}
                 key={x + 1}
