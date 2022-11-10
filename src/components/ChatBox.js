@@ -1,11 +1,10 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import socketIOClient from 'socket.io-client';
-
 const ENDPOINT =
   window.location.host.indexOf('localhost') >= 0
     ? 'http://127.0.0.1:5000'
     : window.location.host;
-
 export default function ChatBox(props) {
   const { userInfo } = props;
   const [socket, setSocket] = useState(null);
@@ -15,7 +14,6 @@ export default function ChatBox(props) {
   const [messages, setMessages] = useState([
     { name: 'Admin', body: 'Hello there, Please ask your question.' },
   ]);
-
   useEffect(() => {
     if (uiMessagesRef.current) {
       uiMessagesRef.current.scrollBy({
@@ -35,7 +33,6 @@ export default function ChatBox(props) {
       });
     }
   }, [messages, isOpen, socket, userInfo]);
-
   const supportHandler = () => {
     setIsOpen(true);
     console.log(ENDPOINT);
@@ -99,3 +96,7 @@ export default function ChatBox(props) {
     </div>
   );
 }
+
+
+
+

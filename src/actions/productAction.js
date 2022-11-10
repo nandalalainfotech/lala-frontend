@@ -70,12 +70,12 @@ export const listProductCategories = () => async (dispatch) => {
   }
 };
 
-export const listProductCategoriesgroup = () => async (dispatch) => {
+export const listProductCategorygroup = () => async (dispatch) => {
   dispatch({
     type: PRODUCT_CATEGORYGROUP_LIST_REQUEST,
   });
   try {
-    const { data } = await Axios.get(`/api/products/categoriesgroup`);
+    const { data } = await Axios.get(`/api/products/categorygroup`);
     dispatch({ type: PRODUCT_CATEGORYGROUP_LIST_SUCCESS, payload: data });
    
   } catch (error) {
@@ -83,12 +83,12 @@ export const listProductCategoriesgroup = () => async (dispatch) => {
   }
 };
 
-export const listProductCategoriestype = () => async (dispatch) => {
+export const listProductCategorytype = () => async (dispatch) => {
   dispatch({
     type: PRODUCT_CATEGORYTYPE_LIST_REQUEST,
   });
   try {
-    const { data } = await Axios.get(`/api/products/categoriestype`);
+    const { data } = await Axios.get(`/api/products/categorytype`);
     dispatch({ type: PRODUCT_CATEGORYTYPE_LIST_SUCCESS, payload: data });
    
   } catch (error) {

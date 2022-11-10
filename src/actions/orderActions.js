@@ -1,6 +1,5 @@
 import Axios from 'axios';
 import { CART_EMPTY } from '../constants/cartConstants';
-import { CART_TSHIRT_EMPTY } from '../constants/cartTshirtConstants';
 import {
   ORDER_CREATE_FAIL,
   ORDER_CREATE_REQUEST,
@@ -40,7 +39,6 @@ export const createOrder = (order) => async (dispatch, getState) => {
     });
     dispatch({ type: ORDER_CREATE_SUCCESS, payload: data.order });
     dispatch({ type: CART_EMPTY });
-    dispatch({ type: CART_TSHIRT_EMPTY });
     localStorage.removeItem('cartItems');
     localStorage.removeItem('cartTshirtItem');
   } catch (error) {

@@ -98,7 +98,7 @@ export default function SareeScreen() {
                                         numReviews={Saree.numReviews}
                                     ></Rating>
                                 </li>
-                                <li>Pirce : ${Saree.price}</li>
+                                <li>Price : ${Saree.price}</li>
                                 <li>
                                     Description:
                                     <p>{Saree.description}</p>
