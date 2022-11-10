@@ -7600,6 +7600,13 @@ margin-top: 20px;
     width: 100% !important;
     height: 100% !important;
   }
+  .slick-prev {
+    left: 5% !important;
+  }
+  
+  .slick-next {
+    right: 5% !important;
+  }
 }
 
 /* -------------------------------------MOBILE VIEW END------------------ */
@@ -7617,6 +7624,13 @@ margin-top: 20px;
     margin: 0px 90px !important;
     align-items: center;
     font-weight: 500;
+  }
+  .slick-prev {
+    left: 4% !important;
+  }
+  
+  .slick-next {
+    right: 4% !important;
   }
 }
 
