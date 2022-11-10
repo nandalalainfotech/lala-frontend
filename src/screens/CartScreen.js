@@ -41,7 +41,7 @@ export default function CartScreen(props) {
         {cartItems.length === 0 ? (
           <>
             {userInfo ? (
-              <div className="cart">
+              <div className="cart img-container">
                 <div className="card card21">
                   <img className="cartin" src="/image/carts.jpg" />
                   <MessageBox>Cart is empty.</MessageBox>
@@ -49,7 +49,7 @@ export default function CartScreen(props) {
               </div>
             ) : (
               <>
-                <div className="cart">
+                <div className="cart img-container">
                   <div className="card card22">
                     <img className="cartin" src="/image/carts.jpg" />
                     <MessageBox style={"color:red"}>Cart is empty.</MessageBox>
@@ -110,6 +110,7 @@ export default function CartScreen(props) {
           </ul>
         )}
       </div>
+      {userInfo ? (
       <div className="col-1">
         <div className="card card-body">
           <ul>
@@ -132,6 +133,7 @@ export default function CartScreen(props) {
           </ul>
         </div>
       </div>
+      ):(<></>)}
     </div>
   );
 }
