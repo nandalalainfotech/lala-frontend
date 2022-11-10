@@ -115,7 +115,6 @@ function App() {
   // useEffect(() => {
   //   dispatch(listSareeCategories());
   // }, [dispatch]);
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -143,15 +142,11 @@ function App() {
               </Link>
             </div>
             {userInfo && userInfo && (
-              <div className="search">
+              <div className="search-Item">
                 <SearchBox />
               </div>
             )}
-            <div
-              className={
-                isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
-              }
-            >
+            <div className= "navigation-menu">
               <ul>
                 <li>
                   {userInfo ? (
@@ -586,7 +581,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/name/men-tiles-cuffkins-pocketsquares">
-                                tiles,cuffkins&pocketsquares
+                                tiles,cuffkins
+                                & pocketsquares
                               </Link>
                             </li>
                             <li>
@@ -599,7 +595,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/name/men-muffalear-scarves-gloves">
-                                muffalear,scarves&gloves
+                                muffalear,scarves
+                                &gloves
                               </Link>
                             </li>
                             <li>
@@ -681,7 +678,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/women-laggins-salwars-chudidars">
-                                laggins,salwars&chudidars
+                                laggins,salwars
+                                & chudidars
                               </Link>
                             </li>
                             <li>
@@ -888,7 +886,8 @@ function App() {
                                   style={{ color: "#fb56c1" }}
                                 >
                                   {" "}
-                                  Lingerie & Sleepwear
+                                  Lingerie 
+                                  & Sleepwear
                                 </Link>{" "}
                               </h3>
                             </li>
@@ -904,7 +903,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/women-Sleepwear-Loungewear">
-                                Sleepwear&Loungewear
+                                Sleepwear
+                                & Loungewear
                               </Link>
                             </li>
                             <li>
@@ -1008,7 +1008,8 @@ function App() {
                                   to="search/category/women-Handbags-Bags-Wallets"
                                   style={{ color: "#fb56c1" }}
                                 >
-                                  Handbags,Bags&Wallets
+                                  Handbags,Bags
+                                  & Wallets
                                 </Link>
                               </h3>
                             </li>
@@ -1031,7 +1032,7 @@ function App() {
                 )}
                 {userInfo && userInfo && (
                   <li>
-                    <Link className="desktop-item1" to="#men">
+                    <Link className="desktop-item2" to="#men">
                       Kids
                     </Link>
                     <input type="checkbox" id="showMega2" />
@@ -1078,12 +1079,14 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/kids-Track-Pants-Pyjamas">
-                                Track Pants & Pyjamas
+                                Track Pants 
+                                & Pyjamas
                               </Link>
                             </li>
                             <li>
                               <Link to="/Jacket-Sweater-Sweatshirts">
-                                Jacket,Sweater&Sweatshirts
+                                Jacket,Sweater
+                                & Sweatshirts
                               </Link>
                             </li>
 
@@ -1097,7 +1100,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/kids-Nightwear-Loungewear">
-                                Nightwear & Loungewear
+                                Nightwear 
+                                & Loungewear
                               </Link>
                             </li>
 
@@ -1276,7 +1280,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/kids-Innerwear-Sleepwear">
-                                Innerwear&Sleepwear
+                                Innerwear
+                                & Sleepwear
                               </Link>
                             </li>
                             <li>
@@ -1324,7 +1329,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/kids-Jewellery-Hair-accessory">
-                                Jewellery&Hairaccessory
+                                Jewellery
+                                & Hairaccessory
                               </Link>
                             </li>
                             <li>
@@ -1332,7 +1338,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/kids-Masks-Protective-Gears">
-                                Masks&ProtectiveGears
+                                Masks
+                                & ProtectiveGears
                               </Link>
                             </li>
                             <li>
@@ -1357,7 +1364,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/kids-United-Colors">
-                                UnitedColorsofBenettonKids
+                                UnitedColors
+                                of BenettonKids
                               </Link>
                             </li>
                             <li>
@@ -1398,7 +1406,8 @@ function App() {
                                   to="search/category/home-Bed-Linen"
                                   style={{ color: "#f2c210" }}
                                 >
-                                  Bed Linen & Furnishing
+                                  Bed Linen 
+                                  & Furnishing
                                 </Link>
                               </h3>
                             </li>
@@ -1419,12 +1428,14 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/home-Blankets-Quilts-Dohars">
-                                Blankets,Quilts&Dohars
+                                Blankets,Quilts
+                                & Dohars
                               </Link>
                             </li>
                             <li>
                               <Link to="search/category/home-Pillows-Pillow-Covers">
-                                Pillows & Pillow Covers
+                                Pillows 
+                                & Pillow Covers
                               </Link>
                             </li>
 
@@ -1436,7 +1447,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/home-Chair-Pads-Covers">
-                                Chair Pads & Covers
+                                Chair Pads 
+                                & Covers
                               </Link>
                             </li>
                             <li>
@@ -1462,7 +1474,8 @@ function App() {
 
                             <li>
                               <Link to="search/category/home-Floor-Mats-Dhurries">
-                                Floor Mats& Dhurries
+                                Floor Mats
+                                & Dhurries
                               </Link>
                             </li>
                             <li>
@@ -1484,7 +1497,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/home-Hand-Face-Towels">
-                                Hand &Face Towels
+                                Hand 
+                                & Face Towels
                               </Link>
                             </li>
                             <li>
@@ -1501,7 +1515,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/home-Bathroom-Accessories">
-                                BathroomAccessories
+                                Bathroom
+                                Accessories
                               </Link>
                             </li>
                             <li>
@@ -1599,7 +1614,8 @@ function App() {
                                   to="search/category/home-Cushions-Cushion-Covers"
                                   style={{ color: "#f2c210" }}
                                 >
-                                  Cushions&CushionCovers
+                                  Cushions
+                                  & CushionCovers
                                 </Link>{" "}
                               </h3>
                             </li>
