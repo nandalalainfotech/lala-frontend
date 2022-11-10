@@ -135,7 +135,7 @@ export default function HomeScreen() {
         )}
       </div>
 
-      <h2>Product's collection</h2>
+      <h2 className="product">Product's Collection</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -162,7 +162,7 @@ export default function HomeScreen() {
           <Slider {...settings}>
             {products
               .filter((menProduct) => {
-                return menProduct.category === "men-casual";
+                return menProduct.category === "men";
               })
               .map((menProduct) => (
                 <div>
