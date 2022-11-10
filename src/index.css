@@ -4054,8 +4054,8 @@ img.large {
   width: 100%;
 } */
 img.small {
-  height: 400px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
 }
 
 /* img.medium {
@@ -5160,15 +5160,12 @@ img.cartin {
 
 .card21 {
   height: 400px;
-  margin-left: 300px;
   width: 600px;
 }
 .card22 {
   height: 450px;
-  margin-left: 300px;
-  width: 800px;
+  width: 700px;
 }
-/* .has-search .search-submit */
 button.carts1 {
   color: white !important;
   background-color: #ed7e34;
@@ -5197,3 +5194,8 @@ button.carts2 {
   background-color: #FF4801;
 }
 
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

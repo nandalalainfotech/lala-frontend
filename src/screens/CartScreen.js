@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { addToCart, removeFromCart } from "../actions/cartAction";
 import MessageBox from "../components/MessageBox";
 
-
 export default function CartScreen(props) {
   const navigate = useNavigate();
   const params = useParams();
@@ -32,7 +31,7 @@ export default function CartScreen(props) {
   };
 
   const checkoutHandler = () => {
-    navigate('/shipping');
+    navigate("/shipping");
   };
   return (
     <div className="row top">
@@ -42,7 +41,7 @@ export default function CartScreen(props) {
         {cartItems.length === 0 ? (
           <>
             {userInfo ? (
-              <div className="cart">
+              <div className="cart img-container">
                 <div className="card card21">
                   <img className="cartin" src="/image/carts.jpg" />
                   <MessageBox>Cart is empty.</MessageBox>
@@ -50,7 +49,7 @@ export default function CartScreen(props) {
               </div>
             ) : (
               <>
-                <div className="cart">
+                <div className="cart img-container">
                   <div className="card card22">
                     <img className="cartin" src="/image/carts.jpg" />
                     <MessageBox style={"color:red"}>Cart is empty.</MessageBox>
@@ -107,53 +106,11 @@ export default function CartScreen(props) {
                   </div>
                 </div>
               </li>
-              
             ))}
-            {/* {cartItems.map((item) => (
-              <li key={item.tshirt}>
-                <div className="row">
-                  <div>
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="small"
-                    ></img>
-                  </div>
-                  <div className="min-30">
-                    <Link to={`/tshirt/${item.tshirt}`}>{item.name}</Link>
-                  </div>
-                  <div>
-                    <select
-                      value={item.qty}
-                      onChange={(e) =>
-                        dispatch(
-                          addToCart(item.tshirt, Number(e.target.value))
-                        )
-                      }
-                    >
-                      {[...Array(item.countInStock).keys()].map((x) => (
-                        <option key={x + 1} value={x + 1}>
-                          {x + 1}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>${item.price}</div>
-                  <div>
-                    <button
-                      type="button"
-                      onClick={() => removeFromCartHandler(item.product)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              </li>
-              
-            ))} */}
           </ul>
         )}
       </div>
+      {userInfo ? (
       <div className="col-1">
         <div className="card card-body">
           <ul>
@@ -176,6 +133,7 @@ export default function CartScreen(props) {
           </ul>
         </div>
       </div>
+      ):(<></>)}
     </div>
   );
 }

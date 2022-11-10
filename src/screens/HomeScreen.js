@@ -160,8 +160,7 @@ export default function HomeScreen() {
       ) : (
         <>
           <Slider {...settings}>
-            {products
-              .filter((menProduct) => {
+            {products?.filter((menProduct) => {
                 return menProduct.category === "men";
               })
               .map((menProduct) => (
@@ -181,8 +180,7 @@ export default function HomeScreen() {
       ) : (
         <>
           <Slider {...settings}>
-            {products
-              .filter((product) => {
+            {products?.filter((product) => {
                 return product.category === "women";
               })
               .map((product) => (
@@ -202,8 +200,7 @@ export default function HomeScreen() {
       ) : (
         <>
           <Slider {...settings}>
-            {products
-              .filter((kidProduct) => {
+            {products?.filter((kidProduct) => {
                 return kidProduct?.category === "Kids";
               })
               .map((kidProduct) => (
