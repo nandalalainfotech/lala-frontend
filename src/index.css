@@ -183,7 +183,7 @@ button.small {
 /* **************Header section Start *********** */
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 599px) {
- 
+
   .row.navigation {
     grid-area: header;
     color: black;
@@ -229,7 +229,9 @@ button.small {
   .search {
     display: none;
   }
-
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
 
   .sides-menu {
     display: block;
@@ -300,10 +302,10 @@ button.small {
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media (min-width: 600px) {
+@media only screen and  (min-width: 600px) and (max-width:640px){
   .row.navigation {
     grid-area: header;
-    /* background-color: #fff; */
+    background-color: #fff;
     color: black;
     display: flex;
     background-color: #fff;
@@ -343,7 +345,9 @@ button.small {
     display: none;
   }
 
-
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
   /* 600 */
   .search {
     margin-right: 20px;
@@ -395,8 +399,17 @@ button.small {
     margin-top: 8px;
   }
 
-  .has-search .form-control-feedback:hover {
-    color: #ff7519;
+  input::placeholder {
+    font-size: 10px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
   }
 
   .sides-menu {
@@ -467,24 +480,384 @@ button.small {
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media (min-width: 768px) {
-.row.navigation {
+@media only screen and  (min-width: 640px) and (max-width:720px){
+  .row.navigation {
     grid-area: header;
-    /* background-color: #fff; */
+    background-color: #fff;
     color: black;
     display: flex;
-    background-color: #fff;
     justify-content: space-between;
     padding: 0.5rem 0rem;
     height: 60px;
     width: 100%;
     align-items: center;
-    position: relative;
-    /* box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23); */
+    position: fixed;
     font-family: 'Amazon Ember', Arial, sans-serif;
     position: fixed;
     z-index: 100;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: none;
+  }
+
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  /* 600 */
+  .search {
+    margin-right: 20px;
+    /* position: relative; */
+  }
+
+  .search input.form-control {
+    width: 280px;
+    /* border: 2px solid #ff7519; */
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 100px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 280px;
+    margin-top: 8px;
+  }
+
+  input::placeholder {
+    font-size: 13px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+  .sides-menu {
+    display: block;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side1 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side2 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side3 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown-content-side1 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 100px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content-side2 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 140px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content-side3 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 200px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+}
+
+@media only screen and (min-width: 720px) and (max-width:768px) {
+.row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+    cursor: pointer;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: none;
+  }
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  /* 768 */
+  .search {
+    margin-right: 20px;
+    /* position: relative; */
+  }
+
+  .search input.form-control {
+    width: 300px;
+    /* border: 2px solid #ff7519; */
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 180px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 300px;
+    margin-top: 8px;
+  }
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+
+  .sides-menu {
+    display: block;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side1 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side2 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side3 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown-content-side1 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 100px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content-side2 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 140px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content-side3 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 200px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width:800px) {
+
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
   }
 
   .brand-name {
@@ -561,12 +934,387 @@ button.small {
     text-align: center;
     pointer-events: none;
     color: #aaa;
-    margin-left: 280px;
+    margin-left: 300px;
     margin-top: 8px;
   }
 
-  .has-search .form-control-feedback:hover {
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+
+  .sides-menu {
+    display: block;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side1 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side2 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side3 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown-content-side1 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 100px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content-side2 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 140px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content-side3 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 200px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width:900px) {
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+    cursor: pointer;
+  }
+
+  .brand-name a:hover {
     color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: none;
+  }
+
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  /* 768 */
+  .search {
+    margin: auto;
+    margin-left: 80px;
+    /* position: relative; */
+  }
+
+  .search input.form-control {
+    width: 300px;
+    /* border: 2px solid #ff7519; */
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 180px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 300px;
+    margin-top: 8px;
+  }
+
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+
+  .sides-menu {
+    display: block;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side1 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side2 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sides-menu li .dropdown-side:hover .dropdown-content-side3 {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown-content-side1 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 100px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content-side2 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 140px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content-side3 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: hsl(120, 8%, 79%);
+    margin-left: 20px;
+    margin-top: 200px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width:992px) {
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+    cursor: pointer;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: none;
+  }
+
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  /* 768 */
+  .search {
+    margin: auto;
+    margin-left: 80px;
+    /* position: relative; */
+  }
+
+  .search input.form-control {
+    width: 300px;
+    /* border: 2px solid #ff7519; */
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 180px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 300px;
+    margin-top: 8px;
+  }
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
   }
 
   .sides-menu {
@@ -638,21 +1386,209 @@ button.small {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media (min-width: 992px) {
-.row.navigation {
+@media only screen and (min-width: 992px) and (max-width:1050px) {
+
+  .row.navigation {
     grid-area: header;
-    color: black;
-    display: flex;
     background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
     justify-content: space-between;
     padding: 0.5rem 0rem;
     height: 60px;
     width: 100%;
     align-items: center;
-    position: relative;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
     font-family: 'Amazon Ember', Arial, sans-serif;
     position: fixed;
     z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+    cursor: pointer;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 0.1rem;
+  }
+
+  .navigation-menu li .home {
+    color: #282c3f;
+    text-decoration: none;
+    padding: 50px 0px;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    margin-right: 10px;
+  }
+
+  .navigation-menu li .home:hover {
+    color: #ff8000;
+  }
+
+
+  li .dropdown {
+    display: inline-block;
+    position: relative;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    z-index: 99;
+  }
+
+  li .dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    padding: 1rem;
+    list-style-type: none;
+    z-index: 1000;
+    background-color: rgb(254, 252, 252);
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content li a {
+    color: #101010;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 16px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    line-height: 45px;
+  }
+
+  .dropdown-content li a:hover {
+    color: #ff8000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  /* 992 */
+  .search {
+    display: block;
+    margin: auto;
+    margin-left: 90px;
+  }
+
+  .search input.form-control {
+    width: 280px;
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 120px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 280px;
+    margin-top: 8px;
+  }
+
+  .has-search .form-control-feedback:hover {
+    color: #ff7519;
+  }
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+  .sides-menu {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1050px) and (max-width:1100px) {
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
   }
 
   .brand-name {
@@ -748,11 +1684,12 @@ button.small {
   /* 992 */
   .search {
     display: block;
-    margin-left: 66px;
+    margin: auto;
+    margin-left: 90px;
   }
 
   .search input.form-control {
-    width: 280px;
+    width: 330px;
   }
 
   input.form-control {
@@ -773,7 +1710,7 @@ button.small {
     background-color: #ff7519;
     color: #fff;
     border: none !important;
-    width: 100px;
+    width: 120px;
   }
 
 
@@ -791,7 +1728,7 @@ button.small {
     text-align: center;
     pointer-events: none;
     color: #aaa;
-    margin-left: 280px;
+    margin-left: 330px;
     margin-top: 8px;
   }
 
@@ -799,27 +1736,427 @@ button.small {
     color: #ff7519;
   }
 
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
   .sides-menu {
     display: none;
   }
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
 }
 
-
-@media (min-width: 1200px) {
- .row.navigation {
+@media only screen and (min-width: 1100px) and (max-width:1160px) {
+.row.navigation {
     grid-area: header;
-    color: black;
-    display: flex;
     background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
     justify-content: space-between;
     padding: 0.5rem 0rem;
     height: 60px;
     width: 100%;
     align-items: center;
-    position: relative;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
     font-family: 'Amazon Ember', Arial, sans-serif;
     position: fixed;
     z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+    cursor: pointer;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 0.1rem;
+  }
+
+  .navigation-menu li .home {
+    color: #282c3f;
+    text-decoration: none;
+    padding: 50px 0px;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    margin-right: 10px;
+  }
+
+  .navigation-menu li .home:hover {
+    color: #ff8000;
+  }
+
+
+  li .dropdown {
+    display: inline-block;
+    position: relative;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    z-index: 99;
+  }
+
+  li .dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    padding: 1rem;
+    list-style-type: none;
+    z-index: 1000;
+    background-color: rgb(254, 252, 252);
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content li a {
+    color: #101010;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 16px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    line-height: 45px;
+  }
+
+  .dropdown-content li a:hover {
+    color: #ff8000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* 992 */
+  .search {
+    display: block;
+    margin: auto;
+    margin-left: 90px;
+  }
+
+  .search input.form-control {
+    width: 380px;
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 120px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 360px;
+    margin-top: 8px;
+  }
+
+  .has-search .form-control-feedback:hover {
+    color: #19ecff;
+  }
+
+  .search-submit .fa:hover {
+    color: #0db7af;
+  }
+
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+  .sides-menu {
+    display: none;
+  }
+
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+}
+
+@media only screen and (min-width: 1160px) and (max-width:1200px) {
+
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+    cursor: pointer;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 0.5rem;
+  }
+
+  .navigation-menu li .home {
+    color: #282c3f;
+    text-decoration: none;
+    padding: 50px 0px;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    margin-right: 10px;
+  }
+
+  .navigation-menu li .home:hover {
+    color: #ff8000;
+  }
+
+
+  li .dropdown {
+    display: inline-block;
+    position: relative;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    z-index: 99;
+  }
+
+  li .dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    padding: 1rem;
+    list-style-type: none;
+    z-index: 1000;
+    background-color: rgb(254, 252, 252);
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content li a {
+    color: #101010;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 16px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    line-height: 45px;
+  }
+
+  .dropdown-content li a:hover {
+    color: #ff8000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* 992 */
+  .search {
+    display: block;
+    margin: auto;
+    margin-left: 100px;
+  }
+
+  .search input.form-control {
+    width: 380px;
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 140px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 380px;
+    margin-top: 8px;
+  }
+
+  .has-search .form-control-feedback:hover {
+    color: #ff7519;
+  }
+
+  .search-submit .fa:hover {
+    color: #19ecff;
+  }
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+  .sides-menu {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width:1314px) {
+ 
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
   }
 
   .brand-name {
@@ -845,7 +2182,7 @@ button.small {
 
   .navigation-menu {
     display: inline-block;
-    margin-left: auto;
+    margin-right: 0;
   }
 
   .navigation-menu ul {
@@ -911,10 +2248,11 @@ button.small {
     display: block;
   }
 
-  /* 992 */
+  /* 1200 */
   .search {
     display: block;
-    margin-right:auto;
+    margin: auto;
+    margin-left: 85px;
   }
 
   .search input.form-control {
@@ -961,23 +2299,40 @@ button.small {
     margin-top: 8px;
   }
 
-  .has-search .form-control-feedback:hover {
-    color: #ff7519;
+  .search-submit .fa:hover {
+    color: #239def;
+  }
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
   }
 
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
   .sides-menu {
     display: none;
+  }
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
   }
 }
 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media (min-width: 1326px) {
+@media only screen and (min-width: 1315px) and (max-width: 1326px) {
+
+
   .row.navigation {
     grid-area: header;
     background-color: #fff;
     color: black;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
     justify-content: space-between;
     padding: 0.5rem 0rem;
     height: 60px;
@@ -987,6 +2342,7 @@ button.small {
     font-family: 'Amazon Ember', Arial, sans-serif;
     position: fixed;
     z-index: 100;
+    flex-direction: row;
   }
 
   .brand-name {
@@ -1080,7 +2436,196 @@ button.small {
 
   /* 1200 */
   .search {
-    margin-right: auto;
+    margin: auto;
+    margin-left: 120px;
+  }
+
+  .search input.form-control {
+    width: 430px;
+    /* border: 2px solid #ff7519; */
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 200px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 420px;
+    margin-top: 8px;
+  }
+
+  .has-search .form-control-feedback:hover {
+    color: #ff7519;
+  }
+
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+  .sides-menu {
+    display: none;
+  }
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+}
+
+@media only screen and (min-width: 1326px) and (max-width: 1400px) {
+ 
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 0.2rem;
+  }
+
+  .navigation-menu li .home {
+    color: #282c3f;
+    text-decoration: none;
+    padding: 50px 0px;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    margin-right: 20px;
+  }
+
+  .navigation-menu li .home:hover {
+    color: #ff8000;
+  }
+
+
+  li .dropdown {
+    display: inline-block;
+    position: relative;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    z-index: 99;
+  }
+
+  li .dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    padding: 1rem;
+    list-style-type: none;
+    z-index: 1000;
+    background-color: rgb(254, 252, 252);
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content li a {
+    color: #101010;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    line-height: 45px;
+  }
+
+  .dropdown-content li a:hover {
+    color: #ff8000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* 1200 */
+  .search {
+    margin: auto;
+    margin-left: 120px;
   }
 
   .search input.form-control {
@@ -1132,6 +2677,946 @@ button.small {
     color: #ff7519;
   }
 
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .sides-menu {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1500px) {
+
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 0.2rem;
+  }
+
+  .navigation-menu li .home {
+    color: #282c3f;
+    text-decoration: none;
+    padding: 50px 0px;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    margin-right: 20px;
+  }
+
+  .navigation-menu li .home:hover {
+    color: #ff8000;
+  }
+
+
+  li .dropdown {
+    display: inline-block;
+    position: relative;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    z-index: 99;
+  }
+
+  li .dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    padding: 1rem;
+    list-style-type: none;
+    z-index: 1000;
+    background-color: rgb(254, 252, 252);
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content li a {
+    color: #101010;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    line-height: 45px;
+  }
+
+  .dropdown-content li a:hover {
+    color: #ff8000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* 1200 */
+  .search {
+    margin: auto;
+    margin-left: 120px;
+  }
+
+  .search input.form-control {
+    width: 450px;
+    /* border: 2px solid #ff7519; */
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 200px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 440px;
+    margin-top: 8px;
+  }
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .sides-menu {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1600px) {
+
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 0.2rem;
+  }
+
+  .navigation-menu li .home {
+    color: #282c3f;
+    text-decoration: none;
+    padding: 50px 0px;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    margin-right: 20px;
+  }
+
+  .navigation-menu li .home:hover {
+    color: #ff8000;
+  }
+
+
+  li .dropdown {
+    display: inline-block;
+    position: relative;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    z-index: 99;
+  }
+
+  li .dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    padding: 1rem;
+    list-style-type: none;
+    z-index: 1000;
+    background-color: rgb(254, 252, 252);
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content li a {
+    color: #101010;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    line-height: 45px;
+  }
+
+  .dropdown-content li a:hover {
+    color: #ff8000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* 1200 */
+  .search {
+    margin: auto;
+    margin-left: 120px;
+  }
+
+  .search input.form-control {
+    width: 550px;
+    /* border: 2px solid #ff7519; */
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 200px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 540px;
+    margin-top: 8px;
+  }
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+  }
+
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .sides-menu {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1700px) {
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 1rem;
+  }
+
+  .navigation-menu li .home {
+    color: #282c3f;
+    text-decoration: none;
+    padding: 50px 0px;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    margin-right: 20px;
+  }
+
+  .navigation-menu li .home:hover {
+    color: #ff8000;
+  }
+
+
+  li .dropdown {
+    display: inline-block;
+    position: relative;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    z-index: 99;
+  }
+
+  li .dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    padding: 1rem;
+    list-style-type: none;
+    z-index: 1000;
+    background-color: rgb(254, 252, 252);
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content li a {
+    color: #101010;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    line-height: 45px;
+  }
+
+  .dropdown-content li a:hover {
+    color: #ff8000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* 1200 */
+  .search {
+    margin: auto;
+    margin-left: 120px;
+  }
+
+  .search input.form-control {
+    width: 550px;
+    /* border: 2px solid #ff7519; */
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 200px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 540px;
+    margin-top: 8px;
+  }
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .sides-menu {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 1700px) and (max-width: 1800px) {
+ 
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 1rem;
+  }
+
+  .navigation-menu li .home {
+    color: #282c3f;
+    text-decoration: none;
+    padding: 50px 0px;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    margin-right: 20px;
+  }
+
+  .navigation-menu li .home:hover {
+    color: #ff8000;
+  }
+
+
+  li .dropdown {
+    display: inline-block;
+    position: relative;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    z-index: 99;
+  }
+
+  li .dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    padding: 1rem;
+    list-style-type: none;
+    z-index: 1000;
+    background-color: rgb(254, 252, 252);
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content li a {
+    color: #101010;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    line-height: 45px;
+  }
+
+  .dropdown-content li a:hover {
+    color: #ff8000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* 1200 */
+  .search {
+    margin: auto;
+    margin-left: 140px;
+  }
+
+  .search input.form-control {
+    width: 600px;
+    /* border: 2px solid #ff7519; */
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 200px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 590px;
+    margin-top: 8px;
+  }
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+
+
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .sides-menu {
+    display: none;
+  }
+
+}
+
+
+@media only screen and (min-width: 1800px) and (max-width: 1900px) {
+ 
+
+  .row.navigation {
+    grid-area: header;
+    background-color: #fff;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    position: fixed;
+    z-index: 100;
+    flex-direction: row;
+  }
+
+  .brand-name {
+    position: fixed;
+    margin-left: 60px;
+  }
+
+  .brand-name a {
+    color: #020202;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .logo.img {
+    margin-top: -20px;
+  }
+
+  .brand-name a:hover {
+    color: #ff7519;
+  }
+
+  .navigation-menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 1rem;
+  }
+
+  .navigation-menu li .home {
+    color: #282c3f;
+    text-decoration: none;
+    padding: 50px 0px;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    margin-right: 20px;
+  }
+
+  .navigation-menu li .home:hover {
+    color: #ff8000;
+  }
+
+
+  li .dropdown {
+    display: inline-block;
+    position: relative;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    z-index: 99;
+  }
+
+  li .dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    padding: 1rem;
+    list-style-type: none;
+    z-index: 1000;
+    background-color: rgb(254, 252, 252);
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .dropdown-content li a {
+    color: #101010;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 18px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    line-height: 45px;
+  }
+
+  .dropdown-content li a:hover {
+    color: #ff8000;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* 1200 */
+  .search {
+    margin: auto;
+    margin-left: 140px;
+  }
+
+  .search input.form-control {
+    width: 800px;
+    /* border: 2px solid #ff7519; */
+  }
+
+  input::placeholder {
+    font-size: 16px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  input.form-control {
+    background: #ffffff;
+    font-size: 14px;
+    border: 2px solid #ff7519 !important;
+    border-radius: 50px 0px 0px 50px;
+    padding: 1rem;
+  }
+
+  .has-search .search-submit {
+    float: right;
+    padding: 1.1rem 4rem 1rem 0.9rem !important;
+    margin-right: 16px;
+    font-size: 2px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    background-color: #ff7519;
+    color: #fff;
+    border: none !important;
+    width: 200px;
+  }
+
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-left: 780px;
+    margin-top: 8px;
+  }
+
+  input::placeholder {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+
+  .search-submit .fa {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
+  .search-submit .fa:hover {
+    color: black;
+
+  }
+  input[type='text'] {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+  }
   .sides-menu {
     display: none;
   }
@@ -1140,13 +3625,13 @@ button.small {
 
 
 /******************** seconde NavBar section Start ******************************** */
-.second-nav input{
+.second-nav input {
   display: none;
 }
 
 
 @media (max-width: 599px) {
-  .second-nav{
+  .second-nav {
     display: none;
   }
 }
@@ -1212,11 +3697,12 @@ button.small {
   .mega-box {
     position: absolute;
     left: 0;
-    width: 550px;
+    width: 500px;
     padding: 0 30px;
     top: 85px;
     opacity: 0;
     visibility: hidden;
+  
   }
 
   .mega-box .content {
@@ -1226,11 +3712,12 @@ button.small {
     width: 100%;
     justify-content: space-between;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    
   }
 
   .mega-box .content .row {
     width: calc(25% - 30px);
-    line-height: 12px;
+    line-height: 6px;
     align-items: flex-start;
   }
 
@@ -1304,7 +3791,7 @@ button.small {
   .desktop-item:hover::after {
     width: 55px;
     margin-top: -20px;
-    margin-left: 70px;
+    margin-left: 75px;
     background: #ee5f73;
   }
 
@@ -1323,7 +3810,7 @@ button.small {
   .mega-box1 {
     position: absolute;
     left: 0;
-    width: 550px;
+    width: 500px;
     padding: 0 30px;
     top: 85px;
     opacity: 0;
@@ -1342,7 +3829,7 @@ button.small {
 
   .mega-box1 .content .row {
     width: calc(25% - 30px);
-    line-height: 12px;
+    line-height: 6px;
     align-items: flex-start;
   }
 
@@ -1404,9 +3891,9 @@ button.small {
 
 
   .desktop-item1:hover::after {
-    width: 65px;
+    width: 72px !important;
     margin-top: -20px;
-    margin-left: 146px;
+    margin-left: 145px !important;
     background: #fb56c1;
   }
 
@@ -1421,7 +3908,7 @@ button.small {
   .mega-box2 {
     position: absolute;
     left: 0;
-    width: 550px;
+    width: 500px;
     padding: 0 30px;
     top: 85px;
     opacity: 0;
@@ -1440,7 +3927,7 @@ button.small {
 
   .mega-box2 .content .row {
     width: calc(25% - 30px);
-    line-height: 12px;
+    line-height: 6px;
     align-items: flex-start;
   }
 
@@ -1519,7 +4006,7 @@ button.small {
   .mega-box3 {
     position: absolute;
     left: 0;
-    width: 550px;
+    width: 500px;
     padding: 0 30px;
     top: 85px;
     opacity: 0;
@@ -1537,7 +4024,7 @@ button.small {
 
   .mega-box3 .content .row {
     width: calc(25% - 30px);
-    line-height: 12px;
+    line-height: 6px;
     align-items: flex-start;
   }
 
@@ -1601,7 +4088,7 @@ button.small {
   .desktop-item3:hover::after {
     width: 135px;
     margin-top: -20px;
-    margin-left: 300px;
+    margin-left: 304px !important;
     background: #f2c210;
   }
 
@@ -1615,7 +4102,7 @@ button.small {
   .mega-box4 {
     position: absolute;
     left: 0;
-    width: 550px;
+    width: 500px;
     padding: 0 30px;
     top: 85px;
     opacity: 0;
@@ -1633,7 +4120,7 @@ button.small {
 
   .mega-box4 .content .row {
     width: calc(25% - 30px);
-    line-height: 12px;
+    line-height: 6px;
     align-items: flex-start;
   }
 
@@ -1697,7 +4184,7 @@ button.small {
   .desktop-item4:hover::after {
     width: 60px;
     margin-top: -20px;
-    margin-left: 460px;
+    margin-left: 460px !important;
     background: #0db7af;
   }
 }
@@ -1709,7 +4196,7 @@ button.small {
     z-index: 99;
     width: 100%;
     background: #f4f4f4;
-    margin-top: 38px;
+    margin-top: 45px;
   }
 
   .second-nav .wrapper {
@@ -1722,6 +4209,7 @@ button.small {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: 120px;
   }
 
   .wrapper .nav-links {
@@ -1730,7 +4218,8 @@ button.small {
 
   .nav-links li {
     list-style: none;
-    margin-top: 30px;
+    margin-top: 25px;
+    margin-left: 10px;
   }
 
   .nav-links li a {
@@ -1768,6 +4257,7 @@ button.small {
     top: 85px;
     opacity: 0;
     visibility: hidden;
+    margin-left: -120px !important;
   }
 
   .mega-box .content {
@@ -1855,7 +4345,7 @@ button.small {
   .desktop-item:hover::after {
     width: 55px;
     margin-top: -20px;
-    margin-left: 70px;
+    margin-left: 80px;
     background: #ee5f73;
   }
 
@@ -1879,6 +4369,7 @@ button.small {
     top: 85px;
     opacity: 0;
     visibility: hidden;
+    margin-left: -120px !important;
   }
 
   .mega-box1 .content {
@@ -1957,7 +4448,7 @@ button.small {
   .desktop-item1:hover::after {
     width: 65px;
     margin-top: -20px;
-    margin-left: 146px;
+    margin-left: 166px !important;
     background: #fb56c1;
   }
 
@@ -1977,6 +4468,7 @@ button.small {
     top: 85px;
     opacity: 0;
     visibility: hidden;
+    margin-left: -120px !important;
   }
 
   .mega-box2 .content {
@@ -2055,7 +4547,7 @@ button.small {
   .desktop-item2:hover::after {
     width: 55px;
     margin-top: -20px;
-    margin-left: 232px;
+    margin-left: 262px;
     background: #f26a10;
   }
 
@@ -2075,6 +4567,7 @@ button.small {
     top: 85px;
     opacity: 0;
     visibility: hidden;
+    margin-left: -120px !important;
   }
 
   .mega-box3 .content {
@@ -2152,7 +4645,7 @@ button.small {
   .desktop-item3:hover::after {
     width: 135px;
     margin-top: -20px;
-    margin-left: 300px;
+    margin-left: 340px !important;
     background: #f2c210;
   }
 
@@ -2171,6 +4664,7 @@ button.small {
     top: 85px;
     opacity: 0;
     visibility: hidden;
+    margin-left: -120px !important;
   }
 
   .mega-box4 .content {
@@ -2248,7 +4742,7 @@ button.small {
   .desktop-item4:hover::after {
     width: 60px;
     margin-top: -20px;
-    margin-left: 460px;
+    margin-left: 510px !important;
     background: #0db7af;
   }
 }
@@ -2259,7 +4753,7 @@ button.small {
     z-index: 99;
     width: 100%;
     background: #f4f4f4;
-    margin-top: 38px;
+    margin-top: 45px;
   }
 
   .second-nav .wrapper {
@@ -2272,6 +4766,7 @@ button.small {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: 90px;
   }
 
   .wrapper .nav-links {
@@ -2280,7 +4775,8 @@ button.small {
 
   .nav-links li {
     list-style: none;
-    margin-top: 30px;
+    margin-top: 25px;
+    margin-left: 10px;
   }
 
   .nav-links li a {
@@ -2318,6 +4814,7 @@ button.small {
     top: 85px;
     opacity: 0;
     visibility: hidden;
+    margin-left: -100px !important;
   }
 
   .mega-box .content {
@@ -2327,6 +4824,7 @@ button.small {
     width: 100%;
     justify-content: space-between;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+   
   }
 
   .mega-box .content .row {
@@ -2405,7 +4903,7 @@ button.small {
   .desktop-item:hover::after {
     width: 55px;
     margin-top: -20px;
-    margin-left: 70px;
+    margin-left: 80px;
     background: #ee5f73;
   }
 
@@ -2429,6 +4927,7 @@ button.small {
     top: 85px;
     opacity: 0;
     visibility: hidden;
+    margin-left: -100px !important;
   }
 
   .mega-box1 .content {
@@ -2507,7 +5006,7 @@ button.small {
   .desktop-item1:hover::after {
     width: 65px;
     margin-top: -20px;
-    margin-left: 146px;
+    margin-left: 166px !important;
     background: #fb56c1;
   }
 
@@ -2527,6 +5026,7 @@ button.small {
     top: 85px;
     opacity: 0;
     visibility: hidden;
+    margin-left: -100px !important;
   }
 
   .mega-box2 .content {
@@ -2605,7 +5105,7 @@ button.small {
   .desktop-item2:hover::after {
     width: 55px;
     margin-top: -20px;
-    margin-left: 232px;
+    margin-left: 262px;
     background: #f26a10;
   }
 
@@ -2625,6 +5125,7 @@ button.small {
     top: 85px;
     opacity: 0;
     visibility: hidden;
+    margin-left: -100px !important;
   }
 
   .mega-box3 .content {
@@ -2702,7 +5203,7 @@ button.small {
   .desktop-item3:hover::after {
     width: 135px;
     margin-top: -20px;
-    margin-left: 300px;
+    margin-left: 340px !important;
     background: #f2c210;
   }
 
@@ -2721,6 +5222,7 @@ button.small {
     top: 85px;
     opacity: 0;
     visibility: hidden;
+    margin-left: -100px !important;
   }
 
   .mega-box4 .content {
@@ -2798,7 +5300,7 @@ button.small {
   .desktop-item4:hover::after {
     width: 60px;
     margin-top: -20px;
-    margin-left: 460px;
+    margin-left: 510px !important;
     background: #0db7af;
   }
 }
@@ -2810,7 +5312,7 @@ button.small {
     z-index: 99;
     width: 100%;
     background: #f4f4f4;
-    margin-top: 38px;
+    margin-top: 45px;
   }
 
   .second-nav .wrapper {
@@ -2823,6 +5325,7 @@ button.small {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: 100px;
   }
 
   .wrapper .nav-links {
@@ -2831,7 +5334,8 @@ button.small {
 
   .nav-links li {
     list-style: none;
-    margin-top: 30px;
+    margin-top: 25px;
+    margin-left: 10px;
   }
 
   .nav-links li a {
@@ -2956,7 +5460,7 @@ button.small {
   .desktop-item:hover::after {
     width: 55px;
     margin-top: -20px;
-    margin-left: 70px;
+    margin-left: 80px;
     background: #ee5f73;
   }
 
@@ -3058,7 +5562,7 @@ button.small {
   .desktop-item1:hover::after {
     width: 65px;
     margin-top: -20px;
-    margin-left: 146px;
+    margin-left: 166px !important;
     background: #fb56c1;
   }
 
@@ -3156,7 +5660,7 @@ button.small {
   .desktop-item2:hover::after {
     width: 55px;
     margin-top: -20px;
-    margin-left: 232px;
+    margin-left: 262px !important;
     background: #f26a10;
   }
 
@@ -3253,7 +5757,7 @@ button.small {
   .desktop-item3:hover::after {
     width: 135px;
     margin-top: -20px;
-    margin-left: 300px;
+    margin-left: 340px !important;
     background: #f2c210;
   }
 
@@ -3349,7 +5853,7 @@ button.small {
   .desktop-item4:hover::after {
     width: 60px;
     margin-top: -20px;
-    margin-left: 460px;
+    margin-left: 510px !important;
     background: #0db7af;
   }
 }
@@ -3360,7 +5864,8 @@ button.small {
     z-index: 99;
     width: 100%;
     background: #f4f4f4;
-    margin-top: 38px;
+    margin-top: 45px;
+    
   }
 
   .second-nav .wrapper {
@@ -3373,6 +5878,7 @@ button.small {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: 150px;
   }
 
   .wrapper .nav-links {
@@ -3381,7 +5887,8 @@ button.small {
 
   .nav-links li {
     list-style: none;
-    margin-top: 30px;
+    margin-top: 25px;
+    margin-left: 10px;
   }
 
   .nav-links li a {
@@ -3393,7 +5900,6 @@ button.small {
     border-radius: 5px;
     transition: all 0.3s ease;
     font-family: 'Amazon Ember', Arial, sans-serif;
-
   }
 
   .nav-links li a:hover {
@@ -3506,7 +6012,7 @@ button.small {
   .desktop-item:hover::after {
     width: 55px;
     margin-top: -20px;
-    margin-left: 70px;
+    margin-left: 80px !important;
     background: #ee5f73;
   }
 
@@ -3608,7 +6114,7 @@ button.small {
   .desktop-item1:hover::after {
     width: 65px;
     margin-top: -20px;
-    margin-left: 146px;
+    margin-left: 166px !important;
     background: #fb56c1;
   }
 
@@ -3706,7 +6212,7 @@ button.small {
   .desktop-item2:hover::after {
     width: 55px;
     margin-top: -20px;
-    margin-left: 232px;
+    margin-left: 262px;
     background: #f26a10;
   }
 
@@ -3803,7 +6309,7 @@ button.small {
   .desktop-item3:hover::after {
     width: 135px;
     margin-top: -20px;
-    margin-left: 300px;
+    margin-left: 340px !important;
     background: #f2c210;
   }
 
@@ -3899,7 +6405,7 @@ button.small {
   .desktop-item4:hover::after {
     width: 60px;
     margin-top: -20px;
-    margin-left: 460px;
+    margin-left: 510px !important;
     background: #0db7af;
   }
 
@@ -3967,7 +6473,7 @@ aside {
   position: fixed;
   width: 30rem;
   height: 100%;
-  background-color: hsl(120, 8%, 79%);
+  background-color: #fffafa;
   z-index: 1000;
   transform: translateX(-30rem);
   /* color: #1b1a1a; */
@@ -3999,6 +6505,7 @@ button.open-sidebar:hover {
 aside ul {
   padding: 0;
   list-style: none;
+  margin-left: 50px;
 }
 
 aside li a {
@@ -4009,6 +6516,7 @@ aside li a {
   color: #282c3f;
   cursor: pointer;
   line-height: 45px;
+ 
 }
 
 aside li a:hover {
@@ -4018,7 +6526,7 @@ aside li a:hover {
 button.open {
   padding: 0.3rem 0.8rem;
   background-color: #ccd8db;
-  margin-left: 230px;
+  margin-left: 202px;
 
 }
 
