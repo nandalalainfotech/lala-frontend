@@ -1,4 +1,3 @@
-/* eslint-disable no-array-constructor */
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -12,6 +11,8 @@ import MessageBox from "../components/MessageBox";
 import {
   PRODUCT_CREATE_RESET,
   PRODUCT_DELETE_RESET,
+  PRODUCT_DETAILS_RESET,
+  PRODUCT_UPDATE_RESET,
 } from "../constants/productConstants";
 import { Link } from "react-router-dom";
 
@@ -23,14 +24,21 @@ export default function ProductListScreen(props) {
   const sellerMode = pathname.indexOf('/seller') >= 0;
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
+  const productDetails = useSelector((state) => state.productDetails);
+  const { product } = productDetails;
   const productCreate = useSelector((state) => state.productCreate);
-  console.log("called----->productCreate", productCreate);
   const {
     loading: loadingCreate,
     error: errorCreate,
     success: successCreate,
     product: createdProduct,
   } = productCreate;
+  const productUpdate = useSelector((state) => state.productUpdate);
+  const {
+    loading: loadingUpdate,
+    error: errorUpdate,
+    success: successUpdate,
+  } = productUpdate;
   const productDelete = useSelector((state) => state.productDelete);
   const {
     loading: loadingDelete,
@@ -44,7 +52,12 @@ export default function ProductListScreen(props) {
   useEffect(() => {
     if (successCreate) {
       dispatch({ type: PRODUCT_CREATE_RESET });
-      navigate(`/product/${createdProduct._id}/edit`);
+    }
+    if (successUpdate) {
+      dispatch({ type: PRODUCT_UPDATE_RESET });
+    }
+    if (product) {
+      dispatch({ type: PRODUCT_DETAILS_RESET });
     }
     if (successDelete) {
       dispatch({ type: PRODUCT_DELETE_RESET });
@@ -58,24 +71,29 @@ export default function ProductListScreen(props) {
     navigate,
     sellerMode,
     successCreate,
+    successUpdate,
     successDelete,
     userInfo._id,
     pageNumber,
+    product
   ]);
   const deleteHandler = (product) => {
     if (window.confirm("Are you sure to delete?")) {
       dispatch(deleteProduct(product._id));
     }
   };
-  console.log("called----->createProduct", createProduct);
   const createHandler = () => {
-    dispatch(createProduct());
+    navigate(`/products/new`);
   };
+  const editHandler=(product)=>{    
+    navigate(`/product/${product._id}/edit`);
+  }
   return (
     <div>
-      <div className="row productsLists">
+      <div className="row">
         <h1>Products</h1>
-        <button type="button" className="primary" onClick={createHandler}>
+        <br/>  <br/>  <br/>  <br/>  <br/>  
+        <button type="button" className="primary" onClick={createHandler} >
           Create Product
         </button>
       </div>
@@ -112,9 +130,12 @@ export default function ProductListScreen(props) {
                     <button
                       type="button"
                       className="small"
-                      onClick={() =>
-                        navigate(`/product/${product._id}/edit`)
-                      }
+                      // onClick={() =>
+                       
+                      //    navigate(`/product/${product._id}/edit`)
+                      // }
+                      // onClick={editHandler(product._id)}
+                      onClick={() => editHandler(product)}
                     >
                       Edit
                     </button>
@@ -160,7 +181,7 @@ export default function ProductListScreen(props) {
             </tbody>
           </table>
           <div className="row center pagination">
-            {[...Array(pages, pageSize).keys()].map((x) => (
+            {[...Array(pages,pageSize).keys()].map((x) => (
               <Link
                 className={x + 1 === page ? 'active' : ''}
                 key={x + 1}

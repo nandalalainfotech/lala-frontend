@@ -1,12 +1,8 @@
 html {
   font-size: 62.5%;
-  /* 16px x 62.5 = 10px = 1rem */
   box-sizing: border-box;
-  font-family: 'Amazon Ember', Arial, sans-serif;
-
-
+  font-family: "Amazon Ember", Arial, sans-serif;
 }
-
 body {
   margin: 0;
   height: 100vh;
@@ -17,15 +13,13 @@ body {
   background-color: #fffafa;
   -webkit-text-size-adjust: 100%;
   font-style: initial;
-  /* text-transform: capitalize; */
-  font-family: 'Amazon Ember', Arial, sans-serif;
+  font-family: "Amazon Ember", Arial, sans-serif;
   overflow-x: hidden;
 }
 
 #root {
   height: 100%;
-  font-family: 'Amazon Ember', Arial, sans-serif;
-  /* text-transform: capitalize; */
+  font-family: "Amazon Ember", Arial, sans-serif;
 }
 
 /* Layout */
@@ -40,14 +34,9 @@ body {
   height: 100%;
   font-family: 'Amazon Ember', Arial, sans-serif;
 }
-
-
-
 main {
   grid-area: main;
-  /* padding: 1rem; */
-  font-family: 'Amazon Ember', Arial, sans-serif;
-
+  font-family: "Amazon Ember", Arial, sans-serif;
 }
 
 footer {
@@ -84,26 +73,15 @@ a {
   font-family: 'Amazon Ember', Arial, sans-serif;
   text-decoration: none;
   text-transform: capitalize;
-  /* font-weight: 200; */
   font-size: 14px;
 
 }
 
 a:hover {
-  /* color: #A02020; */
   margin-top: 85px;
 
 
 }
-
-/* a:after{
-  content:'';
-  position: absolute;
-  background-color: #A02020;
-  height:3px;
-  width:100%;
-  left: 0;
-} */
 ul {
   padding: 10;
   margin: 0;
@@ -124,7 +102,6 @@ button {
   border-radius: 0.5rem;
   border: 0.1rem #A4A4A4 solid;
   font-size: 1.6rem;
-  /* font-family: Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Amazon Ember', Arial, sans-serif;
@@ -137,7 +114,6 @@ button {
 }
 
 input.signininput:focus {
-  /* border: 1px solid  #239def;  */
   box-shadow: 0 0 5pt 2pt #239def;
 }
 
@@ -169,16 +145,6 @@ button.small {
   position: relative;
 
 }
-
-/* .in {
-  font-size: 12px;
-  color: red;
-} */
-
-/* .home{
-  margin-top: 5px;
-} */
-
 /* Header */
 /* **************Header section Start *********** */
 /* Extra small devices (phones, 600px and down) */
@@ -229,10 +195,6 @@ button.small {
   .search {
     display: none;
   }
-  input[type='text'] {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
   .sides-menu {
     display: block;
   }
@@ -305,7 +267,6 @@ button.small {
 @media only screen and  (min-width: 600px) and (max-width:640px){
   .row.navigation {
     grid-area: header;
-    background-color: #fff;
     color: black;
     display: flex;
     background-color: #fff;
@@ -344,19 +305,12 @@ button.small {
   .navigation-menu {
     display: none;
   }
-
-  input[type='text'] {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
   /* 600 */
   .search {
     margin-right: 20px;
-    /* position: relative; */
   }
-
   .search input.form-control {
     width: 220px;
-    /* border: 2px solid #ff7519; */
   }
 
   input.form-control {
@@ -398,197 +352,10 @@ button.small {
     margin-left: 220px;
     margin-top: 8px;
   }
-
-  input::placeholder {
-    font-size: 10px;
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  .search-submit .fa {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-  .search-submit .fa:hover {
-    color: black;
-
-  }
-
-  .sides-menu {
-    display: block;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side1 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side2 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side3 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .dropdown-content-side1 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 100px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-
-  .dropdown-content-side2 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 140px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-
-  .dropdown-content-side3 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 200px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-}
-
-@media only screen and  (min-width: 640px) and (max-width:720px){
-  .row.navigation {
-    grid-area: header;
-    background-color: #fff;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0rem;
-    height: 60px;
-    width: 100%;
-    align-items: center;
-    position: fixed;
-    font-family: 'Amazon Ember', Arial, sans-serif;
-    position: fixed;
-    z-index: 100;
-  }
-
-  .brand-name {
-    position: fixed;
-    margin-left: 60px;
-  }
-
-  .brand-name a {
-    color: #020202;
-    font-size: 3rem;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  .logo.img {
-    margin-top: -20px;
-  }
-
-  .brand-name a:hover {
+  .has-search .form-control-feedback:hover {
     color: #ff7519;
   }
 
-  .navigation-menu {
-    display: none;
-  }
-
-  input[type='text'] {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-  /* 600 */
-  .search {
-    margin-right: 20px;
-    /* position: relative; */
-  }
-
-  .search input.form-control {
-    width: 280px;
-    /* border: 2px solid #ff7519; */
-  }
-
-  input.form-control {
-    background: #ffffff;
-    font-size: 14px;
-    border: 2px solid #ff7519 !important;
-    border-radius: 50px 0px 0px 50px;
-    padding: 1rem;
-  }
-
-  .has-search .search-submit {
-    float: right;
-    padding: 1.1rem 4rem 1rem 0.9rem !important;
-    margin-right: 16px;
-    font-size: 2px;
-    border-radius: 0px 50px 50px 0px;
-    cursor: pointer;
-    background-color: #ff7519;
-    color: #fff;
-    border: none !important;
-    width: 100px;
-  }
-
-
-  .has-search .form-control {
-    padding-left: 2.375rem;
-  }
-
-  .has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-    margin-left: 280px;
-    margin-top: 8px;
-  }
-
-  input::placeholder {
-    font-size: 13px;
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  .search-submit .fa {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-  .search-submit .fa:hover {
-    color: black;
-
-  }
-
   .sides-menu {
     display: block;
   }
@@ -641,188 +408,6 @@ button.small {
     margin-top: 140px;
     box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
   }
-
-  .dropdown-content-side3 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 200px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-}
-
-@media only screen and (min-width: 720px) and (max-width:768px) {
-.row.navigation {
-    grid-area: header;
-    background-color: #fff;
-    color: black;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 30px;
-    justify-content: space-between;
-    padding: 0.5rem 0rem;
-    height: 60px;
-    width: 100%;
-    align-items: center;
-    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
-    font-family: 'Amazon Ember', Arial, sans-serif;
-    position: fixed;
-    z-index: 100;
-    flex-direction: row;
-  }
-
-  .brand-name {
-    position: fixed;
-    margin-left: 60px;
-  }
-
-  .brand-name a {
-    color: #020202;
-    font-size: 3rem;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  .logo.img {
-    margin-top: -20px;
-    cursor: pointer;
-  }
-
-  .brand-name a:hover {
-    color: #ff7519;
-  }
-
-  .navigation-menu {
-    display: none;
-  }
-  input[type='text'] {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  /* 768 */
-  .search {
-    margin-right: 20px;
-    /* position: relative; */
-  }
-
-  .search input.form-control {
-    width: 300px;
-    /* border: 2px solid #ff7519; */
-  }
-
-  input.form-control {
-    background: #ffffff;
-    font-size: 14px;
-    border: 2px solid #ff7519 !important;
-    border-radius: 50px 0px 0px 50px;
-    padding: 1rem;
-  }
-
-  .has-search .search-submit {
-    float: right;
-    padding: 1.1rem 4rem 1rem 0.9rem !important;
-    margin-right: 16px;
-    font-size: 2px;
-    border-radius: 0px 50px 50px 0px;
-    cursor: pointer;
-    background-color: #ff7519;
-    color: #fff;
-    border: none !important;
-    width: 180px;
-  }
-
-
-  .has-search .form-control {
-    padding-left: 2.375rem;
-  }
-
-  .has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-    margin-left: 300px;
-    margin-top: 8px;
-  }
-
-  input::placeholder {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  .search-submit .fa {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-  .search-submit .fa:hover {
-    color: black;
-
-  }
-
-
-  .sides-menu {
-    display: block;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side1 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side2 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side3 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .dropdown-content-side1 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 100px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-
-  .dropdown-content-side2 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 140px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-
   .dropdown-content-side3 {
     position: absolute;
     left: 0;
@@ -885,17 +470,13 @@ button.small {
   .navigation-menu {
     display: none;
   }
-
-
   /* 768 */
   .search {
     margin-right: 20px;
-    /* position: relative; */
   }
 
   .search input.form-control {
     width: 300px;
-    /* border: 2px solid #ff7519; */
   }
 
   input.form-control {
@@ -938,383 +519,8 @@ button.small {
     margin-top: 8px;
   }
 
-  input::placeholder {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  .search-submit .fa {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-  .search-submit .fa:hover {
-    color: black;
-
-  }
-
-
-  .sides-menu {
-    display: block;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side1 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side2 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side3 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .dropdown-content-side1 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 100px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-
-  .dropdown-content-side2 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 140px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-
-  .dropdown-content-side3 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 200px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-}
-
-@media only screen and (min-width: 800px) and (max-width:900px) {
-
-  .row.navigation {
-    grid-area: header;
-    background-color: #fff;
-    color: black;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 30px;
-    justify-content: space-between;
-    padding: 0.5rem 0rem;
-    height: 60px;
-    width: 100%;
-    align-items: center;
-    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
-    font-family: 'Amazon Ember', Arial, sans-serif;
-    position: fixed;
-    z-index: 100;
-    flex-direction: row;
-  }
-
-  .brand-name {
-    position: fixed;
-    margin-left: 60px;
-  }
-
-  .brand-name a {
-    color: #020202;
-    font-size: 3rem;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  .logo.img {
-    margin-top: -20px;
-    cursor: pointer;
-  }
-
-  .brand-name a:hover {
+  .has-search .form-control-feedback:hover {
     color: #ff7519;
-  }
-
-  .navigation-menu {
-    display: none;
-  }
-
-  input[type='text'] {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-  /* 768 */
-  .search {
-    margin: auto;
-    margin-left: 80px;
-    /* position: relative; */
-  }
-
-  .search input.form-control {
-    width: 300px;
-    /* border: 2px solid #ff7519; */
-  }
-
-  input.form-control {
-    background: #ffffff;
-    font-size: 14px;
-    border: 2px solid #ff7519 !important;
-    border-radius: 50px 0px 0px 50px;
-    padding: 1rem;
-  }
-
-  .has-search .search-submit {
-    float: right;
-    padding: 1.1rem 4rem 1rem 0.9rem !important;
-    margin-right: 16px;
-    font-size: 2px;
-    border-radius: 0px 50px 50px 0px;
-    cursor: pointer;
-    background-color: #ff7519;
-    color: #fff;
-    border: none !important;
-    width: 180px;
-  }
-
-
-  .has-search .form-control {
-    padding-left: 2.375rem;
-  }
-
-  .has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-    margin-left: 300px;
-    margin-top: 8px;
-  }
-
-
-  input::placeholder {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  .search-submit .fa {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-  .search-submit .fa:hover {
-    color: black;
-
-  }
-
-
-  .sides-menu {
-    display: block;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side1 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side2 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .sides-menu li .dropdown-side:hover .dropdown-content-side3 {
-    transition: all 0.3s ease;
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .dropdown-content-side1 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 100px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-
-  .dropdown-content-side2 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 140px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-
-  .dropdown-content-side3 {
-    position: absolute;
-    left: 0;
-    width: 120px;
-    padding: 0 30px;
-    top: 85px;
-    opacity: 0;
-    visibility: hidden;
-    background-color: hsl(120, 8%, 79%);
-    margin-left: 20px;
-    margin-top: 200px;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-  }
-}
-
-@media only screen and (min-width: 900px) and (max-width:992px) {
-
-  .row.navigation {
-    grid-area: header;
-    background-color: #fff;
-    color: black;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 30px;
-    justify-content: space-between;
-    padding: 0.5rem 0rem;
-    height: 60px;
-    width: 100%;
-    align-items: center;
-    box-shadow: 0 2px 2px 2px rgb(255, 255, 255);
-    font-family: 'Amazon Ember', Arial, sans-serif;
-    position: fixed;
-    z-index: 100;
-    flex-direction: row;
-  }
-
-  .brand-name {
-    position: fixed;
-    margin-left: 60px;
-  }
-
-  .brand-name a {
-    color: #020202;
-    font-size: 3rem;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  .logo.img {
-    margin-top: -20px;
-    cursor: pointer;
-  }
-
-  .brand-name a:hover {
-    color: #ff7519;
-  }
-
-  .navigation-menu {
-    display: none;
-  }
-
-  input[type='text'] {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-  /* 768 */
-  .search {
-    margin: auto;
-    margin-left: 80px;
-    /* position: relative; */
-  }
-
-  .search input.form-control {
-    width: 300px;
-    /* border: 2px solid #ff7519; */
-  }
-
-  input.form-control {
-    background: #ffffff;
-    font-size: 14px;
-    border: 2px solid #ff7519 !important;
-    border-radius: 50px 0px 0px 50px;
-    padding: 1rem;
-  }
-
-  .has-search .search-submit {
-    float: right;
-    padding: 1.1rem 4rem 1rem 0.9rem !important;
-    margin-right: 16px;
-    font-size: 2px;
-    border-radius: 0px 50px 50px 0px;
-    cursor: pointer;
-    background-color: #ff7519;
-    color: #fff;
-    border: none !important;
-    width: 180px;
-  }
-
-
-  .has-search .form-control {
-    padding-left: 2.375rem;
-  }
-
-  .has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-    margin-left: 300px;
-    margin-top: 8px;
-  }
-
-  input::placeholder {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-
-  .search-submit .fa {
-    font-family: 'Amazon Ember', Arial, sans-serif;
-  }
-  .search-submit .fa:hover {
-    color: black;
-
   }
 
   .sides-menu {
@@ -3723,8 +2929,6 @@ button.small {
 
   .content .row .mega-links {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255,255,255,0.09); */
-
   }
 
   .row .mega-links li {
@@ -3736,8 +2940,7 @@ button.small {
 
     color: #282c3f;
     font-size: 10px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links li a:hover {
@@ -3835,7 +3038,6 @@ button.small {
 
   .content .row .mega-links1 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links1 li {
@@ -3844,11 +3046,9 @@ button.small {
 
   .row .mega-links1 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 10px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links1 li a:hover {
@@ -3933,7 +3133,6 @@ button.small {
 
   .content .row .mega-links2 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links2 li {
@@ -3942,11 +3141,9 @@ button.small {
 
   .row .mega-links2 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 10px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links2 li a:hover {
@@ -4030,7 +3227,6 @@ button.small {
 
   .content .row .mega-links3 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links3 li {
@@ -4039,11 +3235,9 @@ button.small {
 
   .row .mega-links3 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 10px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links3 li a:hover {
@@ -4126,7 +3320,6 @@ button.small {
 
   .content .row .mega-links4 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links4 li {
@@ -4277,8 +3470,6 @@ button.small {
 
   .content .row .mega-links {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255,255,255,0.09); */
-
   }
 
   .row .mega-links li {
@@ -4290,8 +3481,7 @@ button.small {
 
     color: #282c3f;
     font-size: 12px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links li a:hover {
@@ -4390,7 +3580,6 @@ button.small {
 
   .content .row .mega-links1 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links1 li {
@@ -4399,11 +3588,9 @@ button.small {
 
   .row .mega-links1 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 12px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links1 li a:hover {
@@ -4489,7 +3676,6 @@ button.small {
 
   .content .row .mega-links2 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links2 li {
@@ -4498,11 +3684,9 @@ button.small {
 
   .row .mega-links2 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 12px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links2 li a:hover {
@@ -4587,7 +3771,6 @@ button.small {
 
   .content .row .mega-links3 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links3 li {
@@ -4596,11 +3779,9 @@ button.small {
 
   .row .mega-links3 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 12px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links3 li a:hover {
@@ -4835,8 +4016,6 @@ button.small {
 
   .content .row .mega-links {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255,255,255,0.09); */
-
   }
 
   .row .mega-links li {
@@ -4848,7 +4027,6 @@ button.small {
 
     color: #282c3f;
     font-size: 14px;
-    /* display: block; */
     font-family: 'Amazon Ember', Arial, sans-serif;
   }
 
@@ -5047,7 +4225,6 @@ button.small {
 
   .content .row .mega-links2 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links2 li {
@@ -5056,11 +4233,9 @@ button.small {
 
   .row .mega-links2 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 14px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links2 li a:hover {
@@ -5145,7 +4320,6 @@ button.small {
 
   .content .row .mega-links3 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links3 li {
@@ -5154,11 +4328,9 @@ button.small {
 
   .row .mega-links3 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 14px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links3 li a:hover {
@@ -5242,7 +4414,6 @@ button.small {
 
   .content .row .mega-links4 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links4 li {
@@ -5392,8 +4563,6 @@ button.small {
 
   .content .row .mega-links {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255,255,255,0.09); */
-
   }
 
   .row .mega-links li {
@@ -5405,8 +4574,7 @@ button.small {
 
     color: #282c3f;
     font-size: 14px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links li a:hover {
@@ -5504,7 +4672,6 @@ button.small {
 
   .content .row .mega-links1 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links1 li {
@@ -5513,11 +4680,9 @@ button.small {
 
   .row .mega-links1 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 14px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links1 li a:hover {
@@ -5699,7 +4864,6 @@ button.small {
 
   .content .row .mega-links3 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links3 li {
@@ -5708,11 +4872,9 @@ button.small {
 
   .row .mega-links3 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 14px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links3 li a:hover {
@@ -5795,7 +4957,6 @@ button.small {
 
   .content .row .mega-links4 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links4 li {
@@ -5809,7 +4970,6 @@ button.small {
     font-family: 'Amazon Ember', Arial, sans-serif;
 
   }
-
 
   .row .mega-links4 li a:hover {
     color: #ff7519;
@@ -5839,7 +4999,6 @@ button.small {
   .desktop-item4:after {
     content: '';
     position: absolute;
-    /* display: block; */
     left: 0;
     top: 120%;
     width: 0%;
@@ -5944,8 +5103,6 @@ button.small {
 
   .content .row .mega-links {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255,255,255,0.09); */
-
   }
 
   .row .mega-links li {
@@ -5957,8 +5114,7 @@ button.small {
 
     color: #282c3f;
     font-size: 14px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links li a:hover {
@@ -6056,7 +5212,6 @@ button.small {
 
   .content .row .mega-links1 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links1 li {
@@ -6065,11 +5220,9 @@ button.small {
 
   .row .mega-links1 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 14px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links1 li a:hover {
@@ -6154,7 +5307,6 @@ button.small {
 
   .content .row .mega-links2 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links2 li {
@@ -6163,11 +5315,9 @@ button.small {
 
   .row .mega-links2 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 14px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links2 li a:hover {
@@ -6251,7 +5401,6 @@ button.small {
 
   .content .row .mega-links3 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links3 li {
@@ -6260,11 +5409,9 @@ button.small {
 
   .row .mega-links3 li a {
     padding: 0px;
-    /* padding: 0 20px; */
     color: #282c3f;
     font-size: 14px;
-    /* display: block; */
-    font-family: 'Amazon Ember', Arial, sans-serif;
+    font-family: "Amazon Ember", Arial, sans-serif;
   }
 
   .row .mega-links3 li a:hover {
@@ -6347,7 +5494,6 @@ button.small {
 
   .content .row .mega-links4 {
     margin-left: -40px;
-    /* border-left: 1px solid rgba(255, 255, 255, 0.09); */
   }
 
   .row .mega-links4 li {
@@ -6391,7 +5537,6 @@ button.small {
   .desktop-item4:after {
     content: '';
     position: absolute;
-    /* display: block; */
     left: 0;
     top: 120%;
     width: 0%;
@@ -6476,9 +5621,7 @@ aside {
   background-color: #fffafa;
   z-index: 1000;
   transform: translateX(-30rem);
-  /* color: #1b1a1a; */
   transition: all 0.5s;
-  /* color: #2020A0; */
 }
 
 aside.open {
@@ -6505,11 +5648,9 @@ button.open-sidebar:hover {
 aside ul {
   padding: 0;
   list-style: none;
-  margin-left: 50px;
 }
 
 aside li a {
-  /* display: block; */
   justify-content: space-between;
   padding: 1rem;
   font-size: large;
@@ -6532,44 +5673,21 @@ button.open {
 
 .fa {
   font-size: 21px;
-
 }
 
-/* .fas {
-  font-size: 12px;
-} */
 
-/* .fas.close-sidebar {
-  padding: 0.3rem 0.8rem;
-  background-color: #13a1c5;
-  margin-left: 110px;
-} */
 
 /* Image */
 img {
   border-radius: 0.5rem;
 }
 
-/* img.small {
-  max-width: 5rem;
-  width: 100%;
-}
-img.medium {
-  max-width: 29rem;
-  width: 100%;
-}
-img.large {
-  width: 100%;
-} */
+
 img.small {
   height: 200px;
   width: 200px;
 }
 
-/* img.medium {
-  height: 200px;
-  width: 250px;
-} */
 
 img.large {
   width: 100px;
@@ -6724,7 +5842,6 @@ img.medium:hover {
   margin: 30px 0px;
   display: flex;
   justify-content: center;
-  /* align-items: center;  */
 }
 
 .tempimg {
@@ -6811,8 +5928,6 @@ button.signsubmit {
 .tooltip {
   position: relative;
   display: inline-block;
-  /* margin-top: -9px; */
-  /* border-bottom: 1px dotted black; */
 }
 
 .tooltip:hover {
@@ -6843,7 +5958,6 @@ button.signsubmit {
 .Learnlink {
   width: 100% !important;
   background: #0f92e9;
-  /* margin:auto 0px; */
   padding: 0px !important;
   text-align: center;
   line-height: 40px;
@@ -7153,11 +6267,8 @@ img.sellerimg {
 }
 
 .formation2 {
-  background-color: #FFFFFF;
-
-  /* border-radius: 18px; */
+  background-color: #ffffff;
   width: 450px;
-  /* width: 550px; */
   margin-left: 180px;
   padding: 50px, 20px;
   overflow: "hidden";
@@ -7165,9 +6276,6 @@ img.sellerimg {
   height: 450px;
   line-height: -2px;
   margin-top: 10px;
-
-  /* 
-  height: 550px;  */
 }
 
 .formation2-body {
@@ -7181,7 +6289,6 @@ img.sellerimg {
 
 .code {
   margin-top: -17px;
-  /* font-size: 19px; */
 }
 
 .form>* {
@@ -7193,8 +6300,6 @@ img.sellerimg {
 }
 
 .react:hover {
-
-  /* color: #F02020; */
   text-decoration: underline;
   color: #bb710f;
 }
@@ -7206,15 +6311,6 @@ img.sellerimg {
 }
 
 .formation1 {
-  /* background-color: rgb(24, 37, 116);
-  border-radius: 18px;
-  width: 550px;
-  margin: 20px auto;
-  padding: 20px;
-  border-style: ridge; */
-  background-color: #FFFFFF;
-
-  /* border-radius: 18px; */
   width: 450px;
   margin-top: -458px;
   margin-left: 635px;
@@ -7233,30 +6329,18 @@ img.sellerimg {
 .formation1-body>* {
   padding: 5px;
 }
-
-
 .row center {
   color: white;
 }
-
 .row center:hover {
-  /* color: #FF8000; */
   text-decoration: underline;
 }
-
 .robot {
   color: #1b1818;
 }
-
-
 .screen {
   padding: -190px;
-
-  /* overflow: hidden; */
-
 }
-
-
 .playing {
   padding: 1rem;
   margin: 0.5rem;
@@ -7300,40 +6384,6 @@ img.sellerimg {
 .round1:hover {
   text-decoration: underline;
 }
-
-/* .sensitivity{
- 
-  width:10px;
-  height:99px;
-} */
-/* .sensitivity{
-  width: 600px;
-}
-
-
-.carousel-inner {
-  z-index: -1;
-
-}
-
-.carousel-indicators li {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 1px;
-  text-indent: -999px;
-  cursor: pointer;
-  background-color: rgb(209, 188, 188);
-  border: 2px solid rgb(209, 188, 188);
-  background-color: gray;
-  border-radius: 10px
-}
-
-.carousel-indicators li.active,
-.dot:hover {
-  background-color: #720a0a;
-} */
-
 .container1 {
   position: relative;
   z-index: 1;
@@ -7371,7 +6421,6 @@ img.sellerimg {
 .coco {
   height: 320px;
   width: 200px;
-  /* margin-top: 10px; */
 }
 
 .coco1 {
@@ -7385,100 +6434,53 @@ img.sellerimg {
 .formes {
   text-decoration: center;
 }
-
-/* .card1{ */
-/* margin-top: -910px;
-  margin-left: 600px; */
-/* width: 300px;
-  padding-left: 70px;
-  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-margin-left:30px; */
-
-/* }   */
 .card1 {
-  /* margin-top: -910px;
-  margin-left: 600px; */
-  border: 0.1rem #C0C0C0 solid;
+  border: 0.1rem #c0c0c0 solid;
   background-color: #dbdbf3;
   border-radius: 0.67rem;
   margin: 1rem;
   width: 280px;
   text-align: left;
-
-
-  /* margin-left: 120px;
-  width: 230px;
-  text-align: left;
-  transition: all ease-in-out 2s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .card2 {
-  /* margin-top: -910px;
-  margin-left: 600px; */
-  border: 0.1rem #C0C0C0 solid;
+  border: 0.1rem #c0c0c0 solid;
   background-color: #dbdbf3;
   border-radius: 0.67rem;
   margin: 1rem;
   width: 280px;
   text-align: left;
-  /* margin-left: -120px;
-  width: 300px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .card3 {
-  /* margin-top: -910px;
-  margin-left: 600px; */
-
-  border: 0.1rem #C0C0C0 solid;
+  border: 0.1rem #c0c0c0 solid;
   background-color: #dbdbf3;
   border-radius: 0.67rem;
   margin: 1rem;
   width: 280px;
   text-align: left;
-
-  /* margin-left: -120px;
-  width: 300px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
-
-
 .card3:hover {
-
   cursor: pointer;
   transition: all ease-in-out 2s;
 }
 
 .card4 {
-  /* margin-top: -910px;
-  margin-left: 600px; */
-  border: 0.1rem #C0C0C0 solid;
+  border: 0.1rem #c0c0c0 solid;
   background-color: #dbdbf3;
   border-radius: 0.67rem;
   margin: 1rem;
   width: 280px;
   text-align: left;
-  /* margin-left: -120px;
-  width: 300px;
-  transition: all ease-in-out 2s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .card5 {
-  /* margin-top: -910px;
-  margin-left: 600px; */
-  border: 0.1rem #C0C0C0 solid;
+  border: 0.1rem #c0c0c0 solid;
   background-color: #dbdbf3;
   border-radius: 0.67rem;
   margin: 1rem;
   width: 280px;
   text-align: left;
-  /* margin-left: 120px;
-  width: 230px;
-  text-align: left;
-  transition: all ease-in-out 2s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .card6 {
@@ -7488,12 +6490,6 @@ margin-left:30px; */
   margin: 1rem;
   width: 280px;
   text-align: left;
-  /* margin-right: 190px; */
-  /* width: 280px;
-  margin-left: -30px;
-  transition: .3s ease;
-  ;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .card7 {
@@ -7503,9 +6499,6 @@ margin-left:30px; */
   margin: 1rem;
   width: 280px;
   text-align: left;
-  /* margin-left: -10px;
-  transition: .3s ease;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .card8 {
@@ -7515,20 +6508,7 @@ margin-left:30px; */
   margin: 1rem;
   width: 280px;
   text-align: left;
-  /* transition: .3s ease;
-  margin-right: 50px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
-
-/* 
-.megamenu{
-  position: absolute;
-margin-left: 140px;
-margin-top: 20px;
-  
-} */
-
-
 
 
 .menu1 {
@@ -7557,12 +6537,6 @@ margin-top: 20px;
   z-index: -1;
   margin-top: 70px;
 }
-
-
-/* .convey:hover {
-  position: relative;
-  z-index: - 999;
-} */
 
 
 /* -------------------------------------MOBILE VIEW START------------------ */
@@ -7720,4 +6694,16 @@ button.carts2 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial Narrow, sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+}
+.empty:hover {
+  color: #0db7af;
 }

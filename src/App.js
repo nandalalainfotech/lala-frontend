@@ -32,7 +32,7 @@ import SellerRoute from "./components/SellerRoute";
 import SellerScreen from "./screens/SellerScreen";
 import SearchBox from "./components/SearchBox";
 import SearchScreen from "./screens/SearchScreen";
-import { listProductCategories, listProductCategorygroup, listProductCategorytype } from "./actions/productAction";
+// import { listProductCategories, listProductCategorygroup, listProductCategorytype } from "./actions/productAction";
 import { listSareeCategories } from "./actions/sareeAction";
 import MessageBox from "./components/MessageBox";
 import LoadingBox from "./components/LoadingBox";
@@ -51,6 +51,7 @@ import WomenEditScreen from "./screens/WomenEditScreen";
 import KidEditScreen from "./screens/KidEditScreen";
 import WomenScreen from "./screens/WomenScreen";
 import KidScreen from "./screens/KidsScreen";
+import { listProductCategories, listProductCategorygroup, listProductCategorytype } from "./actions/productAction";
 
 
 function App() {
@@ -2452,6 +2453,11 @@ function App() {
                 </SellerRoute>
               }
             />
+            <Route
+              path="/products/new"
+              element={<ProductEditScreen />}
+              exact
+            ></Route>
             <Route
               path="/product/:id/edit"
               element={<ProductEditScreen />}
