@@ -149,7 +149,6 @@ function App() {
             <div className= "navigation-menu">
               <ul>
                 <li>
-                  {userInfo ? (
                     <div className="dropdown">
                       <Link className="home" to="/cart">
                         <i className="fa fa-shopping-cart"></i>&nbsp;Cart
@@ -158,16 +157,6 @@ function App() {
                         )}
                       </Link>
                     </div>
-                  ) : (
-                    <div className="dropdown">
-                      <Link className="home" to="/cart">
-                        <i className="fa fa-shopping-cart"></i>&nbsp;Cart
-                        {cartItems.length > 0 && (
-                          <span className="badge">{cartItems.length}</span>
-                        )}
-                      </Link>
-                    </div>
-                  )}
                 </li>
                 <li>
                   {userInfo ? (

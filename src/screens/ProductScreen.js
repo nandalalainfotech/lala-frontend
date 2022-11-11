@@ -41,18 +41,25 @@ export default function ProductScreen(props) {
       setComment("");
       dispatch({ type: PRODUCT_REVIEW_CREATE_RESET });
     }
-      dispatch(detailsProduct(productId));
-      const fetchBusinesses = async () => {
-        const img = await Axios.get(`/api/uploads/show/${productId}`, { responseType: 'blob' });
-        setImage(URL.createObjectURL(img.data));
-      };
-      fetchBusinesses();
-    
-  },[dispatch, productId, successReviewCreate]);
+    dispatch(detailsProduct(productId));
+    const fetchBusinesses = async () => {
+      const img = await Axios.get(`/api/uploads/show/${productId}`, {
+        responseType: "blob",
+      });
+      setImage(URL.createObjectURL(img.data));
+    };
+    fetchBusinesses();
+  }, [dispatch, productId, successReviewCreate]);
 
   const addToCartHandler = () => {
     navigate(`/cart/${productId}?qty=${qty}`);
   };
+
+  const addToHandler = () => {
+    navigate(`/signin`);
+  };
+
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -203,14 +210,25 @@ export default function ProductScreen(props) {
                             </div>
                           </div>
                         </li>
-                        <li>
-                          <button
-                            onClick={addToCartHandler}
-                            className="primary block"
-                          >
-                            Add to Cart
-                          </button>
-                        </li>
+                        {userInfo ? (
+                          <li>
+                            <button
+                              onClick={addToCartHandler}
+                              className="primary block"
+                            >
+                              Add to Cart
+                            </button>
+                          </li>
+                        ) : (
+                          <li>
+                            <button
+                              onClick={addToHandler}
+                              className="primary block"
+                            >
+                              Add to Cart
+                            </button>
+                          </li>
+                        )}
                       </>
                     )}
                   </ul>

@@ -78,7 +78,6 @@ export default function HomeScreen() {
   return (
     <div>
       <div className="convey">
-        {/* <img src="../image/ama1.jpg" alt="home" height="500px" width="1320px"/> */}
         <h2>Top Sellers</h2>
         {loadingSellers ? (
           <LoadingBox></LoadingBox>
@@ -87,13 +86,9 @@ export default function HomeScreen() {
         ) : (
           <>
             {sellers?.length === 0 && <MessageBox>No Seller Found</MessageBox>}
-
             {sellers?.map((seller) => (
               <div key={seller._id}>
-                {/* <div className="carousel-item"> */}
-
                 <Carousel showArrows autoPlay showThumbs={false} infiniteLoop={true} > 
-                  {/* <Carousel showArrows active showThumbs={true}> */}
                   <Link to={`/seller`}>
                     <ul data-slides>
                       <li className="slide" >
@@ -123,8 +118,6 @@ export default function HomeScreen() {
                   </Link>
                 </Carousel>
               </div>
-
-              // </div>
             ))}
           </>
         )}

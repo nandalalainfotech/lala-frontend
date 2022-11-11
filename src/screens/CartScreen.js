@@ -21,9 +21,6 @@ export default function CartScreen(props) {
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
-    // else if (tshirtId) {
-    //   dispatch(addToCart(tshirtId, qty));
-    // }
   }, [dispatch, productId, qty]);
   const removeFromCartHandler = (id) => {
     // delete action
@@ -44,7 +41,7 @@ export default function CartScreen(props) {
               <div className="cart img-container">
                 <div className="card card21">
                   <img className="cartin" src="/image/carts.jpg" />
-                  <MessageBox>Cart is empty.</MessageBox>
+                  <div className="empty"> Your Cart is Empty</div>
                 </div>
               </div>
             ) : (
@@ -52,7 +49,7 @@ export default function CartScreen(props) {
                 <div className="cart img-container">
                   <div className="card card22">
                     <img className="cartin" src="/image/carts.jpg" />
-                    <MessageBox style={"color:red"}>Cart is empty.</MessageBox>
+                    <div className="empty"> Your Cart is Empty</div>
                     <Link to="/signin">
                       <button className="carts1">Sign In</button>
                     </Link>
