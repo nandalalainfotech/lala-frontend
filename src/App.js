@@ -498,7 +498,7 @@ function App() {
                               <Link to="search/categorytype/active-t-shirts">active t-shirts</Link>
                             </li>
                             <li>
-                              <Link to="search/categorytype/trackpants-shorts">
+                              <Link to="search/categorytype/trackpants">
                                 trackpants&shorts
                               </Link>
                             </li>
@@ -506,7 +506,7 @@ function App() {
                               <Link to="search/categorytype/tracksuits">tracksuits</Link>
                             </li>
                             <li>
-                              <Link to="search/categorytype/jackets-sweetshirts">
+                              <Link to="search/categorytype/sweatshirt">
                                 Jackets&sweetshirts
                               </Link>
                             </li>
@@ -519,7 +519,7 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="search/categorytype/swirm-wears">swirm wears</Link>
+                              <Link to="search/categorytype/swirm-wear">swirm wears</Link>
                             </li>
                             <li>
                               <h3>
@@ -532,10 +532,10 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/categorytype/small-wearables">small wearables</Link>
+                              <Link to="search/categorytype/smart-wearble">small wearables</Link>
                             </li>
                             <li>
-                              <Link to="search/categorytype/fitness-gadgets">fitness gadgets</Link>
+                              <Link to="search/categorytype/fitnes">fitness gadgets</Link>
                             </li>
                             <li>
                               <Link to="search/categorytype/headphone">headphone</Link>
@@ -550,7 +550,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/men-faschion"
+                                  to="search/categorygroup/fashion"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Faschion Accessories
@@ -558,64 +558,59 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/name/men-wallets">wallets</Link>
+                              <Link to="search/categorytype/wallet">wallets</Link>
                             </li>
 
                             <li>
-                              <Link to="search/name/men-belts">belts</Link>
+                              <Link to="search/categorytype/belt">belts</Link>
                             </li>
 
                             <li>
-                              <Link to="search/name/men-perfume-bodymists">
+                              <Link to="search/categorytype/perfume">
                                 perfume&bodymists
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-belts">helmets</Link>
+                              <Link to="search/categorytype/helmet">helmets</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-trimmers">trimmers</Link>
+                              <Link to="search/categorytype/trimmers">trimmers</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-Deodorants">Deodorants</Link>
+                              <Link to="search/categorytype/deodorant">Deodorants</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-tiles-cuffkins-pocketsquares">
+                              <Link to="search/categorytype/tie">
                                 tiles,cuffkins
                                 & pocketsquares
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-accessory-gift-seat">
+                              <Link to="search/categorytype/accessory-gift-seat">
                                 accessory gift seat
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-caps-hates">caps&hates</Link>
+                              <Link to="search/categorytype/caps-hates">caps&hates</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-muffalear-scarves-gloves">
-                                muffalear,scarves
-                                &gloves
+                              <Link to="search/categorytype/muffalear-scarves-gloves">
+                                muffalear,scarves&gloves
                               </Link>
                             </li>
+                           
                             <li>
-                              <Link to="search/name/men-perfume-bodymists">
-                                perfume&bodymists
-                              </Link>
+                              <Link to="search/categorytype/phone-cases">phone cases</Link>
                             </li>
                             <li>
-                              <Link to="search/name/men-phone-cases">phone cases</Link>
-                            </li>
-                            <li>
-                              <Link to="search/name/men-rings-wrist-wear">
+                              <Link to="search/categorytype/rings-wrist-wear">
                                 rings&wrist wear
                               </Link>
                             </li>
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/men-Bags-Backpacks"
+                                  to="search/categorygroup/Bags-Backpacks"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Bags&Backpacks
@@ -625,7 +620,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/name/men-Luggages-trolleys"
+                                  to="search/categorygroup/luggages-trolleys"
                                   style={{ color: "#ee5f73" }}
                                 >
                                   Luggages&trolleys
@@ -654,7 +649,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/category/women-Indian-fusion-wear"
+                                  to="search/categorygroup/indian-fusion-wear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Indian&fusion wear
@@ -662,55 +657,55 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/women-kurtas-suits">kurtas&suits</Link>
+                              <Link to="search/categorytype/kurtas-suits">kurtas&suits</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-kurits-tunics&tops">
+                              <Link to="search/categorytype/kurits-tunics">
                                 kurits,tunics&tops
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-sarees">sarees</Link>
+                              <Link to="search/categorytype/sarees">sarees</Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/women-ethnic-wear">ethnic wear</Link>
+                              <Link to="search/categorytype/ethnic-wear">ethnic wear</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-laggins-salwars-chudidars">
-                                laggins,salwars
-                                & chudidars
+                              <Link to="search/categorytype/laggins-salwars-chudidars">
+                                laggins,salwars&chudidars
+                                
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Skirts-Palazzos">
+                              <Link to="search/categorytype/skirts-Palazzos">
                                 Skirts & Palazzos
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/women-Dress-Materials">Dress Materials</Link>
+                              <Link to="search/categorytype/dress-materials">Dress Materials</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Lehenga-Cholis">Lehenga Cholis</Link>
+                              <Link to="search/categorytype/lehenga-cholis">Lehenga Cholis</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Dupattas-Shawls">
+                              <Link to="search/categorytype/dupattas-shawls">
                                 Dupattas & Shawls
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/women-Jackets">Jackets</Link>
+                              <Link to="search/categorytype/jackets">Jackets</Link>
                             </li>
 
                             <li>
                               <h3>
                                 <Link
-                                  to="search/category/women-Belts-Scarves-More"
+                                  to="search/categorygroup/belts-scarves"
                                   style={{ color: "#fb56c1" }}
                                 >
-                                  Belts, Scarves & More
+                                  Belts,Scarves & More
                                 </Link>
                               </h3>
                             </li>
@@ -719,7 +714,7 @@ function App() {
                               {" "}
                               <h3>
                                 <Link
-                                  to="search/category/women-Watches-Wearables"
+                                  to="search/categorygroup/watches-wearables"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Watches & Wearables
@@ -734,7 +729,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/women-Western-Wear"
+                                  to="search/categorygroup/western-wear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Western Wear
@@ -742,42 +737,42 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/women-Dresses">Dresses</Link>
+                              <Link to="search/categorytype/dresses">Dresses</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Tops">Tops</Link>
+                              <Link to="search/categorytype/tops">Tops</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-T-shirts">Tshirts</Link>
+                              <Link to="search/categorytype/T-shirts">Tshirts</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Jeans">Jeans</Link>
+                              <Link to="search/categorytype/Jeans">Jeans</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Shorts-Skirts">Shorts & Skirts</Link>
+                              <Link to="search/categorytype/shorts-skirts">Shorts & Skirts</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Co-ords">Co-ords</Link>
+                              <Link to="search/categorytype/co-ords">Co-ords</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Playsuits">Playsuits</Link>
+                              <Link to="search/categorytype/playsuits">Playsuits</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Jumpsuits">Jumpsuits</Link>
+                              <Link to="search/categorytype/jumpsuits">Jumpsuits</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Shrugs">Shrugs</Link>
+                              <Link to="search/categorytype/shrugs">Shrugs</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Sweaters-Sweatshirts">
+                              <Link to="search/categorytype/sweaters-sweatshirts">
                                 Sweaters&Sweatshirts
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Jackets-Coats">Jackets & Coats</Link>
+                              <Link to="search/categorytype/jackets-coats">Jackets & Coats</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Blazers-Waistcoats">
+                              <Link to="search/categorytype/blazers-waistcoats">
                                 Blazers & Waistcoats
                               </Link>
                             </li>
@@ -786,7 +781,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/women-Plus-Size"
+                                  to="search/categorygroup/plus-size"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Plus Size
@@ -801,7 +796,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/women-Maternity"
+                                  to="search/categorygroup/maternity"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Maternity
@@ -812,7 +807,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/women-Sunglasses-Frames"
+                                  to="search/categorygroup/sunglasses-frames"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Sunglasses & Frames
@@ -823,7 +818,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/women-Foot-Wear"
+                                  to="search/categorygroup/foot-wear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Foot Wear
@@ -831,19 +826,19 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/women-Flats">Flats</Link>
+                              <Link to="search/categorytype/flats">Flats</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Casual-Shoes">Casual Shoes</Link>
+                              <Link to="search/categorytype/casual-shoes">Casual Shoes</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Heels">Heels</Link>
+                              <Link to="search/categorytype/heels">Heels</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Boots">Boots</Link>
+                              <Link to="search/categorytype/boots">Boots</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Sports-Shoes-Floaters">
+                              <Link to="search/categorytype/sports-shoes-floaters">
                                 SportsShoes&Floaters
                               </Link>
                             </li>
@@ -851,7 +846,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/search/category/women-ports-activy-Wear"
+                                  to="/search/categorygroup/sports-activy-wear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Sports &activy Wear
@@ -859,18 +854,18 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/women-clothing">Clothing</Link>
+                              <Link to="search/categorytype/clothing">Clothing</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Footwear">Footwear</Link>
+                              <Link to="search/categorytype/Footwear">Footwear</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Sports-Accessories">
+                              <Link to="search/categorytype/sports-accessories">
                                 Sports Accessories
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Sports-Equipment">
+                              <Link to="search/categorytype/sports-equipment">
                                 Sports Equipment
                               </Link>
                             </li>
@@ -882,7 +877,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/women-Lingerie-Sleepwear"
+                                  to="search/categorygroup/lingerie-sleepwear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   {" "}
@@ -892,33 +887,33 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/women-Bra">Bra</Link>
+                              <Link to="search/categorytype/bra">Bra</Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/women-Briefs">Briefs</Link>
+                              <Link to="search/categorytype/briefs">Briefs</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Shapewear">Shapewear</Link>
+                              <Link to="search/categorytype/shapewear">Shapewear</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Sleepwear-Loungewear">
+                              <Link to="search/categorytype/sleepwear-loungewear">
                                 Sleepwear
                                 & Loungewear
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Swimwear">Swimwear</Link>
+                              <Link to="search/categorytype/swimwear">Swimwear</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Camisoles-Thermals">
+                              <Link to="search/categorytype/camisoles-thermals">
                                 Camisoles & Thermals
                               </Link>
                             </li>
                             <li>
                               <h3>
                                 <Link
-                                  to="search/category/women-Beauty-Personal-Care"
+                                  to="search/categorygroup/beauty-personal-care"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Beauty & Personal Care
@@ -926,19 +921,19 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/women-Makeup">Makeup</Link>
+                              <Link to="search/categorytype/makeup">Makeup</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Skincare">Skincare</Link>
+                              <Link to="search/categorytype/skincare">Skincare</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Premium-Beauty">Premium Beauty</Link>
+                              <Link to="search/categorytype/premium-beauty">Premium Beauty</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Lipsticks">Lipsticks</Link>
+                              <Link to="search/categorytype/lipsticks">Lipsticks</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Fragrances">Fragrances</Link>
+                              <Link to="search/categorytype/fragrances">Fragrances</Link>
                             </li>
                           </ul>
                         </div>
@@ -947,7 +942,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="/Gadgets"
+                                  to="search/categorygroup/gadgets"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Gadgets
@@ -955,23 +950,23 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/women-Smart-Wearables">SmartWearables</Link>
+                              <Link to="search/categorytype/smart-wearble">SmartWearables</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Fitness-Gadgets">FitnessGadgets</Link>
+                              <Link to="search/categorytype/fitness-gadgets">FitnessGadgets</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Headphones">Headphones</Link>
+                              <Link to="search/categorytype/headphone">Headphones</Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/women-Speakers">Speakers</Link>
+                              <Link to="search/categorytype/speakers">Speakers</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/women-Jewellery"
+                                  to="search/categorygroup/jewellery"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Jewellery
@@ -979,22 +974,22 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/women-Fashion-Jewellery">
+                              <Link to="search/categorytype/fashion-jewellery">
                                 FashionJewellery
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Fine-Jewellery">Fine Jewellery</Link>
+                              <Link to="search/categorytype/fine-jewellery">Fine Jewellery</Link>
                             </li>
                             <li>
-                              <Link to="search/category/women-Earrings">Earrings</Link>
+                              <Link to="search/categorytype/earrings">Earrings</Link>
                             </li>
 
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/women-Gadgets"
+                                  to="search/categorygroup/backpacks"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Backpacks
@@ -1005,11 +1000,11 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/women-Handbags-Bags-Wallets"
+                                  to="search/categorygroup/handbags-bags-wallets"
                                   style={{ color: "#fb56c1" }}
                                 >
-                                  Handbags,Bags
-                                  & Wallets
+                                  Handbags,Bags&Wallets
+                                 
                                 </Link>
                               </h3>
                             </li>
@@ -1017,7 +1012,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/women-Luggages-Trolleys"
+                                  to="search/categorygroup/luggages-trolleys"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Luggages & Trolleys
