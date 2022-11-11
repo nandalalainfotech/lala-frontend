@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import Axios from 'axios';
-import { detailsProduct, updateProduct } from "../actions/productAction";
-import LoadingBox from "../components/LoadingBox";
-import MessageBox from "../components/MessageBox";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   useNavigate,
-  useParams,
+  useParams
 } from "react-router-dom";
-import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
+import { createProduct, updateProduct, detailsProduct } from "../actions/productAction";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 
 
 export default function ProductEditScreen(props) {
@@ -18,7 +17,7 @@ export default function ProductEditScreen(props) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
-  const [imageFile, setImageFile] = useState("");
+  const [imageFile, setImageFile] = useState();
   const [category, setCategory] = useState("");
   const [categorygroup, setCategorygroup] = useState("");
   const [categorytype, setCategorytype] = useState("");
@@ -28,20 +27,28 @@ export default function ProductEditScreen(props) {
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
   const productUpdate = useSelector((state) => state.productUpdate);
+  const productCreate = useSelector((state) => state.productCreate);
   const {
     loading: loadingUpdate,
     error: errorUpdate,
     success: successUpdate,
   } = productUpdate;
+
+  const {
+    loading: loadingCreate,
+    error: errorCreate,
+    success: successCreate,
+    product: createdProduct,
+  } = productCreate;
+
   const dispatch = useDispatch();
+
   useEffect(() => {
-    if (successUpdate) {
-      navigate('/productlist');
-    }
-    if (!product || product._id !== productId || successUpdate) {
-      dispatch({ type: PRODUCT_UPDATE_RESET });
+    if (!product && productId) {
       dispatch(detailsProduct(productId));
-    } else {
+    }
+
+    if(product) {
       setName(product.name);
       setPrice(product.price);
       setImage(product.image);
@@ -52,10 +59,14 @@ export default function ProductEditScreen(props) {
       setBrand(product.brand);
       setDescription(product.description);
     }
-  }, [product, dispatch, productId, navigate, successUpdate]);
-  const submitHandler = (e) => {
+
+    if (successUpdate || successCreate) {
+      navigate('/productlist');
+    }
+  }, [product,productId, dispatch,navigate, successUpdate, successCreate]);
+
+  const updateHandler = (e) => {
     e.preventDefault();
-    // TODO: dispatch update product
     dispatch(
       updateProduct({
         _id: productId,
@@ -72,6 +83,23 @@ export default function ProductEditScreen(props) {
       })
     );
   };
+  const createHandler = (e) => {
+    e.preventDefault();
+    dispatch(createProduct({
+        name,
+        price,
+        image,
+        imageFile,
+        category,
+        categorygroup,
+        categorytype,
+        brand,
+        countInStock,
+        description,
+      })
+    );
+  }
+
   const [loadingUpload, setLoadingUpload] = useState(false);
   const [errorUpload, setErrorUpload] = useState('');
   const userSignin = useSelector((state) => state.userSignin);
@@ -83,38 +111,151 @@ export default function ProductEditScreen(props) {
     bodyFormData.append('image', file);
     setLoadingUpload(true);
     try {
-      const { data } = await Axios.post('/api/uploads', bodyFormData, {
-
+      if(!product && !productId){
+       const { data } = await Axios.post('/api/uploads', bodyFormData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${userInfo.token}`,
           Product: `Bearer ${product}`,
         },
-      });
-      setImage(data.image.originalname);
-      setImageFile(data);
+       }); 
+       setImage(data.image.originalname);
+       setImageFile(data.image);   
+      }
+      if(product){
+        const { data } = await Axios.put(`/api/uploads/${product.fileId}`, bodyFormData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: `Bearer ${userInfo.token}`,
+            Product: `Bearer ${product}`,
+          },
+         }); 
+         setImage(data.image.originalname);
+         setImageFile(data.image); 
+      }
       setLoadingUpload(false);
     } catch (error) {
       setErrorUpload(error.message);
       setLoadingUpload(false);
     }
   };
-
+  
   return (
     <div>
-      <form className="form" onSubmit={submitHandler}>
-        <div>
-          <h1>Edit Product {productId}</h1>
-        </div>
-        {loadingUpdate && <LoadingBox></LoadingBox>}
-        {errorUpdate && <MessageBox variant="danger">{errorUpdate}</MessageBox>}
-        {loading ? (
-          <LoadingBox></LoadingBox>
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
+      <form className="form" >
+        {/* {productId ? <h1>Edit Product {productId}</h1> : <h1>Create Product</h1>} */}
+        {(loadingCreate || loadingUpdate) && <LoadingBox></LoadingBox>}
+        {(errorCreate || errorUpdate) && <MessageBox variant="danger">{errorUpdate}</MessageBox>}
+        {!product && !productId ?(
+          <>
+          <div>
+          <h1>Create Product</h1>
+            <label htmlFor="name">Name</label>
+            <input
+              id="name"
+              type="text"
+              placeholder="Enter name"
+              onChange={(e) => setName(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="price">Price</label>
+            <input
+              id="price"
+              type="text"
+              placeholder="Enter price"
+              onChange={(e) => setPrice(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="imageFile">Image File</label>
+            <input
+              type="file"
+              id="imageFile"
+              label="Choose Images"
+              onChange={uploadFileHandler}
+            ></input>
+           {loadingUpload && <LoadingBox></LoadingBox>}
+              {errorUpload && (
+                <MessageBox variant="danger">{errorUpload}</MessageBox>
+            )}
+          </div>
+          <div>
+              <label htmlFor="image">Image</label>
+              <input
+                id="image"
+                type="text"
+                placeholder="Enter image"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+              ></input>
+            </div>
+          <div>
+            <label htmlFor="category">Category</label>
+            <input
+              id="category"
+              type="text"
+              placeholder="Enter category"
+              onChange={(e) => setCategory(e.target.value)}
+            ></input>
+          </div>
+          <div>
+          <label htmlFor="category group">Category group</label>
+            <input
+              id="category group"
+              type="text"
+              placeholder="Enter category group"
+              onChange={(e) => setCategorygroup(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="category group text">Category text</label>
+            <input
+              id="category text"
+              type="text"
+              placeholder="Enter category  text"
+              onChange={(e) => setCategorytype(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="brand">Brand</label>
+            <input
+              id="brand"
+              type="text"
+              placeholder="Enter brand"
+              onChange={(e) => setBrand(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="countInStock">Count In Stock</label>
+            <input
+              id="countInStock"
+              type="text"
+              placeholder="Enter countInStock"
+              onChange={(e) => setCountInStock(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="description">Description</label>
+            <textarea
+              id="description"
+              rows="3"
+              type="text"
+              placeholder="Enter description"
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
+          </div>
+          <div>
+            <label></label>
+            <button className="primary" type="submit"  onClick={createHandler}>
+              Create
+            </button>
+          </div>
+        </>
+        ) : product? (
           <>
             <div>
+            <h1>Edit Product {productId}</h1>
               <label htmlFor="name">Name</label>
               <input
                 id="name"
@@ -135,6 +276,19 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div>
+              <label htmlFor="imageFile">Image File</label>
+              <input
+                type="file"
+                id="imageFile"
+                label="Choose Images"
+                onChange={uploadFileHandler}
+              ></input>
+              {loadingUpload && <LoadingBox></LoadingBox>}
+              {errorUpload && (
+                <MessageBox variant="danger">{errorUpload}</MessageBox>
+              )}
+            </div>
+            <div>
               <label htmlFor="image">Image</label>
               <input
                 id="image"
@@ -143,20 +297,6 @@ export default function ProductEditScreen(props) {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></input>
-            </div>
-            <div>
-              <label htmlFor="imageFile">Image File</label>
-              <input
-                type="file"
-                id="imageFile"
-                label="Choose Images"
-                // accept="image/*"
-                onChange={uploadFileHandler}
-              ></input>
-              {loadingUpload && <LoadingBox></LoadingBox>}
-              {errorUpload && (
-                <MessageBox variant="danger">{errorUpload}</MessageBox>
-              )}
             </div>
             <div>
               <label htmlFor="category">Category</label>
@@ -169,7 +309,7 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="category group">Category group</label>
+            <label htmlFor="category group">Category group</label>
               <input
                 id="category group"
                 type="text"
@@ -179,11 +319,11 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="category type">Category type</label>
+              <label htmlFor="category group text">Category text</label>
               <input
-                id="category type"
+                id="category text"
                 type="text"
-                placeholder="Enter category  type"
+                placeholder="Enter category  text"
                 value={categorytype}
                 onChange={(e) => setCategorytype(e.target.value)}
               ></input>
@@ -221,14 +361,14 @@ export default function ProductEditScreen(props) {
             </div>
             <div>
               <label></label>
-              <button className="primary" type="submit">
-                Update
+              <button className="primary" type="submit"  onClick={updateHandler}>
+              Update
               </button>
             </div>
           </>
-        )
-        }
-      </form >
-    </div >
+        ) :<div><LoadingBox></LoadingBox></div>
+      }
+      </form>
+    </div>
   );
 }

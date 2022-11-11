@@ -70,12 +70,12 @@ export const listProductCategories = () => async (dispatch) => {
   }
 };
 
-export const listProductCategorygroup = () => async (dispatch) => {
+export const listProductCategoriesgroup = () => async (dispatch) => {
   dispatch({
     type: PRODUCT_CATEGORYGROUP_LIST_REQUEST,
   });
   try {
-    const { data } = await Axios.get(`/api/products/categorygroup`);
+    const { data } = await Axios.get(`/api/products/categoriesgroup`);
     dispatch({ type: PRODUCT_CATEGORYGROUP_LIST_SUCCESS, payload: data });
    
   } catch (error) {
@@ -83,12 +83,12 @@ export const listProductCategorygroup = () => async (dispatch) => {
   }
 };
 
-export const listProductCategorytype = () => async (dispatch) => {
+export const listProductCategoriestype = () => async (dispatch) => {
   dispatch({
     type: PRODUCT_CATEGORYTYPE_LIST_REQUEST,
   });
   try {
-    const { data } = await Axios.get(`/api/products/categorytype`);
+    const { data } = await Axios.get(`/api/products/categoriestype`);
     dispatch({ type: PRODUCT_CATEGORYTYPE_LIST_SUCCESS, payload: data });
    
   } catch (error) {
@@ -112,13 +112,13 @@ export const detailsProduct = (productId) => async (dispatch) => {
     });
   }
 };
-export const createProduct = () => async (dispatch, getState) => {
+export const createProduct = (product) => async (dispatch, getState) => {
   dispatch({ type: PRODUCT_CREATE_REQUEST });
   const {
     userSignin: { userInfo },
   } = getState();
   try {
-    const { data } = await Axios.post('/api/products',{},
+    const { data } = await Axios.post('/api/products',product,
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
       }
@@ -161,6 +161,9 @@ export const deleteProduct = (productId) => async (dispatch, getState) => {
     userSignin: { userInfo },
   } = getState();
   try {
+await Axios.delete(`/api/uploads/${productId}`, {
+      headers: { Authorization: `Bearer ${userInfo.token}` },
+    });
     await Axios.delete(`/api/products/${productId}`, {
       headers: { Authorization: `Bearer ${userInfo.token}` },
     });
