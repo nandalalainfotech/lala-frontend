@@ -28,7 +28,6 @@ import {
   PRODUCT_REVIEW_CREATE_SUCCESS,
   PRODUCT_REVIEW_CREATE_FAIL,
 } from '../constants/productConstants';
-
 export const listProducts =
   ({
     pageNumber = '',
@@ -50,13 +49,11 @@ export const listProducts =
       const { data } = await Axios.get(
         `/api/products?pageNumber=${pageNumber}&seller=${seller}&name=${name}&category=${category}&categorygroup=${categorygroup}&categorytype=${categorytype}&min=${min}&max=${max}&rating=${rating}&order=${order}`
       );
-     
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
     } catch (error) {
       dispatch({ type: PRODUCT_LIST_FAIL, payload: error.message });
     }
   };
-
 export const listProductCategories = () => async (dispatch) => {
   dispatch({
     type: PRODUCT_CATEGORY_LIST_REQUEST,
@@ -64,39 +61,32 @@ export const listProductCategories = () => async (dispatch) => {
   try {
     const { data } = await Axios.get(`/api/products/categories`);
     dispatch({ type: PRODUCT_CATEGORY_LIST_SUCCESS, payload: data });
-   
   } catch (error) {
     dispatch({ type: PRODUCT_CATEGORY_LIST_FAIL, payload: error.message });
   }
 };
-
-export const listProductCategoriesgroup = () => async (dispatch) => {
+export const listProductCategorygroup = () => async (dispatch) => {
   dispatch({
     type: PRODUCT_CATEGORYGROUP_LIST_REQUEST,
   });
   try {
-    const { data } = await Axios.get(`/api/products/categoriesgroup`);
+    const { data } = await Axios.get(`/api/products/categorygroup`);
     dispatch({ type: PRODUCT_CATEGORYGROUP_LIST_SUCCESS, payload: data });
-   
   } catch (error) {
     dispatch({ type: PRODUCT_CATEGORYGROUP_LIST_FAIL, payload: error.message });
   }
 };
-
-export const listProductCategoriestype = () => async (dispatch) => {
+export const listProductCategorytype = () => async (dispatch) => {
   dispatch({
     type: PRODUCT_CATEGORYTYPE_LIST_REQUEST,
   });
   try {
-    const { data } = await Axios.get(`/api/products/categoriestype`);
+    const { data } = await Axios.get(`/api/products/categorytype`);
     dispatch({ type: PRODUCT_CATEGORYTYPE_LIST_SUCCESS, payload: data });
-   
   } catch (error) {
     dispatch({ type: PRODUCT_CATEGORYTYPE_LIST_FAIL, payload: error.message });
   }
 };
-
-
 export const detailsProduct = (productId) => async (dispatch) => {
   dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
   try {
@@ -135,9 +125,7 @@ export const createProduct = (product) => async (dispatch, getState) => {
     dispatch({ type: PRODUCT_CREATE_FAIL, payload: message });
   }
 };
-
 export const updateProduct = (product) => async (dispatch, getState) => {
-  
   dispatch({ type: PRODUCT_UPDATE_REQUEST, payload: product });
   const {
     userSignin: { userInfo },
@@ -161,7 +149,7 @@ export const deleteProduct = (productId) => async (dispatch, getState) => {
     userSignin: { userInfo },
   } = getState();
   try {
-await Axios.delete(`/api/uploads/${productId}`, {
+    await Axios.delete(`/api/uploads/${productId}`, {
       headers: { Authorization: `Bearer ${userInfo.token}` },
     });
     await Axios.delete(`/api/products/${productId}`, {
