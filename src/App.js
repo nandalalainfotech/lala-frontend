@@ -1043,7 +1043,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/kids-Boys-Clothing"
+                                  to="search/categorygroup/boys-clothing"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Boys Clothing
@@ -1051,58 +1051,58 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/kids-T-Shirts">T-Shirts</Link>
+                              <Link to="search/categorytype/T-Shirts">T-Shirts</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Shirts">Shirts</Link>
+                              <Link to="search/categorytype/Shirts">Shirts</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Shorts">Shorts</Link>
-                            </li>
-
-                            <li>
-                              <Link to="search/category/kids-Jeans">Jeans</Link>
-                            </li>
-                            <li>
-                              <Link to="search/category/kids-Trousers">Trousers</Link>
-                            </li>
-                            <li>
-                              <Link to="search/category/kids-Clothing-Sets">Clothing Sets</Link>
+                              <Link to="search/categorytype/Shorts">Shorts</Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/kids-Ethnic-Wear">Ethnic Wear</Link>
+                              <Link to="search/categorytype/jeans">Jeans</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Track-Pants-Pyjamas">
-                                Track Pants 
-                                & Pyjamas
+                              <Link to="search/categorytype/Trousers">Trousers</Link>
+                            </li>
+                            <li>
+                              <Link to="search/categorytype/clothing-sets">Clothing Sets</Link>
+                            </li>
+
+                            <li>
+                              <Link to="search/categorytype/Ethnic-wear">Ethnic Wear</Link>
+                            </li>
+                            <li>
+                              <Link to="search/categorytype/track-pants-pyjamas">
+                                Track Pants& Pyjamas 
+                                
                               </Link>
                             </li>
                             <li>
-                              <Link to="/Jacket-Sweater-Sweatshirts">
-                                Jacket,Sweater
-                                & Sweatshirts
+                              <Link to="search/categorytype/jacket-sweater-sweatshirts">
+                                Jacket,Sweater& Sweatshirts
+                                
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/kids-Party-Wear">Party Wear</Link>
+                              <Link to="search/categorytype/party-wear">Party Wear</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Innerwear-Thermals">
+                              <Link to="search/categorytype/innerwear-thermals">
                                 Innerwear & Thermals
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Nightwear-Loungewear">
-                                Nightwear 
-                                & Loungewear
+                              <Link to="search/categorytype/nightwear-loungewear">
+                                Nightwear & Loungewear 
+                               
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/kids-Value-Packs">Value Packs</Link>
+                              <Link to="search/categorytype/value-packs">Value Packs</Link>
                             </li>
                           </ul>
                         </div>
@@ -1112,69 +1112,69 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/kids-Western-Wear"
+                                  to="search/categorygroup/girls-clothing"
                                   style={{ color: "#f26a10" }}
                                 >
-                                  Western-Wear
+                                  girls-clothing
                                 </Link>{" "}
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Dresses">Dresses</Link>
+                              <Link to="search/categorytype/dress">Dresses</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Tops">Tops</Link>
+                              <Link to="search/categorytype/top">Tops</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-T-shirts">Tshirts</Link>
+                              <Link to="search/categorytype/T-shirt">Tshirts</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Clothing-Sets">Clothing Sets</Link>
+                              <Link to="search/categorytype/clothing-set">Clothing Sets</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Lehenga-choli">Lehenga choli</Link>
+                              <Link to="search/categorytype/lehenga-choli">Lehenga choli</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Kurta-Sets">Kurta Sets</Link>
+                              <Link to="search/categorytype/kurta-sets">Kurta Sets</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Party-wear">Party wear</Link>
+                              <Link to="search/categorytype/party-wears">Party wear</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Dungarees-Jumpsuits">
+                              <Link to="search/categorytype/dungarees-jumpsuits">
                                 Dungarees & Jumpsuits
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Skirts-shorts">Skirts & shorts</Link>
+                              <Link to="search/categorytype/skirts-shorts">Skirts & shorts</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Tights-Leggings">
+                              <Link to="search/categorytype/tights-leggings">
                                 Tights & Leggings
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Jeans-Trousers-Capris">
+                              <Link to="search/categorytype/jeans-trousers-capris">
                                 Jeans,Trousers &Capris
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Jacket-Sweater-Sweatshirts">
+                              <Link to="search/categorytype/jacket-sweater">
                                 Jacket,Sweater&Sweatshirts
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Innerwear-Thermals">
+                              <Link to="search/categorytype/innerwear-thermal">
                                 Innerwear & Thermals
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Nightwear-Loungewear">
+                              <Link to="search/categorytype/nightwear-loungewears">
                                 Nightwear & Loungewear
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Value-Packs">Value Packs</Link>
+                              <Link to="search/categorytype/value-Pack">Value Packs</Link>
                             </li>
                           </ul>
                         </div>
