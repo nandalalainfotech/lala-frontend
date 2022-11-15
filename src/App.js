@@ -1398,62 +1398,62 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/home-Bed-Linen"
+                                  to="search/categorygroup/bed-linen"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Bed Linen
-                                  & Furnishing
+                                  &Furnishing
                                 </Link>
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/home-Bed-Runners"> Bed Runners</Link>
+                              <Link to="search/categorytype/bed-runners"> Bed Runners</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Mattress-Protectors">
+                              <Link to="search/categorytype/mattress-protectors">
                                 Mattress Protectors
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Bedsheets">Bedsheets</Link>
+                              <Link to="search/categorytype/bedsheets">Bedsheets</Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/home-Bedding-Sets">Bedding Sets</Link>
+                              <Link to="search/categorytype/bedding-sets">Bedding Sets</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Blankets-Quilts-Dohars">
+                              <Link to="search/categorytype/blankets-quilts-dohars">
                                 Blankets,Quilts
                                 & Dohars
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Pillows-Pillow-Covers">
+                              <Link to="search/categorytype/pillows-pillow-covers">
                                 Pillows
                                 & Pillow Covers
                               </Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/home-Bed-Covers">Bed Covers</Link>
+                              <Link to="search/categorytype/bed-covers">Bed Covers</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Diwan-Sets">Diwan Sets</Link>
+                              <Link to="search/categorytype/diwan-sets">Diwan Sets</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Chair-Pads-Covers">
+                              <Link to="search/categorytype/chair-pads-covers">
                                 Chair Pads
                                 & Covers
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Sofa-Covers">Sofa Covers</Link>
+                              <Link to="search/categorytype/sofa-covers">Sofa Covers</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/home-Flooring"
+                                  to="search/categorygroup/flooring"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Flooring
@@ -1461,20 +1461,20 @@ function App() {
                               </h3>{" "}
                             </li>
                             <li>
-                              <Link to="search/category/home-Floor-Runners">Floor Runners</Link>
+                              <Link to="search/categorytype/floor-Runners">Floor Runners</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Carpets">Carpets</Link>
+                              <Link to="search/categorytype/carpets">Carpets</Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/home-Floor-Mats-Dhurries">
+                              <Link to="search/categorytype/floor-mats-dhurries">
                                 Floor Mats
                                 & Dhurries
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Door-Mats">Door Mats</Link>
+                              <Link to="search/categorytype/door-mats">Door Mats</Link>
                             </li>
                           </ul>
                         </div>
@@ -1482,46 +1482,46 @@ function App() {
                           <ul className="mega-links3">
                             <li>
                               <h3>
-                                <Link to="search/category/home-Bath" style={{ color: "#f2c210" }}>
+                                <Link to="search/categorygroup/bath" style={{ color: "#f2c210" }}>
                                   Bath
                                 </Link>
                               </h3>{" "}
                             </li>
                             <li>
-                              <Link to="search/category/home-Bath-Towels">Bath Towels</Link>
+                              <Link to="search/categorytype/bath-towels">Bath Towels</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Hand-Face-Towels">
+                              <Link to="search/categorytype/hand-face-towels">
                                 Hand
                                 & Face Towels
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Beach-Towels">Beach Towels</Link>
+                              <Link to="search/categorytype/beach-towels">Beach Towels</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Towels-Set">Towels Set</Link>
+                              <Link to="search/categorytype/towels-set">Towels Set</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Bath-Rugs">Bath Rugs</Link>
+                              <Link to="search/categorytype/bath-rugs">Bath Rugs</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Bath-Robes">Bath Robes</Link>
+                              <Link to="search/categorytype/bath-robes">Bath Robes</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Bathroom-Accessories">
+                              <Link to="search/categorytype/bathroom-accessories">
                                 Bathroom
                                 Accessories
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Shower-Curtains">ShowerCurtains</Link>
+                              <Link to="search/categorytype/shower-curtains">ShowerCurtains</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/home-Lamps-Lighting"
+                                  to="search/categorygroup/lamps-lighting"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Lamps&Lighting
@@ -1529,22 +1529,22 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/home-Floor-Lamps">Floor Lamps</Link>
+                              <Link to="search/categorytype/floor-lamps">Floor Lamps</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Ceiling-Lamps">CeilingLamps</Link>
+                              <Link to="search/categorytype/ceiling-lamps">Ceiling Lamps</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Table-Lamps">Table Lamps</Link>
+                              <Link to="search/categorytype/table-lamps">Table Lamps</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Wall-Lamps">Wall Lamps</Link>
+                              <Link to="search/categorytype/wall-lamps">Wall Lamps</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Outdoor-Lamps">Outdoor Lamps</Link>
+                              <Link to="search/categorytype/outdoor-lamps">Outdoor Lamps</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-String-Lights">String Lights</Link>
+                              <Link to="search/categorytype/string-lights">String Lights</Link>
                             </li>
                           </ul>
                         </div>
@@ -1554,7 +1554,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/home-Decor"
+                                  to="search/categorygroup/home-Decor"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Home Decor
@@ -1562,51 +1562,51 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/home-Plants-Planters">
+                              <Link to="search/categorytype/plants">
                                 Plants & Planters
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Aromas-Candles">Aromas & Candles</Link>
+                              <Link to="search/categorytype/aromas-candles">Aromas & Candles</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Clocks">Clocks</Link>
-                            </li>
-
-                            <li>
-                              <Link to="search/category/home-Mirrors">Mirrors</Link>
-                            </li>
-                            <li>
-                              <Link to="search/category/home-Wall-Decor">Wall Decor</Link>
-                            </li>
-                            <li>
-                              <Link to="search/category/home-Festive-Decor">Festive Decor</Link>
+                              <Link to="search/categorytype/clocks">Clocks</Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/home-Pooja-Essentials">
+                              <Link to="search/categorytype/mirrors">Mirrors</Link>
+                            </li>
+                            <li>
+                              <Link to="search/categorytype/wall-decor">Wall Decor</Link>
+                            </li>
+                            <li>
+                              <Link to="search/categorytype/festive-decor">Festive Decor</Link>
+                            </li>
+
+                            <li>
+                              <Link to="search/categorytype/pooja-essentials">
                                 Pooja Essentials
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Wall-Shelves">Wall Shelves</Link>
+                              <Link to="search/categorytype/wall-shelves">Wall Shelves</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Fountains">Fountains</Link>
+                              <Link to="search/categorytype/fountains">Fountains</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Showpieces-Vases">
+                              <Link to="search/categorytype/showpieces-vases">
                                 Show pieces& Vases
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Ottoman">Ottoman</Link>
+                              <Link to="search/categorytype/ottoman">Ottoman</Link>
                             </li>
 
                             <li>
                               <h3>
                                 <Link
-                                  to="search/category/home-Cushions-Cushion-Covers"
+                                  to="search/categorygroup/cushions-cushion-covers"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Cushions
@@ -1617,7 +1617,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="/Curtains"
+                                  to="search/categorygroup/curtains"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Curtains
@@ -1631,7 +1631,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/category/home-Home-Gift-Sets"
+                                  to="search/categorygroup/home-gift-sets"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Home Gift Sets
@@ -1641,7 +1641,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/category/home-Kitchen-Table"
+                                  to="search/categorygroup/kitchen-table"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Kitchen & Table
@@ -1649,39 +1649,39 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/home-Table-Runners">Table Runners</Link>
+                              <Link to="search/categorytype/table-runners">Table Runners</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Dinnerware-Serveware">
+                              <Link to="search/categorytype/dinnerware-serveware">
                                 Dinnerware & Serveware
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Cups-and-Mugs">Cups and Mugs</Link>
+                              <Link to="search/categorytype/cups-mugs">Cups and Mugs</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Bakeware-Cookware">
+                              <Link to="search/categorytype/bakeware-cookware">
                                 Bakeware & Cookware
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Kitchen-Storage-Tools">
+                              <Link to="search/categorytype/kitchen-storage-tools">
                                 Kitchen Storage & Tools
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Bar-Drinkware">Bar & Drinkware</Link>
+                              <Link to="search/categorytype/bar-drinkware">Bar & Drinkware</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Table-Covers-Furnishings">
-                                TableCovers&Furnishings
+                              <Link to="search/categorytype/table-covers-furnishings">
+                                TableCovers & Furnishings
                               </Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/home-Gadgets"
+                                  to="search/categorygroup/storage"
                                   style={{ color: "#f2c210" }}
                                 >
                                   Storage
@@ -1689,19 +1689,19 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/home-Bins">Bins</Link>
+                              <Link to="search/categorytype/bins">Bins</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Hangers">Hangers</Link>
+                              <Link to="search/categorytype/hangers">Hangers</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Organisers">Organisers</Link>
+                              <Link to="search/categorytype/organisers">Organisers</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Hooks-Holders">Hooks & Holders</Link>
+                              <Link to="search/categorytype/hooks-holders">Hooks & Holders</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Laundry-Bags">Laundry Bags</Link>
+                              <Link to="search/categorytype/laundry-bags">Laundry Bags</Link>
                             </li>
                           </ul>
                         </div>
@@ -1710,61 +1710,61 @@ function App() {
                             <li>
                               <h3>
                                 {" "}
-                                <Link to="search/category/home-Brands" style={{ color: "#f2c210" }}>
+                                <Link to="search/categorygroup/brand" style={{ color: "#f2c210" }}>
                                   Brands
                                 </Link>
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/home-H&M">H&M</Link>
+                              <Link to="search/categorytype/h-m">H&M</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Marks-Spencer">Marks & Spencer</Link>
+                              <Link to="search/categorytype/marks-spencer">Marks & Spencer</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Home-Centre">Home Centre</Link>
+                              <Link to="search/categorytype/home-centre">Home Centre</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Spaces">Spaces</Link>
+                              <Link to="search/categorytype/spaces">Spaces</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-D-Decor">D'Decor</Link>
+                              <Link to="search/categorytype/d-decor">D'Decor</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Story-Home">Story@Home</Link>
+                              <Link to="search/categorytype/story-home">Story@Home</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Pure-Home-Living">
+                              <Link to="search/categorytype/pure-home-living">
                                 PureHome&Living
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Swayam">Swayam</Link>
+                              <Link to="search/categorytype/swayam">Swayam</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Raymond-Home">Raymond Home</Link>
+                              <Link to="search/categorytype/raymond-home">Raymond Home</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Maspar">Maspar</Link>{" "}
+                              <Link to="search/categorytype/maspar">Maspar</Link>{" "}
                             </li>
 
                             <li>
-                              <Link to="search/category/home-Trident">Trident</Link>
+                              <Link to="search/categorytype/trident">Trident</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Cortina">Cortina</Link>
+                              <Link to="search/categorytype/cortina">Cortina</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Random">Random</Link>
+                              <Link to="search/categorytype/random">Random</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Ellementry">Ellementry</Link>
+                              <Link to="search/categorytype/ellementry">Ellementry</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-ROMEE">ROMEE</Link>
+                              <Link to="search/categorytype/romee">ROMEE</Link>
                             </li>
                             <li>
-                              <Link to="search/category/home-Story-Home">SEJby NishaGupta</Link>
+                              <Link to="search/categorytype/nishagupta">SEJ by NishaGupta</Link>
                             </li>
                           </ul>
                         </div>
