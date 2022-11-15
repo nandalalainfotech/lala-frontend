@@ -147,7 +147,7 @@ function App() {
                 <SearchBox />
               </div>
             )}
-            <div className= "navigation-menu">
+            <div className="navigation-menu">
               <ul>
                 <li>
                   {userInfo ? (
@@ -254,8 +254,8 @@ function App() {
               </ul>
             </div>
           </div>
-          
-       {userInfo && (   <div className="second-nav">
+
+          {userInfo && (<div className="second-nav">
             <div className="wrapper">
               <input type="radio" name="slider" id="menu-btn" />
               <input type="radio" name="slider" id="close-btn" />
@@ -390,7 +390,7 @@ function App() {
                             <li>
                               <Link to="search/categorytype/boxer">boxers</Link>
                             </li>
-                                                       
+
                             <li>
                               <Link to="search/categorytype/vest">vests</Link>
                             </li>
@@ -511,7 +511,7 @@ function App() {
                                 Jackets&sweetshirts
                               </Link>
                             </li>
-                           
+
 
                             <li>
                               <Link to="search/categorytype/sports-accessories">
@@ -599,7 +599,7 @@ function App() {
                                 muffalear,scarves&gloves
                               </Link>
                             </li>
-                           
+
                             <li>
                               <Link to="search/categorytype/phone-cases">phone cases</Link>
                             </li>
@@ -675,7 +675,7 @@ function App() {
                             <li>
                               <Link to="search/categorytype/laggins-salwars-chudidars">
                                 laggins,salwars&chudidars
-                                
+
                               </Link>
                             </li>
                             <li>
@@ -882,7 +882,7 @@ function App() {
                                   style={{ color: "#fb56c1" }}
                                 >
                                   {" "}
-                                  Lingerie 
+                                  Lingerie
                                   & Sleepwear
                                 </Link>{" "}
                               </h3>
@@ -1005,7 +1005,7 @@ function App() {
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Handbags,Bags&Wallets
-                                 
+
                                 </Link>
                               </h3>
                             </li>
@@ -1075,14 +1075,14 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/categorytype/track-pants-pyjamas">
-                                Track Pants& Pyjamas 
-                                
+                                Track Pants& Pyjamas
+
                               </Link>
                             </li>
                             <li>
                               <Link to="search/categorytype/jacket-sweater-sweatshirts">
                                 Jacket,Sweater& Sweatshirts
-                                
+
                               </Link>
                             </li>
 
@@ -1096,8 +1096,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/categorytype/nightwear-loungewear">
-                                Nightwear & Loungewear 
-                               
+                                Nightwear & Loungewear
+
                               </Link>
                             </li>
 
@@ -1183,8 +1183,7 @@ function App() {
                             <li>
                               <h3>
                                 {" "}
-                                <Link
-                                  to="search/category/kids-Foot-Wear"
+                                <Link to="search/categorygroup/foot-wears"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Foot Wear
@@ -1192,47 +1191,47 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Casual-Shoes">Casual Shoes</Link>
+                              <Link to="search/categorytype/casual-shoes">Casual Shoes</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Flipflops">Flipflops</Link>
+                              <Link to="search/categorytype/flipflops">Flipflops</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Sports Shoes">Sports Shoes</Link>
+                              <Link to="search/categorytype/Sports-shoes">Sports Shoes</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Flats">Flats</Link>
+                              <Link to="search/categorytype/flat">Flats</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Sandals">Sandals</Link>
+                              <Link to="search/categorytype/Sandals">Sandals</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-School-Shoes">School Shoes</Link>
+                              <Link to="search/categorytype/school-shoes">School Shoes</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Socks">Socks</Link>
+                              <Link to="search/categorytype/Socks">Socks</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
-                                <Link to="search/category/kids-Toys" style={{ color: "#f26a10" }}>
+                                <Link to="search/categorygroup/toys" style={{ color: "#f26a10" }}>
                                   Toys
                                 </Link>{" "}
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Learning-Development">
+                              <Link to="search/categorytype/learning-development">
                                 Learning&Development
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Activity-Toys">Activity Toys</Link>
+                              <Link to="search/categorytype/activity-toys">Activity Toys</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Soft-Toys">Soft Toys</Link>
+                              <Link to="search/categorytype/soft-toys">Soft Toys</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Action-Figure-Play">
+                              <Link to="search/categorytype/action-figure-play">
                                 Action Figure / Play set
                               </Link>
                             </li>
@@ -1244,7 +1243,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/kids-Infants"
+                                  to="search/categorygroup/infants"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Infants
@@ -1252,41 +1251,41 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Bodysuits">Bodysuits</Link>
+                              <Link to="search/categorytype/bodysuits">Bodysuits</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Rompers-Sleepsuits">
+                              <Link to="search/categorytype/rompers-sleepsuits">
                                 Rompers&Sleepsuits
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Clothing-Sets">Clothing Sets</Link>
+                              <Link to="search/categorytype/clothing-sets">Clothing Sets</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Tshirts-Tops">Tshirts & Tops</Link>
+                              <Link to="search/categorytype/t-shirts-tops">Tshirts & Tops</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Dresses">Dresses</Link>
+                              <Link to="search/categorytype/dress">Dresses</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Bottom-wear">Bottom wear</Link>
+                              <Link to="search/categorytype/bottom-wear">Bottom wear</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Winter-Wear">Winter Wear</Link>
+                              <Link to="search/categorytype/winter-wear">Winter Wear</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Innerwear-Sleepwear">
-                                Innerwear
-                                & Sleepwear
+                              <Link to="search/categorytype/innerwear-sleepwear">
+                                Innerwear& Sleepwear
+
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Infant-Care">Infant Care</Link>
+                              <Link to="search/categorytype/infant-care">Infant Care</Link>
                             </li>
                             <li>
                               <h3>
                                 <Link
-                                  to="search/category/kids-Home-Bath"
+                                  to="search/categorygroup/home-bath"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Home & Bath
@@ -1296,7 +1295,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/category/kids-Personal-Care"
+                                  to="search/categorygroup/personal-care"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Personal Care
@@ -1310,7 +1309,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/category/kids-Accessories"
+                                  to="search/categorygroup/kids-accessories"
                                   style={{ color: "#f26a10" }}
                                 >
                                   Kids Accessories
@@ -1318,63 +1317,63 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Bags-Backpacks">Bags&Backpacks</Link>
+                              <Link to="search/categorytype/bags-backpacks">Bags&Backpacks</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Watches">Watches</Link>
+                              <Link to="search/categorytype/watches">Watches</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Jewellery-Hair-accessory">
+                              <Link to="search/categorytype/jewellery-hair-accessory">
                                 Jewellery
                                 & Hairaccessory
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Sunglasses">Sunglasses</Link>
+                              <Link to="search/categorytype/sunglass">Sunglasses</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Masks-Protective-Gears">
+                              <Link to="search/categorytype/masks-protective-gears">
                                 Masks
                                 & ProtectiveGears
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Caps-Hats">Caps & Hats</Link>
+                              <Link to="search/categorytype/caps-hat">Caps & Hats</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
-                                <Link to="search/category/kids-Brands" style={{ color: "#f26a10" }}>
+                                <Link to="search/categorygroup/brands" style={{ color: "#f26a10" }}>
                                   Brands
                                 </Link>
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/kids-H&M">H&M</Link>
+                              <Link to="search/categorytype/hm">H&M</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Max-Kids">Max Kids</Link>
+                              <Link to="search/categorytype/max-kids">Max Kids</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Pantaloons">Pantaloons</Link>
+                              <Link to="search/categorytype/pantaloons">Pantaloons</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-United-Colors">
-                                UnitedColors
-                                of BenettonKids
+                              <Link to="search/categorytype/united-Colors">
+                                United Colors of BenettonKids
+
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-YK">YK</Link>
+                              <Link to="search/categorytype/yk">YK</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Kids">U.S. Polo Assn. Kids</Link>
+                              <Link to="search/categorytype/us-kids">U.S. Polo Assn. Kids</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-Mothercare">Mothercare</Link>
+                              <Link to="search/categorytype/mothercare">Mothercare</Link>
                             </li>
                             <li>
-                              <Link to="search/category/kids-HRX">HRX</Link>
+                              <Link to="search/categorytype/hrx">HRX</Link>
                             </li>
                           </ul>
                         </div>
@@ -1402,7 +1401,7 @@ function App() {
                                   to="search/category/home-Bed-Linen"
                                   style={{ color: "#f2c210" }}
                                 >
-                                  Bed Linen 
+                                  Bed Linen
                                   & Furnishing
                                 </Link>
                               </h3>
@@ -1430,7 +1429,7 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/home-Pillows-Pillow-Covers">
-                                Pillows 
+                                Pillows
                                 & Pillow Covers
                               </Link>
                             </li>
@@ -1443,7 +1442,7 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/home-Chair-Pads-Covers">
-                                Chair Pads 
+                                Chair Pads
                                 & Covers
                               </Link>
                             </li>
@@ -1493,7 +1492,7 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/category/home-Hand-Face-Towels">
-                                Hand 
+                                Hand
                                 & Face Towels
                               </Link>
                             </li>
@@ -2130,12 +2129,12 @@ function App() {
               </label> */}
             </div>
           </div>)}
-         
+
         </header>
         <aside className={sidebarIsOpen ? "open" : ""}>
           <ul className="categories">
             <li>
-             
+
               <button
                 onClick={() => setSidebarIsOpen(false)}
                 className="open"
@@ -2145,7 +2144,7 @@ function App() {
               </button>
             </li>
             <div className="sides-menu">
-            <strong>User Deatils</strong>
+              <strong>User Deatils</strong>
               <li>
                 <div className="dropdown-side">
                   <Link className="home" to="/cart">
@@ -2163,29 +2162,29 @@ function App() {
                       {userInfo.name}{" "}
                     </Link>
                     <ul className="dropdown-content-side1">
-                        <li>
-                          {" "}
-                          <Link to="/profile">User Profile</Link>
-                        </li>
-                        <li>
-                          {" "}
-                          <Link to="/orderhistory">OrderHistory</Link>
-                        </li>
-                        <li>
-                          <Link to="#signout" onClick={signoutHandler}>
-                            SignOut
-                          </Link>
+                      <li>
+                        {" "}
+                        <Link to="/profile">User Profile</Link>
+                      </li>
+                      <li>
+                        {" "}
+                        <Link to="/orderhistory">OrderHistory</Link>
+                      </li>
+                      <li>
+                        <Link to="#signout" onClick={signoutHandler}>
+                          SignOut
+                        </Link>
 
-                          <Link
-                            to="#accountout"
-                            onClick={accountoutHandler}
-                          ></Link>
-                          <Link
-                            to="#registerout"
-                            onClick={registeroutHandler}
-                          ></Link>
-                        </li>
-                      </ul>
+                        <Link
+                          to="#accountout"
+                          onClick={accountoutHandler}
+                        ></Link>
+                        <Link
+                          to="#registerout"
+                          onClick={registeroutHandler}
+                        ></Link>
+                      </li>
+                    </ul>
                   </div>
                 ) : (
                   <Link to="/signin">Sign In</Link>
@@ -2198,14 +2197,14 @@ function App() {
                       Seller
                     </Link>
                     <ul className="dropdown-content-side2">
-                        <li>
-                          {" "}
-                          <Link to="/productlist/seller">Products</Link>
-                        </li>
-                        <li>
-                          <Link to="/orderlist/seller">Orders</Link>
-                        </li>
-                      </ul>
+                      <li>
+                        {" "}
+                        <Link to="/productlist/seller">Products</Link>
+                      </li>
+                      <li>
+                        <Link to="/orderlist/seller">Orders</Link>
+                      </li>
+                    </ul>
                   </div>
                 )}
               </li>
@@ -2216,22 +2215,22 @@ function App() {
                       Admin
                     </Link>
                     <ul className="dropdown-content-side3">
-                        <li>
-                          <Link to="/dashboard">Dashboard</Link>
-                        </li>
-                        <li>
-                          <Link to="/productlist">Products</Link>
-                        </li>
-                        <li>
-                          <Link to="/orderlist">Orders</Link>
-                        </li>
-                        <li>
-                          <Link to="/userlist">Users</Link>
-                        </li>
-                        <li>
-                          <Link to="/support">Support</Link>
-                        </li>
-                      </ul>
+                      <li>
+                        <Link to="/dashboard">Dashboard</Link>
+                      </li>
+                      <li>
+                        <Link to="/productlist">Products</Link>
+                      </li>
+                      <li>
+                        <Link to="/orderlist">Orders</Link>
+                      </li>
+                      <li>
+                        <Link to="/userlist">Users</Link>
+                      </li>
+                      <li>
+                        <Link to="/support">Support</Link>
+                      </li>
+                    </ul>
                   </div>
                 )}
               </li>
@@ -2279,11 +2278,11 @@ function App() {
             <Route path="/cartkid/:id" element={<CartKidScreen />}></Route>
             <Route path="/carttshirt/:id" element={<CartScreen />}></Route>
             <Route path="/search/name" element={<SearchScreen />} exact></Route>
-            
+
             <Route path="/cart" element={<CartScreen />}></Route>
             <Route path="/cartwomen" element={<CartWomenScreen />}></Route>
             <Route path="/cartkid" element={<CartKidScreen />}></Route>
-                 
+
 
             <Route path="/signin" element={<SigninScreen />}></Route>
             <Route path="/account" element={<AccountScreen />}></Route>
@@ -2387,7 +2386,7 @@ function App() {
               element={<SearchScreen />}
               exact
             ></Route>
-            
+
             <Route
               path="/search/categorygroup/:categorygroup"
               element={<SearchScreen />}
@@ -2436,7 +2435,7 @@ function App() {
               }
               exact
             ></Route>
-           
+
             <Route
               path="/sareelist/seller"
               element={
