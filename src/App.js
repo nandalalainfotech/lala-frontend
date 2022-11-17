@@ -380,7 +380,7 @@ function App() {
                                   to="search/categorygroup/inner-wear"
                                   style={{ color: "#ee5f73" }}
                                 >
-                                  Innear Wear&Sleepe Wear
+                                  InnearWear&SleepeWear
                                 </Link>
                               </h3>
                             </li>
@@ -582,8 +582,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/categorytype/tie">
-                                tiles,cuffkins
-                                & pocketsquares
+                                tiles,cuffkins&pocketsquares
+
                               </Link>
                             </li>
                             <li>
@@ -819,7 +819,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/categorygroup/foot-wear"
+                                  to="search/categorygroup/Foot-wear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Foot Wear
@@ -847,7 +847,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/search/categorygroup/sports-activy-wear"
+                                  to="/search/categorygroup/Sports-activy-wear"
                                   style={{ color: "#fb56c1" }}
                                 >
                                   Sports &activy Wear
@@ -951,7 +951,7 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/categorytype/smart-wearble">SmartWearables</Link>
+                              <Link to="search/categorytype/smart-wearbles">SmartWearables</Link>
                             </li>
                             <li>
                               <Link to="search/categorytype/fitness-gadgets">FitnessGadgets</Link>
@@ -1081,7 +1081,7 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/categorytype/jacket-sweater-sweatshirts">
-                                Jacket,Sweater& Sweatshirts
+                                Jacket,Sweater&Sweatshirts
 
                               </Link>
                             </li>
@@ -1324,8 +1324,8 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/categorytype/jewellery-hair-accessory">
-                                Jewellery
-                                & Hairaccessory
+                                Jewellery&Hairaccessory
+
                               </Link>
                             </li>
                             <li>
@@ -1359,7 +1359,7 @@ function App() {
                             </li>
                             <li>
                               <Link to="search/categorytype/united-Colors">
-                                United Colors of BenettonKids
+                                United col benettonKids
 
                               </Link>
                             </li>
@@ -1789,47 +1789,47 @@ function App() {
                             <li>
                               <h3>
                                 {" "}
-                                <Link to="search/category/beauty-Makeup" style={{ color: "#0db7af" }}>
+                                <Link to="search/categorygroup/makeup" style={{ color: "#0db7af" }}>
                                   Makeup
                                 </Link>
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Lipstick">Lipstick</Link>
+                              <Link to="search/categorytype/lipstick">Lipstick</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Lip-Gloss">Lip Gloss</Link>
+                              <Link to="search/categorytype/lip-gloss">Lip Gloss</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Lip-Liner">Lip Liner</Link>
+                              <Link to="search/categorytype/lip-liner">Lip Liner</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Mascara">Mascara</Link>
+                              <Link to="search/categorytype/mascara">Mascara</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Eyeliner">Eyeliner</Link>
+                              <Link to="search/categorytype/eyeliner">Eyeliner</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Kajal">Kajal</Link>
+                              <Link to="search/categorytype/kajal">Kajal</Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/beauty-Eyeshadow">Eyeshadow</Link>
+                              <Link to="search/categorytype/eyeshadow">Eyeshadow</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Foundation">Foundation</Link>
+                              <Link to="search/categorytype/foundation">Foundation</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Primer">Primer</Link>
+                              <Link to="search/categorytype/primer">Primer</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Concealer">Concealer</Link>
+                              <Link to="search/categorytype/concealer">Concealer</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Compact">Compact</Link>
+                              <Link to="search/categorytype/compact">Compact</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Nail-Polish">Nail Polish</Link>
+                              <Link to="search/categorytype/nail-polish">Nail Polish</Link>
                             </li>
                           </ul>
                         </div>
@@ -1839,57 +1839,57 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="/Skincare-Bath-Body "
+                                  to="search/categorygroup/skincare-bath-body"
                                   style={{ color: "#0db7af" }}
                                 >
-                                  Skincare, Bath & Body
+                                  Skincare,Bath & Body
                                 </Link>{" "}
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Face-Moisturiser">
+                              <Link to="search/categorytype/face-moisturiser">
                                 Face Moisturiser
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Cleanser">Cleanser</Link>
+                              <Link to="search/categorytype/cleanser">Cleanser</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Masks-Peel">Masks & Peel</Link>
+                              <Link to="search/categorytype/masks-peel">Masks & Peel</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Sunscreen">Sunscreen</Link>
+                              <Link to="search/categorytype/sunscreen">Sunscreen</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Serum">Serum</Link>
+                              <Link to="search/categorytype/serum">Serum</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Face-Wash">Face Wash</Link>
+                              <Link to="search/categorytype/face-wash">Face Wash</Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/beauty-Eye-Cream">Eye Cream</Link>
+                              <Link to="search/categorytype/eye-cream">Eye Cream</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Lip-Balm">Lip Balm</Link>
+                              <Link to="search/categorytype/lip-balm">Lip Balm</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Body-Lotion ">Body Lotion </Link>
+                              <Link to="search/categorytype/body-lotion">Body Lotion </Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Body-Wash">Body Wash</Link>
+                              <Link to="search/categorytype/body-wash">Body Wash</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Body-Scrup"> Body Scrub</Link>
+                              <Link to="search/categorytype/body-scrup"> Body Scrub</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Hand-cream">Hand Cream </Link>
+                              <Link to="search/categorytype/hand-cream">Hand Cream </Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/beauty-Baby-Care"
+                                  to="search/categorygroup/baby-care"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Baby Care
@@ -1899,7 +1899,7 @@ function App() {
                             <li>
                               <h3>
                                 {" "}
-                                <Link to="search/category/beauty-Masks" style={{ color: "#0db7af" }}>
+                                <Link to="search/categorygroup/masks" style={{ color: "#0db7af" }}>
                                   Masks
                                 </Link>{" "}
                               </h3>
@@ -1912,7 +1912,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/beauty-Haircare"
+                                  to="search/categorygroup/haircare"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Haircare
@@ -1920,34 +1920,34 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Shampoo">Shampoo</Link>
+                              <Link to="search/categorytype/shampoo">Shampoo</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Conditioner">Conditioners</Link>
+                              <Link to="search/categorytype/conditioner">Conditioners</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Hair-Cream">Hair Cream</Link>
+                              <Link to="search/categorytype/hair-cream">Hair Cream</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Hair-Oil">Hair Oil</Link>
+                              <Link to="search/categorytype/hair-oil">Hair Oil</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Hair-Gel">Hair Gel</Link>
+                              <Link to="search/categorytype/hair-gel">Hair Gel</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Hair-Color">Hair Color</Link>
+                              <Link to="search/categorytype/hair-color">Hair Color</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Hair-Serum">Hair Serum</Link>
+                              <Link to="search/categorytype/hair-serum">Hair Serum</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Hair-Accessory">Hair Accessory</Link>
+                              <Link to="search/categorytype/hair-accessory">Hair Accessory</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/beauty-Fragrances"
+                                  to="search/categorygroup/fragrances"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Fragrances
@@ -1955,13 +1955,13 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Perfume">Perfume</Link>
+                              <Link to="search/categorytype/perfume">Perfume</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Deodorant">Deodorant</Link>
+                              <Link to="search/categorytype/deodorant">Deodorant</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Body-Mist">Body Mist</Link>
+                              <Link to="search/categorytype/body-mist">Body Mist</Link>
                             </li>
                           </ul>
                         </div>
@@ -1971,7 +1971,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/beauty-Appliances"
+                                  to="search/categorygroup/appliances"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Appliances
@@ -1979,22 +1979,22 @@ function App() {
                               </h3>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Hair-Straightener">
+                              <Link to="search/categorytype/hair-straightener">
                                 Hair Straightener
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Hair-Dryer">Hair Dryer</Link>
+                              <Link to="search/categorytype/hair-dryer">Hair Dryer</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Epilator">Epilator</Link>
+                              <Link to="search/categorytype/epilator">Epilator</Link>
                             </li>
 
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/beauty-Men-Grooming"
+                                  to="search/categorygroup/men-grooming"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Men's Grooming
@@ -2003,21 +2003,21 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="search/category/beauty-Trimmers">Trimmers</Link>
+                              <Link to="search/categorytype/trimmers">Trimmers</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Beard-Oil">Beard Oil</Link>
+                              <Link to="search/categorytype/beard-oil">Beard Oil</Link>
                             </li>
 
                             <li>
-                              <Link to="search/category/beauty-Hair-Wax">Hair Wax</Link>
+                              <Link to="search/categorytype/hair-wax">Hair Wax</Link>
                             </li>
 
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/beauty-Beauty-Gift-Makeup"
+                                  to="search/categorygroup/beauty-gift-makeup"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Beauty Gift & Makeup Set
@@ -2026,16 +2026,16 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="search/category/beauty-Beauty-Gift">Beauty Gift</Link>
+                              <Link to="search/categorytype/beauty-gift">Beauty Gift</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Makeup-Kit">Makeup Kit</Link>
+                              <Link to="search/categorytype/makeup-kit">Makeup Kit</Link>
                             </li>
                             <li>
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/beauty-Premium-Beauty"
+                                  to="search/categorygroup/premium-beauty"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Premium Beauty
@@ -2046,7 +2046,7 @@ function App() {
                               <h3>
                                 {" "}
                                 <Link
-                                  to="search/category/beauty-Wellness-Hygiene"
+                                  to="search/categorygroup/wellness-hygiene"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Wellness & Hygiene
@@ -2060,7 +2060,7 @@ function App() {
                             <li>
                               <h3>
                                 <Link
-                                  to="search/category/beauty-Top-Brands"
+                                  to="search/categorygroup/top-brands"
                                   style={{ color: "#0db7af" }}
                                 >
                                   Top Brands
@@ -2069,51 +2069,51 @@ function App() {
                             </li>
 
                             <li>
-                              <Link to="search/category/beauty-Lakme">Lakme</Link>
+                              <Link to="search/categorytype/lakme">Lakme</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Maybelline">Maybelline</Link>
+                              <Link to="search/categorytype/maybelline">Maybelline</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Loreal">Loreal</Link>
+                              <Link to="search/categorytype/loreal">Loreal</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Philips">Philips</Link>
+                              <Link to="search/categorytype/philips">Philips</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Bath-Body-Works">
+                              <Link to="search/categorytype/bath-body-works">
                                 Bath & Body Works
                               </Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Body-Shop">The Body Shop</Link>
+                              <Link to="search/categorytype/body-shop">The Body Shop</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Biotique">Biotique</Link>
+                              <Link to="search/categorytype/biotique">Biotique</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Mamaearth">Mamaearth</Link>
+                              <Link to="search/categorytype/mamaearth">Mamaearth</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-MCaffeine">MCaffeine</Link>
+                              <Link to="search/categorytype/mcaffeine">MCaffeine</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Nivea">Nivea</Link>
+                              <Link to="search/categorytype/nivea">Nivea</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Loreal-Professionnel">
+                              <Link to="search/categorytype/loreal-professionnel">
                                 Loreal Professionnel
                               </Link>{" "}
                             </li>
 
                             <li>
-                              <Link to="search/category/beauty-KAMA-AYURVEDA">Kama Ayerveda</Link>
+                              <Link to="search/categorytype/kama-ayurveda">Kama Ayerveda</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-m.a.c">M.A.C</Link>
+                              <Link to="search/categorytype/m-a-c">M.A.C</Link>
                             </li>
                             <li>
-                              <Link to="search/category/beauty-Forest-Essentials">
+                              <Link to="search/categorytype/forest-essentials">
                                 Forest Essentials
                               </Link>
                             </li>
